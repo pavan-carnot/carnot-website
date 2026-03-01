@@ -1,82 +1,189 @@
 "use client"
 
-import Link from "next/link"
-import { useEffect, useRef, useState, type ReactNode } from "react"
-import { FlaskConical, ShieldCheck, Building2, ChevronRight } from "lucide-react"
-
-function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const ob = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVisible(true); ob.unobserve(el) } },
-      { threshold: 0.08 }
-    )
-    ob.observe(el)
-    return () => ob.disconnect()
-  }, [])
-  return (
-    <div ref={ref} className={className}
-      style={visible ? { animation: `fadeUpIn 0.65s ease ${delay}ms both` } : { opacity: 0, transform: "translateY(20px)" }}>
-      {children}
-    </div>
-  )
-}
+import { useEffect, useRef, useState } from "react"
+import { motion, useInView, useScroll, useTransform } from "framer-motion"
+import { FlaskConical, ShieldCheck, Building2, ArrowRight } from "lucide-react"
 
 const pillars = [
   {
     icon: FlaskConical,
-    eyebrow: "47+ funded research projects",
-    title: "Research-grade AI engineering",
+    title: "Research-driven AI engineering",
     description:
-      "Founded by IIT professors and scientists with 120+ years of collective expertise in AI, NLP, and signal processing. Academic rigor, productionized.",
-    color: "#22d3ee",
-    glowRgb: "34,211,238",
+      "Founded by IIT professors and scientists with 120+ years of collective expertise in AI, NLP, and signal processing.",
+    stats: "47+ Research Projects",
   },
   {
     icon: ShieldCheck,
-    eyebrow: "Zero data leaves your infrastructure",
     title: "Complete data sovereignty",
     description:
-      "Deploy LLMs, RAG, and GenAI systems entirely within your own environment. No cloud routing, no external API calls, no vendor lock-in.",
-    color: "#60a5fa",
-    glowRgb: "96,165,250",
+      "Deploy LLMs, RAG, and GenAI systems entirely within your own environment. No cloud routing, no external API calls.",
+    stats: "100% On-Premise",
   },
   {
     icon: Building2,
-    eyebrow: "Deployed in production across India",
     title: "Built for regulated industries",
     description:
-      "Purpose-built for government, defense, and enterprise sectors where compliance, security clearance, and auditability are requirements — not options.",
-    color: "#4ade80",
-    glowRgb: "74,222,128",
+      "Purpose-built for government, defense, and enterprise sectors where compliance and security are requirements.",
+    stats: "9+ Enterprise Clients",
   },
 ]
 
-// Circuit-board node squares — scattered across the top of the section
-const circuitNodes = [
-  { top: 28, left: "8%",  w: 14, h: 14 },
-  { top: 48, left: "14%", w:  8, h:  8 },
-  { top: 18, left: "20%", w: 18, h: 18 },
-  { top: 60, left: "22%", w:  6, h:  6 },
-  { top: 36, left: "32%", w: 12, h: 12 },
-  { top: 22, left: "42%", w:  9, h:  9 },
-  { top: 52, left: "48%", w:  7, h:  7 },
-  { top: 16, left: "58%", w: 16, h: 16 },
-  { top: 44, left: "65%", w:  8, h:  8 },
-  { top: 30, left: "74%", w: 13, h: 13 },
-  { top: 20, left: "83%", w: 10, h: 10 },
-  { top: 55, left: "88%", w:  6, h:  6 },
-  { top: 38, left: "94%", w: 11, h: 11 },
-]
+// Stripe-style moving gradient mesh
+function MovingGradientMesh() {
+  return (
+    <div className="absolute inset-0 overflow-hidden opacity-30">
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          background: `
+            radial-gradient(circle at 20% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 40% 20%, rgba(74, 222, 128, 0.1) 0%, transparent 50%)
+          `,
+        }}
+        animate={{
+          scale: [1, 1.1, 1],
+          rotate: [0, 5, 0],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+    </div>
+  )
+}
 
-// Chamfer size in px — matches the angled cut depth visible in the Clerk reference
+// Clerk-style subtle grid
+function SubtleGrid() {
+  return (
+    <div 
+      className="absolute inset-0 opacity-[0.03]"
+      style={{
+        backgroundImage: `
+          linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px)
+        `,
+        backgroundSize: "64px 64px",
+      }}
+    />
+  )
+}
+
+// Professional feature card
+function FeatureCard({ pillar, index }: { pillar: typeof pillars[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [isHovered, setIsHovered] = useState(false)
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        ease: [0.21, 0.47, 0.32, 0.98]
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group relative"
+    >
+      <div className="relative h-full rounded-2xl border border-white/10 bg-white/[0.02] p-8 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:bg-white/[0.04]">
+        
+        {/* Subtle top gradient on hover */}
+        <motion.div
+          className="absolute inset-x-0 top-0 h-px"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+          style={{
+            background: "linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.5), transparent)",
+          }}
+        />
+
+        {/* Icon */}
+        <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all duration-300 group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10">
+          <pillar.icon className="h-6 w-6 text-cyan-400" />
+        </div>
+
+        {/* Stats badge */}
+        <div className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60">
+          {pillar.stats}
+        </div>
+
+        {/* Title */}
+        <h3 className="mb-3 text-xl font-semibold text-white">
+          {pillar.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-sm leading-relaxed text-white/50">
+          {pillar.description}
+        </p>
+
+        {/* Hover arrow */}
+        <motion.div
+          className="mt-6 flex items-center gap-2 text-sm font-medium text-cyan-400"
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ 
+            opacity: isHovered ? 1 : 0,
+            x: isHovered ? 0 : -10
+          }}
+          transition={{ duration: 0.2 }}
+        >
+          Learn more
+          <ArrowRight className="h-4 w-4" />
+        </motion.div>
+      </div>
+    </motion.div>
+  )
+}
+
+// Floating code snippets (Stripe-style)
+function FloatingCodeBlock({ delay = 0 }: { delay?: number }) {
+  return (
+    <motion.div
+      className="absolute rounded-lg border border-white/10 bg-black/40 p-4 backdrop-blur-xl font-mono text-xs"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ 
+        opacity: [0, 0.6, 0.6, 0],
+        y: [20, -100],
+      }}
+      transition={{
+        duration: 8,
+        delay,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    >
+      <div className="flex items-center gap-2 mb-2">
+        <div className="h-2 w-2 rounded-full bg-green-400" />
+        <span className="text-white/40">Secure Deployment</span>
+      </div>
+      <code className="text-cyan-400">
+        <span className="text-purple-400">const</span> ai = <span className="text-yellow-400">deploy</span>(<span className="text-green-400">"on-premise"</span>)
+      </code>
+    </motion.div>
+  )
+}
+
 const CHAMFER = 80
 
 export function WhyCarnotSection() {
-  // Clerk-style stepped notch: top-left and top-right corners cut at 45° angle
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(sectionRef, { once: true, margin: "-150px" })
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
+
   const notchPath = `polygon(
     ${CHAMFER}px 0, 
     calc(100% - ${CHAMFER}px) 0, 
@@ -89,157 +196,103 @@ export function WhyCarnotSection() {
   )`
 
   return (
-    // Outer wrapper — page bg shows behind the notched corners
-    <div className="bg-background px-0 py-0">
-
-      {/* ── Glowing notched border (2px gradient "border") ── */}
+    <div className="relative bg-background" ref={sectionRef}>
+      {/* Glowing border */}
       <div
         style={{
           clipPath: notchPath,
-          background: "linear-gradient(135deg, rgba(34,211,238,0.7) 0%, rgba(96,165,250,0.6) 50%, rgba(34,211,238,0.4) 100%)",
-          padding: "2px",
+          background: "linear-gradient(135deg, rgba(34,211,238,0.4) 0%, rgba(96,165,250,0.3) 50%, rgba(34,211,238,0.2) 100%)",
+          padding: "1px",
         }}
       >
-        {/* ── Inner section with animated gradient background ── */}
+        {/* Main section */}
         <section
-          className="relative overflow-hidden py-24 lg:py-32"
+          className="relative overflow-hidden"
           style={{
             clipPath: notchPath,
-            // Deep midnight — clearly NOT purple/brinjal, NOT flat navy
-            background: "linear-gradient(-45deg, #080e1a, #0d1a2e, #091522, #060c16)",
-            backgroundSize: "400% 400%",
-            animation: "gradientShift 20s ease infinite",
+            background: "#0a0e1a",
           }}
         >
+          {/* Subtle grid */}
+          <SubtleGrid />
 
-          {/* Mesh grid */}
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-              backgroundSize: "28px 28px",
-            }}
-          />
+          {/* Moving gradient mesh */}
+          <MovingGradientMesh />
 
-          {/* Circuit-board node squares */}
-          <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            {circuitNodes.map((node, i) => (
-              <div
-                key={i}
-                className="absolute border border-white/12 bg-white/5"
-                style={{ top: node.top, left: node.left, width: node.w, height: node.h }}
-              />
-            ))}
-            {/* Connector lines between some nodes (horizontal + vertical accents) */}
-            <div className="absolute top-[34px] left-[8%] h-px w-[6%] bg-white/8" />
-            <div className="absolute top-[34px] left-[20%] h-px w-[12%] bg-white/6" />
-            <div className="absolute top-[34px] left-[42%] h-px w-[16%] bg-white/6" />
-            <div className="absolute top-[34px] left-[66%] h-px w-[8%] bg-white/7" />
-            <div className="absolute top-[22px] left-[20%] h-[46px] w-px bg-white/7" />
-            <div className="absolute top-[22px] left-[58%] h-[38px] w-px bg-white/7" />
+          {/* Floating code blocks */}
+          <div className="absolute left-[10%] top-[20%] hidden lg:block">
+            <FloatingCodeBlock delay={0} />
+          </div>
+          <div className="absolute right-[15%] top-[40%] hidden lg:block">
+            <FloatingCodeBlock delay={3} />
           </div>
 
-          {/* Subtle floating cyan orb */}
-          <div
-            className="pointer-events-none absolute -right-24 top-1/2 h-80 w-80 rounded-full blur-3xl"
-            style={{ background: "radial-gradient(circle, rgba(34,211,238,0.12) 0%, transparent 70%)", animation: "float 11s ease-in-out infinite" }}
-          />
-          <div
-            className="pointer-events-none absolute -left-24 bottom-1/3 h-64 w-64 rounded-full blur-3xl"
-            style={{ background: "radial-gradient(circle, rgba(96,165,250,0.10) 0%, transparent 70%)", animation: "float 14s ease-in-out infinite 3s" }}
-          />
+          {/* Content */}
+          <motion.div 
+            className="relative py-24 lg:py-32"
+            style={{ y, opacity }}
+          >
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              
+              {/* Header */}
+              <motion.div
+                className="mx-auto mb-20 max-w-3xl text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+              >
+                {/* Overline */}
+                <motion.div
+                  className="mb-4 inline-block"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                >
+                  <span className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium text-cyan-400">
+                    Why Carnot Research
+                  </span>
+                </motion.div>
 
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-
-            {/* Section header */}
-            <FadeUp>
-              <div className="mx-auto max-w-2xl text-center mb-16">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#67e8f9] mb-3">
-                  Why Carnot Research
-                </p>
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Enterprise AI, built differently
+                {/* Title */}
+                <h2 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                  Enterprise AI,
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    built differently
+                  </span>
                 </h2>
-                <p className="mt-4 text-base leading-relaxed text-white/45">
-                  We engineer production-grade AI for organizations where security,
-                  accountability, and verifiable performance are non-negotiable.
+
+                {/* Description */}
+                <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/50">
+                  Production-grade AI systems for organizations where security, accountability, 
+                  and verifiable performance are non-negotiable.
                 </p>
+              </motion.div>
+
+              {/* Feature cards */}
+              <div className="grid gap-6 md:grid-cols-3">
+                {pillars.map((pillar, index) => (
+                  <FeatureCard key={pillar.title} pillar={pillar} index={index} />
+                ))}
               </div>
-            </FadeUp>
 
-            {/* Glowing glass cards */}
-            <div className="grid gap-6 sm:grid-cols-3">
-              {pillars.map((p, i) => (
-                <FadeUp key={p.title} delay={i * 130}>
-                  <div
-                    className="group relative overflow-hidden rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                      backdropFilter: "blur(8px)",
-                    }}
-                  >
-                    {/* Hover border glow */}
-                    <div
-                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                      style={{ boxShadow: `inset 0 0 0 1px rgba(${p.glowRgb},0.45)` }}
-                    />
-                    {/* Hover top-radial glow */}
-                    <div
-                      className="pointer-events-none absolute inset-x-0 top-0 h-28 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                      style={{ background: `radial-gradient(ellipse at 50% 0%, rgba(${p.glowRgb},0.16) 0%, transparent 70%)` }}
-                    />
-                    {/* Beam sweep */}
-                    <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100">
-                      <div
-                        className="absolute inset-y-0 w-16"
-                        style={{
-                          background: `linear-gradient(90deg, transparent, rgba(${p.glowRgb},0.07), transparent)`,
-                          animation: "beamSlide 1.4s ease forwards",
-                        }}
-                      />
-                    </div>
-
-                    {/* Icon */}
-                    <div className="relative mb-6 inline-block">
-                      <div
-                        className="absolute inset-0 rounded-xl blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-300"
-                        style={{ background: p.color }}
-                      />
-                      <div
-                        className="relative flex h-12 w-12 items-center justify-center rounded-xl"
-                        style={{
-                          background: `rgba(${p.glowRgb},0.14)`,
-                          border: `1px solid rgba(${p.glowRgb},0.35)`,
-                        }}
-                      >
-                        <p.icon className="h-6 w-6" style={{ color: p.color }} />
-                      </div>
-                    </div>
-
-                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-white/30">{p.eyebrow}</p>
-                    <h3 className="text-lg font-semibold text-white">{p.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-white/45">{p.description}</p>
-                  </div>
-                </FadeUp>
-              ))}
-            </div>
-
-            {/* Link */}
-            <FadeUp delay={430}>
-              <div className="mt-14 text-center">
-                <Link
+              {/* Bottom CTA */}
+              <motion.div
+                className="mt-16 text-center"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <a
                   href="/about"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#67e8f9] hover:text-white transition-colors duration-200"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all hover:border-cyan-500/30 hover:bg-white/10"
                 >
                   Learn more about our approach
-                  <ChevronRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </FadeUp>
-
-          </div>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </motion.div>
+            </div>
+          </motion.div>
         </section>
       </div>
     </div>
