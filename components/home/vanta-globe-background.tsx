@@ -28,10 +28,10 @@ export function VantaGlobeBackground() {
         minWidth: 200,
         scale: 1,
         scaleMobile: 1,
-        // New palette from your screenshot
-        backgroundColor: 0xd2e6e4,
-        color: 0x1a57eb,
-        color2: 0x5378bb,
+        // Violet aurora palette
+        backgroundColor: 0xfaf5ff,   // violet-50 — barely-there lavender
+        color: 0x8b5cf6,              // violet-500 — vibrant mesh lines
+        color2: 0x22d3ee,             // cyan-400 — electric highlight arcs
         size: 1.3,
       }) as VantaGlobeEffect
     }
@@ -48,8 +48,8 @@ export function VantaGlobeBackground() {
   return (
     <div
       ref={elRef}
-      className="absolute inset-0 h-full w-full min-h-[600px] overflow-hidden bg-[#d2e6e4]"
-      style={{ backgroundColor: "#d2e6e4" }}
+      className="absolute inset-0 h-full w-full min-h-[600px] overflow-hidden bg-[#faf5ff]"
+      style={{ backgroundColor: "#faf5ff" }}
       aria-hidden
     />
   )
