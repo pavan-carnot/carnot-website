@@ -1,0 +1,30 @@
+# Carnot Research - robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.well-known/
+Disallow: /admin/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://carnotresearch.com/sitemap.xml
+Sitemap: https://carnotresearch.com/sitemap-products.xml
+Sitemap: https://carnotresearch.com/sitemap-solutions.xml
