@@ -2004,50 +2004,213 @@ function FadeUp({ children, delay = 0 }) {
         columnNumber: 5
     }, this);
 }
+// ── Hyperspace tunnel canvas ──────────────────────────────────────────────────
+// Colorful rectangles spawn near the center and fly outward radially,
+// accelerating as they go — creates the "warp speed" tunnel illusion.
+function HyperspaceCanvas() {
+    const canvasRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const rafId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(undefined);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return;
+        // Palette: blue, purple, cyan, magenta, white accents
+        const PALETTE = [
+            [
+                80,
+                140,
+                255
+            ],
+            [
+                140,
+                80,
+                255
+            ],
+            [
+                60,
+                220,
+                240
+            ],
+            [
+                240,
+                80,
+                200
+            ],
+            [
+                160,
+                120,
+                255
+            ],
+            [
+                80,
+                200,
+                255
+            ],
+            [
+                255,
+                255,
+                255
+            ]
+        ];
+        const WEIGHTS = [
+            4,
+            4,
+            3,
+            3,
+            3,
+            3,
+            1
+        ] // relative spawn frequency
+        ;
+        let W = 0, H = 0;
+        const streaks = [];
+        // Pick a color respecting weights
+        const pickColor = ()=>{
+            const total = WEIGHTS.reduce((a, b)=>a + b, 0);
+            let r = Math.random() * total;
+            for(let i = 0; i < PALETTE.length; i++){
+                r -= WEIGHTS[i];
+                if (r <= 0) return PALETTE[i];
+            }
+            return PALETTE[0];
+        };
+        const spawnAt = (d)=>({
+                angle: Math.random() * Math.PI * 2,
+                d,
+                baseSpeed: 0.5 + Math.random() * 1.2,
+                w: 1.5 + Math.random() * 4,
+                h: 6 + Math.random() * 18,
+                color: pickColor(),
+                maxD: Math.hypot(W / 2, H / 2) * (0.85 + Math.random() * 0.20)
+            });
+        const resize = ()=>{
+            const dpr = window.devicePixelRatio || 1;
+            W = canvas.offsetWidth;
+            H = canvas.offsetHeight;
+            canvas.width = Math.round(W * dpr);
+            canvas.height = Math.round(H * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        // ── Warp cycle: long slow drift → sudden fast burst → instant reset ──────
+        // No ramp-up: the switch is immediate for a jarring warp effect.
+        const CYCLE_MS = 3000 // 7 s total
+        ;
+        const SLOW_MS = 1000 // 4 s slow
+        ;
+        const FAST_MS = 2000 // 3 s fast
+        ;
+        const SLOW_LVL = 0.06 // very slow drift
+        ;
+        const FAST_LVL = 15 // sudden warp
+        ;
+        const startTime = performance.now();
+        const getWarpLevel = (now)=>{
+            const t = (now - startTime) % CYCLE_MS;
+            return t < SLOW_MS ? SLOW_LVL : FAST_LVL;
+        };
+        const draw = (timestamp)=>{
+            const warpLevel = getWarpLevel(timestamp);
+            // ── Background ──────────────────────────────────────────────────────
+            const bg = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.hypot(W, H) * 0.6);
+            bg.addColorStop(0, "#0e1540");
+            bg.addColorStop(0.5, "#07103080");
+            bg.addColorStop(1, "#030818");
+            ctx.fillStyle = bg;
+            ctx.fillRect(0, 0, W, H);
+            const cx = W / 2, cy = H / 2;
+            // ── Spawn ────────────────────────────────────────────────────────────
+            // Add a few new streaks each frame (cap at 150)
+            const toSpawn = streaks.length < 150 ? 3 : 1;
+            for(let i = 0; i < toSpawn; i++)streaks.push(spawnAt(0));
+            // ── Update + Draw ────────────────────────────────────────────────────
+            for(let i = streaks.length - 1; i >= 0; i--){
+                const s = streaks[i];
+                const progress = s.d / s.maxD // 0 → 1
+                ;
+                // Speed grows with distance (perspective illusion), gated by warp cycle.
+                // baseSpeed is fixed per streak — no compounding, clean warp control.
+                s.d += s.baseSpeed * (1 + progress * 3) * warpLevel;
+                if (progress >= 1) {
+                    streaks.splice(i, 1);
+                    continue;
+                }
+                // Opacity: fade in near center (0–12%), full, fade out near edge (75–100%)
+                let alpha = 1;
+                if (progress < 0.12) alpha = progress / 0.12;
+                else if (progress > 0.75) alpha = 1 - (progress - 0.75) / 0.25;
+                alpha = Math.max(0, Math.min(1, alpha)) * 0.90;
+                // Scale grows with distance — perspective effect
+                const scale = 0.12 + progress * 1.6;
+                const x = cx + Math.cos(s.angle) * s.d;
+                const y = cy + Math.sin(s.angle) * s.d;
+                // Rect dimensions: thin across, long along travel direction
+                const rw = s.w * (0.4 + progress * 0.9);
+                const rh = s.h * scale;
+                const [r, g, b] = s.color;
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.rotate(s.angle + Math.PI / 2); // orient rect along travel axis
+                ctx.globalAlpha = alpha;
+                // Soft glow behind the rect
+                ctx.shadowColor = `rgba(${r},${g},${b},0.9)`;
+                ctx.shadowBlur = 10;
+                ctx.fillStyle = `rgba(${r},${g},${b},1)`;
+                ctx.fillRect(-rw / 2, -rh / 2, rw, rh);
+                ctx.restore();
+            }
+            rafId.current = requestAnimationFrame(draw);
+        };
+        resize();
+        // Pre-populate so animation is full immediately (no ramp-up delay)
+        for(let i = 0; i < 100; i++){
+            const maxD = Math.hypot(W / 2, H / 2) * 0.9;
+            streaks.push(spawnAt(Math.random() * maxD * 0.85));
+        }
+        rafId.current = requestAnimationFrame(draw);
+        const ro = new ResizeObserver(resize);
+        ro.observe(canvas);
+        return ()=>{
+            if (rafId.current) cancelAnimationFrame(rafId.current);
+            ro.disconnect();
+        };
+    }, []);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
+        ref: canvasRef,
+        className: "absolute inset-0 w-full h-full",
+        style: {
+            pointerEvents: "none"
+        }
+    }, void 0, false, {
+        fileName: "[project]/components/home/cta-section.tsx",
+        lineNumber: 192,
+        columnNumber: 5
+    }, this);
+}
 function CtaSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "relative overflow-hidden py-24 lg:py-32",
         style: {
-            background: "linear-gradient(-45deg, #4c1d95, #6d28d9, #1e3a8a, #5b21b6)",
-            backgroundSize: "400% 400%",
-            animation: "gradientShift 10s ease infinite"
+            background: "#040c20"
         },
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pointer-events-none absolute inset-0 opacity-[0.06]",
-                style: {
-                    backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,1) 1px, transparent 0)",
-                    backgroundSize: "28px 28px"
-                }
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(HyperspaceCanvas, {}, void 0, false, {
                 fileName: "[project]/components/home/cta-section.tsx",
-                lineNumber: 36,
+                lineNumber: 207,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full blur-3xl",
+                className: "pointer-events-none absolute inset-0",
                 style: {
-                    background: "radial-gradient(circle, rgba(167,139,250,0.30) 0%, transparent 70%)",
-                    animation: "float 9s ease-in-out infinite"
+                    background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, rgba(4,12,32,0.55) 100%)"
                 }
             }, void 0, false, {
                 fileName: "[project]/components/home/cta-section.tsx",
-                lineNumber: 46,
+                lineNumber: 210,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full blur-3xl",
-                style: {
-                    background: "radial-gradient(circle, rgba(34,211,238,0.18) 0%, transparent 70%)",
-                    animation: "float 12s ease-in-out infinite 3s"
-                }
-            }, void 0, false, {
-                fileName: "[project]/components/home/cta-section.tsx",
-                lineNumber: 50,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative mx-auto max-w-7xl px-6 lg:px-8",
+                className: "relative z-10 mx-auto max-w-7xl px-6 lg:px-8",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FadeUp, {
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mx-auto max-w-3xl text-center",
@@ -2059,14 +2222,14 @@ function CtaSection() {
                                         className: "h-1.5 w-1.5 animate-pulse rounded-full bg-white/70"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/cta-section.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 222,
                                         columnNumber: 15
                                     }, this),
                                     "Get Started Today"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/cta-section.tsx",
-                                lineNumber: 58,
+                                lineNumber: 221,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2079,13 +2242,13 @@ function CtaSection() {
                                         children: "enterprise AI?"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/cta-section.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 228,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/cta-section.tsx",
-                                lineNumber: 63,
+                                lineNumber: 226,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2093,7 +2256,7 @@ function CtaSection() {
                                 children: "Talk to our AI experts and discover how Carnot Research can transform your organisation with secure, on-premise generative AI — built for government, defense, and enterprise."
                             }, void 0, false, {
                                 fileName: "[project]/components/home/cta-section.tsx",
-                                lineNumber: 68,
+                                lineNumber: 231,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2111,18 +2274,18 @@ function CtaSection() {
                                                     className: "ml-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/cta-section.tsx",
-                                                    lineNumber: 83,
+                                                    lineNumber: 245,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/cta-section.tsx",
-                                            lineNumber: 81,
+                                            lineNumber: 243,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/cta-section.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 238,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2137,25 +2300,25 @@ function CtaSection() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/cta-section.tsx",
-                                                    lineNumber: 93,
+                                                    lineNumber: 255,
                                                     columnNumber: 19
                                                 }, this),
                                                 "Book Enterprise Demo"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/cta-section.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 254,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/cta-section.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 248,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/cta-section.tsx",
-                                lineNumber: 74,
+                                lineNumber: 237,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2163,29 +2326,29 @@ function CtaSection() {
                                 children: "Deployed across government agencies and enterprise organisations across India"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/cta-section.tsx",
-                                lineNumber: 99,
+                                lineNumber: 261,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/cta-section.tsx",
-                        lineNumber: 57,
+                        lineNumber: 220,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/home/cta-section.tsx",
-                    lineNumber: 56,
+                    lineNumber: 219,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/home/cta-section.tsx",
-                lineNumber: 55,
+                lineNumber: 218,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/home/cta-section.tsx",
-        lineNumber: 27,
+        lineNumber: 203,
         columnNumber: 5
     }, this);
 }

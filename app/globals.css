@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+/* Prevent Tailwind scanning build output — fixes corrupted-class CSS parse errors */
+@source not "../docs";
+@source not "../.next";
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
