@@ -75,19 +75,19 @@ const certifications = [
     icon: BadgeCheck,
     title: "DPIIT Certified",
     detail: "Cert No. DIPP162658",
-    iconBg: "bg-pink-50",
-    iconColor: "text-pink-600",
-    border: "border-pink-100 hover:border-pink-300",
-    glow: "hover:shadow-pink-100/60",
+    iconBg: "bg-blue-50",
+    iconColor: "text-blue-600",
+    border: "border-blue-100 hover:border-blue-300",
+    glow: "hover:shadow-blue-100/60",
   },
   {
     icon: Building,
     title: "MSME Certified",
     detail: "UDYAM-DL-08-0069895",
-    iconBg: "bg-emerald-50",
-    iconColor: "text-emerald-600",
-    border: "border-emerald-100 hover:border-emerald-300",
-    glow: "hover:shadow-emerald-100/60",
+    iconBg: "bg-cyan-50",
+    iconColor: "text-cyan-600",
+    border: "border-cyan-100 hover:border-cyan-300",
+    glow: "hover:shadow-cyan-100/60",
   },
 ]
 
@@ -108,7 +108,7 @@ export function TrustSection() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <FadeUp>
           <div className="mb-12 text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#7c3aed] mb-2">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#2563eb] mb-2">
               Trusted By
             </p>
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -130,7 +130,7 @@ export function TrustSection() {
           {marqueeRow1.map((client, i) => (
             <div
               key={i}
-              className="flex-none rounded-full border border-border bg-card px-5 py-2 text-sm font-medium text-foreground/60 whitespace-nowrap hover:border-[#7c3aed]/30 hover:text-foreground transition-colors duration-200"
+              className="flex-none rounded-full border border-border bg-card px-5 py-2 text-sm font-medium text-foreground/60 whitespace-nowrap hover:border-[#2563eb]/30 hover:text-foreground transition-colors duration-200"
             >
               {client}
             </div>
@@ -149,7 +149,7 @@ export function TrustSection() {
           {marqueeRow2.map((client, i) => (
             <div
               key={i}
-              className="flex-none rounded-full border border-[#7c3aed]/12 bg-[#7c3aed]/4 px-5 py-2 text-sm font-medium text-[#7c3aed]/70 whitespace-nowrap hover:border-[#7c3aed]/30 hover:text-[#7c3aed] transition-colors duration-200"
+              className="flex-none rounded-full border border-[#2563eb]/12 bg-[#2563eb]/4 px-5 py-2 text-sm font-medium text-[#2563eb]/70 whitespace-nowrap hover:border-[#2563eb]/30 hover:text-[#2563eb] transition-colors duration-200"
             >
               {client}
             </div>

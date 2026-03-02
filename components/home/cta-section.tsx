@@ -225,7 +225,7 @@ export function CtaSection() {
 
             <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Ready to deploy secure{" "}
-              <span className="text-[#c4b5fd]">enterprise AI?</span>
+              <span className="text-[#93c5fd]">enterprise AI?</span>
             </h2>
 
             <p className="mt-6 text-pretty text-lg leading-relaxed text-white/70">
@@ -238,7 +238,7 @@ export function CtaSection() {
               <Button
                 size="lg"
                 asChild
-                className="bg-white text-[#4c1d95] font-semibold shadow-xl hover:bg-white/90 hover:shadow-2xl transition-all"
+                className="bg-white text-[#1e3a8a] font-semibold shadow-xl hover:bg-white/90 hover:shadow-2xl transition-all"
               >
                 <Link href="/contact">
                   Talk to AI Experts

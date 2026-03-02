@@ -22,7 +22,7 @@ function useCountUp(target: number, duration: number, trigger: boolean) {
 }
 
 const stats = [
-  { num: 120, format: (n: number) => `${n}+`,    label: "Years Combined Experience", sub: "IIT Faculty & Army Scientists",     glowColor: "rgba(139,92,246,0.30)" },
+  { num: 120, format: (n: number) => `${n}+`,    label: "Years Combined Experience", sub: "IIT Faculty & Army Scientists",     glowColor: "rgba(37,99,235,0.30)" },
   { num: 47,  format: (n: number) => `${n}+`,    label: "Funded R&D Projects",       sub: "Govt & Industry Sponsored",        glowColor: "rgba(34,211,238,0.28)" },
   { num: 70,  format: (n: number) => `₹${n}Cr+`, label: "Research Funding",          sub: "Principal Investigator Projects",   glowColor: "rgba(236,72,153,0.24)" },
   { num: 0,   format: () => "CMMI L3",           label: "Process Maturity",           sub: "Globally Certified Quality",       glowColor: "rgba(52,211,153,0.24)" },
@@ -71,7 +71,7 @@ export function CredibilityStrip() {
       ref={sectionRef}
       className="relative overflow-hidden border-y border-white/10 py-16"
       style={{
-        background: "linear-gradient(-45deg, #3b0764, #4338ca, #1e1b4b, #312e81)",
+        background: "linear-gradient(-45deg, #0c1a4a, #1d4ed8, #0f172a, #1e3a8a)",
         backgroundSize: "400% 400%",
         animation: "gradientShift 14s ease infinite",
       }}
@@ -90,7 +90,7 @@ export function CredibilityStrip() {
       {/* Floating glow orbs */}
       <div
         className="pointer-events-none absolute -top-20 left-1/4 h-72 w-72 rounded-full blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(139,92,246,0.35) 0%, transparent 70%)", animation: "float 9s ease-in-out infinite" }}
+        style={{ background: "radial-gradient(circle, rgba(37,99,235,0.35) 0%, transparent 70%)", animation: "float 9s ease-in-out infinite" }}
       />
       <div
         className="pointer-events-none absolute -bottom-20 right-1/3 h-56 w-56 rounded-full blur-3xl"

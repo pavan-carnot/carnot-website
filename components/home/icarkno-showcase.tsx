@@ -52,7 +52,7 @@ function ChatPreview() {
   }, [])
 
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-[#0f0a2e] shadow-2xl ring-1 ring-white/8">
+    <div className="relative overflow-hidden rounded-2xl bg-[#050f2e] shadow-2xl ring-1 ring-white/8">
       {/* Title bar */}
       <div className="flex items-center gap-3 border-b border-white/8 px-5 py-3.5">
         <div className="flex gap-1.5">
@@ -61,7 +61,7 @@ function ChatPreview() {
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         </div>
         <div className="flex items-center gap-2 rounded-md bg-white/5 px-3 py-1">
-          <Brain className="h-3 w-3 text-[#a78bfa]" />
+          <Brain className="h-3 w-3 text-[#60a5fa]" />
           <span className="text-xs font-medium text-white/60">icarKno Enterprise</span>
         </div>
       </div>
@@ -70,7 +70,7 @@ function ChatPreview() {
         {/* User message */}
         {shown >= 1 && (
           <div className="flex justify-end" style={{ animation: "fadeUpIn 0.4s ease both" }}>
-            <div className="max-w-[80%] rounded-2xl rounded-br-sm bg-[#7c3aed] px-4 py-2.5 text-sm text-white">
+            <div className="max-w-[80%] rounded-2xl rounded-br-sm bg-[#2563eb] px-4 py-2.5 text-sm text-white">
               {messages[0].text}
             </div>
           </div>
@@ -79,8 +79,8 @@ function ChatPreview() {
         {/* Typing indicator */}
         {typing && (
           <div className="flex items-center gap-3">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#7c3aed]/20">
-              <Brain className="h-3.5 w-3.5 text-[#a78bfa]" />
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2563eb]/20">
+              <Brain className="h-3.5 w-3.5 text-[#60a5fa]" />
             </div>
             <div className="flex gap-1 rounded-2xl rounded-tl-sm bg-white/6 px-4 py-3">
               <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/40" style={{ animationDelay: "0ms" }} />
@@ -93,8 +93,8 @@ function ChatPreview() {
         {/* AI response */}
         {shown >= 2 && (
           <div className="flex gap-3" style={{ animation: "fadeUpIn 0.5s ease both" }}>
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#7c3aed]/20">
-              <Brain className="h-3.5 w-3.5 text-[#a78bfa]" />
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2563eb]/20">
+              <Brain className="h-3.5 w-3.5 text-[#60a5fa]" />
             </div>
             <div className="flex-1 space-y-3">
               <div className="rounded-2xl rounded-tl-sm bg-white/6 px-4 py-3 text-sm leading-relaxed text-white/85">
@@ -104,7 +104,7 @@ function ChatPreview() {
               <div className="flex flex-wrap gap-2">
                 {messages[1].sources!.map((src) => (
                   <span key={src}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-[#7c3aed]/12 px-2.5 py-1 text-xs font-medium text-[#a78bfa] ring-1 ring-[#7c3aed]/20">
+                    className="inline-flex items-center gap-1.5 rounded-full bg-[#2563eb]/12 px-2.5 py-1 text-xs font-medium text-[#60a5fa] ring-1 ring-[#2563eb]/20">
                     <FileText className="h-3 w-3" />
                     {src}
                   </span>
@@ -117,7 +117,7 @@ function ChatPreview() {
         {/* Input bar */}
         <div className="mt-2 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
           <span className="flex-1 text-sm text-white/25">Ask icarKno anything about your documents…</span>
-          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#7c3aed]">
+          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#2563eb]">
             <ArrowRight className="h-3.5 w-3.5 text-white" />
           </div>
         </div>
@@ -141,9 +141,9 @@ const otherProducts = [
     tagline: "Transport Analytics Platform",
     desc: "Computer vision + NLP for intelligent transportation systems and movement analytics.",
     icon: Route,
-    iconBg: "bg-emerald-50",
-    iconColor: "text-emerald-600",
-    accent: "#059669",
+    iconBg: "bg-cyan-50",
+    iconColor: "text-cyan-600",
+    accent: "#0891b2",
     href: "/products#bhargati",
   },
   {
@@ -151,9 +151,9 @@ const otherProducts = [
     tagline: "Conversational AI Assistant",
     desc: "Multilingual AI agent — winner of the Transport Stack Open Innovation Challenge.",
     icon: MessageSquare,
-    iconBg: "bg-pink-50",
-    iconColor: "text-pink-600",
-    accent: "#c11574",
+    iconBg: "bg-blue-50",
+    iconColor: "text-blue-600",
+    accent: "#2563eb",
     href: "/products#saathi",
     award: true,
   },
@@ -167,12 +167,12 @@ export function IcarKnoShowcase() {
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, rgba(139,92,246,0.07) 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.07) 1px, transparent 0)",
           backgroundSize: "32px 32px",
         }}
       />
       {/* Soft ambient glow blobs */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#8b5cf6]/6 blur-3xl" style={{ animation: "float 12s ease-in-out infinite" }} />
+      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#3b82f6]/6 blur-3xl" style={{ animation: "float 12s ease-in-out infinite" }} />
       <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-[#06b6d4]/5 blur-3xl" style={{ animation: "float 14s ease-in-out infinite 3s" }} />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -184,13 +184,13 @@ export function IcarKnoShowcase() {
           <FadeUp>
             <div className="max-w-xl">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#7c3aed]" />
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#2563eb]" />
                 Featured Product · icarKno
               </div>
 
               <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
                 Enterprise knowledge AI,{" "}
-                <span className="text-[#7c3aed]">deployed on your terms</span>
+                <span className="text-[#2563eb]">deployed on your terms</span>
               </h2>
 
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -203,8 +203,8 @@ export function IcarKnoShowcase() {
               <ul className="mt-7 space-y-3">
                 {features.map((f) => (
                   <li key={f.text} className="flex items-center gap-3 text-sm text-foreground">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ede9fe]">
-                      <f.icon className="h-3 w-3 text-[#7c3aed]" />
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#dbeafe]">
+                      <f.icon className="h-3 w-3 text-[#2563eb]" />
                     </span>
                     {f.text}
                   </li>
@@ -215,7 +215,7 @@ export function IcarKnoShowcase() {
                 <Button
                   size="default"
                   asChild
-                  className="bg-[#7c3aed] text-white shadow-sm hover:bg-[#7c3aed]/90"
+                  className="bg-[#2563eb] text-white shadow-sm hover:bg-[#2563eb]/90"
                 >
                   <Link href="/products#icarkno">
                     Explore icarKno
@@ -236,7 +236,7 @@ export function IcarKnoShowcase() {
           {/* Right — dark chat preview with glow halo */}
           <FadeUp delay={180}>
             <div className="relative">
-              <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#7c3aed]/10 via-[#06b6d4]/4 to-transparent blur-2xl" />
+              <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#2563eb]/10 via-[#06b6d4]/4 to-transparent blur-2xl" />
               <ChatPreview />
             </div>
           </FadeUp>
@@ -258,7 +258,7 @@ export function IcarKnoShowcase() {
                   <div className="flex items-center gap-2">
                     <p className="font-semibold text-foreground">{p.name}</p>
                     {p.award && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-semibold text-amber-700 ring-1 ring-amber-200">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700 ring-1 ring-blue-200">
                         <Trophy className="h-2.5 w-2.5" /> Award
                       </span>
                     )}

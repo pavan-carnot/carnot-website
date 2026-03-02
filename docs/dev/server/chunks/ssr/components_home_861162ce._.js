@@ -646,9 +646,9 @@ const otherProducts = [
         tagline: "Transport Analytics Platform",
         desc: "Computer vision + NLP for intelligent transportation systems and movement analytics.",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$route$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Route$3e$__["Route"],
-        iconBg: "bg-emerald-50",
-        iconColor: "text-emerald-600",
-        accent: "#059669",
+        iconBg: "bg-cyan-50",
+        iconColor: "text-cyan-600",
+        accent: "#0891b2",
         href: "/products#bhargati"
     },
     {
@@ -656,9 +656,9 @@ const otherProducts = [
         tagline: "Conversational AI Assistant",
         desc: "Multilingual AI agent — winner of the Transport Stack Open Innovation Challenge.",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__["MessageSquare"],
-        iconBg: "bg-pink-50",
-        iconColor: "text-pink-600",
-        accent: "#c11574",
+        iconBg: "bg-violet-50",
+        iconColor: "text-violet-600",
+        accent: "#7c3aed",
         href: "/products#saathi",
         award: true
     }
@@ -921,7 +921,7 @@ function IcarKnoShowcase() {
                                                             columnNumber: 21
                                                         }, this),
                                                         p.award && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-semibold text-amber-700 ring-1 ring-amber-200",
+                                                            className: "inline-flex items-center gap-1 rounded-full bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700 ring-1 ring-violet-200",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trophy$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trophy$3e$__["Trophy"], {
                                                                     className: "h-2.5 w-2.5"
@@ -1699,19 +1699,19 @@ const certifications = [
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$badge$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__BadgeCheck$3e$__["BadgeCheck"],
         title: "DPIIT Certified",
         detail: "Cert No. DIPP162658",
-        iconBg: "bg-pink-50",
-        iconColor: "text-pink-600",
-        border: "border-pink-100 hover:border-pink-300",
-        glow: "hover:shadow-pink-100/60"
+        iconBg: "bg-violet-50",
+        iconColor: "text-violet-600",
+        border: "border-violet-100 hover:border-violet-300",
+        glow: "hover:shadow-violet-100/60"
     },
     {
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Building$3e$__["Building"],
         title: "MSME Certified",
         detail: "UDYAM-DL-08-0069895",
-        iconBg: "bg-emerald-50",
-        iconColor: "text-emerald-600",
-        border: "border-emerald-100 hover:border-emerald-300",
-        glow: "hover:shadow-emerald-100/60"
+        iconBg: "bg-cyan-50",
+        iconColor: "text-cyan-600",
+        border: "border-cyan-100 hover:border-cyan-300",
+        glow: "hover:shadow-cyan-100/60"
     }
 ];
 function TrustSection() {
