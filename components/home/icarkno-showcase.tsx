@@ -3,8 +3,8 @@
 import Link from "next/link"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import {
-  ArrowRight, ArrowUpRight, Brain, FileText, Shield,
-  Layers, MessageSquare, Route, Trophy,
+  ArrowRight, ArrowUpRight, Shield,
+  Layers, FileText, MessageSquare, Route, Trophy,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -27,104 +27,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; 
   )
 }
 
-// ─── Animated RAG chat preview ────────────────────────────────────────────────
-const messages = [
-  {
-    role: "user" as const,
-    text: "Summarise the procurement compliance requirements for Q3",
-  },
-  {
-    role: "ai" as const,
-    text: "Based on the uploaded documents, Q3 procurement mandates a three-tier approval workflow with digital signatures at each stage. Vendor onboarding requires GST verification and...",
-    sources: ["Procurement Circular 2024", "Policy Manual v8.2"],
-  },
-]
-
-function ChatPreview() {
-  const [shown, setShown] = useState(0)
-  const [typing, setTyping] = useState(false)
-
-  useEffect(() => {
-    const t1 = setTimeout(() => setShown(1), 800)
-    const t2 = setTimeout(() => setTyping(true), 1400)
-    const t3 = setTimeout(() => { setShown(2); setTyping(false) }, 3000)
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3) }
-  }, [])
-
-  return (
-    <div className="relative overflow-hidden rounded-2xl bg-[#050f2e] shadow-2xl ring-1 ring-white/8">
-      {/* Title bar */}
-      <div className="flex items-center gap-3 border-b border-white/8 px-5 py-3.5">
-        <div className="flex gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-        </div>
-        <div className="flex items-center gap-2 rounded-md bg-white/5 px-3 py-1">
-          <Brain className="h-3 w-3 text-[#60a5fa]" />
-          <span className="text-xs font-medium text-white/60">icarKno Enterprise</span>
-        </div>
-      </div>
-
-      <div className="space-y-4 p-5">
-        {/* User message */}
-        {shown >= 1 && (
-          <div className="flex justify-end" style={{ animation: "fadeUpIn 0.4s ease both" }}>
-            <div className="max-w-[80%] rounded-2xl rounded-br-sm bg-[#2563eb] px-4 py-2.5 text-sm text-white">
-              {messages[0].text}
-            </div>
-          </div>
-        )}
-
-        {/* Typing indicator */}
-        {typing && (
-          <div className="flex items-center gap-3">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2563eb]/20">
-              <Brain className="h-3.5 w-3.5 text-[#60a5fa]" />
-            </div>
-            <div className="flex gap-1 rounded-2xl rounded-tl-sm bg-white/6 px-4 py-3">
-              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/40" style={{ animationDelay: "0ms" }} />
-              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/40" style={{ animationDelay: "150ms" }} />
-              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white/40" style={{ animationDelay: "300ms" }} />
-            </div>
-          </div>
-        )}
-
-        {/* AI response */}
-        {shown >= 2 && (
-          <div className="flex gap-3" style={{ animation: "fadeUpIn 0.5s ease both" }}>
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2563eb]/20">
-              <Brain className="h-3.5 w-3.5 text-[#60a5fa]" />
-            </div>
-            <div className="flex-1 space-y-3">
-              <div className="rounded-2xl rounded-tl-sm bg-white/6 px-4 py-3 text-sm leading-relaxed text-white/85">
-                {messages[1].text}
-              </div>
-              {/* Source citations */}
-              <div className="flex flex-wrap gap-2">
-                {messages[1].sources!.map((src) => (
-                  <span key={src}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-[#2563eb]/12 px-2.5 py-1 text-xs font-medium text-[#60a5fa] ring-1 ring-[#2563eb]/20">
-                    <FileText className="h-3 w-3" />
-                    {src}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Input bar */}
-        <div className="mt-2 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-          <span className="flex-1 text-sm text-white/25">Ask icarKno anything about your documents…</span>
-          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#2563eb]">
-            <ArrowRight className="h-3.5 w-3.5 text-white" />
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 // ─── icarKno feature list ─────────────────────────────────────────────────────
 const features = [
@@ -233,11 +136,18 @@ export function IcarKnoShowcase() {
             </div>
           </FadeUp>
 
-          {/* Right — dark chat preview with glow halo */}
+          {/* Right — product demo video */}
           <FadeUp delay={180}>
-            <div className="relative">
+            <div className="relative flex justify-center">
               <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#2563eb]/10 via-[#06b6d4]/4 to-transparent blur-2xl" />
-              <ChatPreview />
+              <video
+                src={`${B}/assets/clients/Final_video.mp4`}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="relative block h-auto max-h-[min(480px,55vh)] w-auto max-w-full rounded-2xl"
+              />
             </div>
           </FadeUp>
         </div>

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react"
 
-// ─── Count-up hook ─────────────────────────────────────────────────────────────
 function useCountUp(target: number, duration: number, trigger: boolean) {
   const [val, setVal] = useState(0)
   useEffect(() => {
@@ -11,7 +10,7 @@ function useCountUp(target: number, duration: number, trigger: boolean) {
     const start = performance.now()
     const tick = (now: number) => {
       const t = Math.min((now - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - t, 3) // cubic ease-out
+      const eased = 1 - Math.pow(1 - t, 3)
       setVal(Math.floor(eased * target))
       if (t < 1) raf = requestAnimationFrame(tick)
     }
@@ -22,10 +21,10 @@ function useCountUp(target: number, duration: number, trigger: boolean) {
 }
 
 const stats = [
-  { num: 120, format: (n: number) => `${n}+`,    label: "Years Combined Experience", sub: "IIT Faculty & Army Scientists",     glowColor: "rgba(37,99,235,0.30)" },
-  { num: 47,  format: (n: number) => `${n}+`,    label: "Funded R&D Projects",       sub: "Govt & Industry Sponsored",        glowColor: "rgba(34,211,238,0.28)" },
-  { num: 70,  format: (n: number) => `₹${n}Cr+`, label: "Research Funding",          sub: "Principal Investigator Projects",   glowColor: "rgba(236,72,153,0.24)" },
-  { num: 0,   format: () => "CMMI L3",           label: "Process Maturity",           sub: "Globally Certified Quality",       glowColor: "rgba(52,211,153,0.24)" },
+  { num: 120, format: (n: number) => `${n}+`,    label: "Years Combined Experience", sub: "IIT Faculty & Army Scientists" },
+  { num: 47,  format: (n: number) => `${n}+`,    label: "Funded R&D Projects",       sub: "Govt & Industry Sponsored" },
+  { num: 70,  format: (n: number) => `₹${n}Cr+`, label: "Research Funding",          sub: "Principal Investigator Projects" },
+  { num: 0,   format: () => "CMMI L3",            label: "Process Maturity",           sub: "Globally Certified Quality" },
 ]
 
 function StatItem({ stat, delay, trigger }: { stat: typeof stats[number]; delay: number; trigger: boolean }) {
@@ -34,19 +33,12 @@ function StatItem({ stat, delay, trigger }: { stat: typeof stats[number]; delay:
 
   return (
     <div
-      className="group relative text-center px-6"
-      style={trigger ? { animation: `fadeUpIn 0.65s ease ${delay}ms both` } : { opacity: 0 }}
+      className="text-center px-4"
+      style={trigger ? { animation: `fadeUpIn 0.55s ease ${delay}ms both` } : { opacity: 0 }}
     >
-      {/* Pulsing glow behind number */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 h-16 w-36 -translate-x-1/2 rounded-full blur-2xl"
-        style={{ background: stat.glowColor, animation: "borderGlow 3s ease-in-out infinite" }}
-      />
-      <p className="relative text-4xl font-bold tracking-tight text-white lg:text-5xl">
-        {display}
-      </p>
-      <p className="mt-1.5 text-sm font-semibold text-white/70">{stat.label}</p>
-      <p className="mt-0.5 text-xs text-white/35">{stat.sub}</p>
+      <p className="text-2xl font-bold tracking-tight text-white lg:text-3xl">{display}</p>
+      <p className="mt-1 text-xs font-semibold text-gray-300">{stat.label}</p>
+      <p className="mt-0.5 text-[11px] text-gray-500">{stat.sub}</p>
     </div>
   )
 }
@@ -69,42 +61,16 @@ export function CredibilityStrip() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden border-y border-white/10 py-16"
-      style={{
-        background: "linear-gradient(-45deg, #0c1a4a, #1d4ed8, #0f172a, #1e3a8a)",
-        backgroundSize: "400% 400%",
-        animation: "gradientShift 14s ease infinite",
-      }}
+      className="relative border-y border-gray-800 py-8"
+      style={{ background: "#111827" }}
     >
-
-      {/* Animated mesh grid */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "50px 50px",
-        }}
-      />
-
-      {/* Floating glow orbs */}
-      <div
-        className="pointer-events-none absolute -top-20 left-1/4 h-72 w-72 rounded-full blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(37,99,235,0.35) 0%, transparent 70%)", animation: "float 9s ease-in-out infinite" }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-20 right-1/3 h-56 w-56 rounded-full blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(34,211,238,0.25) 0%, transparent 70%)", animation: "float 11s ease-in-out infinite 2s" }}
-      />
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-y-12 gap-x-4 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-y-8 lg:grid-cols-4 lg:divide-x lg:divide-gray-700">
           {stats.map((stat, i) => (
-            <StatItem key={stat.label} stat={stat} delay={i * 90} trigger={triggered} />
+            <StatItem key={stat.label} stat={stat} delay={i * 80} trigger={triggered} />
           ))}
         </div>
       </div>
-
     </section>
   )
 }

@@ -4,7 +4,7 @@ import { VantaGlobeBackground } from "./vanta-globe-background"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[600px] overflow-hidden flex items-center" style={{ background: "#f8fafc" }}>
+    <section className="relative overflow-hidden flex items-center" style={{ background: "#f8fafc", minHeight: "calc(100vh - 3.75rem)" }}>
       <VantaGlobeBackground />
 
       <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8">

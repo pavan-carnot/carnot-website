@@ -2,6 +2,8 @@
 
 import Link from "next/link"
 import { useState } from "react"
+
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 import {
   NavigationMenu,
@@ -36,10 +38,13 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-xl border border-gray-200 bg-white px-4 h-12 shadow-sm lg:px-5">
 
         {/* ── Logo ── */}
-        <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#2563eb]">
-            <span className="text-[10px] font-bold text-white leading-none">CR</span>
-          </div>
+        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${B}/assets/clients/mainLogo-removebg.png`}
+            alt="Carnot Research"
+            className="h-8 w-auto object-contain"
+          />
           <span className="text-sm font-semibold tracking-tight text-gray-900 hidden sm:inline">
             Carnot Research
           </span>
