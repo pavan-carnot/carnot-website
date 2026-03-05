@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import React from "react"
 import Link from "next/link"
 import {
   ArrowRight,
@@ -21,7 +22,17 @@ export const metadata: Metadata = {
     "AI solutions for government, enterprise, and regulated industries. On-premise LLM deployment, computer vision, NLP, and knowledge AI platforms.",
 }
 
-const solutions = [
+const solutions: Array<{
+  id: string
+  icon: React.ElementType
+  title: string
+  subtitle: string
+  description: string
+  capabilities: string[]
+  iconBg: string
+  iconColor: string
+  learnMore?: string
+}> = [
   {
     id: "government",
     icon: Landmark,
@@ -57,6 +68,7 @@ const solutions = [
     ],
     iconBg: "bg-[#fef3ff]",
     iconColor: "text-[#c11574]",
+    learnMore: "/solutions/enterprise-rag",
   },
   {
     id: "on-premise",
@@ -160,13 +172,21 @@ export default function SolutionsPage() {
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   {solution.description}
                 </p>
-                <div className="mt-8">
+                <div className="mt-8 flex flex-wrap gap-3">
                   <Button asChild>
                     <Link href="/contact">
                       Discuss This Solution
                       <ArrowRight className="ml-2 h-4 w-4 text-[#1a57eb]" />
                     </Link>
                   </Button>
+                  {solution.learnMore && (
+                    <Button variant="outline" asChild>
+                      <Link href={solution.learnMore}>
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  )}
                 </div>
               </div>
               <div className="rounded-xl border border-border bg-card p-8">
