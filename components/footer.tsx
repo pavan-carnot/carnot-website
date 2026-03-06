@@ -10,7 +10,7 @@ const footerLinks = {
   Solutions: [
     { name: "AI for Government", href: "/solutions#government" },
     { name: "Enterprise Knowledge AI", href: "/solutions#enterprise" },
-    { name: "On-Premise LLM", href: "/solutions#on-premise" },
+    { name: "On-Premise & Offline AI", href: "/solutions/on-prem-ai" },
     { name: "Computer Vision", href: "/solutions#cv" },
   ],
   Company: [

@@ -120,7 +120,7 @@ export function IcarKnoShowcase() {
                   asChild
                   className="bg-[#2563eb] text-white shadow-sm hover:bg-[#2563eb]/90"
                 >
-                  <Link href="/products#icarkno">
+                  <Link href="/products/icarkno">
                     Explore icarKno
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

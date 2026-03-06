@@ -31,7 +31,7 @@ const solutions = [
     title: "On-Premise LLM Deployment",
     description:
       "Deploy large language models within your infrastructure. Complete data sovereignty with no cloud dependency.",
-    href: "/solutions#on-premise",
+    href: "/solutions/on-prem-ai",
     iconBg: "bg-[#ecfdf3]",
     iconColor: "text-[#15803d]",
   },

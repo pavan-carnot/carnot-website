@@ -109,7 +109,7 @@ export function ProductsSection() {
             {/* BharGati AI */}
             <FadeUp delay={120} className="flex-1">
               <Link
-                href="/products#bhargati"
+                href="/products/bhargati"
                 className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#15803d]/30"
               >
                 <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#15803d] to-[#15803d]/0" />
