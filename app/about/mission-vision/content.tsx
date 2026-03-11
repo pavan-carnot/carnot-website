@@ -92,14 +92,14 @@ export function MissionVisionContent() {
               </h2>
               <blockquote className="mt-6 border-l-0 text-xl italic leading-relaxed text-muted-foreground">
                 &ldquo;To enable responsible, domain-specific AI adoption across
-                industries and governments — delivering AI that works on-ground,
+                industries and governments, delivering AI that works on-ground,
                 at-scale, and in-context.&rdquo;
               </blockquote>
               <div className="mt-8 space-y-4 text-left text-base leading-relaxed text-muted-foreground">
                 <p>
                   We exist to bridge the gap between cutting-edge AI research and
                   real-world deployment in high-stakes environments. Our mission is
-                  to build AI systems that are secure, contextual, and dependable —
+                  to build AI systems that are secure, contextual, and dependable,
                   designed specifically for institutions that cannot compromise on
                   data sovereignty, reliability, or operational control.
                 </p>
@@ -128,13 +128,13 @@ export function MissionVisionContent() {
               <div className="mt-6 space-y-4 text-left text-base leading-relaxed text-muted-foreground">
                 <p>
                   We envision a future where AI serves as trusted institutional
-                  infrastructure — not as experimental tools, but as foundational
+                  infrastructure, not as experimental tools, but as foundational
                   systems that governments and enterprises can depend on for
                   mission-critical operations.
                 </p>
                 <p>
                   Our vision is to establish Carnot Research as India's leading
-                  applied AI company — recognized for building secure, sovereign,
+                  applied AI company, recognized for building secure, sovereign,
                   and scalable AI systems that empower institutions to operate with
                   intelligence, autonomy, and confidence.
                 </p>
@@ -172,7 +172,7 @@ export function MissionVisionContent() {
               {
                 title: "Research-Driven",
                 description:
-                  "We translate advanced AI research into production-grade systems — bridging academia and real-world impact.",
+                  "We translate advanced AI research into production-grade systems, bridging academia and real-world impact.",
               },
               {
                 title: "Mission-Critical Reliability",
@@ -182,7 +182,7 @@ export function MissionVisionContent() {
               {
                 title: "Long-Term Thinking",
                 description:
-                  "We build infrastructure, not features — systems designed to serve institutions for years, not months.",
+                  "We build infrastructure, not features. These are systems designed to serve institutions for years, not months.",
               },
             ].map((value, i) => (
               <FadeUp key={value.title} delay={i * 100}>

@@ -230,7 +230,7 @@ export function CtaSection() {
 
             <p className="mt-6 text-pretty text-lg leading-relaxed text-white/70">
               Talk to our AI experts and discover how Carnot Research can transform
-              your organisation with secure, on-premise generative AI — built for
+              your organisation with secure, on-premise generative AI, built for
               government, defense, and enterprise.
             </p>
 

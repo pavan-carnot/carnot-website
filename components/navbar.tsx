@@ -18,9 +18,9 @@ const navigation = [
   { name: "About", href: "/about" },
   { name: "Products", href: "/products" },
   { name: "Solutions", href: "/solutions" },
+  { name: "Guides", href: "/company/guides" },
   { name: "Insights", href: "/insights" },
-  { name: "Resources", href: "/resources" },
-  { name: "FAQ", href: "/faq" },
+  { name: "Resources", href: "/company/resources" },
 ]
 
 // Shared dropdown link style
@@ -160,13 +160,14 @@ export function Navbar() {
                   Company
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[400px]">
-                    <div className="grid grid-cols-2 gap-6 px-5 py-5">
+                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[480px]">
+                    <div className="grid grid-cols-3 gap-6 px-5 py-5">
                       <div>
                         <p className={dropSection}>Learn</p>
                         <ul className="space-y-0.5">
-                          <li><NavigationMenuLink asChild><Link href="/insights" className={dropLink}><span className={dropTitle}>Insights</span><span className={dropSub}>Guides, explainers, research</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><Link href="/resources" className={dropLink}><span className={dropTitle}>Resources</span><span className={dropSub}>Case studies &amp; whitepapers</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/company/guides" className={dropLink}><span className={dropTitle}>Guides</span><span className={dropSub}>Step-by-step AI workflows</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/insights" className={dropLink}><span className={dropTitle}>Insights</span><span className={dropSub}>Explainers &amp; research</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/company/resources" className={dropLink}><span className={dropTitle}>Resources</span><span className={dropSub}>Research &amp; case studies</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                       <div>
@@ -174,6 +175,12 @@ export function Navbar() {
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/about/news" className={dropLink}><span className={dropTitle}>News</span><span className={dropSub}>Announcements &amp; press</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/contact" className={dropLink}><span className={dropTitle}>Contact</span><span className={dropSub}>Get in touch with us</span></Link></NavigationMenuLink></li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className={dropSection}>Company</p>
+                        <ul className="space-y-0.5">
+                          <li><NavigationMenuLink asChild><Link href="/company" className={dropLink}><span className={dropTitle}>Overview</span><span className={dropSub}>Who we are</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                     </div>

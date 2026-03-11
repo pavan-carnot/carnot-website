@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { AboutContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "About — Secure Enterprise AI Infrastructure",
+  title: "About: Secure Enterprise AI Infrastructure",
   description:
     "Carnot Research is an applied AI company building secure, domain-aligned enterprise AI infrastructure for government, defense, and enterprise environments in India.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "secure AI deployment",
   ],
   openGraph: {
-    title: "About Carnot Research — Secure Enterprise AI Infrastructure",
+    title: "About Carnot Research: Secure Enterprise AI Infrastructure",
     description:
       "Applied AI company building secure, domain-aligned AI infrastructure for government, defense, and enterprise.",
     url: "https://carnotresearch.com/about",

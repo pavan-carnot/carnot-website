@@ -146,7 +146,7 @@ export function CompanyContent() {
             <FadeUp delay={200}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
                 A deep-tech AI company founded by professors, scientists, and
-                engineers from top IITs — bridging cutting-edge research with
+                engineers from top IITs, bridging cutting-edge research with
                 real-world deployment.
               </p>
             </FadeUp>
@@ -197,7 +197,7 @@ export function CompanyContent() {
                 </p>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                   We specialize in building trustworthy, secure, and high-impact
-                  AI systems — particularly for high-stakes sectors such as
+                  AI systems, particularly for high-stakes sectors such as
                   government, enterprise, and regulated industries.
                 </p>
               </div>
@@ -222,7 +222,7 @@ export function CompanyContent() {
                 </p>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                   Our ability to conduct managed, deployable research sets us
-                  apart — converting deep-tech research into scalable tools,
+                  apart, converting deep-tech research into scalable tools,
                   applications, and IP that directly serve strategic needs.
                 </p>
               </div>
@@ -244,7 +244,7 @@ export function CompanyContent() {
               </h2>
               <blockquote className="mt-6 border-l-0 text-xl italic leading-relaxed text-muted-foreground">
                 &ldquo;To enable responsible, domain-specific AI adoption across
-                industries and governments — delivering AI that works on-ground,
+                industries and governments, delivering AI that works on-ground,
                 at-scale, and in-context.&rdquo;
               </blockquote>
             </div>
@@ -301,7 +301,7 @@ export function CompanyContent() {
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   Carnot Research won the Transport Stack Open Innovation
-                  Challenge for project SAATHI — a hyper-personalized
+                  Challenge for project SAATHI, a hyper-personalized
                   multilingual AI agent for conversational travel assistance.
                 </p>
               </div>

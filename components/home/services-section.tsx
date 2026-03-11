@@ -77,7 +77,7 @@ const services = [
   {
     icon: Wifi,
     name: "Edge AI & IoT Integration",
-    desc: "AI inference at the edge — low-latency, low-power, and fully offline-capable.",
+    desc: "AI inference at the edge: low-latency, low-power, and fully offline-capable.",
     iconBg: "bg-[#f1f5f9]",
     iconColor: "text-[#334155]",
   },
@@ -112,7 +112,7 @@ export function ServicesSection() {
               Research, development &amp; deployment
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              From consulting to fully deployed AI systems — end-to-end capability
+              From consulting to fully deployed AI systems: end-to-end capability
               across the AI lifecycle.
             </p>
           </div>

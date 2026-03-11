@@ -92,7 +92,7 @@ const founders = [
     bio: [
       "Over 25 years of distinguished leadership in the Indian Army, serving as Commanding Officer, Senior Director, Head of IT & Cyber Security, and Program Manager. Deep expertise in computer networks, cybersecurity, data analytics, and machine learning.",
       "Research focused on Natural Language Processing, knowledge representation, multimodal analytics, and AI-driven threat intelligence. Contributed to international AI standardisation through ITU Study Group 12, shaping AI and ML standards for 5G networks.",
-      "At Carnot Research, Dr. Oberoi leads strategic execution and deployment of secure, mission-critical AI systems — translating deep research into real-world institutional impact across government, defense, and enterprise.",
+      "At Carnot Research, Dr. Oberoi leads strategic execution and deployment of secure, mission-critical AI systems, translating deep research into real-world institutional impact across government, defense, and enterprise.",
     ],
     tags: ["NLP", "Cybersecurity", "AI Strategy", "Defense Tech", "5G AI"],
     linkedin: "#",
@@ -174,7 +174,7 @@ export function TeamContent() {
             <FadeUp delay={200}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
                 Founded and led by professors, military scientists, and
-                engineers from India&apos;s premier institutions — united by a
+                engineers from India&apos;s premier institutions, united by a
                 mission to build secure, mission-critical AI infrastructure.
               </p>
             </FadeUp>
@@ -324,7 +324,7 @@ export function TeamContent() {
             <div className="relative rounded-2xl border border-border bg-secondary/30 px-8 py-10 text-center">
               <Quote className="mx-auto mb-4 h-8 w-8 text-primary/30" />
               <blockquote className="text-xl font-medium italic leading-relaxed text-foreground sm:text-2xl">
-                &ldquo;We are building AI not as a feature layer — but as
+                &ldquo;We are building AI not as a feature layer, but as
                 foundational infrastructure for institutions that demand
                 security, control, and long-term reliability.&rdquo;
               </blockquote>

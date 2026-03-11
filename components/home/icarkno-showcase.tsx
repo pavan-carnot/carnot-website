@@ -31,9 +31,9 @@ const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 // ─── icarKno feature list ─────────────────────────────────────────────────────
 const features = [
-  { icon: Layers, text: "Multimodal ingestion — PDF, audio, video, tables" },
+  { icon: Layers, text: "Multimodal ingestion: PDF, audio, video, tables" },
   { icon: FileText, text: "RAG with verifiable source citations" },
-  { icon: Shield, text: "Fully on-premise — zero cloud dependency" },
+  { icon: Shield, text: "Fully on-premise, zero cloud dependency" },
   { icon: MessageSquare, text: "Agentic workflows & conversational AI" },
 ]
 
@@ -52,7 +52,7 @@ const otherProducts = [
   {
     name: "SAATHI",
     tagline: "Conversational AI Assistant",
-    desc: "Multilingual AI agent — winner of the Transport Stack Open Innovation Challenge.",
+    desc: "Multilingual AI agent, winner of the Transport Stack Open Innovation Challenge.",
     icon: MessageSquare,
     iconBg: "bg-blue-50",
     iconColor: "text-blue-600",
@@ -98,7 +98,7 @@ export function IcarKnoShowcase() {
 
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 icarKno turns your institutional documents into a secure, conversational
-                AI — answering questions with cited sources, running entirely on-premise
+                AI that answers questions with cited sources, running entirely on-premise
                 with no data leaving your environment.
               </p>
 

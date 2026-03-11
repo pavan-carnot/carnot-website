@@ -54,7 +54,7 @@ const newsItems = [
     date: "February 2025",
     title: "Transport Stack Open Innovation Challenge Winner",
     description:
-      "Carnot Research won the Transport Stack Open Innovation Challenge for project SAATHI — a hyper-personalized multilingual AI agent for conversational travel assistance.",
+      "Carnot Research won the Transport Stack Open Innovation Challenge for project SAATHI, a hyper-personalized multilingual AI agent for conversational travel assistance.",
     organization: "JICA · Boston Consulting Group · FITT IIT Delhi",
     iconBg: "bg-amber-50",
     iconColor: "text-amber-600",

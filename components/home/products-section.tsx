@@ -25,7 +25,7 @@ const icarKnoFeatures = [
   "Multimodal data ingestion (PDF, audio, video, tables)",
   "LLM-based RAG with verifiable source citations",
   "Conversational AI with agentic workflows",
-  "Fully on-premise — zero cloud dependency",
+  "Fully on-premise, zero cloud dependency",
 ]
 
 export function ProductsSection() {
@@ -80,7 +80,7 @@ export function ProductsSection() {
                 <p className="mt-6 text-base leading-relaxed text-muted-foreground">
                   Context-aware conversational AI with multimodal data ingestion,
                   LLM-based RAG with verifiable citations, and enterprise knowledge
-                  management — deployed fully on-premise with zero cloud dependency.
+                  management, deployed fully on-premise with zero cloud dependency.
                 </p>
 
                 {/* Feature checklist */}

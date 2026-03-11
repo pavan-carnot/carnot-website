@@ -186,7 +186,7 @@ export default function ResearchPage() {
             </h1>
             <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
               Founded by professors and scientists from top IITs, our research
-              spans NLP, Computer Vision, and Generative AI — with a focus on
+              spans NLP, Computer Vision, and Generative AI, with a focus on
               real-world, deployable systems.
             </p>
           </div>
@@ -220,7 +220,7 @@ export default function ResearchPage() {
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Our NLP work focuses on building deployable, domain-specific
               language models that extract intelligence from unstructured,
-              multilingual, and multimodal data — such as documents, web pages,
+              multilingual, and multimodal data, including documents, web pages,
               audio, video, and scanned PDFs. We help organizations unlock
               insights from complex data including policy documents,
               regulations, citizen queries, contracts, and media content.

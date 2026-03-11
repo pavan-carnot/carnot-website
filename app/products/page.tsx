@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 export const metadata: Metadata = {
   title: "AI Products | icarKno, BharGati AI, SAATHI | Carnot Research",
   description:
-    "Explore Carnot Research's enterprise-grade AI products: icarKno (enterprise knowledge RAG), BharGati AI (transport analytics), SAATHI (multilingual assistant) — secure on-premise GenAI, NLP, and Computer Vision platforms for government and enterprise.",
+    "Explore Carnot Research's enterprise-grade AI products: icarKno (enterprise knowledge RAG), BharGati AI (transport analytics), and SAATHI (multilingual assistant). Secure on-premise GenAI, NLP, and Computer Vision platforms for government and enterprise.",
   keywords: [
     "enterprise AI products",
     "generative AI platform",
@@ -29,7 +29,7 @@ const products = [
     name: "icarKno",
     tagline: "Enterprise Knowledge GenAI Platform",
     description:
-      "icarKno is a context-aware conversational AI platform designed for enterprise knowledge management. It ingests multimodal data — PDFs, web pages, YouTube videos, scanned documents — and enables LLM-based Retrieval-Augmented Generation (RAG) with verifiable citations.",
+      "icarKno is a context-aware conversational AI platform designed for enterprise knowledge management. It ingests multimodal data, including PDFs, web pages, YouTube videos, and scanned documents, and enables LLM-based Retrieval-Augmented Generation (RAG) with verifiable citations.",
     features: [
       "Multimodal data ingestion (PDFs, web, YouTube, scanned docs)",
       "LLM-based RAG with verifiable citations",
@@ -65,7 +65,7 @@ const products = [
     name: "SAATHI",
     tagline: "Conversational AI Assistant",
     description:
-      "SAATHI is a hyper-personalized, multilingual AI agent that won the Transport Stack Open Innovation Challenge hosted by JICA, BCG, and FITT IIT Delhi. It serves as a conversational travel assistant with routes, places, and tips — delivered instantly in your language.",
+      "SAATHI is a hyper-personalized, multilingual AI agent that won the Transport Stack Open Innovation Challenge hosted by JICA, BCG, and FITT IIT Delhi. It serves as a conversational travel assistant with routes, places, and tips delivered instantly in your language.",
     features: [
       "Hyper-personalized multilingual conversations",
       "Route planning and navigation assistance",
@@ -204,7 +204,7 @@ export default function ProductsPage() {
             </h2>
             <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
               Intelligent solutions for meetings, communication, and
-              analytics — helping enterprises transform data into action.
+              analytics, helping enterprises transform data into action.
             </p>
           </div>
 

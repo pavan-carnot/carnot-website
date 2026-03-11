@@ -79,7 +79,7 @@ const capabilities = [
     icon: Workflow,
     title: "Agentic Workflow Execution",
     description:
-      "Moves beyond Q&A—provides structured responses, action recommendations, and workflow assistance.",
+      "Goes beyond Q&A to provide structured responses, action recommendations, and workflow assistance.",
   },
   {
     icon: Shield,

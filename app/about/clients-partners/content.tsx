@@ -302,12 +302,12 @@ export function ClientsPartnersContent() {
                 </p>
                 <p>
                   Our approach combines deep technical expertise with institutional
-                  understanding — ensuring that AI systems are not just deployed,
+                  understanding, ensuring that AI systems are not just deployed,
                   but integrated seamlessly into existing workflows and
                   decision-making processes.
                 </p>
                 <p className="font-semibold text-gray-900">
-                  We don&apos;t just build AI systems — we build long-term partnerships
+                  We don&apos;t just build AI systems. We build long-term partnerships
                   that strengthen institutional capability.
                 </p>
               </div>

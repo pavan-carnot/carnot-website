@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { TeamContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Leadership Team — IIT Professors & AI Experts",
+  title: "Leadership Team: IIT Professors & AI Experts",
   description:
-    "Meet the leadership team at Carnot Research — IIT Delhi professors, Army scientists, and AI engineers with 120+ years of combined experience building secure enterprise AI infrastructure for government and defense.",
+    "Meet the leadership team at Carnot Research: IIT Delhi professors, Army scientists, and AI engineers with 120+ years of combined experience building secure enterprise AI infrastructure for government and defense.",
   keywords: [
     "Carnot Research team",
     "Prof Brejesh Lall IIT Delhi",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "defense AI experts India",
   ],
   openGraph: {
-    title: "Leadership Team — Carnot Research",
+    title: "Leadership Team: Carnot Research",
     description:
       "IIT professors, Army scientists, and AI engineers with 120+ years of combined experience building secure enterprise AI for government and defense.",
     url: "https://carnotresearch.com/about/team",

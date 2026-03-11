@@ -34,7 +34,7 @@ import {
 export const metadata: Metadata = {
   title: "Enterprise AI Solutions | Carnot Research",
   description:
-    "Enterprise AI solutions for secure, scalable, real-world impact. From governed RAG and on-premise AI to applied AI systems—turn complex data into reliable, actionable insights.",
+    "Enterprise AI solutions for secure, scalable, real-world impact. From governed RAG and on-premise AI to applied AI systems, we turn complex data into reliable, actionable insights.",
 }
 
 const challenges = [
@@ -165,7 +165,7 @@ const services = [
   {
     icon: Wifi,
     name: "Edge AI & IoT Integration",
-    desc: "AI inference at the edge — low-latency, low-power, and fully offline-capable.",
+    desc: "AI inference at the edge: low-latency, low-power, and fully offline-capable.",
     iconBg: "bg-[#f1f5f9]",
     iconColor: "text-[#334155]",
   },
@@ -201,7 +201,7 @@ const frameworkSteps = [
   {
     title: "Secure Deployment & Integration",
     description:
-      "We deploy systems on-premise, in hybrid setups, or on private infrastructure—ensuring compliance and integration support.",
+      "We deploy systems on-premise, in hybrid setups, or on private infrastructure, ensuring compliance and integration support.",
     icon: Plug,
   },
   {
@@ -542,7 +542,7 @@ export default function SolutionsPage() {
             Ready to move from pilots to production?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
-            Tell us about your data, constraints, and outcomes—we’ll propose the
+            Tell us about your data, constraints, and outcomes. We’ll propose the
             right architecture, deployment model, and implementation plan.
           </p>
           <div className="mt-8">

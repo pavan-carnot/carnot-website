@@ -96,7 +96,7 @@ const painPoints = [
   {
     icon: AlertTriangle,
     title: "AI Hallucinations",
-    desc: "Traditional language models can produce plausible but incorrect responses — dangerous in regulated industries where accuracy is non-negotiable.",
+    desc: "Traditional language models can produce plausible but incorrect responses. This is dangerous in regulated industries where accuracy is non-negotiable.",
     iconBg: "bg-red-50",
     iconColor: "text-red-600",
     border: "border-red-100",
@@ -130,7 +130,7 @@ const architecture = [
   {
     icon: Search,
     title: "Semantic Retrieval Layer",
-    desc: "Vector-based indexing and contextual search mechanisms ensure precise, meaning-aware information matching — not just keyword lookup.",
+    desc: "Vector-based indexing and contextual search mechanisms ensure precise, meaning-aware information matching, not just keyword lookup.",
     iconBg: "bg-cyan-50",
     iconColor: "text-cyan-600",
   },
@@ -161,7 +161,7 @@ const deploymentModels = [
   {
     icon: Server,
     title: "On-Premise Deployment",
-    desc: "Fully controlled infrastructure within organizational boundaries. Zero cloud dependency — ideal for air-gapped and defense environments.",
+    desc: "Fully controlled infrastructure within organizational boundaries. Zero cloud dependency, ideal for air-gapped and defense environments.",
     iconBg: "bg-violet-50",
     iconColor: "text-violet-600",
     accent: "#7c3aed",
@@ -188,7 +188,7 @@ const useCases = [
   {
     icon: Scale,
     title: "Legal & Compliance Teams",
-    desc: "Instant access to policies, regulatory documents, and audit-ready references — with citations, not summaries.",
+    desc: "Instant access to policies, regulatory documents, and audit-ready references, with citations rather than summaries.",
     iconBg: "bg-blue-50",
     iconColor: "text-blue-600",
   },
@@ -226,7 +226,7 @@ const outcomes = [
 const faqs = [
   {
     q: "How does RAG reduce AI hallucinations?",
-    a: "RAG systems retrieve relevant data before generating responses. This ensures outputs are based on verified sources rather than the model's pre-trained memory alone — grounding every answer in your organization's actual documents.",
+    a: "RAG systems retrieve relevant data before generating responses. This ensures outputs are based on verified sources rather than the model's pre-trained memory alone, grounding every answer in your organization's actual documents.",
   },
   {
     q: "Can Enterprise RAG be deployed on-premise?",
@@ -242,7 +242,7 @@ const faqs = [
   },
   {
     q: "How is Enterprise RAG different from a chatbot?",
-    a: "Traditional chatbots rely on predefined scripts or static models. Enterprise RAG systems dynamically retrieve relevant organizational data before generating contextual, source-cited responses — making them far more accurate and auditable.",
+    a: "Traditional chatbots rely on predefined scripts or static models. Enterprise RAG systems dynamically retrieve relevant organizational data before generating contextual, source-cited responses, making them far more accurate and auditable.",
   },
 ]
 
@@ -352,8 +352,8 @@ export function EnterpriseRAGContent() {
                       </p>
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                         Relevant content is fetched from your trusted enterprise
-                        data sources — documents, knowledge bases, policy
-                        repositories — using semantic vector search.
+                        data sources, including documents, knowledge bases, and policy
+                        repositories, using semantic vector search.
                       </p>
                     </div>
                   </div>
@@ -370,7 +370,7 @@ export function EnterpriseRAGContent() {
                       </p>
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                         A language model synthesizes answers using only the
-                        retrieved information — with citations — so every
+                        retrieved information, with citations, so every
                         response is grounded, accurate, and traceable.
                       </p>
                     </div>

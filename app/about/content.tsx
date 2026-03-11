@@ -52,21 +52,21 @@ const slides = [
   {
     label: "Research Lab",
     description:
-      "Where AI research meets engineering rigor — our teams model, test, and validate systems before any deployment.",
+      "Where AI research meets engineering rigor. Our teams model, test, and validate systems before any deployment.",
     gradientClass: "from-[#0b2149] via-[#1a3a6e] to-[#1a57eb]",
     icon: Cpu,
   },
   {
     label: "Secure Infrastructure",
     description:
-      "On-premise server environments built for data sovereignty — no cloud dependency, no external exposure.",
+      "On-premise server environments built for data sovereignty, with no cloud dependency and no external exposure.",
     gradientClass: "from-[#0d3b2e] via-[#145c45] to-[#1a7a5e]",
     icon: Server,
   },
   {
     label: "Operational Deployment",
     description:
-      "AI systems delivered end-to-end into institutional workflows — tested, documented, and ready at scale.",
+      "AI systems delivered end-to-end into institutional workflows, tested, documented, and ready at scale.",
     gradientClass: "from-[#2d1a4e] via-[#4a2d82] to-[#6b46c1]",
     icon: ShieldCheck,
   },
@@ -226,7 +226,7 @@ export function AboutContent() {
               </p>
               <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
                 We operate where intelligence must be controlled, contextual, and
-                dependable — transforming advanced AI research into operational
+                dependable, transforming advanced AI research into operational
                 systems designed for high-stakes decision environments.
               </p>
             </FadeUp>
@@ -374,7 +374,7 @@ export function AboutContent() {
                   Most platforms, however, are built for general-purpose cloud
                   environments. Institutions operating in sensitive and
                   mission-critical domains require a higher standard of AI
-                  infrastructure — one defined by control, reliability,
+                  infrastructure: one defined by control, reliability,
                   contextual depth, and long-term stability.
                 </p>
                 <p className="font-medium text-white">
@@ -382,7 +382,7 @@ export function AboutContent() {
                 </p>
                 <p>
                   We believe artificial intelligence must function as trusted
-                  institutional infrastructure — secure by design, aligned with
+                  institutional infrastructure, secure by design, aligned with
                   operational realities, and built to support human
                   decision-making at scale.
                 </p>
