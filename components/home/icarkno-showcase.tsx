@@ -47,7 +47,7 @@ const otherProducts = [
     iconBg: "bg-cyan-50",
     iconColor: "text-cyan-600",
     accent: "#0891b2",
-    href: "/products#bhargati",
+    href: "/products/bhargati",
   },
   {
     name: "SAATHI",

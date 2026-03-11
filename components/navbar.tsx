@@ -166,7 +166,6 @@ export function Navbar() {
                         <p className={dropSection}>Learn</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/company/guides" className={dropLink}><span className={dropTitle}>Guides</span><span className={dropSub}>Step-by-step AI workflows</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><Link href="/insights" className={dropLink}><span className={dropTitle}>Insights</span><span className={dropSub}>Explainers &amp; research</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/company/resources" className={dropLink}><span className={dropTitle}>Resources</span><span className={dropSub}>Research &amp; case studies</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>

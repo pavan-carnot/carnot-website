@@ -105,12 +105,12 @@ function FeatureCard({ pillar, index }: { pillar: typeof pillars[0]; index: numb
         />
 
         {/* Icon */}
-        <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all duration-300 group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all duration-300 group-hover:border-cyan-500/30 group-hover:bg-cyan-500/10">
           <pillar.icon className="h-6 w-6 text-cyan-400" />
         </div>
 
         {/* Stats badge */}
-        <div className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60">
+        <div className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60">
           {pillar.stats}
         </div>
 

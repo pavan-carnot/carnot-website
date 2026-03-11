@@ -461,7 +461,7 @@ export function TeamContent() {
                   variant="outline"
                   size="lg"
                   asChild
-                  className="border-white/20 text-white hover:bg-white/10 hover:border-white/30"
+                  className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:border-white/30"
                 >
                   <Link href="/about">Learn About Us</Link>
                 </Button>

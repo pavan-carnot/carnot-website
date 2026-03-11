@@ -535,7 +535,7 @@ export function GuidesContent() {
                     variant="outline"
                     size="lg"
                     asChild
-                    className="border-white/20 text-white hover:bg-white/10 hover:border-white/30"
+                    className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:border-white/60"
                   >
                     <Link href="/solutions">Explore solutions</Link>
                   </Button>

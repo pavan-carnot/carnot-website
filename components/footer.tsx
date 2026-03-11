@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 const footerLinks = {
   Products: [
     { name: "icarKno", href: "/products#icarkno" },
@@ -38,9 +40,12 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-                <span className="text-xs font-bold text-primary-foreground">CR</span>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${B}/assets/clients/mainLogo-removebg.png`}
+                alt="Carnot Research"
+                className="h-8 w-auto object-contain"
+              />
               <span className="text-sm font-semibold tracking-tight text-foreground">
                 Carnot Research
               </span>
@@ -55,8 +60,8 @@ export function Footer() {
               <p>New Delhi, 110016, India</p>
               <p className="pt-2">
                 Email:{" "}
-                <a href="mailto:hello@carnotresearch.com" className="hover:text-foreground transition-colors">
-                  hello@carnotresearch.com
+                <a href="mailto:info@carnotresearch.com" className="hover:text-foreground transition-colors">
+                  info@carnotresearch.com
                 </a>
               </p>
             </address>
