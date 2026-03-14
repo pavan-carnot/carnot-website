@@ -22,7 +22,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; 
 }
 
 const icarKnoFeatures = [
-  "Multimodal data ingestion (PDF, audio, video, tables)",
+  "Multimodal data ingestion",
   "LLM-based RAG with verifiable source citations",
   "Conversational AI with agentic workflows",
   "Fully on-premise, zero cloud dependency",

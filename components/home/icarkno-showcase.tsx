@@ -31,7 +31,7 @@ const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 // ─── icarKno feature list ─────────────────────────────────────────────────────
 const features = [
-  { icon: Layers, text: "Multimodal ingestion: PDF, audio, video, tables" },
+  { icon: Layers, text: "Multimodal ingestion" },
   { icon: FileText, text: "RAG with verifiable source citations" },
   { icon: Shield, text: "Fully on-premise, zero cloud dependency" },
   { icon: MessageSquare, text: "Agentic workflows & conversational AI" },
@@ -88,7 +88,7 @@ export function IcarKnoShowcase() {
             <div className="max-w-xl">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#2563eb]" />
-                Featured Product · icarKno
+                Featured Product · icarKno<sup>TM</sup>
               </div>
 
               <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
@@ -98,8 +98,7 @@ export function IcarKnoShowcase() {
 
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 icarKno turns your institutional documents into a secure, conversational
-                AI that answers questions with cited sources, running entirely on-premise
-                with no data leaving your environment.
+                AI running entirely on-premise with no data leaving your environment.
               </p>
 
               {/* Feature list */}

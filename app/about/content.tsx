@@ -151,9 +151,9 @@ function Slideshow() {
 // ─── Stats data ───────────────────────────────────────────────────────────────
 const stats = [
   { value: "120+", label: "Years Combined Experience" },
-  { value: "15+", label: "Patents & Publications" },
-  { value: "9+", label: "Clients & Partners" },
-  { value: "L3", label: "CMMI Maturity Level" },
+  { value: "17+", label: "Projects" },
+  { value: "13", label: "PhD Scholars Guided" },
+  { value: "20+", label: "Elite Team Members, Core Developers And Researchers" },
 ]
 
 // ─── Capability cards ─────────────────────────────────────────────────────────

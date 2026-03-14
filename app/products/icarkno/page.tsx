@@ -106,36 +106,42 @@ const useCases = [
     description:
       "Provides offline multilingual access to emergency protocols, district plans, hazard manuals, and field documentation. It helps responders with structured guidance even when networks fail.",
     icon: Megaphone,
+    video: "Disaster Management.mp4",
   },
   {
     title: "Defense & Field Intelligence",
     description:
       "Enables secure analysis of classified documents, operational logs, and intelligence reports in air-gapped environments. Supports rapid retrieval and contextual reasoning in mission scenarios.",
     icon: Shield,
+    video: "Defense & Field Intelligence.mp4",
   },
   {
     title: "Aviation & Flight Operations",
     description:
       "Offers real-time reasoning over technical manuals, checklists, and operational documentation to lessen cognitive load during critical situations.",
     icon: Plane,
+    video: "Aviation & Flight Operations.mp4",
   },
   {
     title: "Legal & Policy Analysis",
     description:
       "Processes acts, judgments, contracts, and government orders to provide structured comparisons, detect contradictions, and offer cited insights.",
     icon: Scale,
+    video: "Legal & Policy Analysis.mp4",
   },
   {
     title: "Government Field Operations",
     description:
       "Helps officers access policies, forms, and regulatory documents in local languages instantly, improving administrative efficiency and public service delivery.",
     icon: Building2,
+    video: null,
   },
   {
     title: "Enterprise Knowledge Systems",
     description:
       "Converts internal documents, SOPs, and operational data into structured, searchable intelligence while keeping data secure.",
     icon: Database,
+    video: "Enterprise Knowledge Systems.mp4",
   },
 ]
 
@@ -406,13 +412,25 @@ export default function IcarKnoPage() {
                   </p>
                 </div>
                 <div
-                  className={`flex items-center justify-center rounded-xl border border-border bg-secondary/50 p-8 lg:p-12 ${
-                    i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                  }`}
+                  className={`flex items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary/50 ${
+                    uc.video ? "" : "p-8 lg:p-12"
+                  } ${i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}
                 >
-                  <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[#eff6ff]">
-                    <uc.icon className="h-12 w-12 text-[#2563eb]/60" />
-                  </div>
+                  {uc.video ? (
+                    <video
+                      src={`${B}/assets/clients/${encodeURIComponent(uc.video)}`}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="h-auto w-full rounded-xl object-cover"
+                      aria-label={`${uc.title} demo`}
+                    />
+                  ) : (
+                    <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[#eff6ff]">
+                      <uc.icon className="h-12 w-12 text-[#2563eb]/60" />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

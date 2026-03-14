@@ -106,12 +106,6 @@ export function Navbar() {
                         </ul>
                       </div>
                       <div>
-                        <p className={dropSection}>Explore</p>
-                        <ul className="space-y-0.5">
-                          <li><NavigationMenuLink asChild><Link href="/products/other-products" className={dropLink}><span className={dropTitle}>Other products</span><span className={dropSub}>Upcoming AI platforms</span></Link></NavigationMenuLink></li>
-                        </ul>
-                      </div>
-                      <div>
                         <p className={dropSection}>Get started</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/contact" className={dropLink}><span className={dropTitle}>Request a demo</span><span className={dropSub}>Talk to us about deployments</span></Link></NavigationMenuLink></li>

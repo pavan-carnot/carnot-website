@@ -20,15 +20,15 @@ function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; 
 }
 
 const clients = [
-  "FITT IIT Delhi",
-  "MSME",
-  "Rashtriya Raksha University",
+  "Enhance Communications",
   "OPPO",
   "NSG",
   "IIT Delhi",
-  "Boston Consulting Group",
   "JICA",
-  "Enhanced Communications",
+  "BCG",
+  "FITT",
+  "MSME",
+  "Rashtriya Raksha University",
 ]
 
 // Duplicate for seamless loop

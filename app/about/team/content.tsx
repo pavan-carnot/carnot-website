@@ -52,9 +52,9 @@ function FadeUp({
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const pageStats = [
   { value: "120+", label: "Years Combined Experience" },
-  { value: "47+", label: "Funded R&D Projects" },
+  { value: "17+", label: "Projects" },
   { value: "13", label: "PhD Scholars Guided" },
-  { value: "₹70Cr+", label: "Total Research Funding" },
+  { value: "20+", label: "Elite Team Members, Core Developers And Researchers" },
 ]
 
 const founders = [

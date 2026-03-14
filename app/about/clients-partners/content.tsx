@@ -1,8 +1,10 @@
 "use client"
 
-import Image from "next/image"
 import { useEffect, useRef, useState, useCallback, type ReactNode } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Building2, Handshake, Award, ChevronLeft, ChevronRight } from "lucide-react"
+
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 function FadeUp({
   children,
@@ -36,61 +38,40 @@ function FadeUp({
   )
 }
 
+// ── Card geometry (matches homepage TrustSection) ──────────────────────────────
+const CARD_W   = 180
+const CARD_H   = 210
+const STEP_X   = 200
+const ROTATE_Y = 28
+const SCALE_D  = 0.04
+
 // ── Client data ────────────────────────────────────────────────────────────────
 const clientImages = [
-  { id: 1, name: "FITT IIT Delhi",           src: "/assets/clients/1.webp" },
-  { id: 2, name: "MSME",                      src: "/assets/clients/2.webp" },
-  { id: 3, name: "Rashtriya Raksha Univ.",    src: "/assets/clients/3.webp" },
-  { id: 4, name: "Enhanced Communications",  src: "/assets/clients/4.webp" },
-  { id: 5, name: "OPPO",                      src: "/assets/clients/5.png"  },
-  { id: 6, name: "NSG",                       src: "/assets/clients/6.webp" },
-  { id: 7, name: "IIT Delhi",                 src: "/assets/clients/7.png"  },
-  { id: 8, name: "Boston Consulting Group",  src: "/assets/clients/8.webp" },
-  { id: 9, name: "JICA",                      src: "/assets/clients/9.png"  },
+  { id: 1, name: "Enhance Communications",   src: `${B}/assets/clients/1.webp` },
+  { id: 2, name: "OPPO",                     src: `${B}/assets/clients/2.webp` },
+  { id: 3, name: "NSG",                      src: `${B}/assets/clients/3.webp` },
+  { id: 4, name: "IIT Delhi",                src: `${B}/assets/clients/4.webp` },
+  { id: 5, name: "JICA",                     src: `${B}/assets/clients/5.png`  },
+  { id: 6, name: "BCG",                      src: `${B}/assets/clients/6.webp` },
+  { id: 7, name: "FITT",                     src: `${B}/assets/clients/7.png`  },
+  { id: 8, name: "MSME",                     src: `${B}/assets/clients/8.webp` },
+  { id: 9, name: "Rashtriya Raksha University", src: `${B}/assets/clients/9.png` },
 ]
 
-// ── 3D Curved Carousel ─────────────────────────────────────────────────────────
+// ── Curved Fan Carousel (same as homepage TrustSection) ───────────────────────
 function CurvedCarousel() {
   const [active, setActive] = useState(0)
   const total = clientImages.length
+  const [paused, setPaused] = useState(false)
 
   const prev = useCallback(() => setActive(a => (a - 1 + total) % total), [total])
   const next = useCallback(() => setActive(a => (a + 1) % total), [total])
 
-  // Auto-advance every 3 s, pause on hover
-  const [paused, setPaused] = useState(false)
   useEffect(() => {
     if (paused) return
-    const t = setInterval(next, 3000)
-    return () => clearInterval(t)
+    const id = setInterval(next, 3200)
+    return () => clearInterval(id)
   }, [next, paused])
-
-  const getStyle = (index: number): React.CSSProperties => {
-    let diff = index - active
-    // wrap around
-    if (diff > total / 2)  diff -= total
-    if (diff < -total / 2) diff += total
-
-    const abs = Math.abs(diff)
-    if (abs > 2) return { opacity: 0, pointerEvents: "none", position: "absolute" }
-
-    const translateX = diff * 190
-    const rotateY    = diff * 42
-    const translateZ = -abs * 110
-    const scale      = 1 - abs * 0.17
-    const opacity    = 1 - abs * 0.28
-
-    return {
-      position:   "absolute",
-      left:       "50%",
-      top:        "50%",
-      transform:  `translate(-50%, -50%) translateX(${translateX}px) rotateY(${rotateY}deg) translateZ(${translateZ}px) scale(${scale})`,
-      opacity,
-      zIndex:     10 - abs,
-      transition: "all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-      cursor:     diff === 0 ? "default" : "pointer",
-    }
-  }
 
   return (
     <div
@@ -98,77 +79,124 @@ function CurvedCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* 3-D stage */}
+      {/* 3D stage — overflow visible so cards bleed off edges (section clips them) */}
       <div
-        className="relative mx-auto h-60"
-        style={{ perspective: "1100px", maxWidth: 720 }}
+        className="relative w-full"
+        style={{ perspective: "1200px", height: CARD_H + 44 }}
       >
         {clientImages.map((client, i) => {
-          let diff = i - active
-          if (diff > total / 2)  diff -= total
-          if (diff < -total / 2) diff += total
-          const isCenter = diff === 0
+          let d = i - active
+          if (d > total / 2)  d -= total
+          if (d < -total / 2) d += total
+          const abs      = Math.abs(d)
+          const isActive = d === 0
+
+          if (abs > 3) return null
 
           return (
-            <div key={client.id} style={getStyle(i)} onClick={() => !isCenter && setActive(i)}>
+            <motion.div
+              key={client.id}
+              style={{
+                position:   "absolute",
+                left:       "50%",
+                top:        "50%",
+                marginLeft: -CARD_W / 2,
+                marginTop:  -(CARD_H + 16) / 2,
+                zIndex:     10 - abs,
+                cursor:     isActive ? "default" : "pointer",
+              }}
+              animate={{
+                x:       d * STEP_X,
+                rotateY: d * ROTATE_Y,
+                scale:   1 - abs * SCALE_D,
+                opacity: abs === 3 ? 0.5 : 1,
+              }}
+              transition={{ type: "spring", stiffness: 380, damping: 38 }}
+              onClick={() => !isActive && setActive(i)}
+            >
+              {/* Portrait card */}
               <div
-                className={`
-                  flex h-40 w-40 flex-col items-center justify-center rounded-2xl border bg-white p-5
-                  transition-shadow duration-300
-                  ${isCenter
-                    ? "border-blue-200 shadow-[0_8px_40px_rgba(37,99,235,0.15)]"
-                    : "border-gray-100 shadow-md"}
-                `}
+                className="relative flex flex-col overflow-hidden rounded-2xl bg-white"
+                style={{
+                  width:     CARD_W,
+                  height:    CARD_H,
+                  border:    isActive ? "1.5px solid #93c5fd" : "1.5px solid #f1f5f9",
+                  boxShadow: isActive
+                    ? "0 20px 60px rgba(37,99,235,0.18), 0 4px 20px rgba(0,0,0,0.06)"
+                    : "0 4px 20px rgba(0,0,0,0.07)",
+                }}
               >
-                <Image
-                  src={client.src}
-                  alt={client.name}
-                  width={96}
-                  height={96}
-                  className="h-20 w-auto object-contain"
-                  unoptimized
-                />
+                <div className="flex flex-1 items-center justify-center px-6 pt-5 pb-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={client.src}
+                    alt={client.name}
+                    style={{ maxHeight: 90, maxWidth: 120, objectFit: "contain" }}
+                  />
+                </div>
+                <div className="flex items-center justify-center border-t border-gray-50 px-3 py-2.5">
+                  <p className="text-center text-xs font-medium leading-tight text-gray-500">
+                    {client.name}
+                  </p>
+                </div>
               </div>
-              {/* Name label only on centre card */}
-              {isCenter && (
-                <p className="mt-2.5 text-center text-xs font-semibold text-gray-600">
-                  {client.name}
-                </p>
+
+              {/* Active indicator pill */}
+              {isActive && (
+                <motion.div
+                  layoutId="activePillClients"
+                  className="mx-auto mt-2.5 h-1 w-8 rounded-full bg-blue-500"
+                />
               )}
-            </div>
+            </motion.div>
           )
         })}
       </div>
 
-      {/* Controls */}
-      <div className="mt-10 flex items-center justify-center gap-5">
+      {/* Navigation */}
+      <div className="mt-9 flex items-center justify-center gap-4">
         <button
           onClick={prev}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-400 transition-colors hover:border-gray-400 hover:text-gray-700"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-400 transition-colors hover:border-blue-300 hover:text-blue-500"
+          aria-label="Previous"
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
 
-        {/* Dots */}
         <div className="flex items-center gap-1.5">
           {clientImages.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === active ? "w-5 bg-blue-600" : "w-1.5 bg-gray-300 hover:bg-gray-400"
-              }`}
+              className="rounded-full transition-all duration-300"
+              style={{ height: 6, width: i === active ? 20 : 6, background: i === active ? "#2563eb" : "#d1d5db" }}
+              aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>
 
         <button
           onClick={next}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-400 transition-colors hover:border-gray-400 hover:text-gray-700"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-400 transition-colors hover:border-blue-300 hover:text-blue-500"
+          aria-label="Next"
         >
           <ChevronRight className="h-4 w-4" />
         </button>
       </div>
+
+      {/* Active client name crossfade */}
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={active}
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -5 }}
+          transition={{ duration: 0.2 }}
+          className="mt-3 text-center text-xs font-medium text-gray-400"
+        >
+          {clientImages[active].name}
+        </motion.p>
+      </AnimatePresence>
     </div>
   )
 }
@@ -234,8 +262,18 @@ export function ClientsPartnersContent() {
       </section>
 
       {/* 3D Carousel */}
-      <section className="bg-white py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+        {/* Radial spotlight glow — matches homepage TrustSection */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{ background: "radial-gradient(ellipse 900px 480px at 50% 48%, #eff6ff 0%, transparent 68%)" }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.28]"
+          style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(15,23,42,0.05) 1px, transparent 0)", backgroundSize: "28px 28px" }}
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-xl text-center mb-14">
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">
@@ -249,10 +287,12 @@ export function ClientsPartnersContent() {
               </p>
             </div>
           </FadeUp>
-          <FadeUp delay={150}>
-            <CurvedCarousel />
-          </FadeUp>
         </div>
+
+        {/* Full-width carousel — section's overflow-hidden clips edge cards */}
+        <FadeUp delay={150}>
+          <CurvedCarousel />
+        </FadeUp>
       </section>
 
       {/* Sectors */}

@@ -16,15 +16,15 @@ const SCALE_D   = 0.04  // scale loss per slot
 
 // ── Data ───────────────────────────────────────────────────────────────────────
 const clients = [
-  { id: 1, name: "FITT IIT Delhi",             src: `${B}/assets/clients/1.webp` },
-  { id: 2, name: "Ministry of MSME",            src: `${B}/assets/clients/2.webp` },
-  { id: 3, name: "Rashtriya Raksha University", src: `${B}/assets/clients/3.webp` },
-  { id: 4, name: "Enhanced Communications",     src: `${B}/assets/clients/4.webp` },
-  { id: 5, name: "OPPO",                        src: `${B}/assets/clients/5.png`  },
-  { id: 6, name: "NSG",                         src: `${B}/assets/clients/6.webp` },
-  { id: 7, name: "IIT Delhi",                   src: `${B}/assets/clients/7.png`  },
-  { id: 8, name: "Boston Consulting Group",     src: `${B}/assets/clients/8.webp` },
-  { id: 9, name: "JICA",                        src: `${B}/assets/clients/9.png`  },
+  { id: 1, name: "Enhance Communications",     src: `${B}/assets/clients/1.webp` },
+  { id: 2, name: "OPPO",                        src: `${B}/assets/clients/2.webp` },
+  { id: 3, name: "NSG",                         src: `${B}/assets/clients/3.webp` },
+  { id: 4, name: "IIT Delhi",                   src: `${B}/assets/clients/4.webp` },
+  { id: 5, name: "JICA",                        src: `${B}/assets/clients/5.png`  },
+  { id: 6, name: "BCG",                         src: `${B}/assets/clients/6.webp` },
+  { id: 7, name: "FITT",                        src: `${B}/assets/clients/7.png`  },
+  { id: 8, name: "MSME",                        src: `${B}/assets/clients/8.webp` },
+  { id: 9, name: "Rashtriya Raksha University", src: `${B}/assets/clients/9.png`  },
 ]
 
 const certifications = [

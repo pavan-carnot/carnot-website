@@ -33,10 +33,10 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { label: "Publications", value: "50+" },
-  { label: "Patents", value: "10+" },
-  { label: "Deployments", value: "25+" },
-  { label: "Research Years", value: "120+" },
+  { label: "Years Combined Experience", value: "120+" },
+  { label: "Projects", value: "17+" },
+  { label: "PhD Scholars Guided", value: "13" },
+  { label: "Elite Team Members, Core Developers And Researchers", value: "20+" },
 ]
 
 const nlpCapabilities = [
