@@ -322,10 +322,10 @@ export default function BharGatiPage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
-                  <Link href="/contact">
+                  <a href="https://bhargati.ai/" target="_blank" rel="noopener noreferrer">
                     Demo
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <Link href="/contact">Brochure</Link>
@@ -505,10 +505,10 @@ export default function BharGatiPage() {
 
           <div className="mt-12 flex justify-center">
             <Button size="lg" asChild>
-              <Link href="/contact">
+              <a href="https://bhargati.ai/" target="_blank" rel="noopener noreferrer">
                 Talk to our team
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

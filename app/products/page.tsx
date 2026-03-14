@@ -28,6 +28,7 @@ const products = [
     id: "icarkno",
     name: "icarKno",
     tagline: "Enterprise Knowledge GenAI Platform",
+    demoUrl: "https://iknow.carnotresearch.com/",
     description:
       "icarKno is a context-aware conversational AI platform designed for enterprise knowledge management. It ingests multimodal data, including PDFs, web pages, YouTube videos, and scanned documents, and enables LLM-based Retrieval-Augmented Generation (RAG) with verifiable citations.",
     features: [
@@ -46,6 +47,7 @@ const products = [
     id: "bhargati",
     name: "BharGati AI",
     tagline: "Multimodal Transport Analytics AI",
+    demoUrl: "https://bhargati.ai/",
     description:
       "BharGati AI is a comprehensive, AI-driven movement analysis platform that elevates transportation analytics with computer vision, NLP, and multimodal data fusion. Designed for smart city and transport infrastructure applications.",
     features: [
@@ -74,6 +76,7 @@ const products = [
       "Award-winning AI (JICA-BCG-FITT Challenge)",
       "Natural language understanding across Indian languages",
     ],
+    demoUrl: "/contact",
     icon: MessageCircle,
     iconBg: "bg-[#fef3ff]",
     iconColor: "text-[#c11574]",
@@ -162,11 +165,14 @@ export default function ProductsPage() {
                   {product.description}
                 </p>
                 <div className="mt-8">
-                      <Button asChild>
-                    <Link href="/contact">
+                  <Button asChild>
+                    <a
+                      href={product.demoUrl}
+                      {...(product.demoUrl.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
                       Request Demo
-                          <ArrowRight className="ml-2 h-4 w-4 text-[#1a57eb]" />
-                    </Link>
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </div>
               </div>
