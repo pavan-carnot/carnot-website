@@ -42,7 +42,7 @@ const otherProducts = [
   {
     name: "BharGati AI",
     tagline: "Movement & Performance Intelligence",
-    desc: "Vision-based biomechanics analytics for sports performance and rehabilitation — no wearables, no lab setup required.",
+    desc: "AI-powered biomechanics analytics using computer vision. Analyze human movement, posture, and performance from standard video — no wearables required.",
     icon: Route,
     iconBg: "bg-cyan-50",
     iconColor: "text-cyan-600",
@@ -52,11 +52,11 @@ const otherProducts = [
   {
     name: "SAATHI",
     tagline: "Conversational AI Assistant",
-    desc: "Multilingual AI agent, winner of the Transport Stack Open Innovation Challenge.",
+    desc: "Hyper-personalized multilingual AI agent. Award-winning conversational assistant delivering recommendations in your language.",
     icon: MessageSquare,
-    iconBg: "bg-blue-50",
-    iconColor: "text-blue-600",
-    accent: "#2563eb",
+    iconBg: "bg-violet-50",
+    iconColor: "text-violet-600",
+    accent: "#7c3aed",
     href: "/products#saathi",
     award: true,
   },
@@ -86,7 +86,7 @@ export function IcarKnoShowcase() {
           {/* Left — text */}
           <FadeUp>
             <div className="max-w-xl">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-sm font-semibold tracking-wide text-muted-foreground">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#2563eb]" />
                 Featured Product · icarKno<sup>TM</sup>
               </div>
@@ -167,7 +167,7 @@ export function IcarKnoShowcase() {
                   <div className="flex items-center gap-2">
                     <p className="font-semibold text-foreground">{p.name}</p>
                     {p.award && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700 ring-1 ring-blue-200">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-semibold text-amber-700 ring-1 ring-amber-200">
                         <Trophy className="h-2.5 w-2.5" /> Award
                       </span>
                     )}

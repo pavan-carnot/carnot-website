@@ -21,10 +21,9 @@ function useCountUp(target: number, duration: number, trigger: boolean) {
 }
 
 const stats = [
-  { num: 120, format: (n: number) => `${n}+`,    label: "Years Combined Experience", sub: "IIT Faculty & Defense Experts" },
-  { num: 17,  format: (n: number) => `${n}+`,    label: "Projects",                   sub: "Govt & Industry Sponsored" },
-  { num: 13,  format: (n: number) => `${n}`,     label: "PhD Scholars Guided",        sub: "" },
-  { num: 20,  format: (n: number) => `${n}+`,   label: "Elite Team Members, Core Developers And Researchers", sub: ""},
+  { num: 120, format: (n: number) => `${n}+`, label: "Years Combined Experience", sub: "IIT Faculty & Defense Experts" },
+  { num: 17,  format: (n: number) => `${n}+`, label: "Funded Projects",           sub: "Govt & Industry Sponsored"    },
+  { num: 20,  format: (n: number) => `${n}+`, label: "Core Team Members",         sub: "Developers & Researchers"     },
 ]
 
 function StatItem({ stat, delay, trigger }: { stat: typeof stats[number]; delay: number; trigger: boolean }) {
@@ -65,7 +64,7 @@ export function CredibilityStrip() {
       style={{ background: "#111827" }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-y-8 lg:grid-cols-4 lg:divide-x lg:divide-gray-700">
+        <div className="grid grid-cols-1 gap-y-8 sm:grid-cols-3 sm:divide-x sm:divide-gray-700">
           {stats.map((stat, i) => (
             <StatItem key={stat.label} stat={stat} delay={i * 80} trigger={triggered} />
           ))}

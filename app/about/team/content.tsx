@@ -62,7 +62,7 @@ const founders = [
     headerTo: "#1a57eb",
     avatarFrom: "#3a7bd5",
     avatarTo: "#0b2149",
-    credentials: ["PhD, IIT Delhi", "47+ Funded Projects", "₹70 Cr+ Research", "13 PhD Scholars"],
+    credentials: ["PhD, IIT Delhi", "47+ Funded Projects", "₹70 Cr+ Research"],
     bio: [
       "Senior Professor at IIT Delhi and a leading specialist in Signal Processing and Intelligent Systems. Completed PhD from IIT Delhi in Multirate Signal Processing with decades of experience spanning academia, advanced communications, and real-world technology deployment.",
       "Has guided 13 PhD scholars across 47 sponsored research and consultancy projects with total funding exceeding ₹70 crores. Core research areas include object tracking, depth mapping, multimodal signal processing, and next-generation communications.",

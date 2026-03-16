@@ -1,5 +1,5 @@
 :HL["/carnot-website/_next/static/chunks/665dc3aa4aa2d85c.css","style"]
-:HL["/carnot-website/_next/static/chunks/f9cc4655ac86db7d.css","style"]
+:HL["/carnot-website/_next/static/chunks/b6fe256ae74aba75.css","style"]
 :HL["/carnot-website/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/carnot-website/assets/clients/mainLogo-removebg.png","image"]
-0:{"buildId":"J08Yn8KRy30Nnx9PMu5Mu","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"solutions","paramType":null,"paramKey":"solutions","hasRuntimePrefetch":false,"slots":{"children":{"name":"ai-in-sports","paramType":null,"paramKey":"ai-in-sports","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"wgoobJgQt0QbdL_QP8drW","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"solutions","paramType":null,"paramKey":"solutions","hasRuntimePrefetch":false,"slots":{"children":{"name":"ai-in-sports","paramType":null,"paramKey":"ai-in-sports","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
