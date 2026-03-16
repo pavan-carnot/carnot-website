@@ -50,12 +50,6 @@ function FadeUp({
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-const pageStats = [
-  { value: "120+", label: "Years Combined Experience" },
-  { value: "17+", label: "Projects" },
-  { value: "13", label: "PhD Scholars Guided" },
-  { value: "20+", label: "Elite Team Members, Core Developers And Researchers" },
-]
 
 const founders = [
   {
@@ -71,7 +65,7 @@ const founders = [
     credentials: ["PhD, IIT Delhi", "47+ Funded Projects", "₹70 Cr+ Research", "13 PhD Scholars"],
     bio: [
       "Senior Professor at IIT Delhi and a leading specialist in Signal Processing and Intelligent Systems. Completed PhD from IIT Delhi in Multirate Signal Processing with decades of experience spanning academia, advanced communications, and real-world technology deployment.",
-      "Has guided 13 PhD scholars and served as Principal Investigator in nearly 47 sponsored research and consultancy projects with total funding exceeding ₹70 crores. Core research areas include object tracking, depth mapping, multimodal signal processing, and next-generation communications.",
+      "Has guided 13 PhD scholars across 47 sponsored research and consultancy projects with total funding exceeding ₹70 crores. Core research areas include object tracking, depth mapping, multimodal signal processing, and next-generation communications.",
       "Former Head, Bharti School of Telecommunication Technology and Management, IIT Delhi. At Carnot Research, Prof. Lall shapes core research direction, ensuring technical rigor, architectural excellence, and long-term innovation across all initiatives.",
     ],
     tags: ["Signal Processing", "Deep Learning", "NLP", "IoT", "Systems AI"],
@@ -180,21 +174,6 @@ export function TeamContent() {
             </FadeUp>
           </div>
 
-          {/* Stats row */}
-          <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-y-10 gap-x-8 lg:grid-cols-4">
-            {pageStats.map((stat, i) => (
-              <FadeUp key={stat.label} delay={300 + i * 70}>
-                <div className="text-center">
-                  <p className="text-4xl font-bold tracking-tight text-foreground">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
         </div>
       </section>
 

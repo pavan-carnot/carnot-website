@@ -148,13 +148,6 @@ function Slideshow() {
   )
 }
 
-// ─── Stats data ───────────────────────────────────────────────────────────────
-const stats = [
-  { value: "120+", label: "Years Combined Experience" },
-  { value: "17+", label: "Projects" },
-  { value: "13", label: "PhD Scholars Guided" },
-  { value: "20+", label: "Elite Team Members, Core Developers And Researchers" },
-]
 
 // ─── Capability cards ─────────────────────────────────────────────────────────
 const capabilities = [
@@ -234,25 +227,6 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* ── Stats ────────────────────────────────────────────────── */}
-      <section className="border-y border-border bg-secondary/20 py-14">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
-            {stats.map((stat, i) => (
-              <FadeUp key={stat.label} delay={i * 80}>
-                <div className="text-center">
-                  <p className="text-4xl font-bold tracking-tight text-foreground">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── Who We Are ───────────────────────────────────────────────────── */}
       <section className="bg-background py-24 lg:py-32">

@@ -28,6 +28,7 @@ const products = [
     id: "icarkno",
     name: "icarKno",
     tagline: "Enterprise Knowledge GenAI Platform",
+    pageHref: "/products/icarkno",
     demoUrl: "https://iknow.carnotresearch.com/",
     description:
       "icarKno is a context-aware conversational AI platform designed for enterprise knowledge management. It ingests multimodal data, including PDFs, web pages, YouTube videos, and scanned documents, and enables LLM-based Retrieval-Augmented Generation (RAG) with verifiable citations.",
@@ -46,17 +47,18 @@ const products = [
   {
     id: "bhargati",
     name: "BharGati AI",
-    tagline: "Multimodal Transport Analytics AI",
+    tagline: "Movement & Performance Intelligence",
+    pageHref: "/products/bhargati",
     demoUrl: "https://bhargati.ai/",
     description:
-      "BharGati AI is a comprehensive, AI-driven movement analysis platform that elevates transportation analytics with computer vision, NLP, and multimodal data fusion. Designed for smart city and transport infrastructure applications.",
+      "BharGati AI is an AI-driven movement and performance intelligence platform that uses computer vision to analyze human biomechanics from standard video — no wearables or specialized sensors required. Built for sports science, coaching, and rehabilitation.",
     features: [
-      "AI-driven movement and mobility analysis",
-      "Computer vision for traffic and transport monitoring",
-      "Multimodal sensor data fusion",
-      "Real-time analytics dashboard",
-      "Integration with IoT infrastructure",
-      "Predictive modeling for transport planning",
+      "Vision-based movement capture from standard cameras",
+      "Biomechanical metrics: joint angles, posture, gait, symmetry",
+      "Real-time AI-driven performance feedback",
+      "Sports performance analysis and injury prevention",
+      "Actionable dashboards with annotated movement insights",
+      "Session-to-session progress tracking",
     ],
     icon: Route,
     iconBg: "bg-[#ecfdf3]",
@@ -76,6 +78,7 @@ const products = [
       "Award-winning AI (JICA-BCG-FITT Challenge)",
       "Natural language understanding across Indian languages",
     ],
+    pageHref: null,
     demoUrl: "/contact",
     icon: MessageCircle,
     iconBg: "bg-[#fef3ff]",
@@ -166,13 +169,10 @@ export default function ProductsPage() {
                 </p>
                 <div className="mt-8">
                   <Button asChild>
-                    <a
-                      href={product.demoUrl}
-                      {...(product.demoUrl.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    >
-                      Request Demo
+                    <Link href={product.pageHref ?? `/products#${product.id}`}>
+                      Explore {product.name}
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </div>

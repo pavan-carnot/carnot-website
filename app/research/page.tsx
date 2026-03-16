@@ -32,12 +32,6 @@ export const metadata: Metadata = {
     "Explore Carnot Research's work in NLP, Computer Vision, and Generative AI. Publications, patents, and academic collaborations from IIT ecosystem researchers.",
 }
 
-const stats = [
-  { label: "Years Combined Experience", value: "120+" },
-  { label: "Projects", value: "17+" },
-  { label: "PhD Scholars Guided", value: "13" },
-  { label: "Elite Team Members, Core Developers And Researchers", value: "20+" },
-]
 
 const nlpCapabilities = [
   {
@@ -191,22 +185,6 @@ export default function ResearchPage() {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl border border-border bg-card p-6 text-center"
-              >
-                <p className="text-3xl font-semibold text-foreground">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

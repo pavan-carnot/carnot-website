@@ -1,17 +1,16 @@
 "use client"
 
+import { VideoWithSkeleton } from "./video-skeleton"
+
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 export function IcarKnoClientContent() {
   return (
-    <video
+    <VideoWithSkeleton
       src={`${B}/assets/clients/Final_video.mp4`}
-      autoPlay
-      muted
-      loop
-      playsInline
+      ariaLabel="icarKno dashboard and system interface demo"
       className="block h-auto max-h-[min(420px,50vh)] w-auto max-w-full rounded-2xl"
-      aria-label="icarKno dashboard and system interface demo"
+      skeletonClassName="w-full h-[320px] sm:h-[380px]"
     />
   )
 }

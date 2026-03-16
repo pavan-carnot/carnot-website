@@ -41,8 +41,8 @@ const features = [
 const otherProducts = [
   {
     name: "BharGati AI",
-    tagline: "Transport Analytics Platform",
-    desc: "Computer vision + NLP for intelligent transportation systems and movement analytics.",
+    tagline: "Movement & Performance Intelligence",
+    desc: "Vision-based biomechanics analytics for sports performance and rehabilitation — no wearables, no lab setup required.",
     icon: Route,
     iconBg: "bg-cyan-50",
     iconColor: "text-cyan-600",
@@ -86,7 +86,7 @@ export function IcarKnoShowcase() {
           {/* Left — text */}
           <FadeUp>
             <div className="max-w-xl">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-sm font-semibold tracking-wide text-muted-foreground">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#2563eb]" />
                 Featured Product · icarKno<sup>TM</sup>
               </div>

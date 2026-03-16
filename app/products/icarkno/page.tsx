@@ -25,6 +25,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { IcarKnoClientContent } from "./icarkno-client"
+import { VideoWithSkeleton } from "./video-skeleton"
 
 export const metadata: Metadata = {
   title: "icarKno™ | Secure Offline Mission-Ready AI | Carnot Research",
@@ -417,14 +418,11 @@ export default function IcarKnoPage() {
                   } ${i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}
                 >
                   {uc.video ? (
-                    <video
+                    <VideoWithSkeleton
                       src={`${B}/assets/clients/${encodeURIComponent(uc.video)}`}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
+                      ariaLabel={`${uc.title} demo`}
                       className="h-auto w-full rounded-xl object-cover"
-                      aria-label={`${uc.title} demo`}
+                      skeletonClassName="w-full h-64"
                     />
                   ) : (
                     <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-[#eff6ff]">

@@ -37,7 +37,7 @@ const teamSchema = {
       name: "Prof. Brejesh Lall",
       jobTitle: "Co-Founder and Chief Technology Officer",
       description:
-        "Senior Professor at IIT Delhi specialising in Signal Processing and Intelligent Systems. Principal Investigator in 47+ funded projects with ₹70 Cr+ research funding. Has guided 13 PhD scholars.",
+        "Senior Professor at IIT Delhi specialising in Signal Processing and Intelligent Systems. Led 47+ funded projects with ₹70 Cr+ research funding. Has guided 13 PhD scholars.",
       affiliation: [
         {
           "@type": "Organization",

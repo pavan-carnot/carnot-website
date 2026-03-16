@@ -23,7 +23,7 @@ function useCountUp(target: number, duration: number, trigger: boolean) {
 const stats = [
   { num: 120, format: (n: number) => `${n}+`,    label: "Years Combined Experience", sub: "IIT Faculty & Defense Experts" },
   { num: 17,  format: (n: number) => `${n}+`,    label: "Projects",                   sub: "Govt & Industry Sponsored" },
-  { num: 13,  format: (n: number) => `${n}`,     label: "PhD Scholars Guided",        sub: "Principal Investigator Projects" },
+  { num: 13,  format: (n: number) => `${n}`,     label: "PhD Scholars Guided",        sub: "" },
   { num: 20,  format: (n: number) => `${n}+`,   label: "Elite Team Members, Core Developers And Researchers", sub: ""},
 ]
 
