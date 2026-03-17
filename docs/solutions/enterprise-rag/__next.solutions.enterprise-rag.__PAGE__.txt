@@ -2,5 +2,5 @@
 2:I[40407,["/carnot-website/_next/static/chunks/8da519b180907636.js","/carnot-website/_next/static/chunks/b3b6a62c0461e09a.js","/carnot-website/_next/static/chunks/b901560ab9556031.js","/carnot-website/_next/static/chunks/95ca2e1a5a4a2e4d.js"],"EnterpriseRAGContent"]
 3:I[97367,["/carnot-website/_next/static/chunks/ff1a16fafef87110.js","/carnot-website/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"h7w6DkobmkUw3-K5PTRkE","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/carnot-website/_next/static/chunks/95ca2e1a5a4a2e4d.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"B84M4cPZzR6bNpyE-btGj","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/carnot-website/_next/static/chunks/95ca2e1a5a4a2e4d.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null

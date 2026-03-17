@@ -53,7 +53,9 @@ export function ContactForm() {
 
     // Map to Lambda-expected field names
     const params = new URLSearchParams()
+    params.set("template-contactform-name",    name)
     params.set("template-contactform-email",   email)
+    params.set("template-contactform-phone",   "")
     params.set("template-contactform-subject", subject)
     params.set("template-contactform-message", fullMessage)
     services.forEach((s) => params.append("template-contactform-service[]", s))
