@@ -67,19 +67,6 @@ const mobileNav = [
 function MobileAccordion({ item, onClose }: { item: typeof mobileNav[0]; onClose: () => void }) {
   const [open, setOpen] = useState(false)
 
-  if (item.href) {
-    // Direct link (Pricing)
-    return (
-      <Link
-        href={item.href}
-        onClick={onClose}
-        className="block rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
-      >
-        {item.name}
-      </Link>
-    )
-  }
-
   return (
     <div>
       <button
