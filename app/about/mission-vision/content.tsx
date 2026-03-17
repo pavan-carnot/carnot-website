@@ -25,6 +25,71 @@ function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; 
   )
 }
 
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
+// ── Image slideshow ────────────────────────────────────────────────────────────
+function ImageSlideshow({ images }: { images: string[] }) {
+  const [current, setCurrent] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  const next = useCallback(() => setCurrent(c => (c + 1) % images.length), [images.length])
+  const prev = useCallback(() => setCurrent(c => (c - 1 + images.length) % images.length), [images.length])
+
+  useEffect(() => {
+    if (paused) return
+    const id = setInterval(next, 4000)
+    return () => clearInterval(id)
+  }, [next, paused])
+
+  return (
+    <div
+      className="relative select-none rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {images.map((src, i) => (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={i}
+          src={`${B}${src}`}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
+          style={{ opacity: i === current ? 1 : 0 }}
+        />
+      ))}
+
+      {/* Prev / Next */}
+      <button
+        onClick={prev}
+        className="absolute left-3 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50"
+        aria-label="Previous"
+      >
+        <ChevronLeft className="h-4 w-4" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-3 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50"
+        aria-label="Next"
+      >
+        <ChevronRight className="h-4 w-4" />
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className="rounded-full transition-all duration-300"
+            style={{ height: 6, width: i === current ? 20 : 6, background: i === current ? "white" : "rgba(255,255,255,0.5)" }}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 // ── Slide data sets ────────────────────────────────────────────────────────────
 const openingSlides = [
   {
@@ -283,9 +348,9 @@ export function MissionVisionContent() {
       <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
-            {/* Left — slideshow */}
+            {/* Left — image slideshow */}
             <FadeUp delay={160} className="lg:order-1 order-2">
-              <Slideshow slides={missionSlides} />
+              <ImageSlideshow images={["/assets/clients/Mission_Pic_2.jpeg", "/assets/clients/Mission_Pic_3.jpeg"]} />
             </FadeUp>
             {/* Right — text */}
             <FadeUp className="lg:order-2 order-1">
@@ -348,9 +413,9 @@ export function MissionVisionContent() {
                 </p>
               </div>
             </FadeUp>
-            {/* Right — slideshow */}
+            {/* Right — image slideshow */}
             <FadeUp delay={160}>
-              <Slideshow slides={visionSlides} />
+              <ImageSlideshow images={["/assets/clients/Vision_Pic_1.jpeg", "/assets/clients/Vision_Pic_2.jpeg"]} />
             </FadeUp>
           </div>
         </div>
