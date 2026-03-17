@@ -1,11 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Check, Loader2 } from "lucide-react"
 
 const API_ENDPOINT =
   "https://izwz05lqn1.execute-api.ap-south-1.amazonaws.com/default/sendMail"
+
+const RECAPTCHA_SITE_KEY =
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
 
 const serviceOptions = [
   "Product Development",
@@ -22,11 +26,20 @@ type Status = "idle" | "sending" | "success" | "error"
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle")
   const [errorMsg, setErrorMsg] = useState("")
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus("sending")
     setErrorMsg("")
+
+    // Check reCAPTCHA first
+    const recaptchaResponse = recaptchaRef.current?.getValue()
+    if (!recaptchaResponse) {
+      setErrorMsg("Please complete the reCAPTCHA verification.")
+      return
+    }
+
+    setStatus("sending")
 
     const form = e.currentTarget
     const formData = new FormData(form)
@@ -38,26 +51,25 @@ export function ContactForm() {
     const services = formData.getAll("services") as string[]
     const products = formData.getAll("products") as string[]
 
-    // Build a readable subject line
     const subject = `Contact from ${name}${company ? ` (${company})` : ""}`
 
-    // Bundle everything into the message body
     const fullMessage = [
       `Name: ${name}`,
-      company  ? `Organization: ${company}`               : "",
-      services.length ? `Services: ${services.join(", ")}` : "",
-      products.length ? `Products: ${products.join(", ")}` : "",
+      company         ? `Organization: ${company}`               : "",
+      services.length ? `Services: ${services.join(", ")}`        : "",
+      products.length ? `Products: ${products.join(", ")}`        : "",
       "",
       message,
     ].filter(Boolean).join("\n")
 
-    // Map to Lambda-expected field names
     const params = new URLSearchParams()
     params.set("template-contactform-name",    name)
     params.set("template-contactform-email",   email)
     params.set("template-contactform-phone",   "")
     params.set("template-contactform-subject", subject)
     params.set("template-contactform-message", fullMessage)
+    params.set("template-contactform-botcheck", "")
+    params.set("g-recaptcha-response",         recaptchaResponse)
     services.forEach((s) => params.append("template-contactform-service[]", s))
 
     try {
@@ -69,14 +81,17 @@ export function ContactForm() {
 
       if (response.ok) {
         setStatus("success")
+        recaptchaRef.current?.reset()
       } else {
         const err = await response.json().catch(() => ({ message: "Something went wrong." }))
         setErrorMsg(err.message ?? "Failed to send message.")
         setStatus("error")
+        recaptchaRef.current?.reset()
       }
     } catch (error) {
       setErrorMsg(error instanceof Error ? error.message : "Network error. Please try again.")
       setStatus("error")
+      recaptchaRef.current?.reset()
     }
   }
 
@@ -94,6 +109,9 @@ export function ContactForm() {
     )
   }
 
+  const inputClass =
+    "w-full rounded-lg border border-input bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
+
   return (
     <form onSubmit={handleSubmit} className="rounded-xl border border-border bg-card p-8">
       <h3 className="text-lg font-semibold text-foreground">Send us a message</h3>
@@ -104,27 +122,13 @@ export function ContactForm() {
             <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
               Name
             </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="w-full rounded-lg border border-input bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
-              placeholder="Your name"
-            />
+            <input type="text" id="name" name="name" required placeholder="Your name" className={inputClass} />
           </div>
           <div>
             <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
               Email
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full rounded-lg border border-input bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
-              placeholder="you@company.com"
-            />
+            <input type="email" id="email" name="email" required placeholder="you@company.com" className={inputClass} />
           </div>
         </div>
 
@@ -132,19 +136,11 @@ export function ContactForm() {
           <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-foreground">
             Organization
           </label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            className="w-full rounded-lg border border-input bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
-            placeholder="Your organization"
-          />
+          <input type="text" id="company" name="company" placeholder="Your organization" className={inputClass} />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-medium text-foreground">
-            Services of Interest
-          </label>
+          <label className="mb-2 block text-sm font-medium text-foreground">Services of Interest</label>
           <div className="flex flex-wrap gap-2">
             {serviceOptions.map((option) => (
               <label
@@ -159,9 +155,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-medium text-foreground">
-            Products of Interest
-          </label>
+          <label className="mb-2 block text-sm font-medium text-foreground">Products of Interest</label>
           <div className="flex flex-wrap gap-2">
             {productOptions.map((option) => (
               <label
@@ -184,23 +178,20 @@ export function ContactForm() {
             name="message"
             rows={4}
             required
-            className="w-full rounded-lg border border-input bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
             placeholder="Tell us about your project or requirements..."
+            className={inputClass}
           />
         </div>
 
-        {status === "error" && (
+        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} />
+
+        {(status === "error" || errorMsg) && (
           <p className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-2.5 text-sm text-destructive">
             {errorMsg}
           </p>
         )}
 
-        <Button
-          type="submit"
-          size="lg"
-          disabled={status === "sending"}
-          className="w-full sm:w-auto"
-        >
+        <Button type="submit" size="lg" disabled={status === "sending"} className="w-full sm:w-auto">
           {status === "sending" ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
