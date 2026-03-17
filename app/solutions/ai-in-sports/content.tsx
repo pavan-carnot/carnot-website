@@ -131,8 +131,8 @@ const faqs = [
     a: "AI does not replace coaches or analysts. Instead, it improves their decision-making by providing data-driven insights that enhance human expertise. Coaches keep strategic control while using AI to improve technique, manage workloads, and prepare tactics.",
   },
   {
-    q: "What data does BharGati need to analyze performance?",
-    a: "BharGati needs only video footage of the athlete to work. This allows for performance and biomechanics analysis without requiring extra wearable sensors or tracking devices, making it practical for field and field-level deployment.",
+    q: "What data does BharGati™ need to analyze performance?",
+    a: "BharGati™ needs only video footage of the athlete to work. This allows for performance and biomechanics analysis without requiring extra wearable sensors or tracking devices, making it practical for field and field-level deployment.",
   },
   {
     q: "Can AI provide real-time feedback during training?",

@@ -4,9 +4,9 @@ import { ArrowRight, Brain, Route, MessageCircle, FileText, Server, Globe, Bot }
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "AI Products | icarKno, BharGati AI, SAATHI | Carnot Research",
+  title: "AI Products | icarKno™, BharGati™ AI, SAATHI | Carnot Research",
   description:
-    "Explore Carnot Research's enterprise-grade AI products: icarKno (enterprise knowledge RAG), BharGati AI (transport analytics), and SAATHI (multilingual assistant). Secure on-premise GenAI, NLP, and Computer Vision platforms for government and enterprise.",
+    "Explore Carnot Research's enterprise-grade AI products: icarKno™ (enterprise knowledge RAG), BharGati™ AI (transport analytics), and SAATHI (multilingual assistant). Secure on-premise GenAI, NLP, and Computer Vision platforms for government and enterprise.",
   keywords: [
     "enterprise AI products",
     "generative AI platform",
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
 const products = [
   {
     id: "icarkno",
-    name: "icarKno",
+    name: "icarKno™",
     tagline: "Enterprise Knowledge GenAI Platform",
     pageHref: "/products/icarkno",
     demoUrl: "https://iknow.carnotresearch.com/",
     description:
-      "icarKno is a context-aware conversational AI platform designed for enterprise knowledge management. It ingests multimodal data, including PDFs, web pages, YouTube videos, and scanned documents, and enables LLM-based Retrieval-Augmented Generation (RAG) with verifiable citations.",
+      "icarKno™ is a context-aware conversational AI platform designed for enterprise knowledge management. It ingests multimodal data, including PDFs, web pages, YouTube videos, and scanned documents, and enables LLM-based Retrieval-Augmented Generation (RAG) with verifiable citations.",
     features: [
       "Multimodal data ingestion (PDFs, web, YouTube, scanned docs)",
       "LLM-based RAG with verifiable citations",
@@ -46,12 +46,12 @@ const products = [
   },
   {
     id: "bhargati",
-    name: "BharGati AI",
+    name: "BharGati™ AI",
     tagline: "Movement & Performance Intelligence",
     pageHref: "/products/bhargati",
     demoUrl: "https://bhargati.ai/",
     description:
-      "BharGati AI is an AI-driven movement and performance intelligence platform that uses computer vision to analyze human biomechanics from standard video — no wearables or specialized sensors required. Built for sports science, coaching, and rehabilitation.",
+      "BharGati™ AI is an AI-driven movement and performance intelligence platform that uses computer vision to analyze human biomechanics from standard video — no wearables or specialized sensors required. Built for sports science, coaching, and rehabilitation.",
     features: [
       "Vision-based movement capture from standard cameras",
       "Biomechanical metrics: joint angles, posture, gait, symmetry",
@@ -67,19 +67,19 @@ const products = [
   {
     id: "saathi",
     name: "SAATHI",
-    tagline: "Conversational AI Assistant",
+    tagline: "Delhi Public Transport AI Assistant",
     description:
-      "SAATHI is a hyper-personalized, multilingual AI agent that won the Transport Stack Open Innovation Challenge hosted by JICA, BCG, and FITT IIT Delhi. It serves as a conversational travel assistant with routes, places, and tips delivered instantly in your language.",
+      "SAATHI is a hyper-personalized, multilingual AI agent and award-winner of the Transport Stack Open Innovation Challenge (JICA–BCG–FITT IIT Delhi). It serves as your Delhi Public Transport Assistant — helping commuters plan journeys, check metro & bus schedules, fares, and get emergency helpline numbers — all via voice or text in any language.",
     features: [
-      "Hyper-personalized multilingual conversations",
-      "Route planning and navigation assistance",
-      "Local knowledge and recommendations",
-      "Sentiment analysis and user intent detection",
-      "Award-winning AI (JICA-BCG-FITT Challenge)",
-      "Natural language understanding across Indian languages",
+      "Journey planning via metro, bus & multi-modal routes",
+      "Metro station info: accessibility, facilities & timings",
+      "Bus & metro fares, cards, and schedule queries",
+      "Voice messages — ask by speaking, receive audio responses",
+      "22+ Indian languages plus foreign language support",
+      "Emergency helpline access and lost & found assistance",
     ],
-    pageHref: null,
-    demoUrl: "/contact",
+    pageHref: "/products/saathi",
+    demoUrl: "https://bot.carnotresearch.com/",
     icon: MessageCircle,
     iconBg: "bg-[#fef3ff]",
     iconColor: "text-[#c11574]",
@@ -125,7 +125,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-medium tracking-wider text-accent uppercase">
@@ -148,7 +148,7 @@ export default function ProductsPage() {
         <section
           key={product.id}
           id={product.id}
-          className={`py-20 lg:py-28 ${index % 2 === 0 ? "bg-secondary/30" : "bg-background"}`}
+          className={`py-14 sm:py-20 lg:py-28 ${index % 2 === 0 ? "bg-secondary/30" : "bg-background"}`}
         >
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid items-start gap-12 lg:grid-cols-2">
@@ -197,7 +197,7 @@ export default function ProductsPage() {
       ))}
 
       {/* GeM Products */}
-      <section id="summarizer" className="bg-background py-20 lg:py-28">
+      <section id="summarizer" className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <div className="mx-auto mb-4 w-fit rounded-full border border-border bg-secondary px-4 py-1.5">
@@ -238,7 +238,7 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Ready to get started?

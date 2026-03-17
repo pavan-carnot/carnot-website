@@ -192,7 +192,7 @@ export function AboutContent() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-background py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute -top-40 -right-20 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-accent/8 blur-3xl" />
 
@@ -206,7 +206,7 @@ export function AboutContent() {
             </FadeUp>
 
             <FadeUp delay={100}>
-              <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
+              <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-6xl">
                 About Carnot Research
               </h1>
             </FadeUp>
@@ -229,7 +229,7 @@ export function AboutContent() {
 
 
       {/* ── Who We Are ───────────────────────────────────────────────────── */}
-      <section className="bg-background py-24 lg:py-32">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-3xl text-center mb-14">
@@ -280,7 +280,7 @@ export function AboutContent() {
       </section>
 
       {/* ── What We Do ───────────────────────────────────────────────────── */}
-      <section className="bg-secondary/30 py-24 lg:py-32">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-3xl text-center mb-14">
@@ -298,7 +298,7 @@ export function AboutContent() {
             </div>
           </FadeUp>
 
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((cap, i) => (
               <FadeUp key={cap.title} delay={i * 100}>
                 <div
@@ -333,7 +333,7 @@ export function AboutContent() {
       </section>
 
       {/* ── Why We Exist ─────────────────────────────────────────────────── */}
-      <section className="bg-[#0b2149] py-24 lg:py-32">
+      <section className="bg-[#0b2149] py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-3xl">

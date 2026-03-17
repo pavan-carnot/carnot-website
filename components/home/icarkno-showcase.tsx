@@ -40,24 +40,31 @@ const features = [
 // ─── Other products ───────────────────────────────────────────────────────────
 const otherProducts = [
   {
-    name: "BharGati AI",
+    name: "BharGati™ AI",
     tagline: "Movement & Performance Intelligence",
-    desc: "AI-powered biomechanics analytics using computer vision. Analyze human movement, posture, and performance from standard video — no wearables required.",
+    desc: "AI-powered biomechanics analytics using computer vision. Analyze human movement, posture, and performance from standard video — no wearables or lab setup required.",
+    bullets: ["Vision-based pose & gait analysis", "Biomechanical metrics & insights", "Sports, rehab & coaching ready"],
     icon: Route,
     iconBg: "bg-cyan-50",
     iconColor: "text-cyan-600",
-    accent: "#0891b2",
+    gradientFrom: "#0891b2",
+    gradientTo: "#06b6d4",
+    image: "/assets/clients/homepage_Bhargati.png" as string | null,
     href: "/products/bhargati",
+    award: false,
   },
   {
     name: "SAATHI",
-    tagline: "Conversational AI Assistant",
-    desc: "Hyper-personalized multilingual AI agent. Award-winning conversational assistant delivering recommendations in your language.",
+    tagline: "Delhi Public Transport Assistant",
+    desc: "Award-winning multilingual AI for Delhi commuters. Plan metro & bus journeys, check fares, timings, and get emergency help — by voice or text in any language.",
+    bullets: ["Journey planning: metro, bus & multi-modal", "22+ languages, voice & text input", "Award-winning: JICA–BCG–FITT IIT Delhi"],
     icon: MessageSquare,
-    iconBg: "bg-violet-50",
-    iconColor: "text-violet-600",
-    accent: "#7c3aed",
-    href: "/products#saathi",
+    iconBg: "bg-[#eff6ff]",
+    iconColor: "text-[#2563eb]",
+    gradientFrom: "#2563eb",
+    gradientTo: "#60a5fa",
+    image: "/assets/clients/homepage_Saathi.png" as string | null,
+    href: "/products/saathi",
     award: true,
   },
 ]
@@ -65,7 +72,7 @@ const otherProducts = [
 // ─── Main section ─────────────────────────────────────────────────────────────
 export function IcarKnoShowcase() {
   return (
-    <section className="relative overflow-hidden bg-background py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
       {/* Subtle dot grid texture */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -86,9 +93,9 @@ export function IcarKnoShowcase() {
           {/* Left — text */}
           <FadeUp>
             <div className="max-w-xl">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs font-semibold tracking-wide text-muted-foreground">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#2563eb]" />
-                Featured Product · icarKno<sup>TM</sup>
+              <div className="mb-5 inline-flex items-center gap-2.5 rounded-lg bg-[#2563eb] px-4 py-2 shadow-sm">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-white/70" />
+                <span className="text-sm font-bold tracking-tight text-white">Featured Product · icarKno™</span>
               </div>
 
               <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
@@ -97,7 +104,7 @@ export function IcarKnoShowcase() {
               </h2>
 
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                icarKno turns your institutional documents into a secure, conversational
+                icarKno™ turns your institutional documents into a secure, conversational
                 AI running entirely on-premise with no data leaving your environment.
               </p>
 
@@ -120,7 +127,7 @@ export function IcarKnoShowcase() {
                   className="bg-[#2563eb] text-white shadow-sm hover:bg-[#2563eb]/90"
                 >
                   <Link href="/products/icarkno">
-                    Explore icarKno
+                    Explore icarKno™
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -151,31 +158,63 @@ export function IcarKnoShowcase() {
           </FadeUp>
         </div>
 
-        {/* ── Other products strip ── */}
-        <div className="mt-16 grid gap-5 sm:grid-cols-2">
+        {/* ── Other products ── */}
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 items-stretch">
           {otherProducts.map((p, i) => (
-            <FadeUp key={p.name} delay={300 + i * 100}>
-              <Link
-                href={p.href}
-                className="group relative flex items-start gap-5 overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                style={{ ["--accent" as string]: p.accent }}
-              >
-                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${p.iconBg} transition-transform duration-300 group-hover:scale-105`}>
-                  <p.icon className={`h-6 w-6 ${p.iconColor}`} />
+            <FadeUp key={p.name} delay={300 + i * 100} className="flex">
+              <Link href={p.href} className="group flex flex-col w-full overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+                {/* Image / placeholder area */}
+                <div
+                  className="relative flex h-52 items-center justify-center overflow-hidden"
+                  style={{ background: `linear-gradient(135deg, ${p.gradientFrom}18 0%, ${p.gradientTo}10 100%)` }}
+                >
+                  {/* Gradient top stripe */}
+                  <div className="absolute inset-x-0 top-0 h-[3px]"
+                    style={{ background: `linear-gradient(90deg, ${p.gradientFrom}, ${p.gradientTo})` }} />
+                  {p.image ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img src={`${B}${p.image}`} alt={p.name} className="h-full w-full object-cover" />
+                  ) : (
+                    /* Placeholder */
+                    <div className="flex flex-col items-center gap-3 opacity-60">
+                      <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${p.iconBg} shadow-md`}>
+                        <p.icon className={`h-8 w-8 ${p.iconColor}`} />
+                      </div>
+                      <span className="text-xs font-medium text-muted-foreground">Image coming soon</span>
+                    </div>
+                  )}
+                  {/* Award badge overlay */}
+                  {p.award && (
+                    <span className="absolute right-4 top-5 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700 ring-1 ring-amber-200 shadow-sm">
+                      <Trophy className="h-3 w-3" /> Award Winner
+                    </span>
+                  )}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <p className="font-semibold text-foreground">{p.name}</p>
-                    {p.award && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-semibold text-amber-700 ring-1 ring-amber-200">
-                        <Trophy className="h-2.5 w-2.5" /> Award
-                      </span>
-                    )}
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 px-6 py-5">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="text-lg font-bold text-foreground">{p.name}</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider mt-0.5"
+                        style={{ color: p.gradientFrom }}>{p.tagline}</p>
+                    </div>
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground/30 mt-0.5 transition-all group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
-                  <p className="text-xs font-medium text-muted-foreground">{p.tagline}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                  <ul className="mt-4 space-y-2">
+                    {p.bullets.map((b) => (
+                      <li key={b} className="flex items-center gap-2.5 text-sm text-foreground">
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: p.gradientFrom }} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto pt-5 border-t border-border flex items-center justify-between">
+                    <span className="text-xs font-medium text-muted-foreground">Explore product</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" style={{ color: p.gradientFrom }} />
+                  </div>
                 </div>
-                <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground/40 transition-all group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </FadeUp>
           ))}

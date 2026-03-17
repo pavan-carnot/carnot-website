@@ -145,7 +145,7 @@ export function TeamContent() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-background py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-primary/6 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-accent/6 blur-3xl" />
 
@@ -159,7 +159,7 @@ export function TeamContent() {
             </FadeUp>
 
             <FadeUp delay={100}>
-              <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
+              <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-6xl">
                 The Minds Behind{" "}
                 <span className="text-primary">Carnot Research</span>
               </h1>
@@ -178,7 +178,7 @@ export function TeamContent() {
       </section>
 
       {/* ── Founding Leadership ───────────────────────────────────────────── */}
-      <section className="bg-secondary/20 py-24 lg:py-32">
+      <section className="bg-secondary/20 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mb-14 text-center">
@@ -319,7 +319,7 @@ export function TeamContent() {
       </section>
 
       {/* ── Core Team ─────────────────────────────────────────────────────── */}
-      <section className="bg-secondary/20 py-24 lg:py-32">
+      <section className="bg-secondary/20 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mb-14 text-center">

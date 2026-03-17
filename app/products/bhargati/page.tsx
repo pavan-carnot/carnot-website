@@ -303,7 +303,7 @@ export default function BharGatiPage() {
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1.5">
                 <span className="text-lg font-semibold tracking-tight text-foreground">
-                  BharGati
+                  BharGati™
                 </span>
               </div>
               <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
@@ -343,15 +343,15 @@ export default function BharGatiPage() {
       </section>
 
       {/* What is BharGati */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-            What is BharGati?
+            What is BharGati™?
           </h2>
           <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:items-start">
             <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                BharGati AI is an AI-powered system for movement analysis and
+                BharGati™ AI is an AI-powered system for movement analysis and
                 performance intelligence. It captures, interprets, and quantifies
                 human motion using computer vision, deep learning, and biomechanical
                 modeling.
@@ -364,7 +364,7 @@ export default function BharGatiPage() {
               </p>
               <p className="font-medium text-foreground">
                 Whether you’re a sports scientist, coach, physical therapist, or
-                research professional, BharGati is designed to turn movement into
+                research professional, BharGati™ is designed to turn movement into
                 intelligence.
               </p>
             </div>
@@ -388,10 +388,10 @@ export default function BharGatiPage() {
       </section>
 
       {/* Problem BharGati solves */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-            The Problem BharGati Solves
+            The Problem BharGati™ Solves
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed text-muted-foreground">
             Traditional motion analysis systems are often:
@@ -416,17 +416,17 @@ export default function BharGatiPage() {
             practitioners, athletes, and clinics.
           </p>
           <p className="mx-auto mt-4 max-w-4xl text-center text-lg font-semibold text-foreground">
-            BharGati brings precise assessment out of the lab and into practice.
+            BharGati™ brings precise assessment out of the lab and into practice.
           </p>
           <p className="mx-auto mt-3 max-w-4xl text-center text-base leading-relaxed text-muted-foreground">
-            BharGati addresses this by offering camera-based AI motion analysis that
+            BharGati™ addresses this by offering camera-based AI motion analysis that
             is affordable, scalable, and usable in real training or clinical settings.
           </p>
         </div>
       </section>
 
       {/* Core capabilities (2x3 grid) */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             Core Capabilities
@@ -451,20 +451,20 @@ export default function BharGatiPage() {
       </section>
 
       {/* Difference table */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-            What Sets BharGati Apart
+            What Sets BharGati™ Apart
           </h2>
           <div className="mt-12 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
             <div className="grid grid-cols-2 divide-x divide-border">
-              <div className="bg-muted/50 px-6 py-4 text-center">
-                <h3 className="font-semibold text-foreground">
+              <div className="bg-muted/50 px-3 py-4 text-center sm:px-6">
+                <h3 className="text-sm font-semibold text-foreground sm:text-base">
                   Traditional Motion Analysis
                 </h3>
               </div>
-              <div className="bg-[#ecfdf3] px-6 py-4 text-center">
-                <h3 className="font-semibold text-[#15803d]">BharGati AI</h3>
+              <div className="bg-[#ecfdf3] px-3 py-4 text-center sm:px-6">
+                <h3 className="text-sm font-semibold text-[#15803d] sm:text-base">BharGati™ AI</h3>
               </div>
             </div>
             {comparisonRows.map((row, i) => (
@@ -472,10 +472,10 @@ export default function BharGatiPage() {
                 key={i}
                 className="grid grid-cols-2 divide-x divide-border border-t border-border"
               >
-                <div className="px-6 py-4 text-sm text-muted-foreground">
+                <div className="px-3 py-3 text-xs text-muted-foreground sm:px-6 sm:py-4 sm:text-sm">
                   {row.traditional}
                 </div>
-                <div className="bg-card/50 px-6 py-4 text-sm text-foreground">
+                <div className="bg-card/50 px-3 py-3 text-xs text-foreground sm:px-6 sm:py-4 sm:text-sm">
                   {row.bhargati}
                 </div>
               </div>
@@ -485,7 +485,7 @@ export default function BharGatiPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             FAQ

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-medium tracking-wider text-accent uppercase">
@@ -26,7 +26,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-16 grid max-w-5xl gap-12 lg:grid-cols-5">
+          <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:gap-12 lg:grid-cols-5">
             {/* Contact Info */}
             <div className="lg:col-span-2">
               <div className="flex flex-col gap-8">

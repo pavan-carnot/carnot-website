@@ -91,7 +91,7 @@ function FeatureCard({ pillar, index }: { pillar: typeof pillars[0]; index: numb
       onMouseLeave={() => setIsHovered(false)}
       className="group relative"
     >
-      <div className="relative h-full rounded-2xl border border-white/10 bg-white/[0.02] p-8 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:bg-white/[0.04]">
+      <div className="relative h-full rounded-2xl border border-white/10 bg-white/[0.02] p-5 sm:p-8 backdrop-blur-sm transition-all duration-500 hover:border-white/20 hover:bg-white/[0.04]">
         
         {/* Subtle top gradient on hover */}
         <motion.div
@@ -229,14 +229,14 @@ export function WhyCarnotSection() {
 
           {/* Content */}
           <motion.div 
-            className="relative py-24 lg:py-32"
+            className="relative py-16 lg:py-28"
             style={{ y, opacity }}
           >
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               
               {/* Header */}
               <motion.div
-                className="mx-auto mb-20 max-w-3xl text-center"
+                className="mx-auto mb-12 lg:mb-20 max-w-3xl text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -254,7 +254,7 @@ export function WhyCarnotSection() {
                 </motion.div>
 
                 {/* Title */}
-                <h2 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
                   Enterprise AI,
                   <br />
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
@@ -270,7 +270,7 @@ export function WhyCarnotSection() {
               </motion.div>
 
               {/* Feature cards */}
-              <div className="grid gap-6 md:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
                 {pillars.map((pillar, index) => (
                   <FeatureCard key={pillar.title} pillar={pillar} index={index} />
                 ))}

@@ -25,8 +25,8 @@ const sitemapData = [
   {
     title: "Products",
     links: [
-      { name: "icarKno - Knowledge RAG", href: "/products#icarkno" },
-      { name: "BharGati AI - Transport Analytics", href: "/products#bhargati" },
+      { name: "icarKno™ - Knowledge RAG", href: "/products#icarkno" },
+      { name: "BharGati™ AI - Transport Analytics", href: "/products#bhargati" },
       { name: "SAATHI - Travel Assistant", href: "/products#saathi" },
       { name: "Meeting Summarizer", href: "/products#summarizer" },
     ],

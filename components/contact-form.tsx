@@ -12,7 +12,7 @@ const serviceOptions = [
   "On-Premise Deployment",
 ]
 
-const productOptions = ["icarKno", "BharGati AI", "SAATHI", "Other"]
+const productOptions = ["icarKno™", "BharGati™ AI", "SAATHI", "Other"]
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)

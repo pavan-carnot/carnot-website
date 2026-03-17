@@ -2,12 +2,17 @@ import Link from "next/link"
 
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
+function renderName(name: string) {
+  if (!name.includes("™")) return <>{name}</>
+  const [before, after] = name.split("™")
+  return <>{before}<sup className="text-[0.8em]">™</sup>{after ?? ""}</>
+}
+
 const footerLinks = {
   Products: [
-    { name: "icarKno", href: "/products#icarkno" },
-    { name: "BharGati AI", href: "/products#bhargati" },
-    { name: "SAATHI", href: "/products#saathi" },
-    { name: "Meeting Summarizer", href: "/products#summarizer" },
+    { name: "icarKno™", href: "/products/icarkno" },
+    { name: "BharGati™ AI", href: "/products/bhargati" },
+    { name: "SAATHI", href: "/products/saathi" },
   ],
   Solutions: [
     { name: "AI for Government", href: "/solutions#government" },
@@ -35,8 +40,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-secondary">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 lg:grid-cols-5">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5">
@@ -123,7 +128,7 @@ export function Footer() {
                       href={link.href}
                       className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                     >
-                      {link.name}
+                      {renderName(link.name)}
                     </Link>
                   </li>
                 ))}

@@ -177,36 +177,36 @@ const comparisonRows = [
 // FAQ items
 const faqs = [
   {
-    q: "What is icarKno and what problem does it solve?",
-    a: "icarKno is an intelligent knowledge management system that helps organizations make better use of their existing data. Instead of manually searching through files, reports, or repositories, users can quickly find the information they need through a secure, AI-powered search and chat interface.",
+    q: "What is icarKno™ and what problem does it solve?",
+    a: "icarKno™ is an intelligent knowledge management system that helps organizations make better use of their existing data. Instead of manually searching through files, reports, or repositories, users can quickly find the information they need through a secure, AI-powered search and chat interface.",
   },
   {
-    q: "How does icarKno convert organizational data into a searchable knowledge base?",
-    a: "icarKno allows you to upload documents or connect existing storage sources, after which the system processes the content and organizes it into a structured knowledge base. Once indexed, the information can be searched using simple questions, making it much easier to access important data.",
+    q: "How does icarKno™ convert organizational data into a searchable knowledge base?",
+    a: "icarKno™ allows you to upload documents or connect existing storage sources, after which the system processes the content and organizes it into a structured knowledge base. Once indexed, the information can be searched using simple questions, making it much easier to access important data.",
   },
   {
-    q: "What security features does icarKno provide for sensitive data?",
-    a: "Security is a core part of icarKno. Your data stays private and is not shared outside your environment. For organizations that require full control, the system can be deployed on-premise so all processing happens within your own infrastructure.",
+    q: "What security features does icarKno™ provide for sensitive data?",
+    a: "Security is a core part of icarKno™. Your data stays private and is not shared outside your environment. For organizations that require full control, the system can be deployed on-premise so all processing happens within your own infrastructure.",
   },
   {
-    q: "Does icarKno support on-premise deployment for enterprise environments?",
-    a: "Yes, icarKno can be deployed on-premise, which means it runs entirely on your organization's servers. This is especially useful for enterprises, research institutions, and government organizations that need high levels of privacy and control.",
+    q: "Does icarKno™ support on-premise deployment for enterprise environments?",
+    a: "Yes, icarKno™ can be deployed on-premise, which means it runs entirely on your organization's servers. This is especially useful for enterprises, research institutions, and government organizations that need high levels of privacy and control.",
   },
   {
-    q: "Which document formats and data sources are supported by icarKno?",
-    a: "icarKno works with common document formats such as PDFs, text files, reports, and manuals. It can also connect to internal storage, network drives, or cloud services, allowing you to build a knowledge base from your existing data without changing your workflow.",
+    q: "Which document formats and data sources are supported by icarKno™?",
+    a: "icarKno™ works with common document formats such as PDFs, text files, reports, and manuals. It can also connect to internal storage, network drives, or cloud services, allowing you to build a knowledge base from your existing data without changing your workflow.",
   },
   {
-    q: "How does natural language querying work in icarKno?",
-    a: "Instead of using complex search filters, you can simply ask questions in normal language. icarKno understands the query, looks through the stored knowledge, and returns the most relevant information in a clear and accurate way.",
+    q: "How does natural language querying work in icarKno™?",
+    a: "Instead of using complex search filters, you can simply ask questions in normal language. icarKno™ understands the query, looks through the stored knowledge, and returns the most relevant information in a clear and accurate way.",
   },
   {
-    q: "Does icarKno support multilingual interaction and voice-based access?",
-    a: "Yes, icarKno supports multiple languages, so users can ask questions in one language and receive answers in another. It also includes voice support, allowing hands-free interaction when needed.",
+    q: "Does icarKno™ support multilingual interaction and voice-based access?",
+    a: "Yes, icarKno™ supports multiple languages, so users can ask questions in one language and receive answers in another. It also includes voice support, allowing hands-free interaction when needed.",
   },
   {
-    q: "Is it possible to evaluate icarKno through a demo before full deployment?",
-    a: "Yes, you can try icarKno through a demo by uploading your own documents and creating a knowledge container. This allows you to see how the system works before deciding on a full deployment for your organization.",
+    q: "Is it possible to evaluate icarKno™ through a demo before full deployment?",
+    a: "Yes, you can try icarKno™ through a demo by uploading your own documents and creating a knowledge container. This allows you to see how the system works before deciding on a full deployment for your organization.",
   },
 ]
 
@@ -273,7 +273,7 @@ export default function IcarKnoPage() {
       </section>
 
       {/* ─── What is icarKno ─────────────────────────────────────────────────── */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             What is icarKno™?
@@ -324,7 +324,7 @@ export default function IcarKnoPage() {
       </section>
 
       {/* ─── The Problem icarKno Solves ──────────────────────────────────────── */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             The Problem icarKno™ Solves
@@ -359,7 +359,7 @@ export default function IcarKnoPage() {
       </section>
 
       {/* ─── Core Capabilities (2x3 Grid) ────────────────────────────────────── */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             Core Capabilities
@@ -384,7 +384,7 @@ export default function IcarKnoPage() {
       </section>
 
       {/* ─── Use Cases (Alternating Blocks) ──────────────────────────────────── */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             Use Cases
@@ -437,20 +437,20 @@ export default function IcarKnoPage() {
       </section>
 
       {/* ─── The icarKno Difference (Comparison Table) ───────────────────────── */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             The icarKno™ Difference
           </h2>
           <div className="mt-12 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
             <div className="grid grid-cols-2 divide-x divide-border">
-              <div className="bg-muted/50 px-6 py-4 text-center">
-                <h3 className="font-semibold text-foreground">
+              <div className="bg-muted/50 px-3 py-4 text-center sm:px-6">
+                <h3 className="text-sm font-semibold text-foreground sm:text-base">
                   Traditional Cloud AI
                 </h3>
               </div>
-              <div className="bg-[#eff6ff] px-6 py-4 text-center">
-                <h3 className="font-semibold text-[#1d4ed8]">icarKno™</h3>
+              <div className="bg-[#eff6ff] px-3 py-4 text-center sm:px-6">
+                <h3 className="text-sm font-semibold text-[#1d4ed8] sm:text-base">icarKno™</h3>
               </div>
             </div>
             {comparisonRows.map((row, i) => (
@@ -458,10 +458,10 @@ export default function IcarKnoPage() {
                 key={i}
                 className="grid grid-cols-2 divide-x divide-border border-t border-border"
               >
-                <div className="px-6 py-4 text-sm text-muted-foreground">
+                <div className="px-3 py-3 text-xs text-muted-foreground sm:px-6 sm:py-4 sm:text-sm">
                   {row.cloud}
                 </div>
-                <div className="bg-card/50 px-6 py-4 text-sm text-foreground">
+                <div className="bg-card/50 px-3 py-3 text-xs text-foreground sm:px-6 sm:py-4 sm:text-sm">
                   {row.icarkno}
                 </div>
               </div>
@@ -471,7 +471,7 @@ export default function IcarKnoPage() {
       </section>
 
       {/* ─── FAQ Section ────────────────────────────────────────────────────── */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             Frequently Asked Questions
@@ -492,7 +492,7 @@ export default function IcarKnoPage() {
       </section>
 
       {/* ─── CTA ────────────────────────────────────────────────────────────── */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <h2 className="text-balance text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
             Ready to deploy icarKno™?

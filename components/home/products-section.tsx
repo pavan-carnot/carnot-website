@@ -69,7 +69,7 @@ export function ProductsSection() {
                       <Brain className="h-7 w-7 text-[#1d4ed8]" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-foreground">icarKno</h3>
+                      <h3 className="text-2xl font-bold text-foreground">icarKno™</h3>
                       <p className="text-sm font-medium text-[#1d4ed8]">Enterprise Knowledge GenAI Platform</p>
                     </div>
                   </div>
@@ -96,7 +96,7 @@ export function ProductsSection() {
                 </ul>
 
                 <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-[#1a57eb]">
-                  Explore icarKno
+                  Explore icarKno™
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>
@@ -120,7 +120,7 @@ export function ProductsSection() {
                     </div>
                     <ArrowUpRight className="h-4 w-4 text-[#15803d] opacity-0 transition-opacity group-hover:opacity-100" />
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-foreground">BharGati AI</h3>
+                  <h3 className="mt-4 text-lg font-bold text-foreground">BharGati™ AI</h3>
                   <p className="text-xs font-medium text-[#15803d]">Multimodal Transport Analytics AI</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     AI-driven movement analysis and transport analytics combining computer

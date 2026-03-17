@@ -7,7 +7,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden flex items-center" style={{ background: "#f8fafc", minHeight: "calc(100vh - 3.75rem)" }}>
       <VantaGlobeBackground />
 
-      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-0">
         <div className="max-w-2xl text-left">
 
           {/* Overline */}
@@ -15,14 +15,14 @@ export function HeroSection() {
             Enterprise AI Infrastructure
           </p>
 
-          {/* Heading — gray-900 matches navbar "Get Started" button bg */}
-          <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          {/* Heading */}
+          <h1 className="text-balance text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl xl:text-6xl">
             Deploy Secure On-Premise Generative AI for{" "}
             <span className="text-blue-600">Enterprise &amp; Government</span>
           </h1>
 
           {/* Body */}
-          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-gray-500">
+          <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-gray-500 sm:text-lg">
             Carnot Research builds production-grade Generative AI, NLP, and
             Computer Vision systems designed for regulated and
             privacy-sensitive environments in India.

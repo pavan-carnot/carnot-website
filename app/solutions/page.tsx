@@ -267,7 +267,7 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-medium tracking-wider text-accent uppercase">
@@ -299,7 +299,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* AI Challenges */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -338,7 +338,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Our AI Solutions */}
-      <section id="our-solutions" className="bg-background py-20 lg:py-28">
+      <section id="our-solutions" className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -350,7 +350,7 @@ export default function SolutionsPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {solutionCards.map((s) => (
               <div
                 key={s.title}
@@ -393,7 +393,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* AI Capabilities & Specialized Services */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -432,7 +432,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Implementation framework */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -476,7 +476,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Industries */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -507,7 +507,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl text-center">
             FAQ
@@ -536,7 +536,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Ready to move from pilots to production?

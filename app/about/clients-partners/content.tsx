@@ -234,7 +234,7 @@ export function ClientsPartnersContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute -top-40 -right-20 h-96 w-96 rounded-full bg-blue-50 blur-3xl opacity-60" />
         <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-cyan-50 blur-3xl opacity-60" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -246,7 +246,7 @@ export function ClientsPartnersContent() {
               </div>
             </FadeUp>
             <FadeUp delay={100}>
-              <h1 className="text-balance text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              <h1 className="text-balance text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl xl:text-6xl">
                 Organizations We Work With
               </h1>
             </FadeUp>
@@ -296,7 +296,7 @@ export function ClientsPartnersContent() {
       </section>
 
       {/* Sectors */}
-      <section className="bg-gray-50 py-24 lg:py-32">
+      <section className="bg-gray-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-2xl text-center mb-14">
@@ -326,7 +326,7 @@ export function ClientsPartnersContent() {
       </section>
 
       {/* Partnership Approach */}
-      <section className="bg-white py-24 lg:py-32">
+      <section className="bg-white py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-3xl text-center">

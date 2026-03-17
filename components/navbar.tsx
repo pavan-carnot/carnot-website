@@ -14,15 +14,6 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu"
 
-const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Products", href: "/products" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Guides", href: "/company/guides" },
-  { name: "Insights", href: "/insights" },
-  { name: "Resources", href: "/company/resources" },
-]
-
 // Shared dropdown link style
 const dropLink =
   "block rounded-md px-2.5 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
@@ -30,15 +21,121 @@ const dropTitle = "font-medium"
 const dropSub = "mt-0.5 block text-xs font-normal text-gray-400"
 const dropSection = "text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2"
 
+// Mobile nav structure
+const mobileNav = [
+  {
+    name: "About",
+    items: [
+      { name: "Overview", href: "/about", sub: "Who we are" },
+      { name: "Mission & Vision", href: "/about/mission-vision", sub: "Where we're headed" },
+      { name: "Team", href: "/about/team", sub: "Researchers and engineers" },
+      { name: "Clients & Partners", href: "/about/clients-partners", sub: "Who we collaborate with" },
+    ],
+  },
+  {
+    name: "Products",
+    items: [
+      { name: "All Products", href: "/products", sub: "Overview of Carnot AI platforms" },
+      { name: "icarKno™", href: "/products/icarkno", sub: "Enterprise knowledge RAG" },
+      { name: "BharGati™ AI", href: "/products/bhargati", sub: "Movement & performance" },
+      { name: "SAATHI", href: "/products/saathi", sub: "Multilingual transport assistant" },
+      { name: "Request a Demo", href: "/contact", sub: "Talk to us about deployments" },
+    ],
+  },
+  {
+    name: "Solutions",
+    items: [
+      { name: "Solutions Hub", href: "/solutions", sub: "Map AI to your business" },
+      { name: "Enterprise RAG", href: "/solutions/enterprise-rag", sub: "Governed retrieval-augmented AI" },
+      { name: "On-Prem AI", href: "/solutions/on-prem-ai", sub: "Secure, compliant deployments" },
+      { name: "AI in Sports", href: "/solutions/ai-in-sports", sub: "Biomechanics & performance" },
+    ],
+  },
+  {
+    name: "Company",
+    items: [
+      { name: "Guides", href: "/company/guides", sub: "Step-by-step AI workflows" },
+      { name: "Research", href: "/company/resources", sub: "Research & case studies" },
+      { name: "Resource", href: "https://cr-vision.carnotresearch.com/", sub: "Vision & intelligence tools", external: true },
+      { name: "Playground", href: "https://playground.carnotresearch.com/#/", sub: "Explore Carnot AI live", external: true },
+      { name: "Contact", href: "/contact", sub: "Get in touch with us" },
+      { name: "Overview", href: "/company", sub: "Who we are" },
+    ],
+  },
+  {
+    name: "Pricing",
+    href: "/contact",
+  },
+]
+
+function MobileAccordion({ item, onClose }: { item: typeof mobileNav[0]; onClose: () => void }) {
+  const [open, setOpen] = useState(false)
+
+  if (item.href) {
+    // Direct link (Pricing)
+    return (
+      <Link
+        href={item.href}
+        onClick={onClose}
+        className="block rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+      >
+        {item.name}
+      </Link>
+    )
+  }
+
+  return (
+    <div>
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+      >
+        {item.name}
+        <ChevronDown
+          className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      {open && (
+        <div className="mt-1 ml-3 space-y-0.5 border-l border-gray-100 pl-3">
+          {item.items?.map((sub) => sub.external ? (
+            <a
+              key={sub.name}
+              href={sub.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="block rounded-md px-2.5 py-2 transition-colors hover:bg-gray-50"
+            >
+              <span className="text-sm font-medium text-gray-800">{sub.name}</span>
+              {sub.sub && <span className="mt-0.5 block text-xs text-gray-400">{sub.sub}</span>}
+            </a>
+          ) : (
+            <Link
+              key={sub.name}
+              href={sub.href}
+              onClick={onClose}
+              className="block rounded-md px-2.5 py-2 transition-colors hover:bg-gray-50"
+            >
+              <span className="text-sm font-medium text-gray-800">{sub.name}</span>
+              {sub.sub && <span className="mt-0.5 block text-xs text-gray-400">{sub.sub}</span>}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const close = () => setMobileOpen(false)
 
   return (
     <header className="sticky top-0 z-50 w-full px-4 pt-3 pb-0">
       <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-xl border border-gray-200 bg-white px-4 h-12 shadow-sm lg:px-5">
 
         {/* ── Logo ── */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+        <Link href="/" className="flex items-center gap-2 flex-shrink-0" onClick={close}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${B}/assets/clients/mainLogo-removebg.png`}
@@ -95,14 +192,15 @@ export function Navbar() {
                   Products
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[580px]">
-                    <div className="grid grid-cols-3 gap-6 px-5 py-5">
+                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[420px]">
+                    <div className="grid grid-cols-2 gap-6 px-5 py-5">
                       <div>
                         <p className={dropSection}>Browse</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/products" className={dropLink}><span className={dropTitle}>All products</span><span className={dropSub}>Overview of Carnot AI platforms</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><Link href="/products/icarkno" className={dropLink}><span className={dropTitle}>icarKno</span><span className={dropSub}>Enterprise knowledge RAG</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><Link href="/products/bhargati" className={dropLink}><span className={dropTitle}>BharGati AI</span><span className={dropSub}>Transport analytics platform</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/products/icarkno" className={dropLink}><span className={dropTitle}>icarKno™</span><span className={dropSub}>Enterprise knowledge RAG</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/products/bhargati" className={dropLink}><span className={dropTitle}>BharGati™ AI</span><span className={dropSub}>Movement & performance</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/products/saathi" className={dropLink}><span className={dropTitle}>SAATHI</span><span className={dropSub}>Multilingual transport assistant</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                       <div>
@@ -154,13 +252,15 @@ export function Navbar() {
                   Company
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[480px]">
+                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[560px]">
                     <div className="grid grid-cols-3 gap-6 px-5 py-5">
                       <div>
                         <p className={dropSection}>Learn</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/company/guides" className={dropLink}><span className={dropTitle}>Guides</span><span className={dropSub}>Step-by-step AI workflows</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><Link href="/company/resources" className={dropLink}><span className={dropTitle}>Resources</span><span className={dropSub}>Research &amp; case studies</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/company/resources" className={dropLink}><span className={dropTitle}>Research</span><span className={dropSub}>Research &amp; case studies</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><a href="https://cr-vision.carnotresearch.com/" target="_blank" rel="noopener noreferrer" className={dropLink}><span className={dropTitle}>Resource</span><span className={dropSub}>Vision &amp; intelligence tools</span></a></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><a href="https://playground.carnotresearch.com/#/" target="_blank" rel="noopener noreferrer" className={dropLink}><span className={dropTitle}>Playground</span><span className={dropSub}>Explore Carnot AI live</span></a></NavigationMenuLink></li>
                         </ul>
                       </div>
                       <div>
@@ -229,33 +329,28 @@ export function Navbar() {
       {/* ── Mobile Menu ── */}
       {mobileOpen && (
         <div className="mx-auto mt-1 max-w-6xl rounded-xl border border-gray-200 bg-white shadow-sm lg:hidden">
-          <div className="px-4 py-3">
-            <div className="flex flex-col gap-0.5">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="mt-3 flex flex-col gap-2 border-t border-gray-100 pt-3">
-                <Link
-                  href="/contact"
-                  className="block rounded-md px-3 py-2 text-center text-sm font-medium text-gray-600 hover:bg-gray-50"
-                >
-                  Book a demo
-                </Link>
-                <Link
-                  href="/products"
-                  className="flex items-center justify-center gap-1.5 rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:bg-gray-800"
-                >
-                  Get Started
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
+          <div className="px-3 py-3 space-y-0.5">
+            {mobileNav.map((item) => (
+              <MobileAccordion key={item.name} item={item} onClose={close} />
+            ))}
+
+            {/* CTAs */}
+            <div className="mt-3 flex flex-col gap-2 border-t border-gray-100 pt-3">
+              <Link
+                href="/contact"
+                onClick={close}
+                className="block rounded-md px-3 py-2 text-center text-sm font-medium text-gray-600 hover:bg-gray-50"
+              >
+                Book a demo
+              </Link>
+              <Link
+                href="/products"
+                onClick={close}
+                className="flex items-center justify-center gap-1.5 rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:bg-gray-800"
+              >
+                Get Started
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </div>
         </div>
