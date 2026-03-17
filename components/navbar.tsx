@@ -62,10 +62,6 @@ const mobileNav = [
       { name: "Overview", href: "/company", sub: "Who we are" },
     ],
   },
-  {
-    name: "Pricing",
-    href: "/contact",
-  },
 ]
 
 function MobileAccordion({ item, onClose }: { item: typeof mobileNav[0]; onClose: () => void }) {
@@ -280,17 +276,6 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* Pricing — plain link */}
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/contact"
-                    className="inline-flex h-8 items-center rounded-md px-3 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
-                  >
-                    Pricing
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
 
             </NavigationMenuList>
           </NavigationMenu>
