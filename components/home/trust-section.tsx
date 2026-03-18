@@ -229,9 +229,11 @@ export function TrustSection() {
           <div className="mb-14 text-center">
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">Trusted By</p>
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              Organizations across India
+              Organizations across India trust our work
             </h2>
-            <p className="mt-3 text-sm text-gray-500">From government agencies to global consultancies</p>
+            <p className="mt-3 text-sm text-gray-500">
+              From national security agencies and IIT Delhi to global consultancies and enterprise teams
+            </p>
           </div>
         </FadeUp>
       </div>
