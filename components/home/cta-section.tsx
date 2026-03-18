@@ -46,14 +46,14 @@ export function CtaSection() {
               </div>
 
               <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                Ready to deploy secure{" "}
-                <span className="text-[#bfdbfe]">enterprise AI?</span>
+                Ready to deploy AI that{" "}
+                <span className="text-[#bfdbfe]">works on your terms?</span>
               </h2>
 
               <p className="mt-6 text-pretty text-lg leading-relaxed text-white/80">
                 Talk to our AI experts and discover how Carnot Research can transform
-                your organisation with secure, on-premise generative AI, built for
-                government, defense, and enterprise.
+                your organisation with secure, on-premise AI — built for government, defense,
+                and enterprise. No cloud dependency. No data leaving your network.
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -81,7 +81,7 @@ export function CtaSection() {
               </div>
 
               <p className="mt-8 text-xs text-white/50">
-                Deployed across government agencies and enterprise organisations across India
+                Trusted by NSG, IIT Delhi, OPPO, BCG, JICA, and enterprise organizations across India
               </p>
             </div>
           </div>

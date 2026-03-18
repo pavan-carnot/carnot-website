@@ -11,26 +11,26 @@ export function HeroSection() {
         <div className="max-w-2xl text-left">
 
           {/* Overline */}
-          <p className="mb-4 text-xs font-semibold tracking-widest text-blue-600 uppercase">
-            Enterprise AI Infrastructure
-          </p>
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3.5 py-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+            <span className="text-xs font-semibold text-blue-600">IIT Delhi · Applied AI Research</span>
+          </div>
 
           {/* Heading */}
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl xl:text-6xl">
-            Deploy Secure On-Premise Generative AI for{" "}
-            <span className="text-blue-600">Enterprise &amp; Government</span>
+          <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            Secure On-Premise AI for{" "}
+            <span className="text-blue-600">Government, Defense &amp; Enterprise</span>
           </h1>
 
           {/* Body */}
-          <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-gray-500 sm:text-lg">
-            Carnot Research builds production-grade Generative AI, NLP, and
-            Computer Vision systems designed for regulated and
-            privacy-sensitive environments in India.
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg">
+            Carnot Research builds secure, on-premise AI systems for India's government,
+            defense, and enterprise. Knowledge management, computer vision, sports analytics,
+            multilingual NLP — all deployed entirely on your own servers.
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
-            {/* Primary — same style as navbar "Get Started" */}
+          <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row">
             <Link
               href="/products"
               className="inline-flex items-center gap-1.5 rounded-md bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gray-800 transition-colors shadow-sm"
@@ -41,7 +41,6 @@ export function HeroSection() {
               </span>
             </Link>
 
-            {/* Secondary — teal outlined */}
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 hover:border-gray-300 hover:bg-gray-50 transition-colors shadow-sm"
@@ -50,10 +49,17 @@ export function HeroSection() {
             </Link>
           </div>
 
-          {/* Footnote */}
-          <p className="mt-6 text-xs text-gray-400">
-            Trusted by government agencies and enterprise clients across India
-          </p>
+          {/* Trust badges */}
+          <div className="mt-8 flex flex-wrap items-center gap-2">
+            {["IIT Delhi", "CMMI Level 3", "ISO 27001:2022", "DPIIT Recognised"].map((badge) => (
+              <span
+                key={badge}
+                className="inline-flex items-center rounded-full border border-gray-200 bg-white/80 px-3 py-1 text-[11px] font-medium text-gray-500"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

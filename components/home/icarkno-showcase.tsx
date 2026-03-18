@@ -87,25 +87,43 @@ export function IcarKnoShowcase() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
+        {/* ── Section header ── */}
+        <FadeUp className="mb-14 text-center">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">Our Products</p>
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            AI that works in the real world
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            Three flagship products across knowledge AI, sports analytics, and public transit — all deployed on-premise, all operational today.
+          </p>
+        </FadeUp>
+
         {/* ── icarKno spotlight ── */}
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
 
           {/* Left — text */}
           <FadeUp>
             <div className="max-w-xl">
-              <div className="mb-5 inline-flex items-center gap-2.5 rounded-lg bg-[#2563eb] px-4 py-2 shadow-sm">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-white/70" />
-                <span className="text-sm font-bold tracking-tight text-white">Featured Product · icarKno™</span>
+              {/* Badge */}
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#2563eb]/20 bg-[#eff6ff] px-3 py-1 text-xs font-semibold text-[#2563eb]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#2563eb]" />
+                Featured Product
               </div>
 
-              <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Enterprise knowledge AI,{" "}
-                <span className="text-[#2563eb]">deployed on your terms</span>
+              {/* Brand name — large */}
+              <h2 className="text-5xl font-extrabold tracking-tight text-[#0891b2] sm:text-6xl lg:text-7xl">
+                icarKno™
               </h2>
 
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                icarKno™ turns your institutional documents into a secure, conversational
-                AI running entirely on-premise with no data leaving your environment.
+              {/* Tagline — sub heading */}
+              <p className="mt-2 text-lg font-semibold text-[#2563eb] sm:text-xl">
+                Enterprise Knowledge AI, on your terms
+              </p>
+
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Ask your documents anything — policies, manuals, reports, videos. icarKno™
+                turns your institutional knowledge into a secure AI assistant that works
+                100% offline, inside your own servers. No cloud. No data leaks.
               </p>
 
               {/* Feature list */}
@@ -219,6 +237,28 @@ export function IcarKnoShowcase() {
             </FadeUp>
           ))}
         </div>
+
+        {/* ── GeM callout ── */}
+        <FadeUp delay={500}>
+          <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-xl border border-border bg-card px-6 py-4 sm:flex-row">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#eff6ff]">
+                <Shield className="h-4 w-4 text-[#2563eb]" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-foreground">Also available on GeM (Government e-Marketplace)</p>
+                <p className="text-xs text-muted-foreground">Meeting Summarizer · On-Premise Knowledge Agent · Multilingual Chatbot · GenAI Conversational Agent</p>
+              </div>
+            </div>
+            <Link
+              href="/products"
+              className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-[#2563eb] hover:underline"
+            >
+              View all products
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </FadeUp>
 
       </div>
     </section>

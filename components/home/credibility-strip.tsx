@@ -21,9 +21,9 @@ function useCountUp(target: number, duration: number, trigger: boolean) {
 }
 
 const stats = [
-  { num: 120, format: (n: number) => `${n}+`, label: "Years Combined Experience", sub: "IIT Faculty & Defense Experts" },
-  { num: 17,  format: (n: number) => `${n}+`, label: "Funded Projects",           sub: "Govt & Industry Sponsored"    },
-  { num: 20,  format: (n: number) => `${n}+`, label: "Core Team Members",         sub: "Developers & Researchers"     },
+  { num: 120, format: (n: number) => `${n}+`,     label: "Years Combined Expertise", sub: "IIT Faculty & Defense Experts" },
+  { num: 47,  format: (n: number) => `${n}+`,     label: "Funded Projects",          sub: "Govt & Industry Sponsored"    },
+  { num: 70,  format: (n: number) => `₹${n} Cr+`, label: "Research Funded",          sub: "Across AI, NLP & Vision"      },
 ]
 
 function StatItem({ stat, delay, trigger }: { stat: typeof stats[number]; delay: number; trigger: boolean }) {
