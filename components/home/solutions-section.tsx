@@ -1,97 +1,120 @@
-import Link from "next/link"
-import {
-  Landmark,
-  BookOpen,
-  Server,
-  Eye,
-  MessageSquareText,
-} from "lucide-react"
+"use client"
 
-const solutions = [
+import Link from "next/link"
+import { useEffect, useRef, useState, type ReactNode } from "react"
+import { Server, Landmark, BookOpen, Eye, MessageSquareText, Activity, ArrowRight } from "lucide-react"
+
+function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const el = ref.current; if (!el) return
+    const ob = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); ob.unobserve(el) } }, { threshold: 0.05 })
+    ob.observe(el); return () => ob.disconnect()
+  }, [])
+  return (
+    <div ref={ref} className={className}
+      style={visible ? { animation: `fadeUpIn 0.6s ease ${delay}ms both` } : { opacity: 0, transform: "translateY(20px)" }}>
+      {children}
+    </div>
+  )
+}
+
+const domains = [
+  {
+    icon: Server,
+    title: "On-Premise AI Deployment",
+    body: "LLMs, RAG, and GenAI systems running inside your own infrastructure. No cloud routing, no third-party APIs.",
+    href: "/solutions/on-prem-ai",
+    color: "#1d4ed8",
+  },
   {
     icon: Landmark,
-    title: "AI for Government",
-    description:
-      "Secure, sovereign AI systems for governance, e-governance chatbots, and policy document intelligence.",
+    title: "Government & Defense",
+    body: "Secure AI for governance workflows, intelligence analysis, and field operations — built to India's compliance standards.",
     href: "/solutions#government",
-    iconBg: "bg-[#eff6ff]",
-    iconColor: "text-[#1d4ed8]",
+    color: "#0369a1",
   },
   {
     icon: BookOpen,
-    title: "Enterprise Knowledge AI",
-    description:
-      "RAG-powered knowledge management with multimodal ingestion from PDFs, web, audio, video, and scanned documents.",
+    title: "Enterprise Knowledge",
+    body: "RAG-powered knowledge bases that ingest your documents and answer with cited, verifiable sources.",
     href: "/solutions#enterprise",
-    iconBg: "bg-[#fef3ff]",
-    iconColor: "text-[#c11574]",
-  },
-  {
-    icon: Server,
-    title: "On-Premise LLM Deployment",
-    description:
-      "Deploy large language models within your infrastructure. Complete data sovereignty with no cloud dependency.",
-    href: "/solutions/on-prem-ai",
-    iconBg: "bg-[#ecfdf3]",
-    iconColor: "text-[#15803d]",
+    color: "#7c3aed",
   },
   {
     icon: Eye,
-    title: "Computer Vision Systems",
-    description:
-      "Object detection, face recognition, video analytics, and semantic segmentation for real-world applications.",
+    title: "Computer Vision",
+    body: "Object detection, pose estimation, video analytics, and semantic segmentation for real environments.",
     href: "/solutions#cv",
-    iconBg: "bg-[#fee4e2]",
-    iconColor: "text-[#b42318]",
+    color: "#b45309",
   },
   {
     icon: MessageSquareText,
-    title: "NLP Platforms",
-    description:
-      "Document intelligence, named entity recognition, summarization, sentiment analysis, and multilingual processing.",
+    title: "NLP & Document Intelligence",
+    body: "Multilingual text understanding, entity recognition, summarization, and structured extraction at scale.",
     href: "/solutions#nlp",
-    iconBg: "bg-[#f3e8ff]",
-    iconColor: "text-[#7e22ce]",
+    color: "#be185d",
+  },
+  {
+    icon: Activity,
+    title: "Sports & Biomechanics AI",
+    body: "Vision-based movement and performance analysis — no wearables, no lab, just video.",
+    href: "/products/bhargati",
+    color: "#15803d",
   },
 ]
 
 export function SolutionsSection() {
   return (
-    <section className="bg-secondary/30 py-20 lg:py-28">
+    <section style={{ background: "#f9fafb" }} className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium tracking-wider text-accent uppercase">
-            Solutions
-          </p>
-          <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            AI solutions for every sector
-          </h2>
-          <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-            From government to enterprise, we deploy AI systems that work
-            on-ground, at-scale, and in-context.
-          </p>
-        </div>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {solutions.map((solution) => (
-            <Link
-              key={solution.title}
-              href={solution.href}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:border-foreground/20 hover:shadow-sm"
-            >
-              <div
-                className={`flex h-10 w-10 items-center justify-center rounded-lg ${solution.iconBg}`}
-              >
-                <solution.icon className={`h-5 w-5 ${solution.iconColor}`} />
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-foreground">
-                {solution.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {solution.description}
+        <div className="grid gap-16 lg:grid-cols-[1fr_2fr] lg:gap-24">
+
+          {/* Left — sticky heading */}
+          <FadeUp>
+            <div className="lg:sticky lg:top-28">
+              <p className="mb-4 text-xs font-bold uppercase tracking-widest text-gray-400">
+                Capabilities
               </p>
-            </Link>
-          ))}
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                What we
+                <br />build.
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-gray-500">
+                Six domains. Each backed by funded research and live deployments.
+              </p>
+              <Link
+                href="/solutions"
+                className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:text-blue-800"
+              >
+                Explore all solutions
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </FadeUp>
+
+          {/* Right — domain grid */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {domains.map((d, i) => (
+              <FadeUp key={d.title} delay={i * 50}>
+                <Link
+                  href={d.href}
+                  className="group flex flex-col rounded-xl border border-gray-200 bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md"
+                >
+                  <div
+                    className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg"
+                    style={{ background: `${d.color}12`, border: `1px solid ${d.color}25` }}
+                  >
+                    <d.icon className="h-4 w-4" style={{ color: d.color }} />
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-900">{d.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-gray-500">{d.body}</p>
+                </Link>
+              </FadeUp>
+            ))}
+          </div>
         </div>
       </div>
     </section>

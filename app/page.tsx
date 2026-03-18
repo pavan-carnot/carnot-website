@@ -1,27 +1,32 @@
 import type { Metadata } from "next"
-import { HeroSection } from "@/components/home/hero-section"
-import { CredibilityStrip } from "@/components/home/credibility-strip"
-import { IcarKnoShowcase } from "@/components/home/icarkno-showcase"
+import { HeroSection }      from "@/components/home/hero-section"
+import { IcarKnoShowcase }  from "@/components/home/icarkno-showcase"
+import { SolutionsSection } from "@/components/home/solutions-section"
+import { AboutSection }     from "@/components/home/about-section"
 import { WhyCarnotSection } from "@/components/home/why-carnot-section"
-import { TrustSection } from "@/components/home/trust-section"
-import { CtaSection } from "@/components/home/cta-section"
+import { TrustSection }     from "@/components/home/trust-section"
+import { CtaSection }       from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Enterprise AI & On-Premise GenAI Solutions for India",
+  title: "Carnot Research — AI Systems Built for India's Institutions",
   description:
-    "Carnot Research delivers secure, production-grade generative AI, NLP, and computer vision solutions built for government and enterprise. IIT Delhi researchers powering Indian AI innovation.",
+    "Carnot Research builds production-grade AI for government, defense, and enterprise. Founded at IIT Delhi. CMMI Level 3 & ISO/IEC 27001:2022 certified. icarKno™, BharGati™, SAATHI.",
   keywords: [
-    "on-premise AI India",
-    "enterprise generative AI",
-    "government AI solutions",
-    "secure NLP platform",
+    "applied AI India",
+    "on-premise AI government",
+    "enterprise language models",
+    "IIT Delhi AI research",
+    "secure AI deployment",
     "computer vision India",
-    "local LLM deployment",
-    "edge AI",
+    "defense AI systems",
+    "NLP enterprise India",
+    "sports biomechanics AI",
+    "SAATHI Delhi transit AI",
   ],
   openGraph: {
-    title: "Carnot Research | Enterprise AI Solutions",
-    description: "Secure on-premise generative AI for government and enterprise",
+    title: "Carnot Research — AI Systems for India's Institutions",
+    description:
+      "Production-grade AI for government, defense, and enterprise. Founded at IIT Delhi.",
     url: "https://carnotresearch.com",
     type: "website",
     images: [{ url: "https://carnotresearch.com/og-home.png", width: 1200, height: 630 }],
@@ -32,8 +37,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <CredibilityStrip />
       <IcarKnoShowcase />
+      <SolutionsSection />
+      <AboutSection />
       <WhyCarnotSection />
       <TrustSection />
       <CtaSection />
