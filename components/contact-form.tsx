@@ -83,8 +83,14 @@ export function ContactForm() {
         setStatus("success")
         recaptchaRef.current?.reset()
       } else {
-        const err = await response.json().catch(() => ({ message: "Something went wrong." }))
-        setErrorMsg(err.message ?? "Failed to send message.")
+        let errMsg = `Server error (${response.status}). Please try again or email us directly.`
+        try {
+          const body = await response.text()
+          const json = JSON.parse(body)
+          if (json?.message) errMsg = json.message
+          else if (json?.error) errMsg = json.error
+        } catch { /* non-JSON body, use default */ }
+        setErrorMsg(errMsg)
         setStatus("error")
         recaptchaRef.current?.reset()
       }

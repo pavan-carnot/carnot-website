@@ -16,8 +16,6 @@ const SCALE_D   = 0.04  // scale loss per slot
 
 // ── Data ───────────────────────────────────────────────────────────────────────
 const clients = [
-  { id: 1, name: "Enhance Communications",     src: `${B}/assets/clients/1.webp` },
-  { id: 2, name: "OPPO",                        src: `${B}/assets/clients/2.webp` },
   { id: 3, name: "NSG",                         src: `${B}/assets/clients/3.webp` },
   { id: 4, name: "IIT Delhi",                   src: `${B}/assets/clients/4.webp` },
   { id: 5, name: "JICA",                        src: `${B}/assets/clients/5.png`  },
@@ -229,9 +227,11 @@ export function TrustSection() {
           <div className="mb-14 text-center">
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">Trusted By</p>
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              Organizations across India
+              Organizations across India trust our work
             </h2>
-            <p className="mt-3 text-sm text-gray-500">From government agencies to global consultancies</p>
+            <p className="mt-3 text-sm text-gray-500">
+              From national security agencies and IIT Delhi to global consultancies and enterprise teams
+            </p>
           </div>
         </FadeUp>
       </div>
@@ -246,7 +246,7 @@ export function TrustSection() {
         <FadeUp delay={220}>
           <div className="mt-16 border-t border-gray-100 pt-10">
             <p className="mb-8 text-center text-[10px] font-semibold uppercase tracking-widest text-gray-400">
-              Certifications &amp; Recognition
+              Certifications &amp; Compliance
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               {certifications.map((cert) => (

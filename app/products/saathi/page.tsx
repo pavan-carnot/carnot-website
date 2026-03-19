@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button"
 export const metadata: Metadata = {
   title: "SAATHI | Delhi Public Transport AI Assistant | Carnot Research",
   description:
-    "SAATHI is an award-winning multilingual AI assistant for Delhi public transport. Plan metro & bus journeys, check fares, timings, and get emergency help — by voice or text in English, Hindi, or any regional language.",
+    "SAATHI is an award-winning multilingual AI assistant for Delhi public transport. Plan metro and bus journeys, check fares, timings, and get emergency help by voice or text in English, Hindi, or any regional language.",
   keywords: [
     "SAATHI AI",
     "Delhi public transport assistant",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SAATHI – Delhi Public Transport AI Assistant",
     description:
-      "Award-winning multilingual AI for Delhi commuters. Plan journeys, check fares & timings, and get emergency help — by voice or text in any language.",
+      "Award-winning multilingual AI for Delhi commuters. Plan journeys, check fares and timings, and get emergency help by voice or text in any language.",
     url: "https://carnotresearch.com/products/saathi",
   },
   alternates: { canonical: "https://carnotresearch.com/products/saathi" },
@@ -48,7 +48,7 @@ const capabilities = [
   {
     emoji: "🚇",
     title: "Metro Stations Info",
-    desc: "Check details of accessibility offerings and facilities available at metro stations — lifts, ramps, wheelchair access, and more.",
+    desc: "Check details of accessibility offerings and facilities available at metro stations: lifts, ramps, wheelchair access, and more.",
   },
   {
     emoji: "⏰",
@@ -68,7 +68,7 @@ const capabilities = [
   {
     emoji: "🎤",
     title: "Voice Messages",
-    desc: "Record voice messages and get audio responses. Just speak your question — SAATHI listens and replies in your preferred language.",
+    desc: "Record voice messages and get audio responses. Just speak your question and SAATHI listens and replies in your preferred language.",
   },
 ]
 
@@ -106,7 +106,7 @@ export default function SaathiPage() {
 
               <p className="mt-5 text-base leading-relaxed text-muted-foreground max-w-lg">
                 SAATHI is an award-winning multilingual AI assistant that helps Delhi commuters plan journeys,
-                check metro and bus schedules, find fares, and get emergency help — all by voice or text
+                check metro and bus schedules, find fares, and get emergency help by voice or text
                 in English, Hindi, or any regional or foreign language.
               </p>
 
@@ -114,7 +114,7 @@ export default function SaathiPage() {
               <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-[#bfdbfe] bg-[#eff6ff] px-3.5 py-2">
                 <Globe className="h-4 w-4 text-[#2563eb]" />
                 <span className="text-sm font-medium text-[#1d4ed8]">
-                  Ask in English, Hindi, or any language — by typing or voice
+                  Ask in English, Hindi, or any language, by typing or voice
                 </span>
               </div>
 
@@ -207,7 +207,7 @@ export default function SaathiPage() {
               What you can ask SAATHI
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Ask your questions in English, Hindi, or any regional or foreign language — either by typing or using voice recording.
+              Ask your questions in English, Hindi, or any regional or foreign language, either by typing or using voice recording.
             </p>
           </div>
 
@@ -240,7 +240,7 @@ export default function SaathiPage() {
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Quick Questions</h2>
             <p className="mt-3 text-base text-muted-foreground">
-              Tap any question below to try it on SAATHI — or ask your own.
+              Tap any question below to try it on SAATHI, or ask your own.
             </p>
           </div>
 
@@ -317,7 +317,7 @@ export default function SaathiPage() {
             Ready to try SAATHI?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-blue-200">
-            Start planning your Delhi commute right now — no sign-up needed. Ask in any language by text or voice.
+            Start planning your Delhi commute right now. No sign-up needed. Ask in any language by text or voice.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a

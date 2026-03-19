@@ -39,7 +39,7 @@ export default function ContactPage() {
                       Visit Us
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      2-B-4A, Research and Innovation Park
+                      2-A-2B, Research and Innovation Park
                       <br />
                       IIT Delhi, Hauz Khas
                       <br />

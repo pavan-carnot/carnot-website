@@ -1,27 +1,33 @@
 import type { Metadata } from "next"
-import { HeroSection } from "@/components/home/hero-section"
-import { CredibilityStrip } from "@/components/home/credibility-strip"
-import { IcarKnoShowcase } from "@/components/home/icarkno-showcase"
-import { WhyCarnotSection } from "@/components/home/why-carnot-section"
-import { TrustSection } from "@/components/home/trust-section"
-import { CtaSection } from "@/components/home/cta-section"
+import { HeroSection }                    from "@/components/home/hero-section"
+import { IcarKnoShowcase, MoreProducts }  from "@/components/home/icarkno-showcase"
+import { ProblemSection }                 from "@/components/home/problem-section"
+import { SolutionsSection }               from "@/components/home/solutions-section"
+import { AboutSection }                   from "@/components/home/about-section"
+import { TrustSection }                   from "@/components/home/trust-section"
+import { CtaSection }                     from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Enterprise AI & On-Premise GenAI Solutions for India",
+  title: "Carnot Research | On-Premise AI for Government, Defense & Enterprise",
   description:
-    "Carnot Research delivers secure, production-grade generative AI, NLP, and computer vision solutions built for government and enterprise. IIT Delhi researchers powering Indian AI innovation.",
+    "Carnot Research builds secure, on-premise AI for India's government, defense, and enterprise — knowledge management, computer vision, sports analytics, and NLP. Founded at IIT Delhi. CMMI Level 3 certified.",
   keywords: [
     "on-premise AI India",
-    "enterprise generative AI",
-    "government AI solutions",
+    "enterprise AI solutions",
+    "government AI India",
     "secure NLP platform",
     "computer vision India",
+    "IIT Delhi AI company",
+    "icarKno™ knowledge AI",
+    "BharGati™ sports AI",
+    "SAATHI transit AI",
     "local LLM deployment",
-    "edge AI",
+    "air-gap AI deployment",
   ],
   openGraph: {
-    title: "Carnot Research | Enterprise AI Solutions",
-    description: "Secure on-premise generative AI for government and enterprise",
+    title: "Carnot Research | On-Premise AI for Government & Enterprise",
+    description:
+      "Secure AI that runs 100% on your own servers — knowledge management, computer vision, sports analytics, and NLP. Built at IIT Delhi.",
     url: "https://carnotresearch.com",
     type: "website",
     images: [{ url: "https://carnotresearch.com/og-home.png", width: 1200, height: 630 }],
@@ -31,11 +37,28 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* 1. Who we are & first impression */}
       <HeroSection />
-      <CredibilityStrip />
+
+      {/* 2. icarKno™ — flagship product spotlight */}
       <IcarKnoShowcase />
-      <WhyCarnotSection />
+
+      {/* 3. Why edge AI matters — the problem icarKno solves */}
+      <ProblemSection />
+
+      {/* 4. More from Carnot — BharGati & SAATHI */}
+      <MoreProducts />
+
+      {/* 5. All capabilities across 6 domains */}
+      <SolutionsSection />
+
+      {/* 6. Company story — IIT Delhi origins */}
+      <AboutSection />
+
+      {/* 7. Clients + certifications */}
       <TrustSection />
+
+      {/* 8. Get in touch */}
       <CtaSection />
     </>
   )

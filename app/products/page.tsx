@@ -51,7 +51,7 @@ const products = [
     pageHref: "/products/bhargati",
     demoUrl: "https://bhargati.ai/",
     description:
-      "BharGati™ AI is an AI-driven movement and performance intelligence platform that uses computer vision to analyze human biomechanics from standard video — no wearables or specialized sensors required. Built for sports science, coaching, and rehabilitation.",
+      "BharGati™ AI is an AI-driven movement and performance intelligence platform that uses computer vision to analyze human biomechanics from standard video. No wearables or specialized sensors required. Built for sports science, coaching, and rehabilitation.",
     features: [
       "Vision-based movement capture from standard cameras",
       "Biomechanical metrics: joint angles, posture, gait, symmetry",
@@ -69,12 +69,12 @@ const products = [
     name: "SAATHI",
     tagline: "Delhi Public Transport AI Assistant",
     description:
-      "SAATHI is a hyper-personalized, multilingual AI agent and award-winner of the Transport Stack Open Innovation Challenge (JICA–BCG–FITT IIT Delhi). It serves as your Delhi Public Transport Assistant — helping commuters plan journeys, check metro & bus schedules, fares, and get emergency helpline numbers — all via voice or text in any language.",
+      "SAATHI is a hyper-personalized, multilingual AI agent and award-winner of the Transport Stack Open Innovation Challenge (JICA–BCG–FITT IIT Delhi). It serves as your Delhi Public Transport Assistant, helping commuters plan journeys, check metro and bus schedules, fares, and get emergency helpline numbers via voice or text in any language.",
     features: [
       "Journey planning via metro, bus & multi-modal routes",
       "Metro station info: accessibility, facilities & timings",
       "Bus & metro fares, cards, and schedule queries",
-      "Voice messages — ask by speaking, receive audio responses",
+      "Voice messages: ask by speaking, receive audio responses",
       "22+ Indian languages plus foreign language support",
       "Emergency helpline access and lost & found assistance",
     ],

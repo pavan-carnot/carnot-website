@@ -336,7 +336,12 @@ export default function BharGatiPage() {
             {/* Right */}
             <div className="relative flex justify-center">
               <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#22c55e]/12 via-[#10b981]/6 to-transparent blur-2xl" />
-              <BharGatiMockDashboard />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/clients/homepage_Bhargati.png"
+                alt="BharGati™ AI in action — athletic movement analysis"
+                className="relative w-full max-w-[560px] rounded-2xl object-cover shadow-xl"
+              />
             </div>
           </div>
         </div>

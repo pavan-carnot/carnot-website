@@ -47,8 +47,6 @@ const SCALE_D  = 0.04
 
 // ── Client data ────────────────────────────────────────────────────────────────
 const clientImages = [
-  { id: 1, name: "Enhance Communications",   src: `${B}/assets/clients/1.webp` },
-  { id: 2, name: "OPPO",                     src: `${B}/assets/clients/2.webp` },
   { id: 3, name: "NSG",                      src: `${B}/assets/clients/3.webp` },
   { id: 4, name: "IIT Delhi",                src: `${B}/assets/clients/4.webp` },
   { id: 5, name: "JICA",                     src: `${B}/assets/clients/5.png`  },

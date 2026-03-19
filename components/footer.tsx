@@ -60,7 +60,7 @@ export function Footer() {
               and Computer Vision systems for government and enterprise.
             </p>
             <address className="mt-4 not-italic text-sm text-muted-foreground space-y-1">
-              <p>2-B-4A, Research and Innovation Park</p>
+              <p>2-A-2B, Research and Innovation Park</p>
               <p>IIT Delhi, Hauz Khas</p>
               <p>New Delhi, 110016, India</p>
               <p className="pt-2">

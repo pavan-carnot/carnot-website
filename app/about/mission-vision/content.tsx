@@ -321,7 +321,7 @@ export function MissionVisionContent() {
                 <p>
                   Carnot Research was founded to connect advanced artificial intelligence
                   research with real-world use. In critical situations, intelligence must
-                  be secure, reliable, and immediately accessible — without relying on
+                  be secure, reliable, and immediately accessible without relying on
                   weak connections or outside infrastructure.
                 </p>
                 <p>
@@ -338,7 +338,7 @@ export function MissionVisionContent() {
             </FadeUp>
             {/* Right — image slideshow */}
             <FadeUp delay={160}>
-              <ImageSlideshow images={["/assets/clients/Opening_Image_1.jpeg", "/assets/clients/Opening_Image_2.jpg", "/assets/clients/Opening_Image_3.jpg"]} />
+              <ImageSlideshow images={["/assets/clients/Opening_Image_2.jpg", "/assets/clients/Opening_Image_3.jpg"]} />
             </FadeUp>
           </div>
         </div>
@@ -350,7 +350,7 @@ export function MissionVisionContent() {
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             {/* Left — image slideshow */}
             <FadeUp delay={160} className="lg:order-1 order-2">
-              <ImageSlideshow images={["/assets/clients/Mission_Pic_1.jpg", "/assets/clients/Mission_Pic_2.jpeg", "/assets/clients/Mission_Pic_3.jpeg"]} />
+              <ImageSlideshow images={["/assets/clients/Mission_Pic_2.jpeg", "/assets/clients/Mission_Pic_3.jpeg"]} />
             </FadeUp>
             {/* Right — text */}
             <FadeUp className="lg:order-2 order-1">
@@ -396,7 +396,7 @@ export function MissionVisionContent() {
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
                   Our vision is to create the essential infrastructure for the next
-                  generation of intelligent systems — systems that will be secure,
+                  generation of intelligent systems: systems that will be secure,
                   contextual, and built directly into mission environments.
                 </p>
                 <p>
@@ -440,7 +440,7 @@ export function MissionVisionContent() {
               <ResearchCard
                 eyebrow="Ongoing Research"
                 title="Multimodal AI & Reasoning Systems"
-                body="Our research focuses on improving multimodal AI, hybrid retrieval systems, knowledge graphs, and domain-specific reasoning. We are exploring better methods for contextual knowledge representation, multi-agent workflow coordination, and real-time decision-making in critical environments — covering secure edge inference, structured document understanding, and multi-input integration across text, voice, and sensors."
+                body="Our research focuses on improving multimodal AI, hybrid retrieval systems, knowledge graphs, and domain-specific reasoning. We are exploring better methods for contextual knowledge representation, multi-agent workflow coordination, and real-time decision-making in critical environments, covering secure edge inference, structured document understanding, and multi-input integration across text, voice, and sensors."
                 gradient="from-violet-500 via-primary/70 to-primary/20"
               />
             </FadeUp>
@@ -448,7 +448,7 @@ export function MissionVisionContent() {
               <ResearchCard
                 eyebrow="Prototyping & System Evolution"
                 title="Field-Tested Intelligence"
-                body="We continuously improve our systems through careful testing and validation in real-world scenarios. Recent developments involve adding visual input with built-in camera systems — enabling better scene understanding, document and voice processing, and improved situational awareness. Our hardware and system upgrades steadily expand our multimodal intelligence capabilities."
+                body="We continuously improve our systems through careful testing and validation in real-world scenarios. Recent developments involve adding visual input with built-in camera systems, enabling better scene understanding, document and voice processing, and improved situational awareness. Our hardware and system upgrades steadily expand our multimodal intelligence capabilities."
                 gradient="from-cyan-500 via-accent/70 to-accent/20"
               />
             </FadeUp>
@@ -456,7 +456,7 @@ export function MissionVisionContent() {
               <ResearchCard
                 eyebrow="Intellectual Property & Patents"
                 title="Defensible, Scalable Technology"
-                body="Innovation at Carnot Research relies on formal intellectual property development. We have several patent applications in progress, including improvements in multi-agent knowledge graph architectures and AI-driven semantic conflict detection systems. Our patent strategy ensures research leads to defensible, scalable technologies — strengthening long-term innovation and competitive differentiation."
+                body="Innovation at Carnot Research relies on formal intellectual property development. We have several patent applications in progress, including improvements in multi-agent knowledge graph architectures and AI-driven semantic conflict detection systems. Our patent strategy ensures research leads to defensible, scalable technologies that strengthen long-term innovation and competitive differentiation."
                 gradient="from-indigo-500 via-blue-500/70 to-blue-400/20"
               />
             </FadeUp>
