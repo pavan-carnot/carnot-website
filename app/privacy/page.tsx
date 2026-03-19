@@ -115,7 +115,7 @@ export default function PrivacyPolicy() {
               <p>
                 <strong>Carnot Research Pvt. Ltd.</strong>
               </p>
-              <p>2-B-4A, Research and Innovation Park</p>
+              <p>2-A-2B, Research and Innovation Park</p>
               <p>IIT Delhi, Hauz Khas</p>
               <p>New Delhi, 110016, India</p>
               <p>

@@ -100,7 +100,7 @@ export function generateLocalBusinessSchema() {
       "Production-grade AI solutions for government and enterprise in India",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "2-B-4A, Research and Innovation Park",
+      streetAddress: "2-A-2B, Research and Innovation Park",
       addressLocality: "New Delhi",
       addressRegion: "DL",
       postalCode: "110016",

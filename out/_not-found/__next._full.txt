@@ -12,7 +12,7 @@
 16:"$Sreact.suspense"
 18:I[97367,["/_next/static/chunks/1ffdcd21c3ca13b5.js","/_next/static/chunks/d2be314c3ece3fbe.js","/_next/static/chunks/e401bba55bcfe939.js","/_next/static/chunks/90058b1f964687a8.js"],"ViewportBoundary"]
 1a:I[97367,["/_next/static/chunks/1ffdcd21c3ca13b5.js","/_next/static/chunks/d2be314c3ece3fbe.js","/_next/static/chunks/e401bba55bcfe939.js","/_next/static/chunks/90058b1f964687a8.js"],"MetadataBoundary"]
-6:["$","p",null,{"children":"2-B-4A, Research and Innovation Park"}]
+6:["$","p",null,{"children":"2-A-2B, Research and Innovation Park"}]
 7:["$","p",null,{"children":"IIT Delhi, Hauz Khas"}]
 8:["$","p",null,{"children":"New Delhi, 110016, India"}]
 9:["$","p",null,{"className":"pt-2","children":["Email:"," ",["$","a",null,{"href":"mailto:hello@carnotresearch.com","className":"hover:text-foreground transition-colors","children":"hello@carnotresearch.com"}]]}]
