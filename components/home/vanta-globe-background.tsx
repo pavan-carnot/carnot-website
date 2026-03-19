@@ -13,6 +13,9 @@ export function VantaGlobeBackground() {
     const el = elRef.current
     if (!el) return
 
+    // Skip on mobile (< 640px) — hides via CSS too, but avoids wasting resources
+    if (window.innerWidth < 640) return
+
     let mounted = true
 
     const initVanta = async () => {
@@ -28,9 +31,9 @@ export function VantaGlobeBackground() {
         minWidth: 200,
         scale: 1,
         scaleMobile: 1,
-        backgroundColor: 0xf8fafc,   // slate-50 — clean light base
-        color: 0x2563eb,              // blue-600 — primary mesh lines
-        color2: 0x06b6d4,             // cyan-500 teal — arc highlights
+        backgroundColor: 0xf8fafc,
+        color: 0x2563eb,
+        color2: 0x06b6d4,
         size: 1.3,
       }) as VantaGlobeEffect
     }
@@ -47,7 +50,7 @@ export function VantaGlobeBackground() {
   return (
     <div
       ref={elRef}
-      className="absolute inset-0 h-full w-full min-h-[600px] overflow-hidden"
+      className="absolute inset-0 h-full w-full min-h-[600px] overflow-hidden hidden sm:block"
       style={{ backgroundColor: "#f8fafc" }}
       aria-hidden
     />

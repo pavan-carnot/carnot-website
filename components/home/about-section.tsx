@@ -7,15 +7,8 @@ import { ArrowRight } from "lucide-react"
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const images = [
-  { src: `${B}/assets/clients/Opening_Image_1.jpeg`, alt: "Carnot Research team at IIT Delhi" },
-  { src: `${B}/assets/clients/Opening_Image_2.jpg`,  alt: "Carnot Research lab work" },
-  { src: `${B}/assets/clients/Opening_Image_3.jpg`,  alt: "Carnot Research team" },
-]
-
-const milestones = [
-  { stat: "IIT Delhi", label: "Founded by active professors & scientists" },
-  { stat: "47+",       label: "Funded research & deployment projects" },
-  { stat: "₹70 Cr+",  label: "Research funded across AI, NLP & Vision" },
+  { src: `${B}/assets/clients/Opening_Image_2.jpg`, alt: "Carnot Research lab work" },
+  { src: `${B}/assets/clients/Opening_Image_3.jpg`, alt: "Carnot Research team" },
 ]
 
 const certs = ["CMMI Level 3", "ISO 27001:2022", "DPIIT Recognised", "MSME Certified"]
@@ -102,23 +95,13 @@ export function AboutSection() {
             <p className="mt-5 text-base leading-relaxed text-gray-600">
               Carnot Research was founded by IIT Delhi professors and scientists who saw a critical
               gap: India&apos;s government, defense, and enterprise organizations needed AI that
-              worked entirely inside their own walls — secure, offline, and fully under their control.
+              worked entirely inside their own walls: secure, offline, and fully under their control.
             </p>
             <p className="mt-4 text-base leading-relaxed text-gray-600">
-              We don&apos;t just advise — we build and ship. Our products are operational
+              We don&apos;t just advise. We build and ship. Our products are operational
               today: icarKno™ runs inside government networks, BharGati™ AI coaches
               elite athletes, and SAATHI guides Delhi commuters in 22+ languages.
             </p>
-
-            {/* Milestones */}
-            <div className="mt-8 grid grid-cols-3 gap-4 border-t border-gray-100 pt-6">
-              {milestones.map((m) => (
-                <div key={m.label}>
-                  <p className="text-xl font-bold text-gray-900">{m.stat}</p>
-                  <p className="mt-0.5 text-xs leading-snug text-gray-500">{m.label}</p>
-                </div>
-              ))}
-            </div>
 
             {/* Cert tags */}
             <div className="mt-5 flex flex-wrap gap-2">

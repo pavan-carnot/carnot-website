@@ -52,7 +52,7 @@ export function CtaSection() {
 
               <p className="mt-6 text-pretty text-lg leading-relaxed text-white/80">
                 Whether you need an on-premise knowledge AI, a custom computer vision system,
-                or a multilingual conversational agent — our team of IIT Delhi researchers
+                or a multilingual conversational agent, our team of IIT Delhi researchers
                 will scope, build, and deploy it with you.
               </p>
 
@@ -81,7 +81,7 @@ export function CtaSection() {
               </div>
 
               <p className="mt-8 text-xs text-white/50">
-                Trusted by NSG, IIT Delhi, OPPO, BCG, JICA and enterprise organizations across India
+                Trusted by NSG, IIT Delhi, BCG, JICA, MSME, FITT and enterprise organizations across India
               </p>
             </div>
           </div>

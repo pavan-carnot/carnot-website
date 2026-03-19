@@ -1,12 +1,11 @@
 import type { Metadata } from "next"
-import { HeroSection }       from "@/components/home/hero-section"
-import { CredibilityStrip }  from "@/components/home/credibility-strip"
-import { IcarKnoShowcase }   from "@/components/home/icarkno-showcase"
-import { SolutionsSection }  from "@/components/home/solutions-section"
-import { AboutSection }      from "@/components/home/about-section"
-import { WhyCarnotSection }  from "@/components/home/why-carnot-section"
-import { TrustSection }      from "@/components/home/trust-section"
-import { CtaSection }        from "@/components/home/cta-section"
+import { HeroSection }                    from "@/components/home/hero-section"
+import { IcarKnoShowcase, MoreProducts }  from "@/components/home/icarkno-showcase"
+import { ProblemSection }                 from "@/components/home/problem-section"
+import { SolutionsSection }               from "@/components/home/solutions-section"
+import { AboutSection }                   from "@/components/home/about-section"
+import { TrustSection }                   from "@/components/home/trust-section"
+import { CtaSection }                     from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
   title: "Carnot Research | On-Premise AI for Government, Defense & Enterprise",
@@ -19,8 +18,8 @@ export const metadata: Metadata = {
     "secure NLP platform",
     "computer vision India",
     "IIT Delhi AI company",
-    "icarKno knowledge AI",
-    "BharGati sports AI",
+    "icarKno™ knowledge AI",
+    "BharGati™ sports AI",
     "SAATHI transit AI",
     "local LLM deployment",
     "air-gap AI deployment",
@@ -38,28 +37,28 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* 1. Who we are & what we do — first impression */}
+      {/* 1. Who we are & first impression */}
       <HeroSection />
 
-      {/* 2. Numbers — establish credibility instantly */}
-      <CredibilityStrip />
-
-      {/* 3. Products — 3 flagship products + icarKno™ spotlight + GeM */}
+      {/* 2. icarKno™ — flagship product spotlight */}
       <IcarKnoShowcase />
 
-      {/* 4. Capabilities — show we're not just GenAI */}
+      {/* 3. Why edge AI matters — the problem icarKno solves */}
+      <ProblemSection />
+
+      {/* 4. More from Carnot — BharGati & SAATHI */}
+      <MoreProducts />
+
+      {/* 5. All capabilities across 6 domains */}
       <SolutionsSection />
 
-      {/* 5. Company story — IIT Delhi origins + team images */}
+      {/* 6. Company story — IIT Delhi origins */}
       <AboutSection />
 
-      {/* 6. Why us — 3 differentiators over generic cloud AI */}
-      <WhyCarnotSection />
-
-      {/* 7. Trust — clients + certifications */}
+      {/* 7. Clients + certifications */}
       <TrustSection />
 
-      {/* 8. CTA — convert */}
+      {/* 8. Get in touch */}
       <CtaSection />
     </>
   )

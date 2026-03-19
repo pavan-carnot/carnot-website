@@ -103,8 +103,6 @@ const clients = [
   "FITT IIT Delhi",
   "MSME",
   "Rashtriya Raksha University",
-  "Enhanced Communications",
-  "OPPO",
   "NSG",
   "IIT Delhi",
   "Boston Consulting Group",

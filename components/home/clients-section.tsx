@@ -20,8 +20,6 @@ function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; 
 }
 
 const clients = [
-  "Enhance Communications",
-  "OPPO",
   "NSG",
   "IIT Delhi",
   "JICA",
