@@ -226,7 +226,7 @@ const testimonials = [
     orgStyle: "bg-white/90 text-blue-600",
     nameStyle: "text-blue-900",
     gradientFrom: "from-blue-900/70",
-    imgPos: "object-[center_20%]",
+    imgPos: "object-[center_0%]",
     avatar: `${B}/assets/clients/clients%26partners/piyush%20prasad.png`,
   },
   {

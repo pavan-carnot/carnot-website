@@ -5,6 +5,8 @@ import Link from "next/link"
 import { Linkedin, Mail, ArrowRight, Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 // ─── Scroll-triggered fade-up ────────────────────────────────────────────────
 function FadeUp({
   children,
@@ -56,13 +58,10 @@ const founders = [
     name: "Prof. Brejesh Lall",
     role: "Co-Founder & Chief Technology Officer",
     affiliation: "Senior Professor · IIT Delhi",
-    initials: "BL",
-    headerFrom: "#0b2149",
-    headerVia: "#1a3a6e",
-    headerTo: "#1a57eb",
-    avatarFrom: "#3a7bd5",
-    avatarTo: "#0b2149",
+    photo: "brejesh lal.jpg",
+    imgPos: "object-top",
     credentials: ["PhD, IIT Delhi", "47+ Funded Projects", "₹70 Cr+ Research"],
+    credColor: "bg-blue-50 text-blue-700",
     bio: [
       "Senior Professor at IIT Delhi and a leading specialist in Signal Processing and Intelligent Systems. Completed PhD from IIT Delhi in Multirate Signal Processing with decades of experience spanning academia, advanced communications, and real-world technology deployment.",
       "Has guided 13 PhD scholars across 47 sponsored research and consultancy projects with total funding exceeding ₹70 crores. Core research areas include object tracking, depth mapping, multimodal signal processing, and next-generation communications.",
@@ -76,13 +75,10 @@ const founders = [
     name: "Col. (Dr.) Amit Oberoi",
     role: "Co-Founder & Chief Executive Officer",
     affiliation: "Former Senior Officer · Indian Army",
-    initials: "AO",
-    headerFrom: "#0d1b2a",
-    headerVia: "#1b2a3b",
-    headerTo: "#1e3a5f",
-    avatarFrom: "#2c5282",
-    avatarTo: "#0d1b2a",
+    photo: "Col. (Dr.) Amit Oberoi.jpg",
+    imgPos: "object-top",
     credentials: ["25+ Yrs Army Leadership", "ITU Study Group 12", "5G AI Research", "Cybersecurity Expert"],
+    credColor: "bg-slate-100 text-slate-700",
     bio: [
       "Over 25 years of distinguished leadership in the Indian Army, serving as Commanding Officer, Senior Director, Head of IT & Cyber Security, and Program Manager. Deep expertise in computer networks, cybersecurity, data analytics, and machine learning.",
       "Research focused on Natural Language Processing, knowledge representation, multimodal analytics, and AI-driven threat intelligence. Contributed to international AI standardisation through ITU Study Group 12, shaping AI and ML standards for 5G networks.",
@@ -96,48 +92,41 @@ const founders = [
 
 const coreTeam = [
   {
-    name: "Dr. Kanica Sachdev",
+    name: "Dr. Kanica Sachdeva",
     role: "Head R&D & Chief Operating Officer",
-    initials: "KS",
-    from: "#0d3b2e",
-    to: "#1a7a5e",
+    photo: "Dr. Kanica Sachdeva.jpg",
+    imgPos: "object-top",
     bio: "Deep-tech strategist driving AI, data, and cybersecurity innovation across government, defense, and large-scale digital transformation programs. Bridges research and execution to deliver high-impact, mission-ready systems.",
     tags: ["AI Strategy", "Cybersecurity", "Digital Transformation"],
+    accentBg: "bg-emerald-50",
+    accentText: "text-emerald-700",
     linkedin: "#",
     email: "#",
   },
   {
     name: "Pranav Kanire",
     role: "Product Manager",
+    photo: null,
+    imgPos: "object-top",
     initials: "PK",
-    from: "#2d1a4e",
-    to: "#6b46c1",
+    avatarGradient: "linear-gradient(135deg, #2d1a4e, #6b46c1)",
     bio: "Leads core architecture and system design powering advanced on-premise AI and data platforms. Ensures reliability, performance, and seamless deployment across mission-critical operational environments.",
     tags: ["Product Strategy", "AI Systems", "Architecture"],
+    accentBg: "bg-violet-50",
+    accentText: "text-violet-700",
     linkedin: "#",
     email: "#",
   },
 ]
 
-// ─── Components ───────────────────────────────────────────────────────────────
-function SocialBtn({
-  href,
-  label,
-  children,
-}: {
-  href: string
-  label: string
-  children: ReactNode
-}) {
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-all duration-200 hover:border-[#1a57eb] hover:text-[#1a57eb] hover:shadow-sm"
-    >
-      {children}
-    </a>
-  )
+const advisor = {
+  name: "Brig N. Hari",
+  role: "Strategic Advisor",
+  affiliation: "DIG Command · NSG",
+  photo: "Brig N. Hari, DIG Command, NSG .png",
+  imgPos: "object-top",
+  bio: "Former DIG Command at the National Security Guard (NSG), bringing deep expertise in high-stakes operational intelligence, counter-terrorism, and national security systems. Advises Carnot on defense AI applications and mission-critical deployments.",
+  tags: ["Defense Intelligence", "National Security", "AI Advisory"],
 }
 
 // ─── Main export ──────────────────────────────────────────────────────────────
@@ -157,14 +146,12 @@ export function TeamContent() {
                 Leadership Team
               </div>
             </FadeUp>
-
             <FadeUp delay={100}>
               <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-6xl">
                 The Minds Behind{" "}
                 <span className="text-primary">Carnot Research</span>
               </h1>
             </FadeUp>
-
             <FadeUp delay={200}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
                 Founded and led by professors, military scientists, and
@@ -173,19 +160,18 @@ export function TeamContent() {
               </p>
             </FadeUp>
           </div>
-
         </div>
       </section>
 
       {/* ── Founding Leadership ───────────────────────────────────────────── */}
-      <section className="bg-secondary/20 py-14 sm:py-20 lg:py-28">
+      <section className="bg-slate-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mb-14 text-center">
-              <p className="text-sm font-semibold uppercase tracking-wider text-accent">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
                 Founding Leadership
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
                 The founders shaping enterprise AI
               </h2>
             </div>
@@ -194,68 +180,42 @@ export function TeamContent() {
           <div className="grid gap-8 lg:grid-cols-2">
             {founders.map((founder, i) => (
               <FadeUp key={founder.name} delay={i * 150} className="h-full">
-                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  {/* ── Gradient header ── */}
-                  <div
-                    className="relative px-8 pt-8 pb-10"
-                    style={{
-                      background: `linear-gradient(135deg, ${founder.headerFrom}, ${founder.headerVia}, ${founder.headerTo})`,
-                    }}
-                  >
-                    {/* Dot-grid overlay */}
-                    <div
-                      className="absolute inset-0 opacity-[0.08]"
-                      style={{
-                        backgroundImage:
-                          "radial-gradient(circle at 1px 1px, rgba(255,255,255,1) 1px, transparent 0)",
-                        backgroundSize: "22px 22px",
-                      }}
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+                  {/* ── Full-bleed photo panel ── */}
+                  <div className="relative h-64 w-full overflow-hidden bg-gray-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${B}/assets/team/${encodeURIComponent(founder.photo)}`}
+                      alt={founder.name}
+                      className={`absolute inset-0 h-full w-full object-cover ${founder.imgPos} transition-transform duration-500 group-hover:scale-105`}
                     />
-
-                    <div className="relative flex gap-5">
-                      {/* Avatar */}
-                      <div
-                        className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-xl text-2xl font-bold text-white shadow-lg ring-2 ring-white/20"
-                        style={{
-                          background: `linear-gradient(135deg, ${founder.avatarFrom}, ${founder.avatarTo})`,
-                        }}
-                      >
-                        {founder.initials}
-                      </div>
-
-                      <div className="min-w-0 flex-1">
-                        <h3 className="text-lg font-bold leading-tight text-white">
-                          {founder.name}
-                        </h3>
-                        <p className="mt-0.5 text-sm font-medium text-white/80">
-                          {founder.role}
-                        </p>
-                        <p className="mt-0.5 text-xs text-white/55">
-                          {founder.affiliation}
-                        </p>
-                        {/* Credential chips */}
-                        <div className="mt-3 flex flex-wrap gap-1.5">
-                          {founder.credentials.map((c) => (
-                            <span
-                              key={c}
-                              className="inline-flex items-center rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-medium text-white/90 backdrop-blur-sm"
-                            >
-                              {c}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                    {/* Bottom gradient overlay */}
+                    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-900/75 to-transparent" />
+                    <div className="absolute bottom-0 inset-x-0 p-6">
+                      <h3 className="text-xl font-bold text-white leading-tight">{founder.name}</h3>
+                      <p className="mt-0.5 text-sm font-medium text-white/85">{founder.role}</p>
+                      <p className="mt-0.5 text-xs text-white/60">{founder.affiliation}</p>
                     </div>
                   </div>
 
                   {/* ── Body ── */}
-                  <div className="flex flex-1 flex-col px-8 py-7">
+                  <div className="flex flex-1 flex-col px-7 py-6">
+                    {/* Credential chips */}
+                    <div className="flex flex-wrap gap-1.5 mb-5">
+                      {founder.credentials.map((c) => (
+                        <span
+                          key={c}
+                          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${founder.credColor}`}
+                        >
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+
                     <div className="flex-1 space-y-3">
                       {founder.bio.map((para, idx) => (
-                        <p
-                          key={idx}
-                          className="text-sm leading-relaxed text-muted-foreground"
-                        >
+                        <p key={idx} className="text-sm leading-relaxed text-gray-600">
                           {para}
                         </p>
                       ))}
@@ -266,7 +226,7 @@ export function TeamContent() {
                       {founder.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-border bg-secondary/60 px-2.5 py-0.5 text-xs font-medium text-foreground"
+                          className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-xs font-medium text-gray-600"
                         >
                           {tag}
                         </span>
@@ -275,18 +235,20 @@ export function TeamContent() {
 
                     {/* Social */}
                     <div className="mt-5 flex gap-2">
-                      <SocialBtn
+                      <a
                         href={founder.linkedin}
-                        label={`${founder.name} on LinkedIn`}
+                        aria-label={`${founder.name} on LinkedIn`}
+                        className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 text-gray-400 transition-all hover:border-blue-400 hover:text-blue-600 hover:shadow-sm"
                       >
                         <Linkedin className="h-3.5 w-3.5" />
-                      </SocialBtn>
-                      <SocialBtn
+                      </a>
+                      <a
                         href={founder.email}
-                        label={`Email ${founder.name}`}
+                        aria-label={`Email ${founder.name}`}
+                        className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 text-gray-400 transition-all hover:border-blue-400 hover:text-blue-600 hover:shadow-sm"
                       >
                         <Mail className="h-3.5 w-3.5" />
-                      </SocialBtn>
+                      </a>
                     </div>
                   </div>
                 </article>
@@ -297,20 +259,20 @@ export function TeamContent() {
       </section>
 
       {/* ── Pull quote ────────────────────────────────────────────────────── */}
-      <section className="bg-background py-16 lg:py-20">
+      <section className="bg-white py-16 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <FadeUp>
-            <div className="relative rounded-2xl border border-border bg-secondary/30 px-8 py-10 text-center">
+            <div className="relative rounded-2xl border border-gray-100 bg-slate-50 px-8 py-10 text-center">
               <Quote className="mx-auto mb-4 h-8 w-8 text-primary/30" />
-              <blockquote className="text-xl font-medium italic leading-relaxed text-foreground sm:text-2xl">
+              <blockquote className="text-xl font-medium italic leading-relaxed text-gray-800 sm:text-2xl">
                 &ldquo;We are building AI not as a feature layer, but as
                 foundational infrastructure for institutions that demand
                 security, control, and long-term reliability.&rdquo;
               </blockquote>
-              <p className="mt-5 text-sm font-semibold text-foreground">
+              <p className="mt-5 text-sm font-semibold text-gray-900">
                 Prof. Brejesh Lall &amp; Col. (Dr.) Amit Oberoi
               </p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-gray-500">
                 Co-Founders, Carnot Research
               </p>
             </div>
@@ -319,82 +281,68 @@ export function TeamContent() {
       </section>
 
       {/* ── Core Team ─────────────────────────────────────────────────────── */}
-      <section className="bg-secondary/20 py-14 sm:py-20 lg:py-28">
+      <section className="bg-slate-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mb-14 text-center">
-              <p className="text-sm font-semibold uppercase tracking-wider text-accent">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
                 Core Team
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
                 Experts driving our mission
               </h2>
-              <p className="mt-4 text-base text-muted-foreground">
+              <p className="mt-4 text-base text-gray-500">
                 Researchers, strategists, and engineers building the future of
                 enterprise AI.
               </p>
             </div>
           </FadeUp>
 
-          <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-4xl gap-5 sm:grid-cols-2">
             {coreTeam.map((member, i) => (
               <FadeUp key={member.name} delay={i * 120}>
-                <article className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
-                  {/* Top accent stripe */}
-                  <div
-                    className="absolute inset-x-0 top-0 h-[2px]"
-                    style={{
-                      background: `linear-gradient(to right, ${member.from}, ${member.to}, transparent)`,
-                    }}
-                  />
+                <article className="group flex overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ minHeight: 200 }}>
 
-                  <div className="p-6">
-                    {/* Header row */}
-                    <div className="mb-4 flex items-center gap-4">
+                  {/* Left: photo or initials */}
+                  <div className="relative w-36 shrink-0 overflow-hidden bg-gray-100">
+                    {member.photo ? (
+                      <>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={`${B}/assets/team/${encodeURIComponent(member.photo)}`}
+                          alt={member.name}
+                          className={`absolute inset-0 h-full w-full object-cover ${member.imgPos} transition-transform duration-500 group-hover:scale-105`}
+                        />
+                      </>
+                    ) : (
                       <div
-                        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-lg font-bold text-white shadow-md transition-transform duration-300 group-hover:scale-105"
-                        style={{
-                          background: `linear-gradient(135deg, ${member.from}, ${member.to})`,
-                        }}
+                        className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white"
+                        style={{ background: member.avatarGradient }}
                       >
                         {member.initials}
                       </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="font-semibold text-foreground">
-                          {member.name}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          {member.role}
-                        </p>
-                      </div>
-                      <div className="flex shrink-0 gap-1.5">
-                        <a
-                          href={member.linkedin}
-                          aria-label={`${member.name} on LinkedIn`}
-                          className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-[#1a57eb] hover:text-[#1a57eb]"
-                        >
-                          <Linkedin className="h-3 w-3" />
-                        </a>
-                        <a
-                          href={member.email}
-                          aria-label={`Email ${member.name}`}
-                          className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-                        >
-                          <Mail className="h-3 w-3" />
-                        </a>
-                      </div>
+                    )}
+                    {/* Bottom fade */}
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-900/60 to-transparent" />
+                    <div className="absolute bottom-0 inset-x-0 p-3">
+                      <span className={`inline-block rounded px-1.5 py-0.5 text-[10px] font-bold bg-white/90 ${member.accentText}`}>
+                        {member.role.split(" ").slice(0, 2).join(" ")}
+                      </span>
                     </div>
+                  </div>
 
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {member.bio}
-                    </p>
-
-                    {/* Tags */}
+                  {/* Right: content */}
+                  <div className="flex flex-col justify-between p-5">
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{member.name}</h3>
+                      <p className="mt-0.5 text-xs text-gray-500">{member.role}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-gray-600">{member.bio}</p>
+                    </div>
                     <div className="mt-4 flex flex-wrap gap-1.5">
                       {member.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full border border-border bg-secondary/60 px-2.5 py-0.5 text-xs font-medium text-foreground"
+                          className={`rounded-full px-2 py-0.5 text-xs font-medium ${member.accentBg} ${member.accentText}`}
                         >
                           {tag}
                         </span>
@@ -405,6 +353,55 @@ export function TeamContent() {
               </FadeUp>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Strategic Advisor ─────────────────────────────────────────────── */}
+      <section className="bg-white py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeUp>
+            <div className="mb-10 text-center">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+                Strategic Advisor
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-gray-900">
+                Guiding mission-critical AI deployment
+              </h2>
+            </div>
+          </FadeUp>
+          <FadeUp delay={100}>
+            <div className="mx-auto max-w-2xl">
+              <article className="group flex overflow-hidden rounded-2xl border border-gray-100 bg-slate-50 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ minHeight: 200 }}>
+                <div className="relative w-44 shrink-0 overflow-hidden bg-gray-200">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${B}/assets/team/${encodeURIComponent(advisor.photo)}`}
+                    alt={advisor.name}
+                    className={`absolute inset-0 h-full w-full object-cover ${advisor.imgPos} transition-transform duration-500 group-hover:scale-105`}
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-gray-900/65 to-transparent" />
+                  <div className="absolute bottom-0 inset-x-0 p-3">
+                    <p className="text-xs font-semibold text-white leading-tight">{advisor.name}</p>
+                    <p className="text-[10px] text-white/70">{advisor.affiliation}</p>
+                  </div>
+                </div>
+                <div className="flex flex-col justify-between p-6">
+                  <div>
+                    <h3 className="font-semibold text-gray-900">{advisor.name}</h3>
+                    <p className="mt-0.5 text-xs text-gray-500">{advisor.role} &middot; {advisor.affiliation}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-600">{advisor.bio}</p>
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {advisor.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
