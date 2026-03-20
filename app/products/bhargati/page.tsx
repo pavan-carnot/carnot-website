@@ -281,6 +281,8 @@ function BharGatiMockDashboard() {
   )
 }
 
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 export default function BharGatiPage() {
   return (
     <>
@@ -338,8 +340,8 @@ export default function BharGatiPage() {
               <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#22c55e]/12 via-[#10b981]/6 to-transparent blur-2xl" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/clients/homepage_Bhargati.png"
-                alt="BharGati™ AI in action — athletic movement analysis"
+                src={`${B}/assets/clients/homepage_Bhargati.png`}
+                alt="BharGati™ AI in action - athletic movement analysis"
                 className="relative w-full max-w-[560px] rounded-2xl object-cover shadow-xl"
               />
             </div>
