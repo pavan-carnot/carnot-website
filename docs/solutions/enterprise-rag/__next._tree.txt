@@ -1,5 +1,5 @@
 :HL["/carnot-website/_next/static/chunks/665dc3aa4aa2d85c.css","style"]
-:HL["/carnot-website/_next/static/chunks/c9950d5357b0e769.css","style"]
+:HL["/carnot-website/_next/static/chunks/fbd66a5a97490572.css","style"]
 :HL["/carnot-website/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/carnot-website/assets/clients/mainLogo-removebg.png","image"]
-0:{"buildId":"2Ur3AyAg-fCEynboWMBmO","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"solutions","paramType":null,"paramKey":"solutions","hasRuntimePrefetch":false,"slots":{"children":{"name":"enterprise-rag","paramType":null,"paramKey":"enterprise-rag","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"V65k3LcqNKb_vYfcq_8LA","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"solutions","paramType":null,"paramKey":"solutions","hasRuntimePrefetch":false,"slots":{"children":{"name":"enterprise-rag","paramType":null,"paramKey":"enterprise-rag","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

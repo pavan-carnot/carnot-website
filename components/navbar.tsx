@@ -59,7 +59,6 @@ const mobileNav = [
       { name: "Resource", href: "https://cr-vision.carnotresearch.com/", sub: "Vision & intelligence tools", external: true },
       { name: "Playground", href: "https://playground.carnotresearch.com/#/", sub: "Explore Carnot AI live", external: true },
       { name: "Contact", href: "/contact", sub: "Get in touch with us" },
-      { name: "Overview", href: "/company", sub: "Who we are" },
     ],
   },
 ]
@@ -235,8 +234,8 @@ export function Navbar() {
                   Company
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[560px]">
-                    <div className="grid grid-cols-3 gap-6 px-5 py-5">
+                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[380px]">
+                    <div className="grid grid-cols-2 gap-6 px-5 py-5">
                       <div>
                         <p className={dropSection}>Learn</p>
                         <ul className="space-y-0.5">
@@ -250,12 +249,6 @@ export function Navbar() {
                         <p className={dropSection}>Connect</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/contact" className={dropLink}><span className={dropTitle}>Contact</span><span className={dropSub}>Get in touch with us</span></Link></NavigationMenuLink></li>
-                        </ul>
-                      </div>
-                      <div>
-                        <p className={dropSection}>Company</p>
-                        <ul className="space-y-0.5">
-                          <li><NavigationMenuLink asChild><Link href="/company" className={dropLink}><span className={dropTitle}>Overview</span><span className={dropSub}>Who we are</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                     </div>

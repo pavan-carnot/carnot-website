@@ -223,6 +223,7 @@ const testimonials = [
     org: "IHFC",
     accent: "border-blue-200 bg-blue-50/40",
     nameColor: "text-blue-700",
+    avatar: `${B}/assets/clients/clients%26partners/piyush%20prasad.png`,
   },
   {
     quote: "SAATHI impressed us with its seamless multilingual travel assistance and user-centric design, showcasing strong potential for Delhi's public transport ecosystem.",
@@ -231,6 +232,7 @@ const testimonials = [
     org: "BCG",
     accent: "border-amber-200 bg-amber-50/40",
     nameColor: "text-amber-700",
+    avatar: `${B}/assets/clients/clients%26partners/Rhea%20Kapoor%2C%20Project%20Leader%2C%20BCG%20.png`,
   },
   {
     quote: "Carnot's AI platform brings C-DOT a secure, on-premise intelligent assistant that strengthens nationwide disaster early warning, alerts, and operational workflows.",
@@ -239,6 +241,7 @@ const testimonials = [
     org: "C-DOT",
     accent: "border-emerald-200 bg-emerald-50/40",
     nameColor: "text-emerald-700",
+    avatar: `${B}/assets/clients/clients%26partners/Dr%20Pankaj%20Kumar%20Dalela%2C%20Director%2C%20CDOT%20.png`,
   },
   {
     quote: "The AI system developed by Carnot significantly enhanced our ability to analyse IED intelligence with speed, accuracy, and complete on-premise security.",
@@ -247,6 +250,7 @@ const testimonials = [
     org: "NSG",
     accent: "border-violet-200 bg-violet-50/40",
     nameColor: "text-violet-700",
+    avatar: `${B}/assets/clients/clients%26partners/Brig%20N.%20Hari%2C%20DIG%20Command%2C%20NSG%20.png`,
   },
 ]
 
@@ -433,9 +437,17 @@ export function ClientsPartnersContent() {
                   <p className="flex-1 text-base leading-relaxed text-gray-700 italic">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="border-t border-gray-200/60 pt-4">
-                    <p className={`text-sm font-semibold ${t.nameColor}`}>{t.name}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{t.role} &middot; {t.org}</p>
+                  <div className="border-t border-gray-200/60 pt-4 flex items-center gap-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      className="h-10 w-10 rounded-full object-cover shrink-0 border border-white shadow-sm"
+                    />
+                    <div>
+                      <p className={`text-sm font-semibold ${t.nameColor}`}>{t.name}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{t.role} &middot; {t.org}</p>
+                    </div>
                   </div>
                 </div>
               </FadeUp>
