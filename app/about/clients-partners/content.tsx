@@ -453,40 +453,41 @@ export function ClientsPartnersContent() {
           <div className="grid gap-6 sm:grid-cols-2">
             {testimonials.map((t, i) => (
               <FadeUp key={t.name} delay={i * 80}>
-                <div className={`relative h-full rounded-2xl border ${t.border} ${t.cardBg} flex flex-col overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}>
+                <div className={`relative h-full rounded-2xl border ${t.border} ${t.cardBg} overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}>
                   {/* Colored top bar */}
-                  <div className={`h-1 w-full bg-gradient-to-r ${t.topBar}`} />
+                  <div className={`h-1.5 w-full bg-gradient-to-r ${t.topBar}`} />
 
-                  <div className="flex flex-col flex-1 p-8">
-                    {/* Decorative quote mark */}
-                    <span
-                      className="font-serif text-6xl leading-none select-none mb-3"
-                      style={{ color: t.quoteColor, opacity: 0.25 }}
-                      aria-hidden
-                    >
-                      &ldquo;
-                    </span>
-
-                    {/* Quote */}
-                    <p className="flex-1 text-base leading-relaxed text-gray-700">
-                      {t.quote}
-                    </p>
-
-                    {/* Person row */}
-                    <div className="mt-8 flex items-center gap-4 border-t border-gray-100 pt-6">
+                  <div className="flex gap-5 p-6 sm:p-7">
+                    {/* Left: person portrait */}
+                    <div className="flex shrink-0 flex-col items-center gap-3 w-28">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={t.avatar}
                         alt={t.name}
-                        className={`h-16 w-16 rounded-full object-cover shrink-0 shadow-md ring-4 ring-white outline outline-2 ${t.avatarRing}`}
+                        className="h-24 w-24 rounded-full object-cover object-top shadow-md ring-4 ring-white"
+                        style={{ outline: `2px solid`, outlineColor: t.quoteColor + "33" }}
                       />
-                      <div>
-                        <p className={`font-semibold text-base ${t.nameColor}`}>{t.name}</p>
-                        <p className="text-sm text-gray-500 mt-0.5">{t.role}</p>
+                      <div className="text-center">
+                        <p className="text-sm font-semibold text-gray-900 leading-tight">{t.name}</p>
+                        <p className="mt-0.5 text-xs text-gray-500 leading-tight">{t.role}</p>
                         <span className={`mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${t.orgStyle}`}>
                           {t.org}
                         </span>
                       </div>
+                    </div>
+
+                    {/* Right: quote */}
+                    <div className="flex flex-col justify-center min-w-0">
+                      <span
+                        className="font-serif text-5xl leading-none select-none"
+                        style={{ color: t.quoteColor, opacity: 0.2 }}
+                        aria-hidden
+                      >
+                        &ldquo;
+                      </span>
+                      <p className="mt-1 text-sm leading-relaxed text-gray-700">
+                        {t.quote}
+                      </p>
                     </div>
                   </div>
                 </div>
