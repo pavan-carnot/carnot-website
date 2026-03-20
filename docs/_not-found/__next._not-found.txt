@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[39756,["/carnot-website/_next/static/chunks/d1f02e8c59fdf7e8.js","/carnot-website/_next/static/chunks/b901560ab9556031.js","/carnot-website/_next/static/chunks/d2be314c3ece3fbe.js","/carnot-website/_next/static/chunks/da958045809323b5.js"],"default"]
 3:I[37457,["/carnot-website/_next/static/chunks/d1f02e8c59fdf7e8.js","/carnot-website/_next/static/chunks/b901560ab9556031.js","/carnot-website/_next/static/chunks/d2be314c3ece3fbe.js","/carnot-website/_next/static/chunks/da958045809323b5.js"],"default"]
-0:{"buildId":"Ep3UzwkDV9kPeu2J7pStN","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"2Ur3AyAg-fCEynboWMBmO","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
