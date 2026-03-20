@@ -44,22 +44,11 @@ const icarKnoFeatures = [
 // ── icarKno spotlight ─────────────────────────────────────────────────────────
 export function IcarKnoShowcase() {
   return (
-    <section className="relative overflow-hidden bg-background py-20 lg:py-28">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.055) 1px, transparent 0)",
-          backgroundSize: "32px 32px",
-        }}
-      />
-      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-blue-500/5 blur-3xl"
-        style={{ animation: "float 12s ease-in-out infinite" }} />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-cyan-500/4 blur-3xl"
-        style={{ animation: "float 14s ease-in-out infinite 3s" }} />
+    <section className="relative overflow-hidden bg-slate-50 py-14 lg:py-20">
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
-        <FadeUp className="mb-12 text-center">
+        <FadeUp className="mb-8 text-center">
           <h2 className="inline-flex items-center gap-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               <Sparkles className="h-7 w-7 text-blue-600" />
               Meet icarKno™
@@ -71,68 +60,70 @@ export function IcarKnoShowcase() {
         </FadeUp>
 
         <FadeUp delay={80}>
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-            <div className="grid lg:grid-cols-[1fr_400px] lg:min-h-[500px]">
+          <div className="overflow-hidden rounded-2xl bg-white" style={{ boxShadow: "0 2px 24px rgba(0,0,0,0.07)" }}>
+            <div className="grid lg:grid-cols-[1fr_380px]">
 
-              {/* Left: content */}
-              <div className="flex flex-col justify-center p-8 lg:p-12">
-                {/* Tag row */}
-                <div className="mb-5 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                    On-Premise
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-md bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600">
-                    Knowledge AI
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
-                    Zero Cloud
-                  </span>
-                </div>
+              {/* ── Left: content ── */}
+              <div className="flex flex-col justify-center px-8 py-8 lg:px-10 lg:py-10">
 
-                <h3 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+                {/* Eyebrow */}
+                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                  Featured Product
+                </p>
+
+                {/* Heading */}
+                <h3 className="text-4xl font-extrabold tracking-tight text-gray-950 sm:text-5xl">
                   icarKno™
                 </h3>
-                <p className="mt-2 text-base font-semibold text-gray-500">
-                  Your institutional knowledge: searchable, citable, secure
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-gray-500">
-                  Deploy a conversational AI that knows everything in your organization — policies,
-                  reports, manuals, scanned documents. Ask in plain language, get cited answers.
-                  Runs 100% on your own servers. No internet. No data leaves your environment.
+
+                {/* Tagline */}
+                <p className="mt-2 text-base font-medium text-gray-400">
+                  Your institutional knowledge — searchable, citable, secure.
                 </p>
 
-                {/* Feature chips — 2-col grid, Notion style */}
-                <div className="mt-6 grid grid-cols-2 gap-2.5">
+                {/* Description */}
+                <p className="mt-3 text-sm leading-relaxed text-gray-500">
+                  Deploy a conversational AI that knows everything in your organization.
+                  Policies, reports, manuals, scanned documents. Ask in plain language,
+                  get answers with exact source citations. Runs 100% on your own servers —
+                  no internet required, no data leaves your environment.
+                </p>
+
+                {/* Feature list — Notion-clean: icon + text only, no chip backgrounds */}
+                <ul className="mt-5 space-y-2.5">
                   {icarKnoFeatures.map((f) => (
-                    <div key={f.text} className="flex items-center gap-2.5 rounded-xl border border-gray-100 bg-gray-50 px-3 py-2.5">
+                    <li key={f.text} className="flex items-center gap-3">
                       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg" style={{ background: f.bg }}>
                         <f.icon className="h-3.5 w-3.5" style={{ color: f.color }} />
                       </span>
-                      <span className="text-xs font-medium leading-tight text-gray-700">{f.text}</span>
-                    </div>
+                      <span className="text-sm text-gray-700">{f.text}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
-                <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Button size="default" asChild className="bg-gray-900 text-white hover:bg-gray-700">
+                {/* CTAs */}
+                <div className="mt-7 flex flex-wrap items-center gap-3">
+                  <Button size="default" asChild className="bg-blue-600 text-white hover:bg-blue-700">
                     <Link href="/products/icarkno">
                       Explore icarKno™ <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Link href="/products" className="inline-flex items-center gap-1 text-sm font-medium text-gray-400 hover:text-gray-700">
+                  <Link href="/products"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-gray-400 hover:text-gray-900 transition-colors">
                     View all products <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>
 
-              {/* Right: image panel — full height */}
-              <div className="relative hidden lg:block border-l border-gray-100">
-                <IcarKnoSlideshow className="absolute inset-0 h-full w-full" interval={3500} />
+              {/* ── Right: image panel ── */}
+              <div className="relative hidden lg:block bg-gray-50">
+                {/* Hairline divider */}
+                <div className="absolute inset-y-6 left-0 w-px bg-gray-100" />
+                <IcarKnoSlideshow className="absolute inset-0 h-full w-full rounded-r-2xl" interval={3500} />
               </div>
 
               {/* Mobile image */}
-              <div className="relative block h-64 lg:hidden border-t border-gray-100">
+              <div className="relative block h-60 bg-gray-50 lg:hidden">
                 <IcarKnoSlideshow className="absolute inset-0 h-full w-full" interval={3500} />
               </div>
 
