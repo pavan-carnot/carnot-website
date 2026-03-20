@@ -4,9 +4,10 @@ import Link from "next/link"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import {
   ArrowRight, ArrowUpRight, Shield,
-  Layers, FileText, MessageSquare, Trophy,
+  Layers, FileText, MessageSquare, Trophy, Sparkles,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { IcarKnoSlideshow } from "@/components/icarkno-slideshow"
 
 function FadeUp({
   children, delay = 0, className = "",
@@ -34,10 +35,10 @@ function FadeUp({
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const icarKnoFeatures = [
-  { icon: Layers,        text: "Multimodal ingestion" },
-  { icon: FileText,      text: "RAG with verifiable source citations" },
-  { icon: Shield,        text: "Fully on-premise, zero cloud dependency" },
-  { icon: MessageSquare, text: "Agentic workflows & conversational AI" },
+  { icon: Layers,        text: "Multimodal ingestion",                    bg: "#fef3c7", color: "#d97706" }, // amber
+  { icon: FileText,      text: "RAG with verifiable source citations",    bg: "#ede9fe", color: "#7c3aed" }, // violet
+  { icon: Shield,        text: "Fully on-premise, zero cloud dependency", bg: "#dcfce7", color: "#16a34a" }, // green
+  { icon: MessageSquare, text: "Agentic workflows & conversational AI",   bg: "#fee2e2", color: "#dc2626" }, // red
 ]
 
 // ── icarKno spotlight ─────────────────────────────────────────────────────────
@@ -59,7 +60,10 @@ export function IcarKnoShowcase() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
         <FadeUp className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Meet icarKno™</h2>
+          <h2 className="inline-flex items-center gap-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <Sparkles className="h-7 w-7 text-blue-600" />
+              Meet icarKno™
+            </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             icarKno™ turns your institutional documents into a secure, conversational AI running
             entirely on-premise, with no data leaving your environment.
@@ -67,56 +71,69 @@ export function IcarKnoShowcase() {
         </FadeUp>
 
         <FadeUp delay={80}>
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
-            <div className="h-[3px] w-full" style={{ background: "linear-gradient(90deg, #0891b2, #06b6d4, #22d3ee)" }} />
-            <div className="grid gap-10 p-8 lg:grid-cols-2 lg:items-center lg:p-12">
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <div className="grid lg:grid-cols-[1fr_400px] lg:min-h-[500px]">
 
-              <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-500" />
-                  Featured · On-Premise Knowledge AI
+              {/* Left: content */}
+              <div className="flex flex-col justify-center p-8 lg:p-12">
+                {/* Tag row */}
+                <div className="mb-5 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    On-Premise
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600">
+                    Knowledge AI
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600">
+                    Zero Cloud
+                  </span>
                 </div>
-                <h3 className="text-4xl font-extrabold tracking-tight sm:text-5xl" style={{ color: "#0891b2" }}>
+
+                <h3 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
                   icarKno™
                 </h3>
-                <p className="mt-2 text-lg font-semibold text-gray-700">
+                <p className="mt-2 text-base font-semibold text-gray-500">
                   Your institutional knowledge: searchable, citable, secure
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Deploy a conversational AI that knows everything in your organization: policies,
-                  reports, manuals, training videos, scanned documents. Ask in plain language,
-                  get answers with exact source citations. Runs 100% on your own servers.
-                  No internet required. No data ever leaves your environment.
+                <p className="mt-4 text-sm leading-relaxed text-gray-500">
+                  Deploy a conversational AI that knows everything in your organization — policies,
+                  reports, manuals, scanned documents. Ask in plain language, get cited answers.
+                  Runs 100% on your own servers. No internet. No data leaves your environment.
                 </p>
-                <ul className="mt-6 space-y-3">
+
+                {/* Feature chips — 2-col grid, Notion style */}
+                <div className="mt-6 grid grid-cols-2 gap-2.5">
                   {icarKnoFeatures.map((f) => (
-                    <li key={f.text} className="flex items-center gap-3 text-sm text-foreground">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-100 bg-cyan-50">
-                        <f.icon className="h-3.5 w-3.5 text-[#0891b2]" />
+                    <div key={f.text} className="flex items-center gap-2.5 rounded-xl border border-gray-100 bg-gray-50 px-3 py-2.5">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg" style={{ background: f.bg }}>
+                        <f.icon className="h-3.5 w-3.5" style={{ color: f.color }} />
                       </span>
-                      {f.text}
-                    </li>
+                      <span className="text-xs font-medium leading-tight text-gray-700">{f.text}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
+
                 <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Button size="default" asChild className="bg-[#0891b2] text-white hover:bg-[#0891b2]/90">
+                  <Button size="default" asChild className="bg-gray-900 text-white hover:bg-gray-700">
                     <Link href="/products/icarkno">
                       Explore icarKno™ <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Link href="/products" className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground">
+                  <Link href="/products" className="inline-flex items-center gap-1 text-sm font-medium text-gray-400 hover:text-gray-700">
                     View all products <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>
 
-              <div className="relative flex justify-center">
-                <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/8 via-blue-500/4 to-transparent blur-2xl" />
-                <video
-                  src={`${B}/assets/clients/Final_video.mp4`}
-                  autoPlay muted loop playsInline
-                  className="relative block h-auto max-h-[min(460px,52vh)] w-auto max-w-full rounded-xl shadow-lg"
-                />
+              {/* Right: image panel — full height */}
+              <div className="relative hidden lg:block border-l border-gray-100">
+                <IcarKnoSlideshow className="absolute inset-0 h-full w-full" interval={3500} />
+              </div>
+
+              {/* Mobile image */}
+              <div className="relative block h-64 lg:hidden border-t border-gray-100">
+                <IcarKnoSlideshow className="absolute inset-0 h-full w-full" interval={3500} />
               </div>
 
             </div>
