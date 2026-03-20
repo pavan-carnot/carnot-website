@@ -524,35 +524,6 @@ export default function SolutionsPage() {
               </AccordionItem>
             ))}
           </Accordion>
-          <div className="mt-12 flex justify-center">
-            <Button size="lg" asChild>
-              <Link href="/contact">
-                Talk to our team
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-background py-14 sm:py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Ready to move from pilots to production?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
-            Tell us about your data, constraints, and outcomes. We’ll propose the
-            right architecture, deployment model, and implementation plan.
-          </p>
-          <div className="mt-8">
-            <Button size="lg" asChild>
-              <Link href="/contact">
-                Talk to Our Team
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
     </>

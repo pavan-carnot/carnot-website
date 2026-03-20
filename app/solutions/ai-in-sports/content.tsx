@@ -336,9 +336,8 @@ export function AiInSportsContent() {
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <FadeUp>
             <div className="mb-12 text-center">
-              <p className="text-sm font-semibold uppercase tracking-wider text-accent">FAQ</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                Common questions
+              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                FAQ
               </h2>
             </div>
           </FadeUp>
@@ -347,34 +346,6 @@ export function AiInSportsContent() {
               {faqs.map((faq) => (
                 <FAQItem key={faq.q} q={faq.q} a={faq.a} />
               ))}
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-secondary/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeUp>
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                Ready to elevate athletic performance?
-              </h2>
-              <p className="mx-auto mt-4 max-w-lg text-pretty text-base leading-relaxed text-muted-foreground">
-                Talk to our team about your sport, data environment, and performance goals.
-                We will design the right AI system for your athletes and coaches.
-              </p>
-              <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <Button size="lg" asChild>
-                  <Link href="/contact">
-                    Talk to Our Team
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link href="/solutions">Explore All Solutions</Link>
-                </Button>
-              </div>
             </div>
           </FadeUp>
         </div>

@@ -4,9 +4,10 @@ import Link from "next/link"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import {
   ArrowRight, ArrowUpRight, Shield,
-  Layers, FileText, MessageSquare, Trophy,
+  Layers, FileText, MessageSquare, Trophy, Sparkles,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { IcarKnoSlideshow } from "@/components/icarkno-slideshow"
 
 function FadeUp({
   children, delay = 0, className = "",
@@ -34,32 +35,24 @@ function FadeUp({
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const icarKnoFeatures = [
-  { icon: Layers,        text: "Multimodal ingestion" },
-  { icon: FileText,      text: "RAG with verifiable source citations" },
-  { icon: Shield,        text: "Fully on-premise, zero cloud dependency" },
-  { icon: MessageSquare, text: "Agentic workflows & conversational AI" },
+  { icon: Layers,        text: "Multimodal ingestion",                    bg: "#fef3c7", color: "#d97706" }, // amber
+  { icon: FileText,      text: "RAG with verifiable source citations",    bg: "#ede9fe", color: "#7c3aed" }, // violet
+  { icon: Shield,        text: "Fully on-premise, zero cloud dependency", bg: "#dcfce7", color: "#16a34a" }, // green
+  { icon: MessageSquare, text: "Agentic workflows & conversational AI",   bg: "#fee2e2", color: "#dc2626" }, // red
 ]
 
 // ── icarKno spotlight ─────────────────────────────────────────────────────────
 export function IcarKnoShowcase() {
   return (
-    <section className="relative overflow-hidden bg-background py-20 lg:py-28">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.055) 1px, transparent 0)",
-          backgroundSize: "32px 32px",
-        }}
-      />
-      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-blue-500/5 blur-3xl"
-        style={{ animation: "float 12s ease-in-out infinite" }} />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-cyan-500/4 blur-3xl"
-        style={{ animation: "float 14s ease-in-out infinite 3s" }} />
+    <section className="relative overflow-hidden bg-slate-50 py-14 lg:py-20">
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
-        <FadeUp className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Meet icarKno™</h2>
+        <FadeUp className="mb-8 text-center">
+          <h2 className="inline-flex items-center gap-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <Sparkles className="h-7 w-7 text-blue-600" />
+              Meet icarKno™
+            </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             icarKno™ turns your institutional documents into a secure, conversational AI running
             entirely on-premise, with no data leaving your environment.
@@ -67,56 +60,71 @@ export function IcarKnoShowcase() {
         </FadeUp>
 
         <FadeUp delay={80}>
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
-            <div className="h-[3px] w-full" style={{ background: "linear-gradient(90deg, #0891b2, #06b6d4, #22d3ee)" }} />
-            <div className="grid gap-10 p-8 lg:grid-cols-2 lg:items-center lg:p-12">
+          <div className="overflow-hidden rounded-2xl bg-white" style={{ boxShadow: "0 2px 24px rgba(0,0,0,0.07)" }}>
+            <div className="grid lg:grid-cols-[1fr_380px]">
 
-              <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-500" />
-                  Featured · On-Premise Knowledge AI
-                </div>
-                <h3 className="text-4xl font-extrabold tracking-tight sm:text-5xl" style={{ color: "#0891b2" }}>
+              {/* ── Left: content ── */}
+              <div className="flex flex-col justify-center px-8 py-8 lg:px-10 lg:py-10">
+
+                {/* Eyebrow */}
+                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                  Featured Product
+                </p>
+
+                {/* Heading */}
+                <h3 className="text-4xl font-extrabold tracking-tight text-gray-950 sm:text-5xl">
                   icarKno™
                 </h3>
-                <p className="mt-2 text-lg font-semibold text-gray-700">
-                  Your institutional knowledge: searchable, citable, secure
+
+                {/* Tagline */}
+                <p className="mt-2 text-base font-medium text-gray-400">
+                  Your institutional knowledge — searchable, citable, secure.
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Deploy a conversational AI that knows everything in your organization: policies,
-                  reports, manuals, training videos, scanned documents. Ask in plain language,
-                  get answers with exact source citations. Runs 100% on your own servers.
-                  No internet required. No data ever leaves your environment.
+
+                {/* Description */}
+                <p className="mt-3 text-sm leading-relaxed text-gray-500">
+                  Deploy a conversational AI that knows everything in your organization.
+                  Policies, reports, manuals, scanned documents. Ask in plain language,
+                  get answers with exact source citations. Runs 100% on your own servers —
+                  no internet required, no data leaves your environment.
                 </p>
-                <ul className="mt-6 space-y-3">
+
+                {/* Feature list — Notion-clean: icon + text only, no chip backgrounds */}
+                <ul className="mt-5 space-y-2.5">
                   {icarKnoFeatures.map((f) => (
-                    <li key={f.text} className="flex items-center gap-3 text-sm text-foreground">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-100 bg-cyan-50">
-                        <f.icon className="h-3.5 w-3.5 text-[#0891b2]" />
+                    <li key={f.text} className="flex items-center gap-3">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg" style={{ background: f.bg }}>
+                        <f.icon className="h-3.5 w-3.5" style={{ color: f.color }} />
                       </span>
-                      {f.text}
+                      <span className="text-sm text-gray-700">{f.text}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Button size="default" asChild className="bg-[#0891b2] text-white hover:bg-[#0891b2]/90">
+
+                {/* CTAs */}
+                <div className="mt-7 flex flex-wrap items-center gap-3">
+                  <Button size="default" asChild className="bg-blue-600 text-white hover:bg-blue-700">
                     <Link href="/products/icarkno">
                       Explore icarKno™ <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Link href="/products" className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground">
+                  <Link href="/products"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-gray-400 hover:text-gray-900 transition-colors">
                     View all products <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>
 
-              <div className="relative flex justify-center">
-                <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/8 via-blue-500/4 to-transparent blur-2xl" />
-                <video
-                  src={`${B}/assets/clients/Final_video.mp4`}
-                  autoPlay muted loop playsInline
-                  className="relative block h-auto max-h-[min(460px,52vh)] w-auto max-w-full rounded-xl shadow-lg"
-                />
+              {/* ── Right: image panel ── */}
+              <div className="relative hidden lg:block bg-gray-50">
+                {/* Hairline divider */}
+                <div className="absolute inset-y-6 left-0 w-px bg-gray-100" />
+                <IcarKnoSlideshow className="absolute inset-0 h-full w-full rounded-r-2xl" interval={3500} />
+              </div>
+
+              {/* Mobile image */}
+              <div className="relative block h-60 bg-gray-50 lg:hidden">
+                <IcarKnoSlideshow className="absolute inset-0 h-full w-full" interval={3500} />
               </div>
 
             </div>

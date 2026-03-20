@@ -108,7 +108,7 @@ const coreTeam = [
 // Photo fills the left panel completely via absolute positioning.
 function PersonCard({ person }: { person: typeof founders[0] }) {
   return (
-    <article className="group relative flex h-52 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-gray-200">
+    <article className="group relative flex min-h-[13rem] overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-gray-200">
       {/* Notion-style colored top accent stripe */}
       <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${person.accentFrom} ${person.accentTo}`} />
 
@@ -147,8 +147,7 @@ function PersonCard({ person }: { person: typeof founders[0] }) {
           )}
         </div>
 
-        {/* Bio — clamp to 2 lines so height never expands */}
-        <p className="text-[11px] leading-relaxed text-gray-400 line-clamp-2">{person.bio}</p>
+        <p className="text-[11px] leading-relaxed text-gray-400">{person.bio}</p>
       </div>
     </article>
   )
@@ -178,7 +177,7 @@ export function TeamContent() {
             </FadeUp>
             <FadeUp delay={200}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-gray-500">
-                Professors, military scientists, and engineers from India&apos;s premier institutions —
+                Professors, military scientists, and engineers from India&apos;s premier institutions,
                 building secure, mission-critical AI infrastructure.
               </p>
             </FadeUp>

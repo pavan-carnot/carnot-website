@@ -28,8 +28,6 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   Resources: [
-    { name: "Documentation", href: "#" },
-    { name: "Case Studies", href: "#" },
     { name: "Certifications", href: "/company#certifications" },
     { name: "Partners", href: "/company#partners" },
   ],
