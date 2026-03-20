@@ -221,13 +221,7 @@ const testimonials = [
     name: "Piyush Prasad",
     role: "Head, Education & Training",
     org: "IHFC",
-    cardBg: "bg-white",
-    border: "border-blue-100",
-    topBar: "from-blue-500 to-cyan-400",
-    quoteColor: "#2563eb",
-    nameColor: "text-gray-900",
     orgStyle: "bg-blue-50 text-blue-600",
-    avatarRing: "ring-blue-100",
     avatar: `${B}/assets/clients/clients%26partners/piyush%20prasad.png`,
   },
   {
@@ -235,13 +229,7 @@ const testimonials = [
     name: "Rhea Kapoor",
     role: "Project Leader",
     org: "BCG",
-    cardBg: "bg-white",
-    border: "border-amber-100",
-    topBar: "from-amber-400 to-orange-300",
-    quoteColor: "#d97706",
-    nameColor: "text-gray-900",
-    orgStyle: "bg-amber-50 text-amber-600",
-    avatarRing: "ring-amber-100",
+    orgStyle: "bg-amber-50 text-amber-700",
     avatar: `${B}/assets/clients/clients%26partners/Rhea%20Kapoor%2C%20Project%20Leader%2C%20BCG%20.png`,
   },
   {
@@ -249,13 +237,7 @@ const testimonials = [
     name: "Dr. Pankaj Kumar Dalela",
     role: "Director",
     org: "C-DOT",
-    cardBg: "bg-white",
-    border: "border-emerald-100",
-    topBar: "from-emerald-500 to-teal-400",
-    quoteColor: "#059669",
-    nameColor: "text-gray-900",
-    orgStyle: "bg-emerald-50 text-emerald-600",
-    avatarRing: "ring-emerald-100",
+    orgStyle: "bg-emerald-50 text-emerald-700",
     avatar: `${B}/assets/clients/clients%26partners/Dr%20Pankaj%20Kumar%20Dalela%2C%20Director%2C%20CDOT%20.png`,
   },
   {
@@ -263,13 +245,7 @@ const testimonials = [
     name: "Brig N. Hari",
     role: "DIG Command",
     org: "NSG",
-    cardBg: "bg-white",
-    border: "border-violet-100",
-    topBar: "from-violet-500 to-purple-400",
-    quoteColor: "#7c3aed",
-    nameColor: "text-gray-900",
-    orgStyle: "bg-violet-50 text-violet-600",
-    avatarRing: "ring-violet-100",
+    orgStyle: "bg-violet-50 text-violet-700",
     avatar: `${B}/assets/clients/clients%26partners/Brig%20N.%20Hari%2C%20DIG%20Command%2C%20NSG%20.png`,
   },
 ]
@@ -441,7 +417,7 @@ export function ClientsPartnersContent() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="bg-slate-50 py-14 sm:py-20 lg:py-28">
+      <section className="bg-white py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-2xl text-center mb-14">
@@ -450,46 +426,41 @@ export function ClientsPartnersContent() {
               <p className="mt-3 text-sm text-gray-500">Voices from the institutions and organizations we work with</p>
             </div>
           </FadeUp>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2">
             {testimonials.map((t, i) => (
               <FadeUp key={t.name} delay={i * 80}>
-                <div className={`relative h-full rounded-2xl border ${t.border} ${t.cardBg} overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}>
-                  {/* Colored top bar */}
-                  <div className={`h-1.5 w-full bg-gradient-to-r ${t.topBar}`} />
+                <div className="group flex overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md" style={{ minHeight: 200 }}>
 
-                  <div className="flex gap-5 p-6 sm:p-7">
-                    {/* Left: person portrait */}
-                    <div className="flex shrink-0 flex-col items-center gap-3 w-28">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={t.avatar}
-                        alt={t.name}
-                        className="h-24 w-24 rounded-full object-cover object-top shadow-md ring-4 ring-white"
-                        style={{ outline: `2px solid`, outlineColor: t.quoteColor + "33" }}
-                      />
-                      <div className="text-center">
-                        <p className="text-sm font-semibold text-gray-900 leading-tight">{t.name}</p>
-                        <p className="mt-0.5 text-xs text-gray-500 leading-tight">{t.role}</p>
-                        <span className={`mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${t.orgStyle}`}>
-                          {t.org}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Right: quote */}
-                    <div className="flex flex-col justify-center min-w-0">
-                      <span
-                        className="font-serif text-5xl leading-none select-none"
-                        style={{ color: t.quoteColor, opacity: 0.2 }}
-                        aria-hidden
-                      >
-                        &ldquo;
+                  {/* Left: full-height photo panel */}
+                  <div className="relative w-36 shrink-0 overflow-hidden bg-gray-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* Bottom fade for name readability */}
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-0 inset-x-0 p-3">
+                      <p className="text-xs font-semibold text-white leading-tight truncate">{t.name}</p>
+                      <span className={`mt-1 inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold ${t.orgStyle}`}>
+                        {t.org}
                       </span>
-                      <p className="mt-1 text-sm leading-relaxed text-gray-700">
-                        {t.quote}
-                      </p>
                     </div>
                   </div>
+
+                  {/* Right: quote + role */}
+                  <div className="flex flex-col justify-between p-6">
+                    <p className="text-sm leading-relaxed text-gray-600 flex-1">
+                      <span className="mr-0.5 font-serif text-2xl text-gray-300 leading-none align-top">&ldquo;</span>
+                      {t.quote}
+                      <span className="ml-0.5 font-serif text-2xl text-gray-300 leading-none align-bottom">&rdquo;</span>
+                    </p>
+                    <div className="mt-5 border-t border-gray-50 pt-4">
+                      <p className="text-xs text-gray-400">{t.role}</p>
+                    </div>
+                  </div>
+
                 </div>
               </FadeUp>
             ))}
