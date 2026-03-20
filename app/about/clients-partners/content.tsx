@@ -221,7 +221,12 @@ const testimonials = [
     name: "Piyush Prasad",
     role: "Head, Education & Training",
     org: "IHFC",
-    orgStyle: "bg-blue-50 text-blue-600",
+    cardBg: "bg-blue-50/60",
+    photoBg: "bg-blue-100",
+    orgStyle: "bg-white/90 text-blue-600",
+    nameStyle: "text-blue-900",
+    gradientFrom: "from-blue-900/70",
+    imgPos: "object-[center_20%]",
     avatar: `${B}/assets/clients/clients%26partners/piyush%20prasad.png`,
   },
   {
@@ -229,7 +234,12 @@ const testimonials = [
     name: "Rhea Kapoor",
     role: "Project Leader",
     org: "BCG",
-    orgStyle: "bg-amber-50 text-amber-700",
+    cardBg: "bg-amber-50/60",
+    photoBg: "bg-amber-100",
+    orgStyle: "bg-white/90 text-amber-700",
+    nameStyle: "text-amber-900",
+    gradientFrom: "from-amber-900/70",
+    imgPos: "object-top",
     avatar: `${B}/assets/clients/clients%26partners/Rhea%20Kapoor%2C%20Project%20Leader%2C%20BCG%20.png`,
   },
   {
@@ -237,7 +247,12 @@ const testimonials = [
     name: "Dr. Pankaj Kumar Dalela",
     role: "Director",
     org: "C-DOT",
-    orgStyle: "bg-emerald-50 text-emerald-700",
+    cardBg: "bg-emerald-50/60",
+    photoBg: "bg-emerald-100",
+    orgStyle: "bg-white/90 text-emerald-700",
+    nameStyle: "text-emerald-900",
+    gradientFrom: "from-emerald-900/70",
+    imgPos: "object-top",
     avatar: `${B}/assets/clients/clients%26partners/Dr%20Pankaj%20Kumar%20Dalela%2C%20Director%2C%20CDOT%20.png`,
   },
   {
@@ -245,7 +260,12 @@ const testimonials = [
     name: "Brig N. Hari",
     role: "DIG Command",
     org: "NSG",
-    orgStyle: "bg-violet-50 text-violet-700",
+    cardBg: "bg-violet-50/60",
+    photoBg: "bg-violet-100",
+    orgStyle: "bg-white/90 text-violet-700",
+    nameStyle: "text-violet-900",
+    gradientFrom: "from-violet-900/70",
+    imgPos: "object-top",
     avatar: `${B}/assets/clients/clients%26partners/Brig%20N.%20Hari%2C%20DIG%20Command%2C%20NSG%20.png`,
   },
 ]
@@ -429,21 +449,21 @@ export function ClientsPartnersContent() {
           <div className="grid gap-5 sm:grid-cols-2">
             {testimonials.map((t, i) => (
               <FadeUp key={t.name} delay={i * 80}>
-                <div className="group flex overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md" style={{ minHeight: 200 }}>
+                <div className={`group flex overflow-hidden rounded-2xl border border-white/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${t.cardBg}`} style={{ minHeight: 210 }}>
 
                   {/* Left: full-height photo panel */}
-                  <div className="relative w-36 shrink-0 overflow-hidden bg-gray-100">
+                  <div className={`relative w-36 shrink-0 overflow-hidden ${t.photoBg}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={t.avatar}
                       alt={t.name}
-                      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className={`absolute inset-0 h-full w-full object-cover ${t.imgPos} transition-transform duration-500 group-hover:scale-105`}
                     />
-                    {/* Bottom fade for name readability */}
-                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent" />
+                    {/* Bottom fade for name/org overlay */}
+                    <div className={`absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t ${t.gradientFrom} to-transparent`} />
                     <div className="absolute bottom-0 inset-x-0 p-3">
-                      <p className="text-xs font-semibold text-white leading-tight truncate">{t.name}</p>
-                      <span className={`mt-1 inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold ${t.orgStyle}`}>
+                      <p className="text-xs font-semibold text-white leading-tight">{t.name}</p>
+                      <span className={`mt-1.5 inline-block rounded px-1.5 py-0.5 text-[10px] font-bold ${t.orgStyle}`}>
                         {t.org}
                       </span>
                     </div>
@@ -451,13 +471,13 @@ export function ClientsPartnersContent() {
 
                   {/* Right: quote + role */}
                   <div className="flex flex-col justify-between p-6">
-                    <p className="text-sm leading-relaxed text-gray-600 flex-1">
-                      <span className="mr-0.5 font-serif text-2xl text-gray-300 leading-none align-top">&ldquo;</span>
+                    <p className="text-sm leading-relaxed text-gray-700 flex-1">
+                      <span className="mr-0.5 font-serif text-3xl leading-none align-top text-gray-300">&ldquo;</span>
                       {t.quote}
-                      <span className="ml-0.5 font-serif text-2xl text-gray-300 leading-none align-bottom">&rdquo;</span>
+                      <span className="ml-0.5 font-serif text-3xl leading-none align-bottom text-gray-300">&rdquo;</span>
                     </p>
-                    <div className="mt-5 border-t border-gray-50 pt-4">
-                      <p className="text-xs text-gray-400">{t.role}</p>
+                    <div className="mt-5 pt-4 border-t border-black/5">
+                      <p className={`text-xs font-medium ${t.nameStyle}`}>{t.role}</p>
                     </div>
                   </div>
 

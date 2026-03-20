@@ -5,7 +5,6 @@ import { ProblemSection }                 from "@/components/home/problem-sectio
 import { SolutionsSection }               from "@/components/home/solutions-section"
 import { AboutSection }                   from "@/components/home/about-section"
 import { TrustSection }                   from "@/components/home/trust-section"
-import { CtaSection }                     from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
   title: "Carnot Research | On-Premise AI for Government, Defense & Enterprise",
@@ -58,8 +57,6 @@ export default function HomePage() {
       {/* 7. Clients + certifications */}
       <TrustSection />
 
-      {/* 8. Get in touch */}
-      <CtaSection />
     </>
   )
 }
