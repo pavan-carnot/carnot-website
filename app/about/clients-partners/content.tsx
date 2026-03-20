@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback, type ReactNode } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Building2, Handshake, FlaskConical, ChevronLeft, ChevronRight, Quote, ShieldCheck, Rocket, Users } from "lucide-react"
+import { Building2, Handshake, FlaskConical, ChevronLeft, ChevronRight, ShieldCheck, Rocket, Users } from "lucide-react"
 
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
@@ -221,8 +221,13 @@ const testimonials = [
     name: "Piyush Prasad",
     role: "Head, Education & Training",
     org: "IHFC",
-    accent: "border-blue-200 bg-blue-50/40",
-    nameColor: "text-blue-700",
+    cardBg: "bg-white",
+    border: "border-blue-100",
+    topBar: "from-blue-500 to-cyan-400",
+    quoteColor: "#2563eb",
+    nameColor: "text-gray-900",
+    orgStyle: "bg-blue-50 text-blue-600",
+    avatarRing: "ring-blue-100",
     avatar: `${B}/assets/clients/clients%26partners/piyush%20prasad.png`,
   },
   {
@@ -230,8 +235,13 @@ const testimonials = [
     name: "Rhea Kapoor",
     role: "Project Leader",
     org: "BCG",
-    accent: "border-amber-200 bg-amber-50/40",
-    nameColor: "text-amber-700",
+    cardBg: "bg-white",
+    border: "border-amber-100",
+    topBar: "from-amber-400 to-orange-300",
+    quoteColor: "#d97706",
+    nameColor: "text-gray-900",
+    orgStyle: "bg-amber-50 text-amber-600",
+    avatarRing: "ring-amber-100",
     avatar: `${B}/assets/clients/clients%26partners/Rhea%20Kapoor%2C%20Project%20Leader%2C%20BCG%20.png`,
   },
   {
@@ -239,8 +249,13 @@ const testimonials = [
     name: "Dr. Pankaj Kumar Dalela",
     role: "Director",
     org: "C-DOT",
-    accent: "border-emerald-200 bg-emerald-50/40",
-    nameColor: "text-emerald-700",
+    cardBg: "bg-white",
+    border: "border-emerald-100",
+    topBar: "from-emerald-500 to-teal-400",
+    quoteColor: "#059669",
+    nameColor: "text-gray-900",
+    orgStyle: "bg-emerald-50 text-emerald-600",
+    avatarRing: "ring-emerald-100",
     avatar: `${B}/assets/clients/clients%26partners/Dr%20Pankaj%20Kumar%20Dalela%2C%20Director%2C%20CDOT%20.png`,
   },
   {
@@ -248,8 +263,13 @@ const testimonials = [
     name: "Brig N. Hari",
     role: "DIG Command",
     org: "NSG",
-    accent: "border-violet-200 bg-violet-50/40",
-    nameColor: "text-violet-700",
+    cardBg: "bg-white",
+    border: "border-violet-100",
+    topBar: "from-violet-500 to-purple-400",
+    quoteColor: "#7c3aed",
+    nameColor: "text-gray-900",
+    orgStyle: "bg-violet-50 text-violet-600",
+    avatarRing: "ring-violet-100",
     avatar: `${B}/assets/clients/clients%26partners/Brig%20N.%20Hari%2C%20DIG%20Command%2C%20NSG%20.png`,
   },
 ]
@@ -421,32 +441,52 @@ export function ClientsPartnersContent() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="bg-white py-14 sm:py-20 lg:py-28">
+      <section className="bg-slate-50 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeUp>
             <div className="mx-auto max-w-2xl text-center mb-14">
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">Testimonials</p>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">What Our Partners Say</h2>
+              <p className="mt-3 text-sm text-gray-500">Voices from the institutions and organizations we work with</p>
             </div>
           </FadeUp>
           <div className="grid gap-6 sm:grid-cols-2">
             {testimonials.map((t, i) => (
               <FadeUp key={t.name} delay={i * 80}>
-                <div className={`h-full rounded-2xl border p-7 ${t.accent} flex flex-col gap-4`}>
-                  <Quote className="h-6 w-6 text-gray-300 shrink-0" />
-                  <p className="flex-1 text-base leading-relaxed text-gray-700 italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="border-t border-gray-200/60 pt-4 flex items-center gap-3">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={t.avatar}
-                      alt={t.name}
-                      className="h-10 w-10 rounded-full object-cover shrink-0 border border-white shadow-sm"
-                    />
-                    <div>
-                      <p className={`text-sm font-semibold ${t.nameColor}`}>{t.name}</p>
-                      <p className="text-xs text-gray-400 mt-0.5">{t.role} &middot; {t.org}</p>
+                <div className={`relative h-full rounded-2xl border ${t.border} ${t.cardBg} flex flex-col overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}>
+                  {/* Colored top bar */}
+                  <div className={`h-1 w-full bg-gradient-to-r ${t.topBar}`} />
+
+                  <div className="flex flex-col flex-1 p-8">
+                    {/* Decorative quote mark */}
+                    <span
+                      className="font-serif text-6xl leading-none select-none mb-3"
+                      style={{ color: t.quoteColor, opacity: 0.25 }}
+                      aria-hidden
+                    >
+                      &ldquo;
+                    </span>
+
+                    {/* Quote */}
+                    <p className="flex-1 text-base leading-relaxed text-gray-700">
+                      {t.quote}
+                    </p>
+
+                    {/* Person row */}
+                    <div className="mt-8 flex items-center gap-4 border-t border-gray-100 pt-6">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={t.avatar}
+                        alt={t.name}
+                        className={`h-16 w-16 rounded-full object-cover shrink-0 shadow-md ring-4 ring-white outline outline-2 ${t.avatarRing}`}
+                      />
+                      <div>
+                        <p className={`font-semibold text-base ${t.nameColor}`}>{t.name}</p>
+                        <p className="text-sm text-gray-500 mt-0.5">{t.role}</p>
+                        <span className={`mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${t.orgStyle}`}>
+                          {t.org}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
