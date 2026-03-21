@@ -338,7 +338,7 @@ export function MissionVisionContent() {
             </FadeUp>
             {/* Right — image slideshow */}
             <FadeUp delay={160}>
-              <ImageSlideshow images={["/assets/clients/Opening_Image_2.jpg", "/assets/clients/Opening_Image_3.jpg"]} />
+              <ImageSlideshow images={["/assets/company/opening/Opening_Image_2.jpg", "/assets/company/opening/Opening_Image_3.jpg"]} />
             </FadeUp>
           </div>
         </div>
@@ -350,7 +350,7 @@ export function MissionVisionContent() {
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             {/* Left — image slideshow */}
             <FadeUp delay={160} className="lg:order-1 order-2">
-              <ImageSlideshow images={["/assets/clients/Mission_Pic_2.jpeg", "/assets/clients/Mission_Pic_3.jpeg"]} />
+              <ImageSlideshow images={["/assets/company/mission/Mission_Pic_2.jpeg", "/assets/company/mission/Mission_Pic_3.jpeg"]} />
             </FadeUp>
             {/* Right — text */}
             <FadeUp className="lg:order-2 order-1">
@@ -415,7 +415,7 @@ export function MissionVisionContent() {
             </FadeUp>
             {/* Right — image slideshow */}
             <FadeUp delay={160}>
-              <ImageSlideshow images={["/assets/clients/Vision_Pic_1.jpeg", "/assets/clients/Vision_Pic_2.jpeg", "/assets/clients/Vision_Pic_3.jpg"]} />
+              <ImageSlideshow images={["/assets/company/vision/Vision_Pic_1.jpeg", "/assets/company/vision/Vision_Pic_2.jpeg", "/assets/company/vision/Vision_Pic_3.jpg"]} />
             </FadeUp>
           </div>
         </div>

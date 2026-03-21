@@ -5,8 +5,8 @@ import { useEffect, useState } from "react"
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const slides = [
-  "/assets/clients/meet-icarkno/WhatsApp Image 2026-03-20 at 16.29.29 (1).jpeg",
-  "/assets/clients/meet-icarkno/WhatsApp Image 2026-03-20 at 16.29.29 (2).jpeg",
+  "/assets/products/icarkno/slideshow/slide-1.jpeg",
+  "/assets/products/icarkno/slideshow/slide-2.jpeg",
 ]
 
 interface IcarKnoSlideshowProps {

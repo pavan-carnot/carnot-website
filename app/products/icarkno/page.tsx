@@ -412,7 +412,7 @@ export default function IcarKnoPage() {
                 >
                   {uc.video ? (
                     <VideoWithSkeleton
-                      src={`${B}/assets/clients/${encodeURIComponent(uc.video)}`}
+                      src={`${B}/assets/products/icarkno/use-cases/${encodeURIComponent(uc.video)}`}
                       ariaLabel={`${uc.title} demo`}
                       className="h-auto w-full rounded-xl object-cover"
                       skeletonClassName="w-full h-64"

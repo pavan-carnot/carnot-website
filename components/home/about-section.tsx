@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react"
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const images = [
-  { src: `${B}/assets/clients/Opening_Image_2.jpg`, alt: "Carnot Research lab work" },
-  { src: `${B}/assets/clients/Opening_Image_3.jpg`, alt: "Carnot Research team" },
+  { src: `${B}/assets/company/opening/Opening_Image_2.jpg`, alt: "Carnot Research lab work" },
+  { src: `${B}/assets/company/opening/Opening_Image_3.jpg`, alt: "Carnot Research team" },
 ]
 
 const certs = ["CMMI Level 3", "ISO 27001:2022", "DPIIT Recognised", "MSME Certified"]
