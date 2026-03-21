@@ -35,10 +35,10 @@ export const metadata: Metadata = {
 }
 
 const capabilityHighlights = [
-  { icon: Video, label: "Vision-based capture" },
-  { icon: Activity, label: "Biomechanics analytics" },
-  { icon: Gauge, label: "Real-time feedback" },
-  { icon: Shield, label: "No wearables needed" },
+  { icon: Video,    label: "Vision-based capture",   bg: "#dbeafe", color: "#2563eb" },
+  { icon: Activity, label: "Biomechanics analytics", bg: "#dcfce7", color: "#16a34a" },
+  { icon: Gauge,    label: "Real-time feedback",     bg: "#fef3c7", color: "#d97706" },
+  { icon: Shield,   label: "No wearables needed",    bg: "#fee2e2", color: "#dc2626" },
 ]
 
 const problems = [
@@ -53,36 +53,42 @@ const coreCapabilities = [
     icon: Video,
     title: "Vision-Driven Movement Capture",
     description: "Extracts motion data from standard video feeds with high precision.",
+    bg: "#dbeafe", color: "#2563eb",
   },
   {
     icon: Scale,
     title: "Biomechanical Metrics & Analytics",
     description:
       "Provides detailed performance metrics, including joint angles, posture assessments, gait parameters, and symmetry indices.",
+    bg: "#ede9fe", color: "#7c3aed",
   },
   {
     icon: Activity,
     title: "Sports Performance Insight",
     description:
       "Helps evaluate athletic performance, refine techniques, and develop injury prevention strategies.",
+    bg: "#dcfce7", color: "#16a34a",
   },
   {
     icon: FileText,
     title: "Actionable Visual Reports",
     description:
       "Offers dashboards with annotated movement insights, trend graphs, and easy-to-understand summaries.",
+    bg: "#fef3c7", color: "#d97706",
   },
   {
     icon: LayoutDashboard,
     title: "Scalable Deployment",
     description:
       "Works with standard camera systems, making it suitable for field training, clinics, and labs.",
+    bg: "#cffafe", color: "#0891b2",
   },
   {
     icon: BarChart3,
     title: "Progress Tracking",
     description:
       "Session-to-session comparison and analytics to quantify improvement and reduce guesswork.",
+    bg: "#ffedd5", color: "#ea580c",
   },
 ]
 
@@ -340,7 +346,7 @@ export default function BharGatiPage() {
               <div className="pointer-events-none absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#22c55e]/12 via-[#10b981]/6 to-transparent blur-2xl" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`${B}/assets/clients/homepage_Bhargati.png`}
+                src={`${B}/assets/products/homepage/homepage_Bhargati.png`}
                 alt="BharGati™ AI in action - athletic movement analysis"
                 className="relative w-full max-w-[560px] rounded-2xl object-cover shadow-xl"
               />
@@ -381,8 +387,8 @@ export default function BharGatiPage() {
                   key={item.label}
                   className="flex items-center gap-3 rounded-xl border border-border bg-card p-4"
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#ecfdf3]">
-                    <item.icon className="h-4 w-4 text-[#15803d]" />
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg" style={{ background: item.bg }}>
+                    <item.icon className="h-4 w-4" style={{ color: item.color }} />
                   </span>
                   <span className="text-sm font-medium text-foreground">
                     {item.label}
@@ -444,8 +450,8 @@ export default function BharGatiPage() {
                 key={cap.title}
                 className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#ecfdf3]">
-                  <cap.icon className="h-5 w-5 text-[#15803d]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: cap.bg }}>
+                  <cap.icon className="h-5 w-5" style={{ color: cap.color }} />
                 </div>
                 <h3 className="mt-4 font-semibold text-foreground">{cap.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

@@ -56,36 +56,42 @@ const capabilities = [
     title: "100% Offline Operation",
     description:
       "Fully air-gapped AI inference with no external connectivity required.",
+    bg: "#dcfce7", color: "#16a34a",
   },
   {
     icon: Languages,
     title: "Multilingual Intelligence",
     description:
       "Supports over 22 Indian languages with voice-first interaction capability.",
+    bg: "#dbeafe", color: "#2563eb",
   },
   {
     icon: FileText,
     title: "Deep Document Intelligence",
     description:
       "Understands both structured and unstructured documents, including SOPs, scanned PDFs, policy documents, forms, and manuals.",
+    bg: "#ede9fe", color: "#7c3aed",
   },
   {
     icon: Layers,
     title: "Multimodal Processing",
     description:
       "Integrates voice, text, documents, and visual inputs into a unified reasoning framework.",
+    bg: "#fef3c7", color: "#d97706",
   },
   {
     icon: Workflow,
     title: "Agentic Workflow Execution",
     description:
       "Goes beyond Q&A to provide structured responses, action recommendations, and workflow assistance.",
+    bg: "#cffafe", color: "#0891b2",
   },
   {
     icon: Shield,
     title: "Secure Architecture",
     description:
       "Government and defense-grade architecture designed for sensitive deployments.",
+    bg: "#fee2e2", color: "#dc2626",
   },
 ]
 
@@ -107,6 +113,7 @@ const useCases = [
       "Provides offline multilingual access to emergency protocols, district plans, hazard manuals, and field documentation. It helps responders with structured guidance even when networks fail.",
     icon: Megaphone,
     video: "Disaster Management.mp4",
+    bg: "#ffedd5", color: "#ea580c",
   },
   {
     title: "Defense & Field Intelligence",
@@ -114,6 +121,7 @@ const useCases = [
       "Enables secure analysis of classified documents, operational logs, and intelligence reports in air-gapped environments. Supports rapid retrieval and contextual reasoning in mission scenarios.",
     icon: Shield,
     video: "Defense & Field Intelligence.mp4",
+    bg: "#fee2e2", color: "#dc2626",
   },
   {
     title: "Aviation & Flight Operations",
@@ -121,6 +129,7 @@ const useCases = [
       "Offers real-time reasoning over technical manuals, checklists, and operational documentation to lessen cognitive load during critical situations.",
     icon: Plane,
     video: "Aviation & Flight Operations.mp4",
+    bg: "#dbeafe", color: "#2563eb",
   },
   {
     title: "Legal & Policy Analysis",
@@ -128,6 +137,7 @@ const useCases = [
       "Processes acts, judgments, contracts, and government orders to provide structured comparisons, detect contradictions, and offer cited insights.",
     icon: Scale,
     video: "Legal & Policy Analysis.mp4",
+    bg: "#ede9fe", color: "#7c3aed",
   },
   {
     title: "Government Field Operations",
@@ -135,6 +145,7 @@ const useCases = [
       "Helps officers access policies, forms, and regulatory documents in local languages instantly, improving administrative efficiency and public service delivery.",
     icon: Building2,
     video: "Government Field Operations.mp4",
+    bg: "#dcfce7", color: "#16a34a",
   },
   {
     title: "Enterprise Knowledge Systems",
@@ -142,6 +153,7 @@ const useCases = [
       "Converts internal documents, SOPs, and operational data into structured, searchable intelligence while keeping data secure.",
     icon: Database,
     video: "Enterprise Knowledge Systems.mp4",
+    bg: "#cffafe", color: "#0891b2",
   },
 ]
 
@@ -363,8 +375,8 @@ export default function IcarKnoPage() {
                 key={cap.title}
                 className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#dbeafe]">
-                  <cap.icon className="h-5 w-5 text-[#2563eb]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: cap.bg }}>
+                  <cap.icon className="h-5 w-5" style={{ color: cap.color }} />
                 </div>
                 <h3 className="mt-4 font-semibold text-foreground">{cap.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -395,8 +407,8 @@ export default function IcarKnoPage() {
                     i % 2 === 1 ? "lg:col-start-2" : ""
                   }
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#dbeafe]">
-                    <uc.icon className="h-6 w-6 text-[#2563eb]" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: uc.bg }}>
+                    <uc.icon className="h-6 w-6" style={{ color: uc.color }} />
                   </div>
                   <h3 className="mt-4 text-xl font-semibold text-foreground">
                     {uc.title}
@@ -412,7 +424,7 @@ export default function IcarKnoPage() {
                 >
                   {uc.video ? (
                     <VideoWithSkeleton
-                      src={`${B}/assets/clients/${encodeURIComponent(uc.video)}`}
+                      src={`${B}/assets/products/icarkno/use-cases/${encodeURIComponent(uc.video)}`}
                       ariaLabel={`${uc.title} demo`}
                       className="h-auto w-full rounded-xl object-cover"
                       skeletonClassName="w-full h-64"

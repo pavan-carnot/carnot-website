@@ -12,8 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/assets/clients/mainLogo-removebg.png",
-    apple: "/assets/clients/mainLogo-removebg.png",
+    icon: "/assets/logo/carnot-logo.png",
+    apple: "/assets/logo/carnot-logo.png",
   },
   title: {
     default: "Carnot Research | Enterprise AI & Secure On-Premise GenAI Solutions",

@@ -85,8 +85,8 @@ export default function SaathiPage() {
     <>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
-        <div className="pointer-events-none absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-[#2563eb]/6 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-[#1d4ed8]/4 blur-3xl" />
+        <div className="pointer-events-none absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-[#E73C30]/6 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-[#E73C30]/4 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -138,58 +138,58 @@ export default function SaathiPage() {
               </div>
             </div>
 
-            {/* Right — chat preview */}
+            {/* Right — chat preview (Delhi Metro red + white) */}
             <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#2563eb]/10 via-[#1d4ed8]/4 to-transparent blur-2xl" />
-              <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
-                {/* Header bar */}
-                <div className="flex items-center gap-3 border-b border-border bg-[#0b2149] px-5 py-3.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
-                    <MessageCircle className="h-4 w-4 text-white" />
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#E73C30]/15 via-[#E73C30]/4 to-transparent blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-red-100 bg-white shadow-xl">
+                {/* Header bar — Delhi Metro red */}
+                <div className="flex items-center gap-3 border-b border-red-700 px-5 py-3.5" style={{ background: "#E73C30" }}>
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                    <Train className="h-4 w-4 text-white" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-white">SAATHI</p>
-                    <p className="text-[10px] text-blue-300">Delhi Public Transport Assistant</p>
+                    <p className="text-[10px] text-red-100">Delhi Public Transport Assistant</p>
                   </div>
                   <div className="ml-auto flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                    <span className="text-[10px] text-blue-300">Online</span>
+                    <span className="h-2 w-2 rounded-full bg-emerald-300" />
+                    <span className="text-[10px] text-red-100">Online</span>
                   </div>
                 </div>
                 {/* Chat messages */}
-                <div className="space-y-4 p-5">
+                <div className="space-y-4 bg-white p-5">
                   <div className="flex justify-end">
-                    <div className="max-w-[75%] rounded-2xl rounded-tr-sm bg-[#2563eb] px-4 py-2.5 text-sm text-white shadow-sm">
+                    <div className="max-w-[75%] rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm text-white shadow-sm" style={{ background: "#E73C30" }}>
                       How to reach Connaught Place by multi-modal journey?
                     </div>
                   </div>
                   <div className="flex gap-2.5">
-                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#dbeafe]">
-                      <MessageCircle className="h-3.5 w-3.5 text-[#2563eb]" />
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-50">
+                      <Train className="h-3.5 w-3.5" style={{ color: "#E73C30" }} />
                     </div>
-                    <div className="max-w-[78%] rounded-2xl rounded-tl-sm border border-border bg-secondary/40 px-4 py-2.5 text-sm text-foreground shadow-sm">
-                      Take Bus 615 from your nearest stop to AIIMS Metro Station, then board the Yellow Line towards Samaypur Badli and alight at Rajiv Chowk (Connaught Place). Journey time: ~35 mins.
+                    <div className="max-w-[78%] rounded-2xl rounded-tl-sm border border-red-100 bg-red-50/60 px-4 py-2.5 text-sm text-gray-800 shadow-sm">
+                      Take Bus 615 from your nearest stop to AIIMS Metro Station, then board the Yellow Line towards Samaypur Badli and alight at Rajiv Chowk. Journey time: ~35 mins.
                     </div>
                   </div>
                   <div className="flex justify-end">
-                    <div className="max-w-[75%] rounded-2xl rounded-tr-sm bg-[#2563eb] px-4 py-2.5 text-sm text-white shadow-sm">
+                    <div className="max-w-[75%] rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm text-white shadow-sm" style={{ background: "#E73C30" }}>
                       What is the helpline for medical emergency?
                     </div>
                   </div>
                   <div className="flex gap-2.5">
-                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#dbeafe]">
-                      <MessageCircle className="h-3.5 w-3.5 text-[#2563eb]" />
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-50">
+                      <Train className="h-3.5 w-3.5" style={{ color: "#E73C30" }} />
                     </div>
-                    <div className="max-w-[78%] rounded-2xl rounded-tl-sm border border-border bg-secondary/40 px-4 py-2.5 text-sm text-foreground shadow-sm">
-                      For medical emergencies at metro stations, call <span className="font-semibold text-[#2563eb]">155370</span> (DMRC Helpline) or <span className="font-semibold text-[#2563eb]">112</span> (National Emergency Number).
+                    <div className="max-w-[78%] rounded-2xl rounded-tl-sm border border-red-100 bg-red-50/60 px-4 py-2.5 text-sm text-gray-800 shadow-sm">
+                      For medical emergencies at metro stations, call <span className="font-semibold" style={{ color: "#E73C30" }}>155370</span> (DMRC Helpline) or <span className="font-semibold" style={{ color: "#E73C30" }}>112</span> (National Emergency).
                     </div>
                   </div>
                 </div>
                 {/* Input bar */}
-                <div className="border-t border-border px-4 py-3">
-                  <div className="flex items-center gap-2 rounded-xl border border-border bg-background px-3 py-2 text-sm text-muted-foreground">
+                <div className="border-t border-red-100 bg-white px-4 py-3">
+                  <div className="flex items-center gap-2 rounded-xl border border-red-100 bg-red-50/40 px-3 py-2 text-sm text-gray-400">
                     <span className="flex-1">Ask your question...</span>
-                    <Mic className="h-4 w-4 text-[#2563eb]" />
+                    <Mic className="h-4 w-4" style={{ color: "#E73C30" }} />
                   </div>
                 </div>
               </div>
@@ -297,10 +297,17 @@ export default function SaathiPage() {
                 </p>
               </div>
               <div className="flex items-center justify-center bg-gradient-to-br from-amber-100 to-amber-50 p-8 lg:p-12">
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  {["JICA", "BCG", "FITT\nIIT Delhi"].map((org) => (
-                    <div key={org} className="rounded-xl border border-amber-200 bg-white px-4 py-5 shadow-sm">
-                      <p className="whitespace-pre-line text-xs font-bold tracking-wide text-amber-800">{org}</p>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { name: "JICA",      src: "/assets/clients-logos/5.png"  },
+                    { name: "BCG",       src: "/assets/clients-logos/6.webp" },
+                    { name: "FITT",      src: "/assets/clients-logos/7.png"  },
+                    { name: "IIT Delhi", src: "/assets/clients-logos/4.webp" },
+                  ].map((org) => (
+                    <div key={org.name} className="flex flex-col items-center justify-center rounded-xl border border-amber-200 bg-white p-4 shadow-sm">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={org.src} alt={org.name} className="h-10 w-auto object-contain" />
+                      <p className="mt-2 text-[10px] font-semibold tracking-wide text-amber-700">{org.name}</p>
                     </div>
                   ))}
                 </div>

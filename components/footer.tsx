@@ -45,7 +45,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`${B}/assets/clients/mainLogo-removebg.png`}
+                src={`${B}/assets/logo/carnot-logo.png`}
                 alt="Carnot Research"
                 className="h-8 w-auto object-contain"
               />

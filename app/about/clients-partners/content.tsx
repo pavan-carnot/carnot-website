@@ -47,13 +47,13 @@ const SCALE_D  = 0.04
 
 // ── Client data ────────────────────────────────────────────────────────────────
 const clientImages = [
-  { id: 3, name: "NSG",                        src: `${B}/assets/clients/3.webp` },
-  { id: 4, name: "IIT Delhi",                  src: `${B}/assets/clients/4.webp` },
-  { id: 5, name: "JICA",                       src: `${B}/assets/clients/5.png`  },
-  { id: 6, name: "BCG",                        src: `${B}/assets/clients/6.webp` },
-  { id: 7, name: "FITT",                       src: `${B}/assets/clients/7.png`  },
-  { id: 8, name: "MSME",                       src: `${B}/assets/clients/8.webp` },
-  { id: 9, name: "Rashtriya Raksha University", src: `${B}/assets/clients/9.png`  },
+  { id: 3, name: "NSG",                        src: `${B}/assets/clients-logos/3.webp` },
+  { id: 4, name: "IIT Delhi",                  src: `${B}/assets/clients-logos/4.webp` },
+  { id: 5, name: "JICA",                       src: `${B}/assets/clients-logos/5.png`  },
+  { id: 6, name: "BCG",                        src: `${B}/assets/clients-logos/6.webp` },
+  { id: 7, name: "FITT",                       src: `${B}/assets/clients-logos/7.png`  },
+  { id: 8, name: "MSME",                       src: `${B}/assets/clients-logos/8.webp` },
+  { id: 9, name: "Rashtriya Raksha University", src: `${B}/assets/clients-logos/9.png`  },
 ]
 
 // ── Curved Fan Carousel ────────────────────────────────────────────────────────
@@ -227,7 +227,7 @@ const testimonials = [
     nameStyle: "text-blue-900",
     gradientFrom: "from-blue-900/70",
     imgPos: "object-[center_0%]",
-    avatar: `${B}/assets/clients/clients%26partners/piyush%20prasad.png`,
+    avatar: `${B}/assets/testimonials/piyush%20prasad.png`,
   },
   {
     quote: "SAATHI impressed us with its seamless multilingual travel assistance and user-centric design, showcasing strong potential for Delhi's public transport ecosystem.",
@@ -240,7 +240,7 @@ const testimonials = [
     nameStyle: "text-amber-900",
     gradientFrom: "from-amber-900/70",
     imgPos: "object-top",
-    avatar: `${B}/assets/clients/clients%26partners/Rhea%20Kapoor%2C%20Project%20Leader%2C%20BCG%20.png`,
+    avatar: `${B}/assets/testimonials/Rhea%20Kapoor%2C%20Project%20Leader%2C%20BCG%20.png`,
   },
   {
     quote: "Carnot's AI platform brings C-DOT a secure, on-premise intelligent assistant that strengthens nationwide disaster early warning, alerts, and operational workflows.",
@@ -253,7 +253,7 @@ const testimonials = [
     nameStyle: "text-emerald-900",
     gradientFrom: "from-emerald-900/70",
     imgPos: "object-top",
-    avatar: `${B}/assets/clients/clients%26partners/Dr%20Pankaj%20Kumar%20Dalela%2C%20Director%2C%20CDOT%20.png`,
+    avatar: `${B}/assets/testimonials/Dr%20Pankaj%20Kumar%20Dalela%2C%20Director%2C%20CDOT%20.png`,
   },
   {
     quote: "The AI system developed by Carnot significantly enhanced our ability to analyse IED intelligence with speed, accuracy, and complete on-premise security.",
@@ -266,7 +266,7 @@ const testimonials = [
     nameStyle: "text-violet-900",
     gradientFrom: "from-violet-900/70",
     imgPos: "object-top",
-    avatar: `${B}/assets/clients/clients%26partners/Brig%20N.%20Hari%2C%20DIG%20Command%2C%20NSG%20.png`,
+    avatar: `${B}/assets/testimonials/Brig%20N.%20Hari%2C%20DIG%20Command%2C%20NSG%20.png`,
   },
 ]
 

@@ -43,30 +43,35 @@ const challenges = [
     title: "Fragmented Knowledge and Data Silos",
     description:
       "Important information is often spread across documents, systems, and departments. This makes decision-making slow and inconsistent.",
+    bg: "#fef3c7", color: "#d97706",
   },
   {
     icon: ShieldAlert,
     title: "AI Hallucinations and Trust Gaps",
     description:
       "Generic AI models produce responses without backing from verified data. This creates risk in high-stakes environments.",
+    bg: "#fee2e2", color: "#dc2626",
   },
   {
     icon: Lock,
     title: "Data Security and Compliance Constraints",
     description:
       "Strict regulations and internal policies limit the use of cloud-based AI.",
+    bg: "#ede9fe", color: "#7c3aed",
   },
   {
     icon: WifiOff,
     title: "Cloud Dependency Risks",
     description:
       "Internet-reliant systems are vulnerable to outages, delays, and security issues.",
+    bg: "#cffafe", color: "#0891b2",
   },
   {
     icon: Workflow,
     title: "Operational Inefficiencies",
     description:
       "Manual workflows and slow information retrieval reduce productivity and strategic flexibility.",
+    bg: "#dcfce7", color: "#16a34a",
   },
 ]
 
@@ -83,6 +88,7 @@ const solutionCards = [
     ],
     href: "/solutions/enterprise-rag",
     cta: "Explore Enterprise RAG Solutions",
+    bg: "#dbeafe", color: "#2563eb",
   },
   {
     icon: Lock,
@@ -96,6 +102,7 @@ const solutionCards = [
     ],
     href: "/solutions/on-prem-ai",
     cta: "Explore On-Prem AI Solutions",
+    bg: "#ede9fe", color: "#7c3aed",
   },
   {
     icon: Brain,
@@ -109,6 +116,7 @@ const solutionCards = [
     ],
     href: "/solutions/ai-in-sports",
     cta: "Explore AI in Sports",
+    bg: "#dcfce7", color: "#16a34a",
   },
 ]
 
@@ -191,24 +199,28 @@ const frameworkSteps = [
     description:
       "We look at operational challenges, workflows, and data environments to set clear AI goals.",
     icon: Search,
+    bg: "#fef3c7", color: "#d97706",
   },
   {
     title: "AI Architecture & Model Design",
     description:
       "We create custom AI frameworks that fit domain needs, security requirements, and scalability targets.",
     icon: Settings,
+    bg: "#dbeafe", color: "#2563eb",
   },
   {
     title: "Secure Deployment & Integration",
     description:
       "We deploy systems on-premise, in hybrid setups, or on private infrastructure, ensuring compliance and integration support.",
     icon: Plug,
+    bg: "#dcfce7", color: "#16a34a",
   },
   {
     title: "Monitoring, Governance & Optimization",
     description:
       "Ongoing evaluation keeps performance up, maintains transparency, and ensures long-term reliability.",
     icon: Check,
+    bg: "#ede9fe", color: "#7c3aed",
   },
 ]
 
@@ -317,8 +329,8 @@ export default function SolutionsPage() {
                 key={c.title}
                 className="rounded-xl border border-border bg-card p-6"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#dbeafe]">
-                  <c.icon className="h-5 w-5 text-[#2563eb]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: c.bg }}>
+                  <c.icon className="h-5 w-5" style={{ color: c.color }} />
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-foreground">
                   {c.title}
@@ -356,8 +368,8 @@ export default function SolutionsPage() {
                 key={s.title}
                 className="flex flex-col rounded-xl border border-border bg-card p-7"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#dbeafe]">
-                  <s.icon className="h-5 w-5 text-[#2563eb]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: s.bg }}>
+                  <s.icon className="h-5 w-5" style={{ color: s.color }} />
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-foreground">
                   {s.title}
@@ -368,8 +380,8 @@ export default function SolutionsPage() {
                 <ul className="mt-5 space-y-2.5">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#dbeafe]">
-                        <Check className="h-3.5 w-3.5 text-[#2563eb]" />
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: s.bg }}>
+                        <Check className="h-3.5 w-3.5" style={{ color: s.color }} />
                       </div>
                       <span className="text-sm leading-relaxed text-muted-foreground">
                         {b}
@@ -451,8 +463,8 @@ export default function SolutionsPage() {
                 className="rounded-xl border border-border bg-card p-6"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#dbeafe]">
-                    <step.icon className="h-5 w-5 text-[#2563eb]" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: step.bg }}>
+                    <step.icon className="h-5 w-5" style={{ color: step.color }} />
                   </div>
                   <span className="text-xs font-semibold text-muted-foreground">
                     {idx + 1}
