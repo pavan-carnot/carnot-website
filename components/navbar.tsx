@@ -124,7 +124,7 @@ export function Navbar() {
             alt="Carnot Research"
             className="h-8 w-auto object-contain"
           />
-          <span className="text-sm font-semibold tracking-tight text-gray-900 hidden sm:inline">
+          <span className="text-sm font-semibold tracking-tight text-gray-900">
             Carnot Research
           </span>
         </Link>
