@@ -11,10 +11,6 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/assets/logo/carnot-logo.png",
-    apple: "/assets/logo/carnot-logo.png",
-  },
   title: {
     default: "Carnot Research | Enterprise AI & Secure On-Premise GenAI Solutions",
     template: "%s | Carnot Research - Enterprise AI Platform",
@@ -139,6 +135,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link
+          rel="icon"
+          href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/logo/carnot-logo.png`}
+          type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/logo/carnot-logo.png`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

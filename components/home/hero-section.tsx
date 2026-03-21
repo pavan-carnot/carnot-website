@@ -10,6 +10,22 @@ export function HeroSection() {
     >
       <VantaGlobeBackground />
 
+      {/* Mobile-only decorative background (Vanta is hidden on mobile) */}
+      <div className="absolute inset-0 sm:hidden" aria-hidden>
+        {/* Radial gradient blobs */}
+        <div className="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl" />
+        <div className="absolute top-1/3 -left-20 h-56 w-56 rounded-full bg-cyan-400/15 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 h-48 w-48 rounded-full bg-blue-300/15 blur-3xl" />
+        {/* Subtle dot mesh grid */}
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.18) 1px, transparent 0)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+      </div>
+
       <div className="relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-0">
         <div className="max-w-2xl text-left">
 
