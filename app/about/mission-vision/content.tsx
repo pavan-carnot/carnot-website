@@ -338,7 +338,7 @@ export function MissionVisionContent() {
             </FadeUp>
             {/* Right — image slideshow */}
             <FadeUp delay={160}>
-              <ImageSlideshow images={["/assets/company/opening/Opening_Image_2.jpg", "/assets/company/opening/Opening_Image_3.jpg"]} />
+              <ImageSlideshow images={["/assets/company/who-we-are/Opening_Image_2.jpg", "/assets/company/who-we-are/Opening_Image_3.jpg"]} />
             </FadeUp>
           </div>
         </div>
