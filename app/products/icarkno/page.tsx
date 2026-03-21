@@ -15,7 +15,6 @@ import {
   Scale,
   Building2,
   Database,
-  Download,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -251,12 +250,6 @@ export default function IcarKnoPage() {
                     Request a Demo
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/contact">
-                    <Download className="mr-2 h-4 w-4" />
-                    Download Brochure
-                  </Link>
                 </Button>
               </div>
             </div>
