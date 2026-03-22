@@ -192,7 +192,7 @@ export function AboutContent() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-background min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-16 pb-[7.5rem]">
         <div className="pointer-events-none absolute -top-40 -right-20 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-accent/8 blur-3xl" />
 

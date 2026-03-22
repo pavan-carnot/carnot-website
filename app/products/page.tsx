@@ -125,7 +125,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-background py-14 sm:py-20 lg:py-28">
+      <section className="bg-background min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-14 pb-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-medium tracking-wider text-accent uppercase">

@@ -284,7 +284,7 @@ export function MissionVisionContent() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-background py-14 sm:py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-background min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-14 pb-28">
         <div className="pointer-events-none absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-primary/6 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-accent/6 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">

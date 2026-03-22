@@ -32,7 +32,6 @@ export function ContactForm() {
     e.preventDefault()
     setErrorMsg("")
 
-    // Check reCAPTCHA first
     const recaptchaResponse = recaptchaRef.current?.getValue()
     if (!recaptchaResponse) {
       setErrorMsg("Please complete the reCAPTCHA verification.")
@@ -89,7 +88,7 @@ export function ContactForm() {
           const json = JSON.parse(body)
           if (json?.message) errMsg = json.message
           else if (json?.error) errMsg = json.error
-        } catch { /* non-JSON body, use default */ }
+        } catch { /* non-JSON body */ }
         setErrorMsg(errMsg)
         setStatus("error")
         recaptchaRef.current?.reset()
@@ -103,12 +102,12 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-12 text-center">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ecfdf3]">
-          <Check className="h-6 w-6 text-[#15803d]" />
+      <div className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-10 text-center">
+        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecfdf3]">
+          <Check className="h-5 w-5 text-[#15803d]" />
         </div>
-        <h3 className="mt-4 text-lg font-semibold text-foreground">Message sent</h3>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <h3 className="mt-3 text-base font-semibold text-foreground">Message sent</h3>
+        <p className="mt-1.5 text-sm text-muted-foreground">
           {"Thank you for reaching out. We'll get back to you within 24 hours."}
         </p>
       </div>
@@ -116,43 +115,46 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-input bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
+    "w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
+
+  const chipClass =
+    "flex cursor-pointer items-center rounded-md border border-input bg-background px-2.5 py-1 text-xs text-foreground transition-colors hover:bg-secondary has-[:checked]:border-ring has-[:checked]:bg-secondary"
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border border-border bg-card p-8">
-      <h3 className="text-lg font-semibold text-foreground">Send us a message</h3>
+    <form onSubmit={handleSubmit} className="rounded-xl border border-border bg-card p-5">
+      <h3 className="text-base font-semibold text-foreground">Send us a message</h3>
 
-      <div className="mt-6 flex flex-col gap-5">
-        <div className="grid gap-5 sm:grid-cols-2">
+      <div className="mt-4 flex flex-col gap-3">
+        {/* Name + Email */}
+        <div className="grid gap-3 sm:grid-cols-2">
           <div>
-            <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
-              Name
+            <label htmlFor="name" className="mb-1 block text-xs font-medium text-foreground">
+              Name <span className="text-destructive">*</span>
             </label>
             <input type="text" id="name" name="name" required placeholder="Your name" className={inputClass} />
           </div>
           <div>
-            <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
-              Email
+            <label htmlFor="email" className="mb-1 block text-xs font-medium text-foreground">
+              Email <span className="text-destructive">*</span>
             </label>
             <input type="email" id="email" name="email" required placeholder="you@company.com" className={inputClass} />
           </div>
         </div>
 
+        {/* Organization */}
         <div>
-          <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-foreground">
+          <label htmlFor="company" className="mb-1 block text-xs font-medium text-foreground">
             Organization
           </label>
           <input type="text" id="company" name="company" placeholder="Your organization" className={inputClass} />
         </div>
 
+        {/* Services */}
         <div>
-          <label className="mb-2 block text-sm font-medium text-foreground">Services of Interest</label>
-          <div className="flex flex-wrap gap-2">
+          <label className="mb-1.5 block text-xs font-medium text-foreground">Services of Interest</label>
+          <div className="flex flex-wrap gap-1.5">
             {serviceOptions.map((option) => (
-              <label
-                key={option}
-                className="flex cursor-pointer items-center gap-2 rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary has-[:checked]:border-ring has-[:checked]:bg-secondary"
-              >
+              <label key={option} className={chipClass}>
                 <input type="checkbox" name="services" value={option} className="sr-only" />
                 {option}
               </label>
@@ -160,14 +162,12 @@ export function ContactForm() {
           </div>
         </div>
 
+        {/* Products */}
         <div>
-          <label className="mb-2 block text-sm font-medium text-foreground">Products of Interest</label>
-          <div className="flex flex-wrap gap-2">
+          <label className="mb-1.5 block text-xs font-medium text-foreground">Products of Interest</label>
+          <div className="flex flex-wrap gap-1.5">
             {productOptions.map((option) => (
-              <label
-                key={option}
-                className="flex cursor-pointer items-center gap-2 rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary has-[:checked]:border-ring has-[:checked]:bg-secondary"
-              >
+              <label key={option} className={chipClass}>
                 <input type="checkbox" name="products" value={option} className="sr-only" />
                 {option}
               </label>
@@ -175,29 +175,30 @@ export function ContactForm() {
           </div>
         </div>
 
+        {/* Message */}
         <div>
-          <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">
-            Message
+          <label htmlFor="message" className="mb-1 block text-xs font-medium text-foreground">
+            Message <span className="text-destructive">*</span>
           </label>
           <textarea
             id="message"
             name="message"
-            rows={4}
+            rows={3}
             required
             placeholder="Tell us about your project or requirements..."
             className={inputClass}
           />
         </div>
 
-        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} />
+        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} size="normal" />
 
         {(status === "error" || errorMsg) && (
-          <p className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-2.5 text-sm text-destructive">
+          <p className="rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive">
             {errorMsg}
           </p>
         )}
 
-        <Button type="submit" size="lg" disabled={status === "sending"} className="w-full sm:w-auto">
+        <Button type="submit" disabled={status === "sending"} className="w-full sm:w-auto">
           {status === "sending" ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />

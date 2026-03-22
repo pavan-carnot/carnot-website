@@ -139,22 +139,6 @@ export function IcarKnoShowcase() {
 // ── More from Carnot Research (BharGati + SAATHI) ─────────────────────────────
 const imageProducts = [
   {
-    name: "BharGati™ AI",
-    nameColor: "#16a34a",
-    tagline: "Sports & Performance AI",
-    desc: "AI-powered biomechanical movement analysis from standard video. No wearables or lab setup needed. Measures joint angles, gait, posture, and performance metrics for coaches, athletes, and rehabilitation teams.",
-    bullets: [
-      "Vision-based pose & gait analysis",
-      "Biomechanical metrics & coaching insights",
-      "Sports, rehabilitation & elite training",
-    ],
-    accentFrom: "#16a34a",
-    accentTo: "#4ade80",
-    image: "/assets/products/homepage/homepage_Bhargati.png",
-    href: "/products/bhargati",
-    award: false,
-  },
-  {
     name: "SAATHI",
     nameColor: "#dc2626",
     tagline: "Delhi Public Transit AI",
@@ -169,6 +153,22 @@ const imageProducts = [
     image: "/assets/products/homepage/homepage_Saathi.png",
     href: "/products/saathi",
     award: true,
+  },
+  {
+    name: "BharGati™ AI",
+    nameColor: "#16a34a",
+    tagline: "Sports & Performance AI",
+    desc: "AI-powered biomechanical movement analysis from standard video. No wearables or lab setup needed. Measures joint angles, gait, posture, and performance metrics for coaches, athletes, and rehabilitation teams.",
+    bullets: [
+      "Vision-based pose & gait analysis",
+      "Biomechanical metrics & coaching insights",
+      "Sports, rehabilitation & elite training",
+    ],
+    accentFrom: "#16a34a",
+    accentTo: "#4ade80",
+    image: "/assets/products/homepage/homepage_Bhargati.png",
+    href: "/products/bhargati",
+    award: false,
   },
 ]
 

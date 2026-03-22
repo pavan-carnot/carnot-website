@@ -135,7 +135,7 @@ Resume Google Drive Link: ${resumeLink}`
   return (
     <>
       {/* ── Position cards ── */}
-      <section className="bg-secondary/30 py-24 lg:py-32">
+      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-14">
             <p className="text-sm font-medium tracking-wider text-accent uppercase">Careers</p>

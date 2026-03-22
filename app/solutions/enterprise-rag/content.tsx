@@ -251,7 +251,7 @@ export function EnterpriseRAGContent() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#0b1929] py-24 lg:py-32">
+      <section className="relative overflow-hidden bg-[#0b1929] min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-16 pb-[7.5rem]">
         {/* Dot-grid overlay */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
