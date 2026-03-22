@@ -54,8 +54,7 @@ export function IcarKnoShowcase() {
               Meet icarKno™
             </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            icarKno™ turns your institutional documents into a secure, conversational AI running
-            entirely on-premise, with no data leaving your environment.
+            icarKno™ facilitates institutional Knowledge to be leveraged while ensuring privacy, security and reliability.
           </p>
         </FadeUp>
 

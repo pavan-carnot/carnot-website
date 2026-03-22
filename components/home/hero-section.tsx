@@ -38,14 +38,26 @@ export function HeroSection() {
           </div>
 
           {/* H1 */}
-          <h1 className="text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            AI That Works{" "}
-            <span className="text-blue-600">Without the Internet.</span>
+          <h1 className="font-bold tracking-tight text-gray-900">
+            <span className="block text-2xl sm:text-3xl text-gray-900 mb-1">icarKno™</span>
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-blue-600">I Carry Knowledge.</span>
           </h1>
 
+          {/* Attribute tags */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {["Secure", "Portable", "On-Premise", "Agentic"].map((attr) => (
+              <span
+                key={attr}
+                className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700"
+              >
+                {attr}
+              </span>
+            ))}
+          </div>
+
           {/* Sub */}
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
-            Carnot Research deploys secure, sovereign AI inside your own walls.
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
+            Knowledge Agent for Standalone Applications , no cloud, no internet required.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-gray-600">
             <li className="flex items-start gap-2">
