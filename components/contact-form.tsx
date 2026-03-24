@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
-import { Button } from "@/components/ui/button"
 import { ArrowRight, Check, Loader2 } from "lucide-react"
 
 const API_ENDPOINT =
@@ -54,21 +53,21 @@ export function ContactForm() {
 
     const fullMessage = [
       `Name: ${name}`,
-      company         ? `Organization: ${company}`               : "",
-      services.length ? `Services: ${services.join(", ")}`        : "",
-      products.length ? `Products: ${products.join(", ")}`        : "",
+      company         ? `Organization: ${company}`        : "",
+      services.length ? `Services: ${services.join(", ")}` : "",
+      products.length ? `Products: ${products.join(", ")}` : "",
       "",
       message,
     ].filter(Boolean).join("\n")
 
     const params = new URLSearchParams()
-    params.set("template-contactform-name",    name)
-    params.set("template-contactform-email",   email)
-    params.set("template-contactform-phone",   "")
-    params.set("template-contactform-subject", subject)
-    params.set("template-contactform-message", fullMessage)
+    params.set("template-contactform-name",     name)
+    params.set("template-contactform-email",    email)
+    params.set("template-contactform-phone",    "")
+    params.set("template-contactform-subject",  subject)
+    params.set("template-contactform-message",  fullMessage)
     params.set("template-contactform-botcheck", "")
-    params.set("g-recaptcha-response",         recaptchaResponse)
+    params.set("g-recaptcha-response",          recaptchaResponse)
     services.forEach((s) => params.append("template-contactform-service[]", s))
 
     try {
@@ -102,116 +101,114 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-xl border border-border bg-card p-10 text-center">
-        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ecfdf3]">
-          <Check className="h-5 w-5 text-[#15803d]" />
+      <div className="flex h-full flex-col items-center justify-center text-center py-10">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-50 ring-4 ring-green-100">
+          <Check className="h-6 w-6 text-green-600" />
         </div>
-        <h3 className="mt-3 text-base font-semibold text-foreground">Message sent</h3>
-        <p className="mt-1.5 text-sm text-muted-foreground">
-          {"Thank you for reaching out. We'll get back to you within 24 hours."}
+        <h3 className="mt-4 text-lg font-semibold text-gray-900">Message sent!</h3>
+        <p className="mt-1 text-sm text-gray-500 max-w-xs">
+          Thank you for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
       </div>
     )
   }
 
   const inputClass =
-    "w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
+    "w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400 transition-colors"
 
   const chipClass =
-    "flex cursor-pointer items-center rounded-md border border-input bg-background px-2.5 py-1 text-xs text-foreground transition-colors hover:bg-secondary has-[:checked]:border-ring has-[:checked]:bg-secondary"
+    "flex cursor-pointer items-center rounded-full border border-gray-200 bg-white px-2.5 py-0.5 text-xs text-gray-600 transition-colors hover:border-blue-300 hover:bg-blue-50 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:text-blue-700"
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border border-border bg-card p-5">
-      <h3 className="text-base font-semibold text-foreground">Send us a message</h3>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 h-full">
 
-      <div className="mt-4 flex flex-col gap-3">
-        {/* Name + Email */}
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div>
-            <label htmlFor="name" className="mb-1 block text-xs font-medium text-foreground">
-              Name <span className="text-destructive">*</span>
-            </label>
-            <input type="text" id="name" name="name" required placeholder="Your name" className={inputClass} />
-          </div>
-          <div>
-            <label htmlFor="email" className="mb-1 block text-xs font-medium text-foreground">
-              Email <span className="text-destructive">*</span>
-            </label>
-            <input type="email" id="email" name="email" required placeholder="you@company.com" className={inputClass} />
-          </div>
-        </div>
-
-        {/* Organization */}
+      {/* Row 1: Name + Email */}
+      <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor="company" className="mb-1 block text-xs font-medium text-foreground">
-            Organization
+          <label htmlFor="name" className="mb-1 block text-xs font-medium text-gray-600">
+            Name <span className="text-red-500">*</span>
           </label>
-          <input type="text" id="company" name="company" placeholder="Your organization" className={inputClass} />
+          <input type="text" id="name" name="name" required placeholder="Your name" className={inputClass} />
         </div>
-
-        {/* Services */}
         <div>
-          <label className="mb-1.5 block text-xs font-medium text-foreground">Services of Interest</label>
-          <div className="flex flex-wrap gap-1.5">
-            {serviceOptions.map((option) => (
-              <label key={option} className={chipClass}>
-                <input type="checkbox" name="services" value={option} className="sr-only" />
-                {option}
-              </label>
-            ))}
-          </div>
-        </div>
-
-        {/* Products */}
-        <div>
-          <label className="mb-1.5 block text-xs font-medium text-foreground">Products of Interest</label>
-          <div className="flex flex-wrap gap-1.5">
-            {productOptions.map((option) => (
-              <label key={option} className={chipClass}>
-                <input type="checkbox" name="products" value={option} className="sr-only" />
-                {option}
-              </label>
-            ))}
-          </div>
-        </div>
-
-        {/* Message */}
-        <div>
-          <label htmlFor="message" className="mb-1 block text-xs font-medium text-foreground">
-            Message <span className="text-destructive">*</span>
+          <label htmlFor="email" className="mb-1 block text-xs font-medium text-gray-600">
+            Email <span className="text-red-500">*</span>
           </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={3}
-            required
-            placeholder="Tell us about your project or requirements..."
-            className={inputClass}
-          />
+          <input type="email" id="email" name="email" required placeholder="you@company.com" className={inputClass} />
         </div>
-
-        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} size="normal" />
-
-        {(status === "error" || errorMsg) && (
-          <p className="rounded-lg border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive">
-            {errorMsg}
-          </p>
-        )}
-
-        <Button type="submit" disabled={status === "sending"} className="w-full sm:w-auto">
-          {status === "sending" ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Sending…
-            </>
-          ) : (
-            <>
-              Send Message
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </>
-          )}
-        </Button>
       </div>
+
+      {/* Row 2: Organization */}
+      <div>
+        <label htmlFor="company" className="mb-1 block text-xs font-medium text-gray-600">
+          Organization
+        </label>
+        <input type="text" id="company" name="company" placeholder="Your organization" className={inputClass} />
+      </div>
+
+      {/* Row 3: Services */}
+      <div>
+        <label className="mb-1.5 block text-xs font-medium text-gray-600">Services of Interest</label>
+        <div className="flex flex-wrap gap-1.5">
+          {serviceOptions.map((option) => (
+            <label key={option} className={chipClass}>
+              <input type="checkbox" name="services" value={option} className="sr-only" />
+              {option}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Row 4: Products */}
+      <div>
+        <label className="mb-1.5 block text-xs font-medium text-gray-600">Products of Interest</label>
+        <div className="flex flex-wrap gap-1.5">
+          {productOptions.map((option) => (
+            <label key={option} className={chipClass}>
+              <input type="checkbox" name="products" value={option} className="sr-only" />
+              {option}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Row 5: Message */}
+      <div className="flex-1">
+        <label htmlFor="message" className="mb-1 block text-xs font-medium text-gray-600">
+          Message <span className="text-red-500">*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={3}
+          required
+          placeholder="Tell us about your project or requirements..."
+          className={`${inputClass} resize-none`}
+          style={{ height: "72px" }}
+        />
+      </div>
+
+      {/* Row 6: reCAPTCHA + Submit */}
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} size="compact" />
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60 transition-colors shadow-sm"
+        >
+          {status === "sending" ? (
+            <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>
+          ) : (
+            <>Send Message<ArrowRight className="h-4 w-4" /></>
+          )}
+        </button>
+      </div>
+
+      {(status === "error" || errorMsg) && (
+        <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">
+          {errorMsg}
+        </p>
+      )}
     </form>
   )
 }

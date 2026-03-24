@@ -39,8 +39,8 @@ export function HeroSection() {
 
           {/* H1 */}
           <h1 className="font-bold tracking-tight text-gray-900">
-            <span className="block text-2xl sm:text-3xl text-gray-900 mb-1">icarKno™</span>
-            <span className="block text-4xl sm:text-5xl lg:text-6xl text-blue-600">I Carry Knowledge.</span>
+            <span className="block text-2xl sm:text-3xl text-gray-900 mb-3">icarKno™</span>
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-blue-600">I Carry Knowledge</span>
           </h1>
 
           {/* Attribute tags */}
@@ -62,7 +62,7 @@ export function HeroSection() {
           <ul className="mt-4 space-y-2 text-sm text-gray-600">
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
-              <span><span className="font-semibold text-gray-800">icarKno™:</span> on-premise knowledge AI that runs 100% inside your network</span>
+              <span><span className="font-semibold text-gray-800">icarKno™</span> on-premise knowledge AI that runs 100% inside your network</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
@@ -91,22 +91,6 @@ export function HeroSection() {
             </Link>
           </div>
 
-          {/* Trust */}
-          <div className="mt-8">
-            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-              Trusted by
-            </p>
-            <div className="flex flex-wrap items-center gap-2.5">
-              {["NSG", "IIT Delhi", "BCG", "JICA", "MSME", "Rashtriya Raksha University"].map((name) => (
-                <span
-                  key={name}
-                  className="rounded-md border border-gray-200 bg-white px-3 py-1 text-xs font-semibold text-gray-500"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
-          </div>
 
 
         </div>

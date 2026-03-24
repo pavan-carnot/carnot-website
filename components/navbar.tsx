@@ -56,9 +56,19 @@ const mobileNav = [
     items: [
       { name: "Guides", href: "/company/guides", sub: "Step-by-step AI workflows" },
       { name: "Research", href: "/company/resources", sub: "Research & case studies" },
-      { name: "Resource", href: "https://cr-vision.carnotresearch.com/", sub: "Vision & intelligence tools", external: true },
-      { name: "Playground", href: "https://playground.carnotresearch.com/#/", sub: "Explore Carnot AI live", external: true },
       { name: "Contact", href: "/contact", sub: "Get in touch with us" },
+    ],
+  },
+  {
+    name: "Resources",
+    items: [
+      { name: "Resources", href: "https://cr-vision.carnotresearch.com/", sub: "Vision & intelligence tools", external: true },
+    ],
+  },
+  {
+    name: "Playground",
+    items: [
+      { name: "Playground", href: "https://playground.carnotresearch.com/#/", sub: "Explore Carnot AI live", external: true },
     ],
   },
 ]
@@ -79,7 +89,7 @@ function MobileAccordion({ item, onClose }: { item: typeof mobileNav[0]; onClose
       </button>
       {open && (
         <div className="mt-1 ml-3 space-y-0.5 border-l border-gray-100 pl-3">
-          {item.items?.map((sub) => sub.external ? (
+          {item.items?.map((sub) => ('external' in sub && sub.external) ? (
             <a
               key={sub.name}
               href={sub.href}
@@ -114,7 +124,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full px-4 pt-3 pb-0">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-xl border border-gray-200 bg-white px-4 h-12 shadow-sm lg:px-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-xl border border-gray-200 bg-white px-4 h-12 shadow-sm lg:px-5">
 
         {/* ── Logo ── */}
         <Link href="/" className="flex items-center gap-2 flex-shrink-0" onClick={close}>
@@ -234,15 +244,13 @@ export function Navbar() {
                   Company
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[380px]">
+                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[320px]">
                     <div className="grid grid-cols-2 gap-6 px-5 py-5">
                       <div>
                         <p className={dropSection}>Learn</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/company/guides" className={dropLink}><span className={dropTitle}>Guides</span><span className={dropSub}>Step-by-step AI workflows</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/company/resources" className={dropLink}><span className={dropTitle}>Research</span><span className={dropSub}>Research &amp; case studies</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><a href="https://cr-vision.carnotresearch.com/" target="_blank" rel="noopener noreferrer" className={dropLink}><span className={dropTitle}>Resource</span><span className={dropSub}>Vision &amp; intelligence tools</span></a></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><a href="https://playground.carnotresearch.com/#/" target="_blank" rel="noopener noreferrer" className={dropLink}><span className={dropTitle}>Playground</span><span className={dropSub}>Explore Carnot AI live</span></a></NavigationMenuLink></li>
                         </ul>
                       </div>
                       <div>
@@ -259,6 +267,26 @@ export function Navbar() {
 
             </NavigationMenuList>
           </NavigationMenu>
+
+          {/* Direct links */}
+          <div className="flex items-center gap-0.5 ml-1">
+            <a
+              href="https://cr-vision.carnotresearch.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-8 inline-flex items-center gap-1 rounded-md px-3 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+            >
+              Resources
+            </a>
+            <a
+              href="https://playground.carnotresearch.com/#/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-8 inline-flex items-center gap-1 rounded-md px-3 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+            >
+              Playground
+            </a>
+          </div>
         </div>
 
         {/* ── Right CTAs ── */}
@@ -293,11 +321,24 @@ export function Navbar() {
 
       {/* ── Mobile Menu ── */}
       {mobileOpen && (
-        <div className="mx-auto mt-1 max-w-6xl rounded-xl border border-gray-200 bg-white shadow-sm lg:hidden">
+        <div className="mx-auto mt-1 max-w-7xl rounded-xl border border-gray-200 bg-white shadow-sm lg:hidden">
           <div className="px-3 py-3 space-y-0.5">
-            {mobileNav.map((item) => (
-              <MobileAccordion key={item.name} item={item} onClose={close} />
-            ))}
+            {mobileNav.map((item) =>
+              item.items.length === 1 && 'external' in item.items[0] && item.items[0].external ? (
+                <a
+                  key={item.name}
+                  href={item.items[0].href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={close}
+                  className="flex w-full items-center rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <MobileAccordion key={item.name} item={item} onClose={close} />
+              )
+            )}
 
             {/* CTAs */}
             <div className="mt-3 flex flex-col gap-2 border-t border-gray-100 pt-3">
