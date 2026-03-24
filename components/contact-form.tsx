@@ -9,7 +9,7 @@ const API_ENDPOINT =
   "https://izwz05lqn1.execute-api.ap-south-1.amazonaws.com/default/sendMail"
 
 const RECAPTCHA_SITE_KEY =
-  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "6Lehn-cpAAAAAJ4E59tN-ihLUUDt3zpEykVAMRPI"
 
 const serviceOptions = [
   "Product Development",

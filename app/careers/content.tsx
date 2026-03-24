@@ -10,7 +10,7 @@ const API_ENDPOINT =
 
 // Add your reCAPTCHA v2 site key here (or set NEXT_PUBLIC_RECAPTCHA_SITE_KEY env var)
 const RECAPTCHA_SITE_KEY =
-  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "6Lehn-cpAAAAAJ4E59tN-ihLUUDt3zpEykVAMRPI"
 
 type PositionType = "Job Position" | "Internship" | ""
 type Status = "idle" | "sending" | "success" | "error"
