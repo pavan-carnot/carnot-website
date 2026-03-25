@@ -151,15 +151,13 @@ export function ContactForm() {
 
       {/* Services */}
       <div>
-        <label className="mb-1.5 block text-xs font-medium text-gray-600">Services of Interest</label>
-        <div className="flex flex-wrap gap-1.5">
+        <label htmlFor="cf-service" className="mb-1.5 block text-xs font-medium text-gray-600">Services of Interest</label>
+        <select id="cf-service" name="services" className={inputClass}>
+          <option value="">Select a service…</option>
           {serviceOptions.map((o) => (
-            <label key={o} className={chipClass}>
-              <input type="checkbox" name="services" value={o} className="sr-only" />
-              {o}
-            </label>
+            <option key={o} value={o}>{o}</option>
           ))}
-        </div>
+        </select>
       </div>
 
       {/* Products */}
