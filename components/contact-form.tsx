@@ -53,9 +53,9 @@ export function ContactForm() {
 
     const fullMessage = [
       `Name: ${name}`,
-      company         ? `Organization: ${company}`        : "",
-      services.length ? `Services: ${services.join(", ")}` : "",
-      products.length ? `Products: ${products.join(", ")}` : "",
+      company         ? `Organization: ${company}`               : "",
+      services.length ? `Services: ${services.join(", ")}`        : "",
+      products.length ? `Products: ${products.join(", ")}`        : "",
       "",
       message,
     ].filter(Boolean).join("\n")
@@ -101,111 +101,112 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex h-full flex-col items-center justify-center text-center py-10">
+      <div className="flex flex-col items-center justify-center py-10 text-center">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-50 ring-4 ring-green-100">
           <Check className="h-6 w-6 text-green-600" />
         </div>
-        <h3 className="mt-4 text-lg font-semibold text-gray-900">Message sent!</h3>
-        <p className="mt-1 text-sm text-gray-500 max-w-xs">
-          Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+        <h3 className="mt-4 text-base font-semibold text-gray-900">Message sent!</h3>
+        <p className="mt-1.5 max-w-xs text-sm text-gray-500">
+          {"Thank you for reaching out. We'll get back to you within 24 hours."}
         </p>
       </div>
     )
   }
 
   const inputClass =
-    "w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400 transition-colors"
+    "w-full rounded-lg border border-gray-200 bg-gray-50 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 " +
+    "focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
 
   const chipClass =
-    "flex cursor-pointer items-center rounded-full border border-gray-200 bg-white px-2.5 py-0.5 text-xs text-gray-600 transition-colors hover:border-blue-300 hover:bg-blue-50 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:text-blue-700"
+    "flex cursor-pointer items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 " +
+    "transition-all hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 " +
+    "has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:text-blue-700"
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 h-full">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
 
-      {/* Row 1: Name + Email */}
+      {/* Name + Email */}
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor="name" className="mb-1 block text-xs font-medium text-gray-600">
-            Name <span className="text-red-500">*</span>
+          <label htmlFor="cf-name" className="mb-1.5 block text-xs font-medium text-gray-600">
+            Name <span className="text-red-400">*</span>
           </label>
-          <input type="text" id="name" name="name" required placeholder="Your name" className={inputClass} />
+          <input type="text" id="cf-name" name="name" required placeholder="Your name" className={inputClass} />
         </div>
         <div>
-          <label htmlFor="email" className="mb-1 block text-xs font-medium text-gray-600">
-            Email <span className="text-red-500">*</span>
+          <label htmlFor="cf-email" className="mb-1.5 block text-xs font-medium text-gray-600">
+            Work Email <span className="text-red-400">*</span>
           </label>
-          <input type="email" id="email" name="email" required placeholder="you@company.com" className={inputClass} />
+          <input type="email" id="cf-email" name="email" required placeholder="you@company.com" className={inputClass} />
         </div>
       </div>
 
-      {/* Row 2: Organization */}
+      {/* Organization */}
       <div>
-        <label htmlFor="company" className="mb-1 block text-xs font-medium text-gray-600">
+        <label htmlFor="cf-company" className="mb-1.5 block text-xs font-medium text-gray-600">
           Organization
         </label>
-        <input type="text" id="company" name="company" placeholder="Your organization" className={inputClass} />
+        <input type="text" id="cf-company" name="company" placeholder="Your organization" className={inputClass} />
       </div>
 
-      {/* Row 3: Services */}
+      {/* Services */}
       <div>
         <label className="mb-1.5 block text-xs font-medium text-gray-600">Services of Interest</label>
         <div className="flex flex-wrap gap-1.5">
-          {serviceOptions.map((option) => (
-            <label key={option} className={chipClass}>
-              <input type="checkbox" name="services" value={option} className="sr-only" />
-              {option}
+          {serviceOptions.map((o) => (
+            <label key={o} className={chipClass}>
+              <input type="checkbox" name="services" value={o} className="sr-only" />
+              {o}
             </label>
           ))}
         </div>
       </div>
 
-      {/* Row 4: Products */}
+      {/* Products */}
       <div>
         <label className="mb-1.5 block text-xs font-medium text-gray-600">Products of Interest</label>
         <div className="flex flex-wrap gap-1.5">
-          {productOptions.map((option) => (
-            <label key={option} className={chipClass}>
-              <input type="checkbox" name="products" value={option} className="sr-only" />
-              {option}
+          {productOptions.map((o) => (
+            <label key={o} className={chipClass}>
+              <input type="checkbox" name="products" value={o} className="sr-only" />
+              {o}
             </label>
           ))}
         </div>
       </div>
 
-      {/* Row 5: Message */}
-      <div className="flex-1">
-        <label htmlFor="message" className="mb-1 block text-xs font-medium text-gray-600">
-          Message <span className="text-red-500">*</span>
+      {/* Message */}
+      <div>
+        <label htmlFor="cf-message" className="mb-1.5 block text-xs font-medium text-gray-600">
+          Message <span className="text-red-400">*</span>
         </label>
         <textarea
-          id="message"
-          name="message"
-          rows={3}
-          required
-          placeholder="Tell us about your project or requirements..."
+          id="cf-message" name="message" required rows={2}
+          placeholder="Tell us about your project or requirements…"
           className={`${inputClass} resize-none`}
-          style={{ height: "72px" }}
         />
       </div>
 
-      {/* Row 6: reCAPTCHA + Submit */}
-      <div className="flex items-center justify-between gap-3 flex-wrap">
-        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} size="compact" />
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-60 transition-colors shadow-sm"
-        >
-          {status === "sending" ? (
-            <><Loader2 className="h-4 w-4 animate-spin" />Sending…</>
-          ) : (
-            <>Send Message<ArrowRight className="h-4 w-4" /></>
-          )}
-        </button>
+      {/* reCAPTCHA */}
+      <div className="flex justify-center">
+        <ReCAPTCHA ref={recaptchaRef} sitekey={RECAPTCHA_SITE_KEY} />
       </div>
 
+      {/* Submit */}
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 active:scale-[0.98] disabled:opacity-60 transition-all"
+      >
+        {status === "sending" ? (
+          <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</>
+        ) : (
+          <>Send Message <ArrowRight className="h-4 w-4" /></>
+        )}
+      </button>
+
       {(status === "error" || errorMsg) && (
-        <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">
+        <p className="rounded-lg border border-red-100 bg-red-50 px-3 py-2 text-xs text-red-600">
           {errorMsg}
         </p>
       )}
