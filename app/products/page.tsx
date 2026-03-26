@@ -94,6 +94,7 @@ const gemProducts = [
     icon: FileText,
     iconBg: "bg-[#e0f2fe]",
     iconColor: "text-[#1d4ed8]",
+    href: "/products/gem/meeting-summarizer",
   },
   {
     name: "On-Premise Knowledge Agent",
@@ -102,6 +103,7 @@ const gemProducts = [
     icon: Server,
     iconBg: "bg-[#ecfdf3]",
     iconColor: "text-[#15803d]",
+    href: "/products/gem/onpremise-knowledge-agent",
   },
   {
     name: "Multilingual Chatbot",
@@ -110,6 +112,7 @@ const gemProducts = [
     icon: Globe,
     iconBg: "bg-[#fef3ff]",
     iconColor: "text-[#c11574]",
+    href: "/products/gem/multilingual-chatbot",
   },
   {
     name: "Generative AI Conversational Agent",
@@ -118,6 +121,7 @@ const gemProducts = [
     icon: Bot,
     iconBg: "bg-[#fff3c6]",
     iconColor: "text-[#b54708]",
+    href: "/products/gem/genai-conversational-agent",
   },
 ]
 
@@ -218,7 +222,7 @@ export default function ProductsPage() {
             {gemProducts.map((product) => (
               <div
                 key={product.name}
-                className="rounded-xl border border-border bg-card p-6"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-200"
               >
                 <div
                   className={`flex h-10 w-10 items-center justify-center rounded-lg ${product.iconBg}`}
@@ -228,9 +232,15 @@ export default function ProductsPage() {
                 <h3 className="mt-4 text-base font-semibold text-foreground">
                   {product.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground flex-1">
                   {product.description}
                 </p>
+                <Link
+                  href={product.href}
+                  className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+                >
+                  Explore <ArrowRight className="h-3 w-3" />
+                </Link>
               </div>
             ))}
           </div>
