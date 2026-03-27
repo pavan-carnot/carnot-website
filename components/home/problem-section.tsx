@@ -1,162 +1,221 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useRef, useState, type ReactNode } from "react"
-import { Wifi, Clock, ShieldCheck, Layers, X, Check } from "lucide-react"
+import { Wifi, Clock, ShieldCheck, Layers, X, Check, ArrowRight } from "lucide-react"
 
-function FadeUp({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
+function useReveal() {
   const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const [vis, setVis] = useState(false)
   useEffect(() => {
     const el = ref.current; if (!el) return
-    const ob = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVisible(true); ob.unobserve(el) } },
-      { threshold: 0.05 }
-    )
+    const ob = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(true); ob.unobserve(el) } }, { threshold: 0.05 })
     ob.observe(el); return () => ob.disconnect()
   }, [])
+  return { ref, vis }
+}
+
+function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
+  const { ref, vis } = useReveal()
   return (
     <div ref={ref} className={className}
-      style={visible ? { animation: `fadeUpIn 0.6s ease ${delay}ms both` } : { opacity: 0, transform: "translateY(20px)" }}>
+      style={vis ? { animation: `revealUp 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}ms both` } : { opacity: 0, transform: "translateY(24px)" }}>
       {children}
     </div>
   )
 }
 
-const pillars = [
-  {
-    icon: Wifi,
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-600",
-    category: "Connectivity",
-    challenge: "When connectivity fails, most AI systems stop.",
-    challengeDetail: "Remote operations, critical environments, and field scenarios don't guarantee stable access to the cloud.",
-    solution: "icarKno™ enables AI to run entirely offline.",
-    solutionDetail: "Processing, understanding, and decision support without relying on external networks.",
-  },
-  {
-    icon: Clock,
-    iconBg: "bg-amber-100",
-    iconColor: "text-amber-600",
-    category: "Latency",
-    challenge: "When decisions are time-sensitive, delays aren't acceptable.",
-    challengeDetail: "Sending data back and forth to centralized systems creates lag where immediate action is required.",
-    solution: "icarKno™ processes intelligence at the source.",
-    solutionDetail: "Real-time analysis and response, exactly where the data is generated.",
-  },
-  {
-    icon: ShieldCheck,
-    iconBg: "bg-emerald-100",
-    iconColor: "text-emerald-600",
-    category: "Security",
-    challenge: "When data is critical, exposure isn't an option.",
-    challengeDetail: "Transmitting sensitive information through external systems introduces risks many environments cannot take.",
-    solution: "icarKno™ keeps data fully local and controlled.",
-    solutionDetail: "No external dependency. No unnecessary exposure. Complete operational security.",
-  },
-  {
-    icon: Layers,
-    iconBg: "bg-purple-100",
-    iconColor: "text-purple-600",
-    category: "Complexity",
-    challenge: "When information is vast, extracting clarity becomes difficult.",
-    challengeDetail: "Documents, inputs, and data streams remain underutilised because systems can't process them effectively on-site.",
-    solution: "icarKno™ turns complex data into actionable intelligence.",
-    solutionDetail: "From documents to real-time inputs, delivering clarity when it matters most.",
-  },
+const problems = [
+  { icon: Wifi,        label: "Connectivity",  text: "Stops working the moment internet is unavailable — field deployments left without AI support." },
+  { icon: Clock,       label: "Latency",        text: "Every query round-trips to a data center. Real-time decisions wait for network latency." },
+  { icon: ShieldCheck, label: "Security",       text: "Your most sensitive documents leave your perimeter every time someone asks a question." },
+  { icon: Layers,      label: "Complexity",     text: "Vast document stores can't be processed on-site — critical knowledge stays locked away." },
+]
+
+const solutions = [
+  { icon: Wifi,        label: "Offline First",  text: "Runs 100% inside your network. No internet. No cloud. Fully operational in the most remote environments." },
+  { icon: Clock,       label: "Instant Local",  text: "Every query processed on your own hardware — sub-second responses with zero round-trip latency." },
+  { icon: ShieldCheck, label: "Data Stays Put", text: "Your data never leaves your perimeter. Air-gap capable. Designed for defence-grade environments." },
+  { icon: Layers,      label: "Full Ingestion", text: "PDF, Word, Excel, video, audio, scanned images — every format, fully searchable, on-premise." },
 ]
 
 export function ProblemSection() {
   return (
-    <section className="bg-secondary/30 py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section
+      className="relative overflow-hidden"
+      style={{ background: "#ffffff" }}
+    >
+      {/* Top line */}
+      <div className="absolute inset-x-0 top-0 h-px"
+        style={{ background: "linear-gradient(90deg,transparent,rgba(0,0,0,0.08),transparent)" }} />
 
-        {/* Header */}
-        <FadeUp>
-          <div className="mx-auto mb-14 max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              The Need for Edge AI
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Today&apos;s AI systems were not built for the environments that need them most.
-            </p>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+
+        {/* ── Header ── */}
+        <Reveal className="mb-16">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-12 bg-zinc-300" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+              The Edge AI Advantage
+            </span>
           </div>
-        </FadeUp>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-zinc-900 tracking-tight leading-[1.05] max-w-2xl">
+            AI built for where
+            <br />
+            <span className="text-teal-600">decisions actually happen.</span>
+          </h2>
+          <p className="mt-5 max-w-lg text-base text-zinc-600 leading-relaxed">
+            Cloud AI was built for offices with reliable internet. icarKno™ was built for the
+            field, the defence base, and the air-gapped server room.
+          </p>
+        </Reveal>
 
-        {/* Column headers */}
-        <FadeUp delay={80}>
-          <div className="mb-4 hidden grid-cols-[200px_1fr_40px_1fr] gap-4 px-2 sm:grid lg:grid-cols-[220px_1fr_48px_1fr]">
-            <div />
-            <div className="flex items-center gap-2 text-sm font-bold tracking-wide text-red-500">
-              <X className="h-4 w-4" /> Without icarKno™
-            </div>
-            <div />
-            <div className="flex items-center gap-2 text-sm font-bold tracking-wide text-green-600">
-              <Check className="h-4 w-4" /> With icarKno™
-            </div>
-          </div>
-        </FadeUp>
+        {/* ── LARGE SPLIT PANELS ── */}
+        <Reveal delay={120}>
+          <div
+            className="grid lg:grid-cols-2 overflow-hidden rounded-2xl"
+            style={{ border: "1px solid rgba(0,0,0,0.10)" }}
+          >
+            {/* ── LEFT: WITHOUT ── */}
+            <div
+              className="relative p-8 lg:p-10"
+              style={{ background: "#fffbfb", borderRight: "1px solid rgba(0,0,0,0.08)" }}
+            >
+              {/* Red top bar */}
+              <div className="absolute inset-x-0 top-0 h-0.5"
+                style={{ background: "linear-gradient(90deg,#991b1b,#dc2626,transparent)" }} />
 
-        {/* Rows */}
-        <div className="space-y-3">
-          {pillars.map((p, i) => (
-            <FadeUp key={p.category} delay={120 + i * 70}>
-              <div className="overflow-hidden rounded-xl border border-border bg-card">
+              <div className="flex items-center gap-2.5 mb-8">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg"
+                  style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.2)" }}>
+                  <X className="h-3.5 w-3.5 text-red-500" />
+                </div>
+                <span className="text-sm font-bold uppercase tracking-widest text-red-500">
+                  Cloud AI
+                </span>
+              </div>
 
-                {/* Mobile: stacked layout */}
-                <div className="sm:hidden">
-                  <div className="flex items-center gap-3 border-b border-border bg-gray-50 px-5 py-3">
-                    <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${p.iconBg}`}>
-                      <p.icon className={`h-4 w-4 ${p.iconColor}`} />
+              <div className="space-y-6">
+                {problems.map((p) => (
+                  <div key={p.label} className="flex gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl mt-0.5"
+                      style={{ background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.1)" }}>
+                      <p.icon className="h-4.5 w-4.5 text-red-800" />
                     </div>
-                    <span className="text-sm font-bold text-foreground">{p.category}</span>
+                    <div>
+                      <p className="text-sm font-bold text-zinc-700 mb-1">{p.label}</p>
+                      <p className="text-[13px] leading-relaxed text-zinc-500">{p.text}</p>
+                    </div>
                   </div>
-                  <div className="grid grid-cols-2 divide-x divide-border">
-                    <div className="bg-red-50/50 p-4">
-                      <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-red-500 flex items-center gap-1"><X className="h-3 w-3" /> Challenge</p>
-                      <p className="text-xs font-semibold text-red-800 leading-snug">{p.challenge}</p>
-                      <p className="mt-1.5 text-xs leading-relaxed text-red-700/60">{p.challengeDetail}</p>
+                ))}
+              </div>
+            </div>
+
+            {/* ── RIGHT: WITH icarKno ── */}
+            <div
+              className="relative p-8 lg:p-10"
+              style={{ background: "#f0fdfa" }}
+            >
+              {/* Teal top bar */}
+              <div className="absolute inset-x-0 top-0 h-0.5"
+                style={{ background: "linear-gradient(90deg,#0d9488,#14b8a6,transparent)" }} />
+
+              <div className="flex items-center gap-2.5 mb-8">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg"
+                  style={{ background: "rgba(20,184,166,0.1)", border: "1px solid rgba(20,184,166,0.25)" }}>
+                  <Check className="h-3.5 w-3.5 text-teal-400" />
+                </div>
+                <span className="text-sm font-bold uppercase tracking-widest text-teal-400">
+                  icarKno™ Edge AI
+                </span>
+              </div>
+
+              <div className="space-y-6">
+                {solutions.map((s) => (
+                  <div key={s.label} className="flex gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl mt-0.5"
+                      style={{ background: "rgba(20,184,166,0.08)", border: "1px solid rgba(20,184,166,0.18)" }}>
+                      <s.icon className="h-4.5 w-4.5 text-teal-500" />
                     </div>
-                    <div className="bg-green-50/50 p-4">
-                      <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-green-600 flex items-center gap-1"><Check className="h-3 w-3" /> icarKno™</p>
-                      <p className="text-xs font-semibold text-green-800 leading-snug">{p.solution}</p>
-                      <p className="mt-1.5 text-xs leading-relaxed text-green-700/60">{p.solutionDetail}</p>
+                    <div>
+                      <p className="text-sm font-bold text-zinc-900 mb-1">{s.label}</p>
+                      <p className="text-[13px] leading-relaxed text-zinc-600">{s.text}</p>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ── Numbered feature reveal ── */}
+        <div className="mt-20 lg:mt-28 grid lg:grid-cols-2 gap-y-16 gap-x-24">
+          {[
+            {
+              n: "01", icon: ShieldCheck, color: "#14b8a6",
+              title: "Built for classified environments",
+              body: "Deployed across NSG, Rashtriya Raksha University, IIT Delhi, and more. icarKno™ meets the security requirements of India's most sensitive organisations.",
+              tags: ["CMMI Level 3", "ISO 27001:2022", "DPIIT Certified"],
+            },
+            {
+              n: "02", icon: Layers, color: "#f59e0b",
+              title: "Every document format, fully indexed",
+              body: "Scanned PDFs, Word docs, Excel sheets, PowerPoint presentations, meeting recordings, audio briefings — every format ingested and made searchable.",
+              tags: ["50+ formats", "OCR included", "Multilingual"],
+            },
+          ].map((item, i) => (
+            <Reveal key={item.n} delay={i * 120}>
+              <div className="flex gap-5">
+                <div>
+                  <span className="block text-[11px] font-black text-zinc-400 mb-3">{item.n}</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl"
+                    style={{ background: `${item.color}12`, border: `1px solid ${item.color}22` }}>
+                    <item.icon className="h-5 w-5" style={{ color: item.color }} />
                   </div>
                 </div>
-
-                {/* Desktop: horizontal row */}
-                <div className="hidden sm:grid sm:grid-cols-[200px_1fr_48px_1fr] lg:grid-cols-[220px_1fr_48px_1fr]">
-
-                  {/* Category */}
-                  <div className="flex items-center gap-3 border-r border-border bg-gray-50/80 px-5 py-5">
-                    <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${p.iconBg}`}>
-                      <p.icon className={`h-4 w-4 ${p.iconColor}`} />
-                    </div>
-                    <span className="text-sm font-bold text-foreground">{p.category}</span>
+                <div>
+                  <h4 className="text-xl font-black text-zinc-900 mb-3">{item.title}</h4>
+                  <p className="text-[13px] leading-relaxed text-zinc-600 mb-4">{item.body}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {item.tags.map(t => (
+                      <span key={t} className="text-[11px] font-semibold rounded-full px-2.5 py-1"
+                        style={{ background: `${item.color}0d`, border: `1px solid ${item.color}22`, color: item.color }}>
+                        {t}
+                      </span>
+                    ))}
                   </div>
-
-                  {/* Challenge */}
-                  <div className="border-r border-border bg-red-50/40 px-6 py-5">
-                    <p className="text-sm font-semibold leading-snug text-red-800">{p.challenge}</p>
-                    <p className="mt-1.5 text-xs leading-relaxed text-red-700/60">{p.challengeDetail}</p>
-                  </div>
-
-                  {/* Arrow */}
-                  <div className="flex items-center justify-center bg-white text-gray-300 text-lg font-light">
-                    →
-                  </div>
-
-                  {/* Solution */}
-                  <div className="bg-green-50/40 px-6 py-5">
-                    <p className="text-sm font-semibold leading-snug text-green-800">{p.solution}</p>
-                    <p className="mt-1.5 text-xs leading-relaxed text-green-700/60">{p.solutionDetail}</p>
-                  </div>
-
                 </div>
               </div>
-            </FadeUp>
+            </Reveal>
           ))}
         </div>
+
+        {/* ── Final CTA ── */}
+        <Reveal delay={160} className="mt-20">
+          <div
+            className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl px-8 py-7"
+            style={{
+              background: "rgba(20,184,166,0.04)",
+              border: "1px solid rgba(20,184,166,0.15)",
+            }}
+          >
+            <div>
+              <p className="text-xl font-black text-zinc-900">
+                Ready to take AI fully on-premise?
+              </p>
+              <p className="mt-1 text-sm text-zinc-600">
+                Deployed inside your network. Your data. Your control.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="shrink-0 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-black transition-all hover:-translate-y-0.5"
+              style={{ background: "#14b8a6", boxShadow: "0 4px 20px rgba(20,184,166,0.2)" }}
+            >
+              Request a Demo <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Reveal>
 
       </div>
     </section>
