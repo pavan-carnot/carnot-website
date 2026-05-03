@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { HeroSection }                    from "@/components/home/hero-section"
+import { WeAreSection }                   from "@/components/home/we-are-section"
 import { IcarKnoShowcase, MoreProducts }  from "@/components/home/icarkno-showcase"
 import { ProblemSection }                 from "@/components/home/problem-section"
 import { SolutionsSection }               from "@/components/home/solutions-section"
@@ -39,22 +40,25 @@ export default function HomePage() {
       {/* 1. Who we are & first impression */}
       <HeroSection />
 
-      {/* 2. icarKno™ — flagship product spotlight */}
+      {/* 2. We are Carnot Research */}
+      <WeAreSection />
+
+      {/* 3. icarKno™ — flagship product spotlight */}
       <IcarKnoShowcase />
 
-      {/* 3. Why edge AI matters — the problem icarKno solves */}
+      {/* 4. Why edge AI matters — the problem icarKno solves */}
       <ProblemSection />
 
-      {/* 4. More from Carnot — BharGati & SAATHI */}
+      {/* 5. More from Carnot — BharGati & SAATHI */}
       <MoreProducts />
 
-      {/* 5. All capabilities across 6 domains */}
+      {/* 6. All capabilities across 6 domains */}
       <SolutionsSection />
 
-      {/* 6. Company story — IIT Delhi origins */}
+      {/* 7. Company story — IIT Delhi origins */}
       <AboutSection />
 
-      {/* 7. Clients + certifications */}
+      {/* 8. Clients + certifications */}
       <TrustSection />
 
     </>
