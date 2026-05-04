@@ -4,7 +4,7 @@ export function WeAreSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-700">
-            We are Carnot Research
+            We are icarKno™
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Everything About Us

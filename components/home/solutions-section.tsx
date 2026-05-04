@@ -60,14 +60,14 @@ export function SolutionsSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-700">
             What We Build
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Beyond products: a full AI research team
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Our products are just three examples of what we build. Carnot Research takes
+            Our products are just three examples of what we build. icarKno™ takes
             on custom AI projects across six domains, for organizations that need something
             built from the ground up.
           </p>

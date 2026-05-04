@@ -261,14 +261,14 @@ export function HeroSection() {
         >
           <Image
             src="/assets/logo/carnot-logo.png"
-            alt="Carnot logo"
+            alt="icarKno™ logo"
             width={24}
             height={24}
             priority
             style={{ width: 24, height: 24, objectFit: "contain" }}
           />
           <span style={{ fontSize: 16, fontWeight: 500, color: "#0f172a", letterSpacing: "-0.01em" }}>
-            Carnot Research
+            icarKno™
           </span>
         </div>
 

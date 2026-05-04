@@ -7,10 +7,10 @@ import { ArrowRight } from "lucide-react"
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const images = [
-  { src: `${B}/assets/company/who-we-are/first%20.jpeg`, alt: "Carnot Research" },
-  { src: `${B}/assets/company/who-we-are/second.jpg`, alt: "Carnot Research lab work" },
-  { src: `${B}/assets/company/who-we-are/third.jpeg`, alt: "Carnot Research team" },
-  { src: `${B}/assets/company/who-we-are/forth.jpg`, alt: "Carnot Research" },
+  { src: `${B}/assets/company/who-we-are/first%20.jpeg`, alt: "icarKno™" },
+  { src: `${B}/assets/company/who-we-are/second.jpg`, alt: "icarKno™ lab work" },
+  { src: `${B}/assets/company/who-we-are/third.jpeg`, alt: "icarKno™ team" },
+  { src: `${B}/assets/company/who-we-are/forth.jpg`, alt: "icarKno™" },
 ]
 
 const certs = ["CMMI Level 3", "ISO 27001:2022", "DPIIT Recognised", "MSME Certified"]
@@ -86,16 +86,16 @@ export function AboutSection() {
 
           {/* Right — text */}
           <div className="order-1 lg:order-2">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-teal-700">
               Who We Are
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               From IIT Delhi labs to{" "}
-              <span className="text-blue-600">real-world AI deployment</span>
+              <span className="text-teal-700">real-world AI deployment</span>
             </h2>
 
             <p className="mt-5 text-base leading-relaxed text-gray-600">
-              Carnot Research was founded by IIT Delhi professors and scientists who saw a critical
+              icarKno™ was founded by IIT Delhi professors and scientists who saw a critical
               gap: India&apos;s government, defense, and enterprise organizations needed AI that
               worked entirely inside their own walls: secure, offline, and fully under their control.
             </p>
@@ -119,7 +119,7 @@ export function AboutSection() {
 
             <Link
               href="/about"
-              className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700"
+              className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800"
             >
               Meet the team
               <ArrowRight className="h-4 w-4" />

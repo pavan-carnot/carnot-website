@@ -225,8 +225,8 @@ export function TrustSection() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <FadeUp>
           <div className="mb-14 text-center">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">Trusted By</p>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-teal-700">Trusted By</p>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               Organizations across India trust our work
             </h2>
             <p className="mt-3 text-sm text-gray-500">

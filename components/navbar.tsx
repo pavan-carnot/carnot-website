@@ -131,11 +131,11 @@ export function Navbar() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${B}/assets/logo/carnot-logo.png`}
-            alt="Carnot Research"
+            alt="icarKno™"
             className="h-8 w-auto object-contain"
           />
           <span className="text-sm font-semibold tracking-tight text-gray-900">
-            Carnot Research
+            icarKno™
           </span>
         </Link>
 

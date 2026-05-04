@@ -46,11 +46,11 @@ export function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${B}/assets/logo/carnot-logo.png`}
-                alt="Carnot Research"
+                alt="icarKno™"
                 className="h-8 w-auto object-contain"
               />
               <span className="text-sm font-semibold tracking-tight text-foreground">
-                Carnot Research
+                {renderName("icarKno™")}
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -76,7 +76,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/carnot-research-pvt-ltd/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Carnot Research on LinkedIn"
+                aria-label="icarKno™ on LinkedIn"
                 className="transition-opacity hover:opacity-80"
               >
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@ export function Footer() {
                 href="https://www.youtube.com/@CarnotResearch"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Carnot Research on YouTube"
+                aria-label="icarKno™ on YouTube"
                 className="transition-opacity hover:opacity-80"
               >
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +104,7 @@ export function Footer() {
                 href="https://carnotresearch.medium.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Carnot Research on Medium"
+                aria-label="icarKno™ on Medium"
                 className="transition-opacity hover:opacity-80"
               >
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -137,7 +137,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            {`© ${currentYear} Carnot Research Pvt. Ltd. All rights reserved.`}
+            © {currentYear} {renderName("icarKno™")} Pvt. Ltd. All rights reserved.
           </p>
           <nav className="flex items-center gap-6">
             <Link
