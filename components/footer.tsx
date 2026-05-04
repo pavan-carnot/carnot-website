@@ -137,7 +137,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {currentYear} {renderName("icarKno™")} Pvt. Ltd. All rights reserved.
+            © {currentYear} Carnot Research Pvt. Ltd. All rights reserved.
           </p>
           <nav className="flex items-center gap-6">
             <Link
