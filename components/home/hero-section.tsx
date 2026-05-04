@@ -5,6 +5,8 @@ import Image from "next/image"
 import { useEffect, useRef } from "react"
 import { ChevronRight } from "lucide-react"
 
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 // ─── Ring-Particles Canvas ─────────────────────────────────────────────────────
 // Faithful canvas port of css-houdini-ringparticles (used on antigravity.google).
 // Source math from: https://unpkg.com/css-houdini-ringparticles/dist/ringparticles.js
@@ -260,7 +262,7 @@ export function HeroSection() {
           }}
         >
           <Image
-            src="/assets/logo/carnot-logo.png"
+            src={`${B}/assets/logo/carnot-logo.png`}
             alt="icarKno™ logo"
             width={24}
             height={24}
