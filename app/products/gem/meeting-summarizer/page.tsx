@@ -4,9 +4,9 @@ import { FileText, ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Meeting Summarizer | GeM | Carnot Research",
+  title: "Meeting Summarizer | GeM | icarKno™",
   description:
-    "AI-powered meeting intelligence — auto-transcription, context tagging, and actionable summaries. On-premise capable. Listed on GeM by Carnot Research.",
+    "AI-powered meeting intelligence — auto-transcription, context tagging, and actionable summaries. On-premise capable. Listed on GeM by icarKno™.",
 }
 
 const features = [

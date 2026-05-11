@@ -4,9 +4,9 @@ import { ArrowRight, Brain, Route, MessageCircle, FileText, Server, Globe, Bot }
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "AI Products | icarKno™, BharGati™ AI, SAATHI | Carnot Research",
+  title: "AI Products | icarKno™, BharGati™ AI, SAATHI | icarKno™",
   description:
-    "Explore Carnot Research's enterprise-grade AI products: icarKno™ (enterprise knowledge RAG), BharGati™ AI (transport analytics), and SAATHI (multilingual assistant). Secure on-premise GenAI, NLP, and Computer Vision platforms for government and enterprise.",
+    "Explore icarKno™'s enterprise-grade AI products: icarKno™ (enterprise knowledge RAG), BharGati™ AI (transport analytics), and SAATHI (multilingual assistant). Secure on-premise GenAI, NLP, and Computer Vision platforms for government and enterprise.",
   keywords: [
     "enterprise AI products",
     "generative AI platform",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "NLP platform India",
   ],
   openGraph: {
-    title: "AI Products - Carnot Research",
+    title: "AI Products - icarKno™",
     description: "Production-grade AI products for government and enterprise",
     url: "https://carnotresearch.com/products",
   },

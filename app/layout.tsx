@@ -12,15 +12,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Carnot Research | Enterprise AI & Secure On-Premise GenAI Solutions",
-    template: "%s | Carnot Research - Enterprise AI Platform",
+    default: "icarKno™ | Enterprise AI & Secure On-Premise GenAI Solutions",
+    template: "%s | icarKno™ - Enterprise AI Platform",
   },
   description:
-    "Carnot Research delivers production-grade on-premise generative AI, NLP, and computer vision solutions for government and enterprise. Secure, scalable AI infrastructure built by IIT researchers.",
-  applicationName: "Carnot Research",
-  authors: [{ name: "Carnot Research", url: "https://carnotresearch.com" }],
-  creator: "Carnot Research",
-  publisher: "Carnot Research",
+    "icarKno™ delivers production-grade on-premise generative AI, NLP, and computer vision solutions for government and enterprise. Secure, scalable AI infrastructure built by IIT researchers.",
+  applicationName: "icarKno™",
+  authors: [{ name: "icarKno™", url: "https://carnotresearch.com" }],
+  creator: "icarKno™",
+  publisher: "icarKno™",
   keywords: [
     "on-premise generative AI India",
     "enterprise AI solutions India",
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://carnotresearch.com",
-    siteName: "Carnot Research",
-    title: "Carnot Research | Enterprise AI & Secure On-Premise GenAI Solutions",
+    siteName: "icarKno™",
+    title: "icarKno™ | Enterprise AI & Secure On-Premise GenAI Solutions",
     description:
       "Production-grade on-premise generative AI, NLP, and computer vision solutions for government and enterprise in India.",
     images: [
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
         url: "https://carnotresearch.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Carnot Research - Enterprise AI Solutions",
+        alt: "icarKno™ - Enterprise AI Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carnot Research | Enterprise AI & Secure On-Premise GenAI",
+    title: "icarKno™ | Enterprise AI & Secure On-Premise GenAI",
     description: "Secure, scalable AI infrastructure for government and enterprise.",
     creator: "@CarnotResearch",
   },
@@ -101,7 +101,7 @@ export const viewport: Viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Carnot Research",
+  name: "icarKno™",
   url: "https://carnotresearch.com",
   logo: "https://carnotresearch.com/logo.png",
   description:

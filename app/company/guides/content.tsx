@@ -354,7 +354,7 @@ export function GuidesContent() {
             <FadeUp>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/70">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-                Carnot Research
+                icarKno™
               </div>
             </FadeUp>
             <FadeUp delay={80}>
@@ -368,7 +368,7 @@ export function GuidesContent() {
             <FadeUp delay={160}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-slate-300">
                 Practical insights from actual development, research, and
-                engineering workflows used at Carnot Research. These guides help
+                engineering workflows used at icarKno™. These guides help
                 teams plan, build, and deploy AI systems effectively, without
                 unnecessary complexity.
               </p>

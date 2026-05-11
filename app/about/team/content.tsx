@@ -172,7 +172,7 @@ export function TeamContent() {
             <FadeUp delay={100}>
               <h1 className="text-balance text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
                 The minds behind{" "}
-                <span className="text-blue-600">Carnot Research</span>
+                <span className="text-blue-600">icarKno™</span>
               </h1>
             </FadeUp>
             <FadeUp delay={200}>
@@ -246,7 +246,7 @@ export function TeamContent() {
                 <div className="h-px w-8 bg-gray-200" />
                 <div>
                   <p className="text-sm font-semibold text-gray-900">Prof. Brejesh Lall &amp; Col. (Dr.) Amit Oberoi</p>
-                  <p className="text-xs text-gray-400 mt-0.5">Co-Founders, Carnot Research</p>
+                  <p className="text-xs text-gray-400 mt-0.5">Co-Founders, icarKno™</p>
                 </div>
                 <div className="h-px w-8 bg-gray-200" />
               </div>

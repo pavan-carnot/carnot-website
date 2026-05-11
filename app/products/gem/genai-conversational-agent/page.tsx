@@ -4,9 +4,9 @@ import { Bot, Download, ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Generative AI Conversational Agent | GeM | Carnot Research",
+  title: "Generative AI Conversational Agent | GeM | icarKno™",
   description:
-    "Accurate on-premise, high-privacy, multilingual knowledge agent. From secure servers to the field's edge. Listed on GeM by Carnot Research.",
+    "Accurate on-premise, high-privacy, multilingual knowledge agent. From secure servers to the field's edge. Listed on GeM by icarKno™.",
 }
 
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""

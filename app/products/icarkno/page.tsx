@@ -27,7 +27,7 @@ import { IcarKnoClientContent } from "./icarkno-client"
 import { VideoWithSkeleton } from "./video-skeleton"
 
 export const metadata: Metadata = {
-  title: "icarKno™ | Secure Offline Mission-Ready AI | Carnot Research",
+  title: "icarKno™ | Secure Offline Mission-Ready AI | icarKno™",
   description:
     "A fully on-premise, multimodal AI knowledge system engineered for high-stakes environments. Secure, offline, mission-ready AI for government, defense, and enterprise.",
   keywords: [

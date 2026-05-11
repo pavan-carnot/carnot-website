@@ -54,7 +54,7 @@ const newsItems = [
     date: "February 2025",
     title: "Transport Stack Open Innovation Challenge Winner",
     description:
-      "Carnot Research won the Transport Stack Open Innovation Challenge for project SAATHI, a hyper-personalized multilingual AI agent for conversational travel assistance.",
+      "icarKno™ won the Transport Stack Open Innovation Challenge for project SAATHI, a hyper-personalized multilingual AI agent for conversational travel assistance.",
     organization: "JICA · Boston Consulting Group · FITT IIT Delhi",
     iconBg: "bg-amber-50",
     iconColor: "text-amber-600",
@@ -65,7 +65,7 @@ const newsItems = [
     date: "January 2025",
     title: "CMMI Level 3 Certification Achieved",
     description:
-      "Carnot Research achieves CMMI Maturity Level 3 certification, demonstrating commitment to process excellence and quality in AI system development.",
+      "icarKno™ achieves CMMI Maturity Level 3 certification, demonstrating commitment to process excellence and quality in AI system development.",
     organization: "Certificate No: ECI/2411/0710",
     iconBg: "bg-blue-50",
     iconColor: "text-blue-600",
@@ -109,7 +109,7 @@ export function NewsContent() {
             <FadeUp delay={200}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
                 Stay updated with the latest events, announcements, and press
-                coverage from Carnot Research.
+                coverage from icarKno™.
               </p>
             </FadeUp>
           </div>

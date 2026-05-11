@@ -35,7 +35,7 @@ const mobileNav = [
   {
     name: "Products",
     items: [
-      { name: "All Products", href: "/products", sub: "Overview of Carnot AI platforms" },
+      { name: "All Products", href: "/products", sub: "Overview of icarKno™ AI platforms" },
       { name: "icarKno™", href: "/products/icarkno", sub: "Enterprise knowledge RAG" },
       { name: "BharGati™ AI", href: "/products/bhargati", sub: "Movement & performance" },
       { name: "SAATHI", href: "/products/saathi", sub: "Multilingual transport assistant" },
@@ -189,7 +189,7 @@ export function Navbar() {
                       <div>
                         <p className={dropSection}>Browse</p>
                         <ul className="space-y-0.5">
-                          <li><NavigationMenuLink asChild><Link href="/products" className={dropLink}><span className={dropTitle}>All products</span><span className={dropSub}>Overview of Carnot AI platforms</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/products" className={dropLink}><span className={dropTitle}>All products</span><span className={dropSub}>Overview of icarKno™ AI platforms</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/products/icarkno" className={dropLink}><span className={dropTitle}>icarKno™</span><span className={dropSub}>Enterprise knowledge RAG</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/products/bhargati" className={dropLink}><span className={dropTitle}>BharGati™ AI</span><span className={dropSub}>Movement & performance</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/products/saathi" className={dropLink}><span className={dropTitle}>SAATHI</span><span className={dropSub}>Multilingual transport assistant</span></Link></NavigationMenuLink></li>

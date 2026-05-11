@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { NewsContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "News & Updates: Carnot Research",
+  title: "News & Updates: icarKno™",
   description:
-    "Latest news, events, announcements, and press coverage from Carnot Research, building secure AI infrastructure for India.",
+    "Latest news, events, announcements, and press coverage from icarKno™, building secure AI infrastructure for India.",
   openGraph: {
-    title: "News & Updates: Carnot Research",
-    description: "Events, announcements, and press coverage from Carnot Research.",
+    title: "News & Updates: icarKno™",
+    description: "Events, announcements, and press coverage from icarKno™.",
     url: "https://carnotresearch.com/about/news",
     type: "website",
   },

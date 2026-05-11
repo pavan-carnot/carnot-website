@@ -4,7 +4,7 @@ import { Server, Download, ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-re
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "On-Premise Knowledge Agent | GeM | Carnot Research",
+  title: "On-Premise Knowledge Agent | GeM | icarKno™",
   description:
     "Enterprise AI Knowledge Management System for Banking, Financial Services & Government. 96.8% accuracy, 1.2s response time. Listed on GeM.",
 }

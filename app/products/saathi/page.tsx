@@ -17,7 +17,7 @@ import {
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "SAATHI | Delhi Public Transport AI Assistant | Carnot Research",
+  title: "SAATHI | Delhi Public Transport AI Assistant | icarKno™",
   description:
     "SAATHI is an award-winning multilingual AI assistant for Delhi public transport. Plan metro and bus journeys, check fares, timings, and get emergency help by voice or text in English, Hindi, or any regional language.",
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "multilingual AI chatbot",
     "Delhi metro AI",
     "bus route planner AI",
-    "Carnot Research SAATHI",
+    "icarKno™ SAATHI",
     "JICA BCG FITT award",
     "voice AI Hindi",
   ],

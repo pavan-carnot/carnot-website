@@ -29,7 +29,7 @@ import { Button } from "@/components/ui/button"
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Explore Carnot Research's work in NLP, Computer Vision, and Generative AI. Publications, patents, and academic collaborations from IIT ecosystem researchers.",
+    "Explore icarKno™'s work in NLP, Computer Vision, and Generative AI. Publications, patents, and academic collaborations from IIT ecosystem researchers.",
 }
 
 
@@ -342,7 +342,7 @@ export default function ResearchPage() {
             Collaborate with us on research
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
-            Partner with Carnot Research for managed, deployable research that
+            Partner with icarKno™ for managed, deployable research that
             converts into scalable tools and IP.
           </p>
           <div className="mt-8">

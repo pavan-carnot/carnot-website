@@ -182,7 +182,7 @@ export function MoreProducts() {
             <div className="h-px flex-1 bg-border" />
             <div className="text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                More from icarKno™
+                Our complete product suite
               </p>
             </div>
             <div className="h-px flex-1 bg-border" />

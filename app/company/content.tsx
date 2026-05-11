@@ -160,7 +160,7 @@ export function CompanyContent() {
                   Who we are
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  We are Carnot Research, a deep-tech AI company founded by
+                  We are icarKno™, a deep-tech AI company founded by
                   professors, scientists, and engineers from top IITs. Our team
                   brings together over 120 years of collective experience in AI,
                   NLP, and systems engineering, backed by multiple patents and
@@ -271,7 +271,7 @@ export function CompanyContent() {
                   JICA &middot; Boston Consulting Group &middot; FITT IIT Delhi
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  Carnot Research won the Transport Stack Open Innovation
+                  icarKno™ won the Transport Stack Open Innovation
                   Challenge for project SAATHI, a hyper-personalized
                   multilingual AI agent for conversational travel assistance.
                 </p>

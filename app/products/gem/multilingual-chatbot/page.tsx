@@ -4,7 +4,7 @@ import { Globe, Download, ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-rea
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Multilingual AI Chatbot | GeM | Carnot Research",
+  title: "Multilingual AI Chatbot | GeM | icarKno™",
   description:
     "Enterprise Conversational AI Platform with 24/7 support in 15+ languages, 93.2% accuracy. For Banking, Finance & Government. Listed on GeM.",
 }

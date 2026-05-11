@@ -32,7 +32,7 @@ import {
 } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "Enterprise AI Solutions | Carnot Research",
+  title: "Enterprise AI Solutions | icarKno™",
   description:
     "Enterprise AI solutions for secure, scalable, real-world impact. From governed RAG and on-premise AI to applied AI systems, we turn complex data into reliable, actionable insights.",
 }

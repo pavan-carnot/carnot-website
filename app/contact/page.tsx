@@ -3,9 +3,9 @@ import { Mail, Phone, MapPin } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 
 export const metadata: Metadata = {
-  title: "Contact | Carnot Research",
+  title: "Contact | icarKno™",
   description:
-    "Get in touch with Carnot Research. Book an enterprise demo, discuss AI solutions, or explore partnership opportunities.",
+    "Get in touch with icarKno™. Book an enterprise demo, discuss AI solutions, or explore partnership opportunities.",
 }
 
 function LinkedInIcon() {
@@ -140,7 +140,7 @@ export default function ContactPage() {
             {/* Right — Google Map */}
             <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
               <iframe
-                title="Carnot Research - IIT Delhi"
+                title="icarKno™ - IIT Delhi"
                 src="https://maps.google.com/maps?q=Research+and+Innovation+Park+IIT+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"

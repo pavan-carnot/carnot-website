@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "BharGati™ | Movement & Performance Intelligence | Carnot Research",
+  title: "BharGati™ | Movement & Performance Intelligence | icarKno™",
   description:
     "AI-driven movement and performance intelligence using computer vision and biomechanical analytics. Lab-quality insights in real-world sports science and rehabilitation settings.",
   openGraph: {

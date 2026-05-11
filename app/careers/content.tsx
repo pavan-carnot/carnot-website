@@ -294,7 +294,7 @@ Resume Google Drive Link: ${resumeLink}`
                   id="cover-letter"
                   required
                   rows={5}
-                  placeholder="Tell us why you want to join Carnot Research and what you'll bring to the team..."
+                  placeholder="Tell us why you want to join icarKno™ and what you'll bring to the team..."
                   className={inputClass}
                 />
               </div>

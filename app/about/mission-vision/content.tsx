@@ -319,7 +319,7 @@ export function MissionVisionContent() {
             <FadeUp>
               <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Carnot Research was founded to connect advanced artificial intelligence
+                  icarKno™ was founded to connect advanced artificial intelligence
                   research with real-world use. In critical situations, intelligence must
                   be secure, reliable, and immediately accessible without relying on
                   weak connections or outside infrastructure.
@@ -374,7 +374,7 @@ export function MissionVisionContent() {
                   generic cloud scenarios.
                 </p>
                 <p className="font-medium text-foreground">
-                  At Carnot Research, we aim to turn advanced AI research into usable
+                  At icarKno™, we aim to turn advanced AI research into usable
                   systems that have a measurable impact in critical areas.
                 </p>
               </div>
@@ -407,7 +407,7 @@ export function MissionVisionContent() {
                   to influence the future of responsible AI use.
                 </p>
                 <p className="font-medium text-foreground">
-                  With research-driven engineering and teamwork, Carnot Research is
+                  With research-driven engineering and teamwork, icarKno™ is
                   building the foundation for large-scale AI-led changes across India
                   and beyond.
                 </p>
@@ -456,7 +456,7 @@ export function MissionVisionContent() {
               <ResearchCard
                 eyebrow="Intellectual Property & Patents"
                 title="Defensible, Scalable Technology"
-                body="Innovation at Carnot Research relies on formal intellectual property development. We have several patent applications in progress, including improvements in multi-agent knowledge graph architectures and AI-driven semantic conflict detection systems. Our patent strategy ensures research leads to defensible, scalable technologies that strengthen long-term innovation and competitive differentiation."
+                body="Our innovation relies on formal intellectual property development. We have several patent applications in progress, including improvements in multi-agent knowledge graph architectures and AI-driven semantic conflict detection systems. Our patent strategy ensures research leads to defensible, scalable technologies that strengthen long-term innovation and competitive differentiation."
                 gradient="from-indigo-500 via-blue-500/70 to-blue-400/20"
               />
             </FadeUp>
