@@ -9,6 +9,7 @@ const slides = [
   "/assets/clients/meet-icarkno/icarkno-2.jpeg",
   "/assets/clients/meet-icarkno/icarkno-3.jpeg",
   "/assets/clients/meet-icarkno/icarkno-4.jpeg",
+  "/assets/clients/meet-icarkno/icarkno-5.jpeg",
 ]
 
 interface IcarKnoSlideshowProps {
