@@ -194,22 +194,41 @@ const LETTER_REVEAL_DURATION = 0.55
 
 function Words({ text, color, delay = 0 }: { text: string; color?: string; delay?: number }) {
   const letters = Array.from(text)
+  // Group into word segments so mid-word line breaks don't occur on narrow screens
+  const segments: Array<{ word: string; startIdx: number }> = []
+  let i = 0
+  while (i < letters.length) {
+    const start = i
+    const isSpace = letters[i] === " "
+    while (i < letters.length && (letters[i] === " ") === isSpace) i++
+    segments.push({ word: letters.slice(start, i).join(""), startIdx: start })
+  }
   return (
     <>
-      {letters.map((char, i) => (
-        <span
-          key={i}
-          style={{
-            display: "inline-block",
-            color,
-            opacity: 0,
-            animation: "wordReveal 0.55s cubic-bezier(0.22,1,0.36,1) both",
-            animationDelay: `${delay + i * CHAR_STAGGER}s`,
-          }}
-        >
-          {char === " " ? "\u00A0" : char}
-        </span>
-      ))}
+      {segments.map((seg, si) => {
+        const isSpaceSeg = seg.word[0] === " "
+        return (
+          <span
+            key={si}
+            style={isSpaceSeg ? undefined : { display: "inline-block", whiteSpace: "nowrap" }}
+          >
+            {Array.from(seg.word).map((char, ci) => (
+              <span
+                key={ci}
+                style={{
+                  display: "inline-block",
+                  color,
+                  opacity: 0,
+                  animation: "wordReveal 0.55s cubic-bezier(0.22,1,0.36,1) both",
+                  animationDelay: `${delay + (seg.startIdx + ci) * CHAR_STAGGER}s`,
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </span>
+        )
+      })}
     </>
   )
 }
