@@ -38,7 +38,7 @@ const icarKnoFeatures = [
   { icon: Layers,        text: "Multimodal ingestion",                    bg: "#fef3c7", color: "#d97706" }, // amber
   { icon: FileText,      text: "RAG with verifiable source citations",    bg: "#ede9fe", color: "#7c3aed" }, // violet
   { icon: Shield,        text: "Fully on-premise, zero cloud dependency", bg: "#dcfce7", color: "#16a34a" }, // green
-  { icon: MessageSquare, text: "Agentic workflows & conversational AI",   bg: "#fee2e2", color: "#dc2626" }, // red
+  { icon: MessageSquare, text: "Agentic workflows & conversational AI",   bg: "#fee2e2", color: "#f43f5e" }, // rose pastel
 ]
 
 // ── icarKno spotlight ─────────────────────────────────────────────────────────
@@ -88,13 +88,11 @@ export function IcarKnoShowcase() {
                   no internet required, no data leaves your environment.
                 </p>
 
-                {/* Feature list — Notion-clean: icon + text only, no chip backgrounds */}
+                {/* Feature list — icon only, no chip backgrounds */}
                 <ul className="mt-5 space-y-2.5">
                   {icarKnoFeatures.map((f) => (
                     <li key={f.text} className="flex items-center gap-3">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg" style={{ background: f.bg }}>
-                        <f.icon className="h-3.5 w-3.5" style={{ color: f.color }} />
-                      </span>
+                      <f.icon className="h-4 w-4 shrink-0" style={{ color: f.color }} />
                       <span className="text-sm text-gray-700">{f.text}</span>
                     </li>
                   ))}
@@ -139,7 +137,7 @@ export function IcarKnoShowcase() {
 const imageProducts = [
   {
     name: "SAATHI",
-    nameColor: "#dc2626",
+    nameColor: "#f43f5e",
     tagline: "Delhi Public Transit AI",
     desc: "Award-winning multilingual AI assistant for Delhi commuters. Plan metro and bus journeys, check fares and timings, and get emergency help by voice or text in 22+ languages.",
     bullets: [
@@ -147,8 +145,8 @@ const imageProducts = [
       "22+ languages including Indic languages",
       "JICA–BCG–FITT award winner 2025",
     ],
-    accentFrom: "#dc2626",
-    accentTo: "#f87171",
+    accentFrom: "#f43f5e",
+    accentTo: "#fda4af",
     image: "/assets/products/homepage/homepage_Saathi.png",
     href: "/products/saathi",
     award: true,
@@ -182,7 +180,7 @@ export function MoreProducts() {
             <div className="h-px flex-1 bg-border" />
             <div className="text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                Our complete product suite
+                Our other products
               </p>
             </div>
             <div className="h-px flex-1 bg-border" />
@@ -243,9 +241,7 @@ export function MoreProducts() {
         <FadeUp delay={220}>
           <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-xl border border-border bg-secondary/40 px-5 py-4 sm:flex-row sm:items-center">
             <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50">
-                <Shield className="h-4 w-4 text-blue-600" />
-              </div>
+              <Shield className="h-5 w-5 shrink-0 text-blue-600" />
               <div>
                 <p className="text-sm font-semibold text-foreground">Also listed on GeM (Government e-Marketplace)</p>
                 <p className="text-xs text-muted-foreground">

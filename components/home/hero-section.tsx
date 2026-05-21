@@ -283,12 +283,12 @@ export function HeroSection() {
           <Image
             src={`${B}/assets/logo/carnot-logo.png`}
             alt="icarKno™ logo"
-            width={24}
-            height={24}
+            width={40}
+            height={40}
             priority
-            style={{ width: 24, height: 24, objectFit: "contain" }}
+            style={{ width: 40, height: 40, objectFit: "contain" }}
           />
-          <span style={{ fontSize: 16, fontWeight: 500, color: "#0f172a", letterSpacing: "-0.01em" }}>
+          <span style={{ fontSize: 22, fontWeight: 600, color: "#0f172a", letterSpacing: "-0.01em" }}>
             icarKno™
           </span>
         </div>

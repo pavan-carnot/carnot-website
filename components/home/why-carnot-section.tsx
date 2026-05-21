@@ -51,12 +51,7 @@ function PillarCard({ pillar, index }: { pillar: (typeof pillars)[number]; index
           background: `linear-gradient(90deg, transparent, ${pillar.color}88, transparent)`,
         }}
       />
-      <div
-        className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10"
-        style={{ background: pillar.bg }}
-      >
-        <pillar.icon className="h-5 w-5" style={{ color: pillar.color }} />
-      </div>
+      <pillar.icon className="mb-5 h-6 w-6" style={{ color: pillar.color }} />
       <span className="mb-3 inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/50">
         {pillar.eyebrow}
       </span>

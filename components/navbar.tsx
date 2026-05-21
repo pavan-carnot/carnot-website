@@ -60,9 +60,18 @@ const mobileNav = [
     ],
   },
   {
-    name: "Resources",
+    name: "Open Source",
     items: [
-      { name: "Resources", href: "https://cr-vision.carnotresearch.com/", sub: "Vision & intelligence tools", external: true },
+      { name: "Evaluation", href: "https://github.com/carnotresearch/on-premise-rag-evaluation-pipeline", sub: "RAG evaluation framework", external: true },
+      { name: "CR Sparse", href: "https://github.com/carnotresearch/cr-sparse", sub: "Sparse signal processing", external: true },
+      { name: "CR Wavelets", href: "https://github.com/carnotresearch/cr-wavelets", sub: "Wavelet transforms library", external: true },
+      { name: "CR Nimble", href: "https://github.com/carnotresearch/cr-nimble", sub: "Lightweight numerical tools", external: true },
+    ],
+  },
+  {
+    name: "Blog",
+    items: [
+      { name: "Blog", href: "https://carnotresearch.medium.com/", sub: "Carnot Research on Medium", external: true },
     ],
   },
   {
@@ -164,7 +173,6 @@ export function Navbar() {
                         <p className={dropSection}>Ecosystem</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/about/clients-partners" className={dropLink}><span className={dropTitle}>Clients &amp; Partners</span><span className={dropSub}>Who we collaborate with</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><Link href="/about/news" className={dropLink}><span className={dropTitle}>News &amp; Updates</span><span className={dropSub}>Announcements and press</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                       <div>
@@ -265,18 +273,57 @@ export function Navbar() {
               </NavigationMenuItem>
 
 
+              {/* Open Source */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="h-8 gap-1 rounded-md px-3 text-sm font-medium text-gray-600 bg-transparent hover:bg-gray-50 hover:text-gray-900 data-[state=open]:bg-gray-50 data-[state=open]:text-gray-900 transition-colors">
+                  Open Source
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[260px]">
+                    <div className="px-5 py-5">
+                      <ul className="space-y-0.5">
+                        <li>
+                          <a href="https://github.com/carnotresearch/on-premise-rag-evaluation-pipeline" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>Evaluation</span>
+                            <span className={dropSub}>RAG evaluation framework</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/carnotresearch/cr-sparse" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>CR Sparse</span>
+                            <span className={dropSub}>Sparse signal processing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/carnotresearch/cr-wavelets" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>CR Wavelets</span>
+                            <span className={dropSub}>Wavelet transforms library</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/carnotresearch/cr-nimble" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>CR Nimble</span>
+                            <span className={dropSub}>Lightweight numerical tools</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
             </NavigationMenuList>
           </NavigationMenu>
 
           {/* Direct links */}
           <div className="flex items-center gap-0.5 ml-1">
             <a
-              href="https://cr-vision.carnotresearch.com/"
+              href="https://carnotresearch.medium.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="h-8 inline-flex items-center gap-1 rounded-md px-3 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
             >
-              Resources
+              Blog
             </a>
             <a
               href="https://playground.carnotresearch.com/#/"

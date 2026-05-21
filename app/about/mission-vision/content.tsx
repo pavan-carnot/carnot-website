@@ -344,38 +344,41 @@ export function MissionVisionContent() {
         </div>
       </section>
 
-      {/* ── Our Mission ───────────────────────────────────────────────────────── */}
+      {/* ── Our Vision ────────────────────────────────────────────────────────── */}
       <section className="bg-background py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             {/* Left — image slideshow */}
             <FadeUp delay={160} className="lg:order-1 order-2">
-              <ImageSlideshow images={["/assets/company/mission/Mission_Pic_2.jpeg", "/assets/company/mission/Mission_Pic_3.jpeg"]} />
+              <ImageSlideshow images={["/assets/company/vision/Vision_Pic_1.jpeg", "/assets/company/vision/Vision_Pic_2.jpeg", "/assets/company/vision/Vision_Pic_3.jpg"]} />
             </FadeUp>
             {/* Right — text */}
             <FadeUp className="lg:order-2 order-1">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Our Mission</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Our Vision</p>
               <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Responsible AI for Critical Sectors
+                Secure Access to Knowledge, for Everyone
               </h2>
+              <blockquote className="mt-5 border-l-2 border-primary pl-4 text-base font-medium italic text-foreground/80">
+                "To provide the world with secure access to knowledge in an ethical and responsible manner with complete control retained by the user."
+              </blockquote>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Our mission is to support responsible, specific AI use in government,
-                  defense, and business. We help with public governance platforms, make
-                  sense of complex policy documents, and set up secure enterprise RAG
-                  systems. We create AI that works reliably in real-world situations, at
-                  scale, and in context.
+                  Our vision is to build secure, contextual, and intelligent systems for
+                  real-world mission environments. At icarKno™, we believe AI should
+                  enhance human decision-making while ensuring privacy, security, and
+                  complete user control over data.
                 </p>
                 <p>
-                  Our main strengths are in Natural Language Processing, Vision-Language
-                  Models, and agentic AI systems. We also integrate these systems into
-                  IoT, cybersecurity, and distributed setups when necessary. Each solution
-                  we create is designed for actual operational environments, not just
-                  generic cloud scenarios.
+                  We believe that while technology continues to evolve, its core principles
+                  remain constant — accessibility, trust, security, and responsible
+                  innovation. Our systems are designed to deliver structured intelligence
+                  and real-time reasoning in secure on-premise and offline environments,
+                  where sensitive data remains protected and never harvested.
                 </p>
                 <p className="font-medium text-foreground">
-                  At icarKno™, we aim to turn advanced AI research into usable
-                  systems that have a measurable impact in critical areas.
+                  Through deep-tech research and ethical AI engineering, icarKno™ is
+                  building trusted AI infrastructure for scalable and responsible adoption
+                  across India and beyond.
                 </p>
               </div>
             </FadeUp>
@@ -383,39 +386,36 @@ export function MissionVisionContent() {
         </div>
       </section>
 
-      {/* ── Our Vision ────────────────────────────────────────────────────────── */}
+      {/* ── Our Mission ───────────────────────────────────────────────────────── */}
       <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             {/* Left — text */}
             <FadeUp>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Our Vision</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Our Mission</p>
               <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                Infrastructure for the Next Generation of AI
+                Responsible AI for Critical Sectors
               </h2>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Our vision is to create the essential infrastructure for the next
-                  generation of intelligent systems: systems that will be secure,
-                  contextual, and built directly into mission environments.
+                  Our mission is to enable responsible, domain-specific AI adoption across
+                  industries and governments. Whether it&apos;s powering public-facing
+                  governance chatbots, automating knowledge from policy documents, or
+                  deploying enterprise RAG systems — we deliver AI that works on-ground,
+                  at-scale, and in-context.
                 </p>
                 <p>
-                  We see AI that supports human decision-making in ministries, businesses,
-                  and field operations. It will offer structured intelligence, understand
-                  different forms of data, and enable automated reasoning at the edge.
-                  From early innovation to large-scale changes in organizations, we want
-                  to influence the future of responsible AI use.
-                </p>
-                <p className="font-medium text-foreground">
-                  With research-driven engineering and teamwork, icarKno™ is
-                  building the foundation for large-scale AI-led changes across India
-                  and beyond.
+                  Our core strengths lie in NLP, Vision-Language models, and agentic
+                  systems, with seamless linkages to IoT, Cybersecurity, and Blockchain
+                  where required. From startups to Fortune 500s to ministries, we are
+                  building the infrastructure for India&apos;s next leap in AI-driven
+                  transformation.
                 </p>
               </div>
             </FadeUp>
             {/* Right — image slideshow */}
             <FadeUp delay={160}>
-              <ImageSlideshow images={["/assets/company/vision/Vision_Pic_1.jpeg", "/assets/company/vision/Vision_Pic_2.jpeg", "/assets/company/vision/Vision_Pic_3.jpg"]} />
+              <ImageSlideshow images={["/assets/company/mission/Mission_Pic_2.jpeg", "/assets/company/mission/Mission_Pic_3.jpeg"]} />
             </FadeUp>
           </div>
         </div>

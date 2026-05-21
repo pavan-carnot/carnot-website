@@ -157,7 +157,7 @@ export function CompanyContent() {
                   <Users className="h-6 w-6 text-blue-600" />
                 </div>
                 <h2 className="text-2xl font-semibold text-foreground">
-                  Who we are
+                  Our Story
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   We are icarKno™, a deep-tech AI company founded by

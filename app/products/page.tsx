@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Brain, Route, MessageCircle, FileText, Server, Globe, Bot } from "lucide-react"
+import { ArrowRight, ArrowUpRight, Brain, Route, MessageCircle, FileText, Server, Globe, Bot } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
@@ -90,11 +90,12 @@ const gemProducts = [
   {
     name: "Meeting Summarizer",
     description:
-      "Automatically captures and summarizes key meeting insights with AI-powered transcription and context tagging.",
+      "On-premise AI-powered meeting summarization tool that captures and summarizes key meeting insights with AI-powered transcription and context tagging.",
     icon: FileText,
     iconBg: "bg-[#e0f2fe]",
     iconColor: "text-[#1d4ed8]",
     href: "/products/gem/meeting-summarizer",
+    gemHref: "https://mkp.gem.gov.in/business-intelligence-data-analysis-software-v2/meeting-summarizer/p-5116877-3723073004-cat.html#variant_id=5116877-3723073004",
   },
   {
     name: "On-Premise Knowledge Agent",
@@ -104,6 +105,7 @@ const gemProducts = [
     iconBg: "bg-[#ecfdf3]",
     iconColor: "text-[#15803d]",
     href: "/products/gem/onpremise-knowledge-agent",
+    gemHref: "https://mkp.gem.gov.in/artificial-intelligence-big-data-analytics-ver-2-0/premise-knowledge-agent/p-5116877-4816507327-cat.html#variant_id=5116877-4816507327",
   },
   {
     name: "Multilingual Chatbot",
@@ -113,6 +115,7 @@ const gemProducts = [
     iconBg: "bg-[#fef3ff]",
     iconColor: "text-[#c11574]",
     href: "/products/gem/multilingual-chatbot",
+    gemHref: "https://mkp.gem.gov.in/artificial-intelligence-big-data-analytics-ver-2-0/multilingual-chatbot/p-5116877-52065673885-cat.html#variant_id=5116877-52065673885",
   },
   {
     name: "Generative AI Conversational Agent",
@@ -122,6 +125,17 @@ const gemProducts = [
     iconBg: "bg-[#fff3c6]",
     iconColor: "text-[#b54708]",
     href: "/products/gem/genai-conversational-agent",
+    gemHref: "https://mkp.gem.gov.in/artificial-intelligence-big-data-analytics-ver-2-0/generative-ai-based-conversational-agent/p-5116877-74185814411-cat.html#variant_id=5116877-74185814411",
+  },
+  {
+    name: "Business Intelligence Software",
+    description:
+      "Intelligent data management system for business intelligence and data analysis, transforming enterprise data into actionable insights.",
+    icon: Brain,
+    iconBg: "bg-[#f0fdf4]",
+    iconColor: "text-[#166534]",
+    href: "/products/gem/business-intelligence",
+    gemHref: "https://mkp.gem.gov.in/business-intelligence-data-analysis-software-v2/intelligent-data-management-system/p-5116877-42769598617-cat.html#variant_id=5116877-42769598617",
   },
 ]
 
@@ -218,7 +232,7 @@ export default function ProductsPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {gemProducts.map((product) => (
               <div
                 key={product.name}
@@ -235,12 +249,22 @@ export default function ProductsPage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground flex-1">
                   {product.description}
                 </p>
-                <Link
-                  href={product.href}
-                  className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
-                >
-                  Explore <ArrowRight className="h-3 w-3" />
-                </Link>
+                <div className="mt-4 flex items-center gap-3">
+                  <Link
+                    href={product.href}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+                  >
+                    Explore <ArrowRight className="h-3 w-3" />
+                  </Link>
+                  <a
+                    href={product.gemHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 hover:underline"
+                  >
+                    View on GeM <ArrowUpRight className="h-3 w-3" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
