@@ -1,4 +1,4 @@
 :HL["/carnot-website/_next/static/chunks/665dc3aa4aa2d85c.css","style"]
-:HL["/carnot-website/_next/static/chunks/154978bf2dceed3d.css","style"]
+:HL["/carnot-website/_next/static/chunks/ec3a772f7b11030c.css","style"]
 :HL["/carnot-website/assets/logo/carnot-logo.png","image"]
-0:{"buildId":"_O2ulxBxivo3wwUX5nZpk","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"RI2Be1PuPd_87Z1y30Wq8","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
