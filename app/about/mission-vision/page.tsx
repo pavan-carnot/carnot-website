@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     url: "https://carnotresearch.com/about/mission-vision",
     type: "website",
   },
+  alternates: { canonical: "https://carnotresearch.com/about/mission-vision" },
 }
 
 export default function MissionVisionPage() {

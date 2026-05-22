@@ -39,6 +39,52 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://carnotresearch.com/products/saathi" },
 }
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "SAATHI",
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "PublicTransportAssistant",
+  operatingSystem: "Web, Android, iOS",
+  description:
+    "Award-winning multilingual AI assistant for Delhi public transport. Plan metro and bus journeys, check fares and timings, and get emergency help by voice or text in 22+ languages including Hindi and Indic languages.",
+  url: "https://carnotresearch.com/products/saathi",
+  award: "JICA–BCG–FITT IIT Delhi Transport Stack Open Innovation Challenge Winner 2025",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://carnotresearch.com/products/saathi",
+  },
+  featureList: [
+    "Journey planning via metro, bus & multi-modal routes",
+    "Metro station info: accessibility, facilities and timings",
+    "Bus and metro fares, cards, and schedule queries",
+    "Voice messages: ask by speaking, receive audio responses",
+    "22+ Indian and foreign language support",
+    "Emergency helpline access and lost-and-found assistance",
+  ],
+  provider: {
+    "@type": "Organization",
+    name: "icarKno™",
+    url: "https://carnotresearch.com",
+    "@id": "https://carnotresearch.com/#organization",
+  },
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    url: "https://bot.carnotresearch.com/",
+  },
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://carnotresearch.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://carnotresearch.com/products" },
+    { "@type": "ListItem", position: 3, name: "SAATHI", item: "https://carnotresearch.com/products/saathi" },
+  ],
+}
+
 const capabilities = [
   {
     emoji: "📍",
@@ -83,6 +129,14 @@ const quickQuestions = [
 export default function SaathiPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
         <div className="pointer-events-none absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-[#E73C30]/6 blur-3xl" />

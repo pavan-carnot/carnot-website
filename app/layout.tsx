@@ -75,12 +75,12 @@ export const metadata: Metadata = {
     title: "icarKno™ | Enterprise AI & Secure On-Premise GenAI",
     description: "Secure, scalable AI infrastructure for government and enterprise.",
     creator: "@CarnotResearch",
+    images: ["https://carnotresearch.com/og-image.png"],
   },
   alternates: {
     canonical: "https://carnotresearch.com",
     languages: {
       "en-IN": "https://carnotresearch.com",
-      hi: "https://carnotresearch.com/hi",
     },
   },
 }
@@ -101,22 +101,47 @@ export const viewport: Viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://carnotresearch.com/#organization",
   name: "icarKno™",
+  legalName: "Carnot Research Private Limited",
   url: "https://carnotresearch.com",
-  logo: "https://carnotresearch.com/logo.png",
-  description:
-    "Production-grade on-premise generative AI, NLP, and computer vision solutions for government and enterprise.",
-  foundingDate: "2020",
-  areaServed: "IN",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "Sales",
-    email: "sales@carnotresearch.com",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://carnotresearch.com/assets/logo/carnot-logo.png",
+    width: 200,
+    height: 200,
   },
+  description:
+    "Production-grade on-premise generative AI, NLP, and computer vision solutions for government and enterprise in India. Founded by IIT Delhi researchers.",
+  foundingDate: "2020",
+  foundingLocation: "New Delhi, India",
+  areaServed: ["IN", "Asia"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2-A-2B, Research and Innovation Park",
+    addressLocality: "New Delhi",
+    addressRegion: "Delhi",
+    postalCode: "110016",
+    addressCountry: "IN",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "Sales",
+      email: "sales@carnotresearch.com",
+      availableLanguage: ["English", "Hindi"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "Customer Support",
+      email: "info@carnotresearch.com",
+    },
+  ],
   sameAs: [
     "https://www.linkedin.com/company/carnot-research",
     "https://twitter.com/CarnotResearch",
     "https://github.com/carnotresearch",
+    "https://carnotresearch.medium.com/",
   ],
   knowsAbout: [
     "Generative AI",
@@ -124,7 +149,32 @@ const organizationSchema = {
     "Computer Vision",
     "Enterprise AI",
     "On-Premise Deployment",
+    "Retrieval-Augmented Generation",
+    "Large Language Models",
+    "Agentic AI",
   ],
+  hasCredential: [
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "CMMI Level 3" },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "ISO/IEC 27001:2022" },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "DPIIT Recognized Startup" },
+  ],
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "icarKno™",
+  url: "https://carnotresearch.com",
+  description: "Enterprise AI solutions for government and enterprise — secure, on-premise, built by IIT researchers.",
+  publisher: { "@type": "Organization", name: "icarKno™", "@id": "https://carnotresearch.com/#organization" },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://carnotresearch.com/?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
 }
 
 export default function RootLayout({
@@ -133,7 +183,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <link
           rel="icon"
@@ -147,6 +197,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>

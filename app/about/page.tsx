@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     url: "https://carnotresearch.com/about",
     type: "website",
   },
+  alternates: { canonical: "https://carnotresearch.com/about" },
 }
 
 export default function AboutPage() {

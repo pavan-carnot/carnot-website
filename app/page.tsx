@@ -30,8 +30,9 @@ export const metadata: Metadata = {
       "Secure AI that runs 100% on your own servers — knowledge management, computer vision, sports analytics, and NLP. Built at IIT Delhi.",
     url: "https://carnotresearch.com",
     type: "website",
-    images: [{ url: "https://carnotresearch.com/og-home.png", width: 1200, height: 630 }],
+    images: [{ url: "https://carnotresearch.com/og-image.png", width: 1200, height: 630 }],
   },
+  alternates: { canonical: "https://carnotresearch.com" },
 }
 
 export default function HomePage() {

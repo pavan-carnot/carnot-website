@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description: "Production-grade AI products for government and enterprise",
     url: "https://carnotresearch.com/products",
   },
+  alternates: { canonical: "https://carnotresearch.com/products" },
 }
 
 const products = [

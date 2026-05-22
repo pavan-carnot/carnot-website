@@ -18,11 +18,12 @@ export const metadata: Metadata = {
     "on-premise AI",
   ],
   openGraph: {
-    title: "Research | icarKno™",
-    description:
-      "Applied AI research from icarKno™: pose detection, real-time vision systems, edge deployment, and production challenges.",
+    title: "Research Articles | icarKno™",
+    description: "Applied AI research from icarKno™: pose detection, real-time vision systems, edge deployment, and production challenges.",
+    url: "https://carnotresearch.com/company/resources",
     type: "website",
   },
+  alternates: { canonical: "https://carnotresearch.com/company/resources" },
 }
 
 const articles = [

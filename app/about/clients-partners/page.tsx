@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     url: "https://carnotresearch.com/about/clients-partners",
     type: "website",
   },
+  alternates: { canonical: "https://carnotresearch.com/about/clients-partners" },
 }
 
 export default function ClientsPartnersPage() {
