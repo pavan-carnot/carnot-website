@@ -150,7 +150,7 @@ export function Navbar() {
 
         {/* ── Desktop Nav ── */}
         <div className="hidden lg:flex flex-1 items-center justify-start pl-8">
-          <NavigationMenu>
+          <NavigationMenu viewport={false}>
             <NavigationMenuList className="gap-0">
 
               {/* About */}

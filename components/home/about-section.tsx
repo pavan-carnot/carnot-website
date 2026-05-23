@@ -87,7 +87,7 @@ export function AboutSection() {
           {/* Right — text */}
           <div className="order-1 lg:order-2">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-teal-700">
-              Who We Are
+              Our Story
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               From IIT Delhi labs to{" "}

@@ -73,10 +73,10 @@ export function ProblemSection() {
         {/* Header */}
         <FadeUp>
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            {/* <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               The Need for Edge AI
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            </h2> */}
+            <p className="text-base leading-relaxed text-muted-foreground">
               Today&apos;s AI systems were not built for the environments that need them most.
             </p>
           </div>

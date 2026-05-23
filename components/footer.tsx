@@ -18,12 +18,11 @@ const footerLinks = {
     { name: "AI for Government", href: "/solutions#government" },
     { name: "Enterprise Knowledge AI", href: "/solutions#enterprise" },
     { name: "On-Premise & Offline AI", href: "/solutions/on-prem-ai" },
-    { name: "Computer Vision", href: "/solutions#cv" },
   ],
   Company: [
-    { name: "About Us", href: "/company" },
-    { name: "Research", href: "/research" },
-    { name: "Blog", href: "/blog" },
+    { name: "About Us", href: "/about" },
+    { name: "Research", href: "/company/resources" },
+    { name: "Blog", href: "https://carnotresearch.medium.com/", external: true },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ],
@@ -122,12 +121,23 @@ export function Footer() {
               <ul className="mt-4 flex flex-col gap-2.5">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-                    >
-                      {renderName(link.name)}
-                    </Link>
+                    {'external' in link && link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                      >
+                        {renderName(link.name)}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                      >
+                        {renderName(link.name)}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
