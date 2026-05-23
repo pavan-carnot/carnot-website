@@ -196,13 +196,13 @@ export function MoreProducts() {
                 className="group flex flex-col w-full overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
               >
                 <div
-                  className="relative flex h-52 items-center justify-center overflow-hidden"
+                  className="relative w-full aspect-[4/3] sm:aspect-[16/9] overflow-hidden"
                   style={{ background: `linear-gradient(135deg, ${p.accentFrom}15 0%, ${p.accentTo}0a 100%)` }}
                 >
-                  <div className="absolute inset-x-0 top-0 h-[3px]"
+                  <div className="absolute inset-x-0 top-0 h-[3px] z-10"
                     style={{ background: `linear-gradient(90deg, ${p.accentFrom}, ${p.accentTo})` }} />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`${B}${p.image}`} alt={p.name} className="h-full w-full object-cover" />
+                  <img src={`${B}${p.image}`} alt={p.name} className="absolute inset-0 h-full w-full object-contain" />
                   {p.award && (
                     <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700 ring-1 ring-amber-200 shadow-sm">
                       <Trophy className="h-3 w-3" /> Award Winner
