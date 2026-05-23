@@ -120,7 +120,7 @@ export function IcarKnoShowcase() {
               </div>
 
               {/* Mobile image */}
-              <div className="relative block h-60 bg-gray-50 lg:hidden">
+              <div className="relative block w-full aspect-[3/4] bg-gray-50 lg:hidden">
                 <IcarKnoSlideshow className="absolute inset-0 h-full w-full" interval={3500} />
               </div>
 
