@@ -126,6 +126,8 @@ const quickQuestions = [
   "What is the helpline for medical emergency?",
 ]
 
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 export default function SaathiPage() {
   return (
     <>
@@ -353,10 +355,10 @@ export default function SaathiPage() {
               <div className="flex items-center justify-center bg-gradient-to-br from-amber-100 to-amber-50 p-8 lg:p-12">
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { name: "JICA",      src: "/assets/clients-logos/5.png"  },
-                    { name: "BCG",       src: "/assets/clients-logos/6.webp" },
-                    { name: "FITT",      src: "/assets/clients-logos/7.png"  },
-                    { name: "IIT Delhi", src: "/assets/clients-logos/4.webp" },
+                    { name: "JICA",      src: `${B}/assets/clients-logos/5.png`  },
+                    { name: "BCG",       src: `${B}/assets/clients-logos/6.webp` },
+                    { name: "FITT",      src: `${B}/assets/clients-logos/7.png`  },
+                    { name: "IIT Delhi", src: `${B}/assets/clients-logos/4.webp` },
                   ].map((org) => (
                     <div key={org.name} className="flex flex-col items-center justify-center rounded-xl border border-amber-200 bg-white p-4 shadow-sm">
                       {/* eslint-disable-next-line @next/next/no-img-element */}

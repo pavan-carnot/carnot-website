@@ -178,7 +178,7 @@ export function Navbar() {
                       <div>
                         <p className={dropSection}>Work with us</p>
                         <ul className="space-y-0.5">
-                          <li><NavigationMenuLink asChild><Link href="/contact" className={dropLink}><span className={dropTitle}>Join our team</span><span className={dropSub}>Explore open roles</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/careers" className={dropLink}><span className={dropTitle}>Join our team</span><span className={dropSub}>Explore open roles</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                     </div>
