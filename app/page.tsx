@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { HeroSection }                    from "@/components/home/hero-section"
 import { WeAreSection }                   from "@/components/home/we-are-section"
 import { IcarKnoShowcase, MoreProducts }  from "@/components/home/icarkno-showcase"
-import { ProblemSection }                 from "@/components/home/problem-section"
 import { SolutionsSection }               from "@/components/home/solutions-section"
 import { AboutSection }                   from "@/components/home/about-section"
 import { TrustSection }                   from "@/components/home/trust-section"
@@ -47,10 +46,7 @@ export default function HomePage() {
       {/* 3. icarKno™ — flagship product spotlight */}
       <IcarKnoShowcase />
 
-      {/* 4. Why edge AI matters — the problem icarKno solves */}
-      <ProblemSection />
-
-      {/* 5. More from icarKno™ — BharGati & SAATHI */}
+      {/* 4. More from icarKno™ — BharGati & SAATHI */}
       <MoreProducts />
 
       {/* 6. All capabilities across 6 domains */}

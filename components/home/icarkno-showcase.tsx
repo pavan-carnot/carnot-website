@@ -137,7 +137,8 @@ export function IcarKnoShowcase() {
 const imageProducts = [
   {
     name: "SAATHI",
-    nameColor: "#f43f5e",
+    nameColor: "#0f172a",
+    taglineColor: "#64748b",
     tagline: "Delhi Public Transit AI",
     desc: "Award-winning multilingual AI assistant for Delhi commuters. Plan metro and bus journeys, check fares and timings, and get emergency help by voice or text in 22+ languages.",
     bullets: [
@@ -145,15 +146,17 @@ const imageProducts = [
       "22+ languages including Indic languages",
       "JICA–BCG–FITT award winner 2025",
     ],
-    accentFrom: "#f43f5e",
-    accentTo: "#fda4af",
+    accentFrom: "#0f172a",
+    accentTo: "#1e293b",
+    ctaColor: "#2563eb",
     image: "/assets/products/homepage/homepage_Saathi.png",
     href: "/products/saathi",
     award: true,
   },
   {
     name: "BharGati™ AI",
-    nameColor: "#16a34a",
+    nameColor: "#0f172a",
+    taglineColor: "#64748b",
     tagline: "Sports & Performance AI",
     desc: "AI-powered biomechanical movement analysis from standard video. No wearables or lab setup needed. Measures joint angles, gait, posture, and performance metrics for coaches, athletes, and rehabilitation teams.",
     bullets: [
@@ -161,8 +164,9 @@ const imageProducts = [
       "Biomechanical metrics & coaching insights",
       "Sports, rehabilitation & elite training",
     ],
-    accentFrom: "#16a34a",
-    accentTo: "#4ade80",
+    accentFrom: "#0f172a",
+    accentTo: "#1e293b",
+    ctaColor: "#2563eb",
     image: "/assets/products/homepage/homepage_Bhargati.png",
     href: "/products/bhargati",
     award: false,
@@ -204,7 +208,7 @@ export function MoreProducts() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${B}${p.image}`} alt={p.name} className="h-full w-full object-cover" />
                   {p.award && (
-                    <span className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700 ring-1 ring-amber-200 shadow-sm">
+                    <span className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-slate-800 ring-1 ring-slate-200 shadow-sm">
                       <Trophy className="h-3 w-3" /> Award Winner
                     </span>
                   )}
@@ -214,7 +218,7 @@ export function MoreProducts() {
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <p className="text-2xl font-extrabold tracking-tight" style={{ color: p.nameColor }}>{p.name}</p>
-                      <p className="mt-0.5 text-xs font-semibold uppercase tracking-wider" style={{ color: p.accentFrom }}>{p.tagline}</p>
+                      <p className="mt-0.5 text-xs font-semibold uppercase tracking-wider" style={{ color: p.taglineColor }}>{p.tagline}</p>
                     </div>
                     <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground/30 mt-1 transition-all group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
@@ -229,7 +233,7 @@ export function MoreProducts() {
                   </ul>
                   <div className="mt-auto pt-5 border-t border-border flex items-center justify-between">
                     <span className="text-xs font-medium text-muted-foreground">Explore product</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" style={{ color: p.accentFrom }} />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" style={{ color: p.ctaColor }} />
                   </div>
                 </div>
               </Link>
