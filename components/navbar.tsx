@@ -141,7 +141,7 @@ export function Navbar() {
           <img
             src={`${B}/assets/logo/carnot-logo.png`}
             alt="icarKno™"
-            className="h-8 w-auto object-contain"
+            className="h-10 w-auto object-contain"
           />
           <span className="text-sm font-semibold tracking-tight text-gray-900">
             icarKno™
@@ -342,7 +342,7 @@ export function Navbar() {
             href="/contact"
             className="px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50"
           >
-            Book a demo
+            Discover the solution
           </Link>
           <Link
             href="/products"
@@ -394,7 +394,7 @@ export function Navbar() {
                 onClick={close}
                 className="block rounded-md px-3 py-2 text-center text-sm font-medium text-gray-600 hover:bg-gray-50"
               >
-                Book a demo
+                Discover the solution
               </Link>
               <Link
                 href="/products"

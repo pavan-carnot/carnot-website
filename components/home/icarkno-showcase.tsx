@@ -105,9 +105,9 @@ export function IcarKnoShowcase() {
                       Explore icarKno™ <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Link href="/products"
+                  <Link href="/contact"
                     className="inline-flex items-center gap-1 text-sm font-medium text-gray-400 hover:text-gray-900 transition-colors">
-                    View all products <ArrowUpRight className="h-3.5 w-3.5" />
+                    Discover the solution <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>

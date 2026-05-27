@@ -30,16 +30,16 @@ const capabilities = [
   },
   {
     icon: Eye,
-    title: "Computer Vision",
-    desc: "Object detection, pose estimation, face recognition, and video analytics built for real operational environments across sports, security, healthcare, and manufacturing.",
+    title: "Indoor Navigation AI",
+    desc: "Transform complex indoor environments into intelligent navigable spaces using AI-powered localization, contextual guidance, and real-time navigation assistance.",
     href: "/solutions",
     iconBg: "bg-rose-50",
     iconColor: "text-rose-400",
   },
   {
     icon: MessageSquareText,
-    title: "Multilingual NLP & Chatbots",
-    desc: "Conversational AI, document intelligence, summarization, and named entity recognition across 22+ languages including Indic languages for India-specific deployments.",
+    title: "Multilingual Sovereign RAG platform",
+    desc: "Secure, domain-aware RAG platform supporting 22+ Indian languages with offline intelligence, multilingual reasoning, and sovereign knowledge retrieval across enterprise and mission-critical environments.",
     href: "/solutions",
     iconBg: "bg-violet-50",
     iconColor: "text-violet-700",
@@ -64,11 +64,11 @@ export function SolutionsSection() {
             What We Build
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Custom AI Projects
+            Deployable AI Systems
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Our products are just three examples of what we build. icarKno™ takes
-            on custom AI projects across six domains, for organizations that need something
+            Our products are just three examples of what we build. icarKno™ creates
+            deployable AI systems across multiple domains, for organizations that need something
             built from the ground up.
           </p>
         </div>

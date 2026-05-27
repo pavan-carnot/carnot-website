@@ -52,11 +52,11 @@ export default function HomePage() {
       {/* 6. All capabilities across 6 domains */}
       <SolutionsSection />
 
-      {/* 7. Company story — IIT Delhi origins */}
-      <AboutSection />
-
-      {/* 8. Clients + certifications */}
+      {/* 7. Clients + certifications */}
       <TrustSection />
+
+      {/* 8. Company story — IIT Delhi origins */}
+      <AboutSection />
 
     </>
   )

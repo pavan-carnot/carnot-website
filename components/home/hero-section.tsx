@@ -382,7 +382,7 @@ export function HeroSection() {
               whiteSpace: "nowrap",
             }}
           >
-            Book a Demo <ChevronRight className="h-4 w-4" />
+            Discover the solution <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
       </div>
