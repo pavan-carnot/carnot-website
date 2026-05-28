@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { HeroSection }                    from "@/components/home/hero-section"
 import { WeAreSection }                   from "@/components/home/we-are-section"
+import { TheProblemSection }              from "@/components/home/the-problem-section"
 import { IcarKnoShowcase, MoreProducts }  from "@/components/home/icarkno-showcase"
 import { SolutionsSection }               from "@/components/home/solutions-section"
 import { AboutSection }                   from "@/components/home/about-section"
@@ -43,7 +44,10 @@ export default function HomePage() {
       {/* 2. We are icarKno™ */}
       <WeAreSection />
 
-      {/* 3. icarKno™ — flagship product spotlight */}
+      {/* 3. The problem — why trusted AI is hard */}
+      <TheProblemSection />
+
+      {/* 4. icarKno™ — flagship product spotlight */}
       <IcarKnoShowcase />
 
       {/* 4. More from icarKno™ — BharGati & SAATHI */}
