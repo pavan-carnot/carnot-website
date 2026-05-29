@@ -6,6 +6,7 @@ import { IcarKnoShowcase, MoreProducts }  from "@/components/home/icarkno-showca
 import { SolutionsSection }               from "@/components/home/solutions-section"
 import { AboutSection }                   from "@/components/home/about-section"
 import { TrustSection }                   from "@/components/home/trust-section"
+import { StayConnectedSection }           from "@/components/home/stay-connected-section"
 
 export const metadata: Metadata = {
   title: "icarKno™ | On-Premise AI for Government, Defense & Enterprise",
@@ -61,6 +62,9 @@ export default function HomePage() {
 
       {/* 8. Company story — IIT Delhi origins */}
       <AboutSection />
+
+      {/* 9. Stay connected — social links */}
+      <StayConnectedSection />
 
     </>
   )
