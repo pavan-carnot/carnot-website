@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, FlaskConical, Cpu, Lightbulb } from "lucide-react"
 
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
@@ -13,7 +13,26 @@ const images = [
   { src: `${B}/assets/company/who-we-are/forth.jpg`, alt: "icarKno™" },
 ]
 
-const certs = ["CMMI Level 3", "ISO 27001:2022", "DPIIT Recognised", "MSME Certified"]
+const pillars = [
+  {
+    icon: FlaskConical,
+    title: "Research-Led Development",
+    desc: "Every product originates from peer-reviewed research at IIT Delhi labs.",
+    iconColor: "text-orange-500",
+  },
+  {
+    icon: Cpu,
+    title: "Algorithmic-Level Solutions",
+    desc: "We engineer at the algorithm layer — not prompt wrappers or API glue.",
+    iconColor: "text-cyan-600",
+  },
+  {
+    icon: Lightbulb,
+    title: "Patented Innovations",
+    desc: "Proprietary IP underpins our systems, delivering defensible technical moats.",
+    iconColor: "text-emerald-600",
+  },
+]
 
 export function AboutSection() {
   const [current, setCurrent] = useState(0)
@@ -105,15 +124,16 @@ export function AboutSection() {
               elite athletes, and SAATHI guides Delhi commuters in 22+ languages.
             </p>
 
-            {/* Cert tags */}
-            <div className="mt-5 flex flex-wrap gap-2">
-              {certs.map((c) => (
-                <span
-                  key={c}
-                  className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600"
-                >
-                  {c}
-                </span>
+            {/* Differentiator pillars */}
+            <div className="mt-6 flex flex-col divide-y divide-gray-100">
+              {pillars.map(({ icon: Icon, title, desc, iconColor }) => (
+                <div key={title} className="flex items-start gap-3 py-3">
+                  <Icon className={`mt-0.5 h-5 w-5 shrink-0 ${iconColor}`} />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-800">{title}</p>
+                    <p className="text-xs leading-relaxed text-gray-500">{desc}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
