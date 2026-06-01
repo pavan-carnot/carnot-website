@@ -162,37 +162,35 @@ export function TheProblemSection() {
           <div className="space-y-2.5">
             {sectors.map((s, i) => (
               <FadeUp key={s.title} delay={80 + i * 55}>
-                <div className="group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card px-5 py-4 transition-all duration-200 hover:shadow-md">
+                <div className="group flex items-start gap-4 rounded-xl border border-border bg-card px-5 py-4 transition-all duration-200 hover:shadow-md sm:items-center">
 
                   {/* Icon */}
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center">
                     <s.icon className={`h-5 w-5 ${s.iconColor}`} />
                   </div>
 
-                  {/* Title + org types */}
+                  {/* Title + org types + mobile tags */}
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-semibold text-foreground">{s.title}</p>
                     <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{s.orgs}</p>
+                    <div className="mt-1.5 flex flex-wrap gap-1 sm:hidden">
+                      {s.useCases.map((uc) => (
+                        <span
+                          key={uc}
+                          className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600"
+                        >
+                          {uc}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Use-case tags */}
+                  {/* Desktop tags */}
                   <div className="hidden shrink-0 flex-col items-end gap-1 sm:flex">
                     {s.useCases.map((uc) => (
                       <span
                         key={uc}
                         className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-600"
-                      >
-                        {uc}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Mobile: use-cases below */}
-                  <div className="flex flex-wrap gap-1 sm:hidden absolute bottom-3 right-5">
-                    {s.useCases.map((uc) => (
-                      <span
-                        key={uc}
-                        className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600"
                       >
                         {uc}
                       </span>
