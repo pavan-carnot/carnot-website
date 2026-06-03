@@ -138,7 +138,7 @@ export function AboutSection() {
             </div>
 
             <Link
-              href="/about"
+              href="/about/team"
               className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800"
             >
               Meet the team

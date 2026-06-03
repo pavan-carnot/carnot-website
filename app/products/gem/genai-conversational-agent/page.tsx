@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const features = [
-  "Fully on-premise — no internet outbound, sensitive data stays within your network",
+  "Fully on-premise with no internet outbound; sensitive data stays within your network",
   "Cloud-accessible via PCs, laptops, or mobile with real-time collaboration",
-  "Edge Device mode — compact AI for field operations with voice, text, and image inputs",
+  "Edge Device mode: compact AI for field operations with voice, text, and image inputs",
   "Knowledge Graph-powered for smarter search and complex information handling",
   "Agentic integration: WhatsApp, Email, Telegram, Discord, Edge Wearables",
-  "Maintains conversation context — zero hallucinations, grounded in verified data",
+  "Maintains conversation context with zero hallucinations, grounded in verified data",
   "Seamless multilingual support for major Indian and global languages",
 ]
 
@@ -33,7 +33,7 @@ const useCases = [
     title: "Defence & Security",
     color: "text-orange-600",
     points: [
-      "Soldiers use headset for voice Q&A and goggles for visual intelligence — all offline",
+      "Soldiers use headset for voice Q&A and goggles for visual intelligence, all offline",
       "Combine live visual feed with pre-loaded GIS data for real-time situational awareness",
       "Translate and summarise local language intercepts via audio",
     ],
@@ -106,7 +106,7 @@ export default function GenAIConversationalAgentPage() {
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 Runs entirely inside your secure environment with no internet outbound. Responses are strictly grounded
-                in your verified, on-premise data with zero hallucinations — from enterprise servers to the field&apos;s edge.
+                in your verified, on-premise data with zero hallucinations, from enterprise servers to the field&apos;s edge.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild className="bg-primary hover:bg-primary/90">
@@ -124,7 +124,7 @@ export default function GenAIConversationalAgentPage() {
               </div>
             </div>
 
-            {/* Right — deployment modes + features */}
+            {/* Right: deployment modes + features */}
             <div className="relative">
               <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-br from-orange-500/10 via-amber-400/5 to-transparent blur-2xl" />
               <div className="relative rounded-2xl border border-border bg-card p-8 shadow-xl">

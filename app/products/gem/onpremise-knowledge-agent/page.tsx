@@ -19,11 +19,11 @@ const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const features = [
   "Hybrid Vector + Keyword search (GPT-4 Turbo, text-embedding-ada-002)",
-  "Compliance Document Retrieval — RBI circulars, SEBI guidelines, KYC norms, AML policies",
+  "Compliance Document Retrieval: RBI circulars, SEBI guidelines, KYC norms, AML policies",
   "Financial Policy Intelligence with contextual understanding",
   "Risk Management via ML-powered fraud pattern analytics",
-  "Corporate Law Repository — Companies Act, MCA circulars, SEBI regulations",
-  "Real-time analytics dashboard — query volume, accuracy, response latency",
+  "Corporate Law Repository: Companies Act, MCA circulars, SEBI regulations",
+  "Real-time analytics dashboard: query volume, accuracy, response latency",
   "Zero data leakage, RBAC, Make in India (DPIIT recognised)",
 ]
 
@@ -93,7 +93,7 @@ export default function OnPremiseKnowledgeAgentPage() {
               <p className="mt-2 text-base font-medium text-muted-foreground">Enterprise AI Knowledge Management System</p>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 A secure on-premise AI agent that organises enterprise knowledge and answers complex queries instantly.
-                All processing happens inside your network — GPT-4 Turbo inference, embedding-based search, and zero data leakage.
+                All processing happens inside your network. GPT-4 Turbo inference, embedding-based search, and zero data leakage.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild className="bg-primary hover:bg-primary/90">
@@ -111,7 +111,7 @@ export default function OnPremiseKnowledgeAgentPage() {
               </div>
             </div>
 
-            {/* Right — stats + features card */}
+            {/* Right: stats + features card */}
             <div className="relative">
               <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-br from-green-500/10 via-emerald-400/5 to-transparent blur-2xl" />
               <div className="relative rounded-2xl border border-border bg-card p-8 shadow-xl">

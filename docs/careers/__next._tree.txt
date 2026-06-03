@@ -1,5 +1,5 @@
 :HL["/carnot-website/_next/static/chunks/665dc3aa4aa2d85c.css","style"]
-:HL["/carnot-website/_next/static/chunks/b1fc5423a2e4e035.css","style"]
+:HL["/carnot-website/_next/static/chunks/9d33f2c7d35f5a66.css","style"]
 :HL["/carnot-website/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/carnot-website/assets/logo/carnot-logo.png","image"]
-0:{"buildId":"ZEQWv1vmQvCBcoiQcgZbg","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"careers","paramType":null,"paramKey":"careers","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"lNzNePIdLWpPSzDHARTFN","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"careers","paramType":null,"paramKey":"careers","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

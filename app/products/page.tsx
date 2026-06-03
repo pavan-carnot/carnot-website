@@ -129,9 +129,9 @@ const gemProducts = [
     gemHref: "https://mkp.gem.gov.in/artificial-intelligence-big-data-analytics-ver-2-0/generative-ai-based-conversational-agent/p-5116877-74185814411-cat.html#variant_id=5116877-74185814411",
   },
   {
-    name: "Business Intelligence Software",
+    name: "IDMS",
     description:
-      "Intelligent data management system for business intelligence and data analysis, transforming enterprise data into actionable insights.",
+      "Intelligent Data Management System for business intelligence and data analysis, transforming enterprise data into actionable insights.",
     icon: Brain,
     iconBg: "bg-[#f0fdf4]",
     iconColor: "text-[#166534]",
