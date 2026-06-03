@@ -26,7 +26,7 @@ const footerLinks = {
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ],
-  Resources: [
+  "Trust & Partnerships": [
     { name: "Certifications", href: "/company#certifications" },
     { name: "Partners", href: "/company#partners" },
   ],
