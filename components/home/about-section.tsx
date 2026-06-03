@@ -60,7 +60,7 @@ export function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-background py-20 lg:py-28"
+      className="bg-background pt-20 pb-8 lg:pt-28 lg:pb-10"
       style={
         visible
           ? { animation: "fadeUpIn 0.65s ease both" }
