@@ -4,19 +4,25 @@ import { Globe, Download, ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-rea
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Multilingual AI Chatbot | GeM | Carnot Research",
+  title: "Multilingual AI Chatbot | GeM | icarKno™",
   description:
     "Enterprise Conversational AI Platform with 24/7 support in 15+ languages, 93.2% accuracy. For Banking, Finance & Government. Listed on GeM.",
+  openGraph: {
+    title: "Multilingual AI Chatbot | Enterprise Conversational AI | icarKno™",
+    description: "24/7 enterprise AI chatbot in 15+ languages, 93.2% accuracy. For banking, finance, and government. Listed on GeM.",
+    url: "https://carnotresearch.com/products/gem/multilingual-chatbot",
+  },
+  alternates: { canonical: "https://carnotresearch.com/products/gem/multilingual-chatbot" },
 }
 
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const features = [
-  "24/7 Automated Support — dramatically cuts call centre volume",
-  "Multilingual NLP Engine — 15+ languages including Hindi, Telugu, Arabic, French",
-  "Advanced Knowledge Base — 1,247+ policy documents, 5,832+ Q&A pairs",
-  "Analytics Dashboard — intent trends, satisfaction scores, language usage",
-  "Voice Integration — Speech-to-Text & Text-to-Speech (Google Cloud Speech API, Neural TTS)",
+  "24/7 Automated Support: dramatically cuts call centre volume",
+  "Multilingual NLP Engine: 15+ languages including Hindi, Telugu, Arabic, French",
+  "Advanced Knowledge Base: 1,247+ policy documents, 5,832+ Q&A pairs",
+  "Analytics Dashboard: intent trends, satisfaction scores, language usage",
+  "Voice Integration: Speech-to-Text and Text-to-Speech (Google Cloud Speech API, Neural TTS)",
   "Security: SOC 2 Type II, GDPR compliance, HTTPS/TLS, RBAC",
   "Integrates with Salesforce, SAP, Oracle, Microsoft Dynamics, government portals",
 ]
@@ -35,7 +41,7 @@ const sectors = [
   },
   {
     title: "Ministry of Corporate Affairs & Government Services",
-    desc: "Unified communication channel for corporate stakeholders — answers compliance queries and filing procedures in the user's preferred language, improving regulatory compliance.",
+    desc: "Unified communication channel for corporate stakeholders, answering compliance queries and filing procedures in the user's preferred language and improving regulatory compliance.",
   },
 ]
 
@@ -73,7 +79,7 @@ export default function MultilingualChatbotPage() {
               <p className="mt-2 text-base font-medium text-muted-foreground">Enterprise Conversational AI Platform</p>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 Handles 1,317+ conversations per day across 15+ languages. Designed for banking, financial services,
-                and government — seamless multilingual support with secure enterprise system integration.
+                and government with seamless multilingual support and secure enterprise system integration.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild className="bg-primary hover:bg-primary/90">
@@ -91,7 +97,7 @@ export default function MultilingualChatbotPage() {
               </div>
             </div>
 
-            {/* Right — stats + features card */}
+            {/* Right: stats + features card */}
             <div className="relative">
               <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-br from-pink-500/10 via-purple-400/5 to-transparent blur-2xl" />
               <div className="relative rounded-2xl border border-border bg-card p-8 shadow-xl">

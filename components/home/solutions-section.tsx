@@ -30,16 +30,16 @@ const capabilities = [
   },
   {
     icon: Eye,
-    title: "Computer Vision",
-    desc: "Object detection, pose estimation, face recognition, and video analytics built for real operational environments across sports, security, healthcare, and manufacturing.",
+    title: "Indoor Navigation AI",
+    desc: "Transform complex indoor environments into intelligent navigable spaces using AI-powered localization, contextual guidance, and real-time navigation assistance.",
     href: "/solutions",
-    iconBg: "bg-red-50",
-    iconColor: "text-red-700",
+    iconBg: "bg-rose-50",
+    iconColor: "text-rose-400",
   },
   {
     icon: MessageSquareText,
-    title: "Multilingual NLP & Chatbots",
-    desc: "Conversational AI, document intelligence, summarization, and named entity recognition across 22+ languages including Indic languages for India-specific deployments.",
+    title: "Multilingual Sovereign RAG platform",
+    desc: "Secure, domain-aware RAG platform supporting 22+ Indian languages with offline intelligence, multilingual reasoning, and sovereign knowledge retrieval across enterprise and mission-critical environments.",
     href: "/solutions",
     iconBg: "bg-violet-50",
     iconColor: "text-violet-700",
@@ -60,15 +60,15 @@ export function SolutionsSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-700">
             What We Build
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Beyond products: a full AI research team
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Deployable AI Systems
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Our products are just three examples of what we build. Carnot Research takes
-            on custom AI projects across six domains, for organizations that need something
+            Our products are just three examples of what we build. icarKno™ creates
+            deployable AI systems across multiple domains, for organizations that need something
             built from the ground up.
           </p>
         </div>
@@ -80,9 +80,7 @@ export function SolutionsSection() {
               href={c.href}
               className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-foreground/15 hover:shadow-md"
             >
-              <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${c.iconBg}`}>
-                <c.icon className={`h-5 w-5 ${c.iconColor}`} />
-              </div>
+              <c.icon className={`h-6 w-6 ${c.iconColor}`} />
               <h3 className="mt-4 text-base font-semibold text-foreground">{c.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
             </Link>

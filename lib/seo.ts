@@ -11,7 +11,7 @@ export interface SEOProps {
 
 const baseUrl = "https://carnotresearch.com"
 const twitterHandle = "@CarnotResearch"
-const companyName = "Carnot Research"
+const companyName = "icarKno™"
 
 export function generateMetadata(seo: SEOProps): Metadata {
   const {

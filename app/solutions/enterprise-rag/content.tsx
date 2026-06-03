@@ -230,7 +230,7 @@ const faqs = [
   },
   {
     q: "Can Enterprise RAG be deployed on-premise?",
-    a: "Yes. RAG architectures can be fully deployed in on-premise or air-gapped environments, depending on infrastructure requirements. Carnot Research specializes in exactly this kind of sovereign deployment.",
+    a: "Yes. RAG architectures can be fully deployed in on-premise or air-gapped environments, depending on infrastructure requirements. icarKno™ specializes in exactly this kind of sovereign deployment.",
   },
   {
     q: "Is Enterprise RAG secure?",
@@ -238,7 +238,7 @@ const faqs = [
   },
   {
     q: "What types of data can be used in a RAG system?",
-    a: "Structured databases, PDFs, knowledge bases, internal documents, policy repositories, and more can all be integrated. Carnot Research supports multimodal ingestion including scanned documents and audio transcripts.",
+    a: "Structured databases, PDFs, knowledge bases, internal documents, policy repositories, and more can all be integrated. icarKno™ supports multimodal ingestion including scanned documents and audio transcripts.",
   },
   {
     q: "How is Enterprise RAG different from a chatbot?",

@@ -27,7 +27,7 @@ import { IcarKnoClientContent } from "./icarkno-client"
 import { VideoWithSkeleton } from "./video-skeleton"
 
 export const metadata: Metadata = {
-  title: "icarKno™ | Secure Offline Mission-Ready AI | Carnot Research",
+  title: "icarKno™ | Secure Offline Mission-Ready AI | icarKno™",
   description:
     "A fully on-premise, multimodal AI knowledge system engineered for high-stakes environments. Secure, offline, mission-ready AI for government, defense, and enterprise.",
   keywords: [
@@ -45,6 +45,53 @@ export const metadata: Metadata = {
     description: "Transform any operational setup into an intelligent, self-contained knowledge engine.",
     url: "https://carnotresearch.com/products/icarkno",
   },
+  alternates: { canonical: "https://carnotresearch.com/products/icarkno" },
+}
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "icarKno™",
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "EnterpriseAI",
+  operatingSystem: "Linux, Windows, On-Premise",
+  description:
+    "A fully on-premise, multimodal AI knowledge system for government, defense, and enterprise. Supports RAG with verifiable citations, agentic workflows, and VLM integration. Air-gap capable with zero cloud dependency.",
+  url: "https://carnotresearch.com/products/icarkno",
+  screenshot: "https://carnotresearch.com/assets/products/homepage/homepage_icarKno.png",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://carnotresearch.com/products/icarkno",
+  },
+  featureList: [
+    "100% on-premise deployment",
+    "Multimodal data ingestion (PDF, video, audio, scanned docs)",
+    "RAG with verifiable source citations",
+    "Agentic AI workflows",
+    "Air-gap capable, zero cloud dependency",
+    "VLM integration for visual reasoning",
+  ],
+  provider: {
+    "@type": "Organization",
+    name: "icarKno™",
+    url: "https://carnotresearch.com",
+    "@id": "https://carnotresearch.com/#organization",
+  },
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    url: "https://carnotresearch.com/contact",
+  },
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://carnotresearch.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://carnotresearch.com/products" },
+    { "@type": "ListItem", position: 3, name: "icarKno™", item: "https://carnotresearch.com/products/icarkno" },
+  ],
 }
 
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
@@ -221,9 +268,31 @@ const faqs = [
   },
 ]
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+}
+
 export default function IcarKnoPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* ─── Hero (Full-width) ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-background">
         <div

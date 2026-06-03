@@ -35,7 +35,7 @@ const mobileNav = [
   {
     name: "Products",
     items: [
-      { name: "All Products", href: "/products", sub: "Overview of Carnot AI platforms" },
+      { name: "All Products", href: "/products", sub: "Overview of icarKno™ AI platforms" },
       { name: "icarKno™", href: "/products/icarkno", sub: "Enterprise knowledge RAG" },
       { name: "BharGati™ AI", href: "/products/bhargati", sub: "Movement & performance" },
       { name: "SAATHI", href: "/products/saathi", sub: "Multilingual transport assistant" },
@@ -60,9 +60,18 @@ const mobileNav = [
     ],
   },
   {
-    name: "Resources",
+    name: "Open Source",
     items: [
-      { name: "Resources", href: "https://cr-vision.carnotresearch.com/", sub: "Vision & intelligence tools", external: true },
+      { name: "Evaluation", href: "https://github.com/carnotresearch/on-premise-rag-evaluation-pipeline", sub: "RAG evaluation framework", external: true },
+      { name: "CR Sparse", href: "https://github.com/carnotresearch/cr-sparse", sub: "Sparse signal processing", external: true },
+      { name: "CR Wavelets", href: "https://github.com/carnotresearch/cr-wavelets", sub: "Wavelet transforms library", external: true },
+      { name: "CR Nimble", href: "https://github.com/carnotresearch/cr-nimble", sub: "Lightweight numerical tools", external: true },
+    ],
+  },
+  {
+    name: "Blog",
+    items: [
+      { name: "Blog", href: "https://carnotresearch.medium.com/", sub: "Carnot Research on Medium", external: true },
     ],
   },
   {
@@ -131,17 +140,17 @@ export function Navbar() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${B}/assets/logo/carnot-logo.png`}
-            alt="Carnot Research"
-            className="h-8 w-auto object-contain"
+            alt="icarKno™"
+            className="h-10 w-auto object-contain"
           />
           <span className="text-sm font-semibold tracking-tight text-gray-900">
-            Carnot Research
+            icarKno™
           </span>
         </Link>
 
         {/* ── Desktop Nav ── */}
         <div className="hidden lg:flex flex-1 items-center justify-start pl-8">
-          <NavigationMenu>
+          <NavigationMenu viewport={false}>
             <NavigationMenuList className="gap-0">
 
               {/* About */}
@@ -164,13 +173,12 @@ export function Navbar() {
                         <p className={dropSection}>Ecosystem</p>
                         <ul className="space-y-0.5">
                           <li><NavigationMenuLink asChild><Link href="/about/clients-partners" className={dropLink}><span className={dropTitle}>Clients &amp; Partners</span><span className={dropSub}>Who we collaborate with</span></Link></NavigationMenuLink></li>
-                          <li><NavigationMenuLink asChild><Link href="/about/news" className={dropLink}><span className={dropTitle}>News &amp; Updates</span><span className={dropSub}>Announcements and press</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                       <div>
                         <p className={dropSection}>Work with us</p>
                         <ul className="space-y-0.5">
-                          <li><NavigationMenuLink asChild><Link href="/contact" className={dropLink}><span className={dropTitle}>Join our team</span><span className={dropSub}>Explore open roles</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/careers" className={dropLink}><span className={dropTitle}>Join our team</span><span className={dropSub}>Explore open roles</span></Link></NavigationMenuLink></li>
                         </ul>
                       </div>
                     </div>
@@ -189,7 +197,7 @@ export function Navbar() {
                       <div>
                         <p className={dropSection}>Browse</p>
                         <ul className="space-y-0.5">
-                          <li><NavigationMenuLink asChild><Link href="/products" className={dropLink}><span className={dropTitle}>All products</span><span className={dropSub}>Overview of Carnot AI platforms</span></Link></NavigationMenuLink></li>
+                          <li><NavigationMenuLink asChild><Link href="/products" className={dropLink}><span className={dropTitle}>All products</span><span className={dropSub}>Overview of icarKno™ AI platforms</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/products/icarkno" className={dropLink}><span className={dropTitle}>icarKno™</span><span className={dropSub}>Enterprise knowledge RAG</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/products/bhargati" className={dropLink}><span className={dropTitle}>BharGati™ AI</span><span className={dropSub}>Movement & performance</span></Link></NavigationMenuLink></li>
                           <li><NavigationMenuLink asChild><Link href="/products/saathi" className={dropLink}><span className={dropTitle}>SAATHI</span><span className={dropSub}>Multilingual transport assistant</span></Link></NavigationMenuLink></li>
@@ -265,18 +273,57 @@ export function Navbar() {
               </NavigationMenuItem>
 
 
+              {/* Open Source */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="h-8 gap-1 rounded-md px-3 text-sm font-medium text-gray-600 bg-transparent hover:bg-gray-50 hover:text-gray-900 data-[state=open]:bg-gray-50 data-[state=open]:text-gray-900 transition-colors">
+                  Open Source
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="bg-white rounded-xl border border-gray-100 shadow-lg md:w-[260px]">
+                    <div className="px-5 py-5">
+                      <ul className="space-y-0.5">
+                        <li>
+                          <a href="https://github.com/carnotresearch/on-premise-rag-evaluation-pipeline" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>Evaluation</span>
+                            <span className={dropSub}>RAG evaluation framework</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/carnotresearch/cr-sparse" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>CR Sparse</span>
+                            <span className={dropSub}>Sparse signal processing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/carnotresearch/cr-wavelets" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>CR Wavelets</span>
+                            <span className={dropSub}>Wavelet transforms library</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/carnotresearch/cr-nimble" target="_blank" rel="noopener noreferrer" className={dropLink}>
+                            <span className={dropTitle}>CR Nimble</span>
+                            <span className={dropSub}>Lightweight numerical tools</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
             </NavigationMenuList>
           </NavigationMenu>
 
           {/* Direct links */}
           <div className="flex items-center gap-0.5 ml-1">
             <a
-              href="https://cr-vision.carnotresearch.com/"
+              href="https://carnotresearch.medium.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="h-8 inline-flex items-center gap-1 rounded-md px-3 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
             >
-              Resources
+              Blog
             </a>
             <a
               href="https://playground.carnotresearch.com/#/"
@@ -295,7 +342,7 @@ export function Navbar() {
             href="/contact"
             className="px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-50"
           >
-            Book a demo
+            Discover the solution
           </Link>
           <Link
             href="/products"
@@ -347,7 +394,7 @@ export function Navbar() {
                 onClick={close}
                 className="block rounded-md px-3 py-2 text-center text-sm font-medium text-gray-600 hover:bg-gray-50"
               >
-                Book a demo
+                Discover the solution
               </Link>
               <Link
                 href="/products"

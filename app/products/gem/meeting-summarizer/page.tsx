@@ -4,14 +4,20 @@ import { FileText, ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Meeting Summarizer | GeM | Carnot Research",
+  title: "Meeting Summarizer | GeM | icarKno™",
   description:
-    "AI-powered meeting intelligence — auto-transcription, context tagging, and actionable summaries. On-premise capable. Listed on GeM by Carnot Research.",
+    "AI-powered meeting intelligence: auto-transcription, context tagging, and actionable summaries. On-premise capable. Listed on GeM by icarKno™.",
+  openGraph: {
+    title: "Meeting Summarizer | AI-Powered Meeting Intelligence | icarKno™",
+    description: "Auto-transcription, context tagging, and actionable summaries from meetings. On-premise capable. Listed on GeM.",
+    url: "https://carnotresearch.com/products/gem/meeting-summarizer",
+  },
+  alternates: { canonical: "https://carnotresearch.com/products/gem/meeting-summarizer" },
 }
 
 const features = [
   "Real-time AI transcription with speaker diarization",
-  "Automatic context tagging — decisions, action items, and deadlines extracted instantly",
+  "Automatic context tagging: decisions, action items, and deadlines extracted instantly",
   "Multilingual meeting support across Indian and global languages",
   "Integration with major video conferencing platforms",
   "Searchable meeting archive with semantic search",
@@ -20,7 +26,7 @@ const features = [
 ]
 
 const useCases = [
-  { title: "Enterprise Meetings", desc: "Auto-document board meetings, standups, and client calls — reducing manual note-taking effort to zero." },
+  { title: "Enterprise Meetings", desc: "Auto-document board meetings, standups, and client calls, reducing manual note-taking effort to zero." },
   { title: "Government Committees", desc: "Capture minutes of parliamentary committees, policy reviews, and inter-departmental sessions with full accuracy." },
   { title: "Legal & Compliance", desc: "Maintain a searchable, timestamped record of legal proceedings, audit meetings, and compliance reviews." },
   { title: "Board Meetings", desc: "Generate structured board minutes with tagged decisions, resolutions, and action items for governance documentation." },
@@ -60,7 +66,7 @@ export default function MeetingSummarizerPage() {
               <p className="mt-2 text-base font-medium text-muted-foreground">AI-Powered Meeting Intelligence</p>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 Automatically captures and summarises key meeting insights with AI-powered transcription and context tagging.
-                Converts unstructured meeting data into structured, actionable summaries — so your team focuses on decisions, not documentation.
+                Converts unstructured meeting data into structured, actionable summaries so your team can focus on decisions, not documentation.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild className="bg-primary hover:bg-primary/90">
@@ -74,7 +80,7 @@ export default function MeetingSummarizerPage() {
               </div>
             </div>
 
-            {/* Right — stats + features */}
+            {/* Right: stats + features */}
             <div className="relative">
               <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue-500/10 via-cyan-400/5 to-transparent blur-2xl" />
               <div className="relative rounded-2xl border border-border bg-card p-8 shadow-xl">

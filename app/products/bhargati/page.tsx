@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "BharGati™ | Movement & Performance Intelligence | Carnot Research",
+  title: "BharGati™ | Movement & Performance Intelligence | icarKno™",
   description:
     "AI-driven movement and performance intelligence using computer vision and biomechanical analytics. Lab-quality insights in real-world sports science and rehabilitation settings.",
   openGraph: {
@@ -32,6 +32,52 @@ export const metadata: Metadata = {
       "Analyze human movement, assess biomechanics, and provide performance feedback using computer vision and smart modeling.",
     url: "https://carnotresearch.com/products/bhargati",
   },
+  alternates: { canonical: "https://carnotresearch.com/products/bhargati" },
+}
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "BharGati™ AI",
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "SportsAnalytics",
+  operatingSystem: "Linux, Windows, On-Premise",
+  description:
+    "AI-driven movement and performance intelligence platform using computer vision to analyse human biomechanics from standard video. No wearables or lab setup required.",
+  url: "https://carnotresearch.com/products/bhargati",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://carnotresearch.com/products/bhargati",
+  },
+  featureList: [
+    "Vision-based pose and gait analysis from standard cameras",
+    "Biomechanical metrics: joint angles, posture, symmetry",
+    "Real-time AI-driven performance feedback",
+    "Sports performance analysis and injury prevention",
+    "Session-to-session progress tracking",
+    "No wearables or specialised sensors needed",
+  ],
+  provider: {
+    "@type": "Organization",
+    name: "icarKno™",
+    url: "https://carnotresearch.com",
+    "@id": "https://carnotresearch.com/#organization",
+  },
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    url: "https://carnotresearch.com/contact",
+  },
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://carnotresearch.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://carnotresearch.com/products" },
+    { "@type": "ListItem", position: 3, name: "BharGati™", item: "https://carnotresearch.com/products/bhargati" },
+  ],
 }
 
 const capabilityHighlights = [
@@ -134,6 +180,16 @@ const faqs = [
     a: "You can sign up on the platform, upload your training video, and start receiving AI-powered motion analysis and performance feedback right away.",
   },
 ]
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+}
 
 function BharGatiMockDashboard() {
   return (
@@ -292,6 +348,18 @@ const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 export default function BharGatiPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-background">
         <div

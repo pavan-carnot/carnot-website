@@ -4,9 +4,15 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog | icarKno™",
   description:
-    "Insights, research updates, and thought leadership from Carnot Research on enterprise AI, NLP, computer vision, and on-premise generative AI.",
+    "Insights, research updates, and thought leadership from icarKno™ on enterprise AI, NLP, computer vision, and on-premise generative AI.",
+  openGraph: {
+    title: "Blog | icarKno™",
+    description: "Insights, research updates, and thought leadership on enterprise AI, NLP, and computer vision.",
+    url: "https://carnotresearch.com/blog",
+  },
+  alternates: { canonical: "https://carnotresearch.com/blog" },
 }
 
 const posts = [
@@ -68,7 +74,7 @@ export default function BlogPage() {
             </h1>
             <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
               Thought leadership, technical deep dives, and research updates
-              from the Carnot Research team.
+              from the icarKno™ team.
             </p>
           </div>
 

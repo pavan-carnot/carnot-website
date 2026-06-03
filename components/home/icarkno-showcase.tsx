@@ -38,7 +38,7 @@ const icarKnoFeatures = [
   { icon: Layers,        text: "Multimodal ingestion",                    bg: "#fef3c7", color: "#d97706" }, // amber
   { icon: FileText,      text: "RAG with verifiable source citations",    bg: "#ede9fe", color: "#7c3aed" }, // violet
   { icon: Shield,        text: "Fully on-premise, zero cloud dependency", bg: "#dcfce7", color: "#16a34a" }, // green
-  { icon: MessageSquare, text: "Agentic workflows & conversational AI",   bg: "#fee2e2", color: "#dc2626" }, // red
+  { icon: MessageSquare, text: "Agentic workflows & conversational AI",   bg: "#fee2e2", color: "#f43f5e" }, // rose pastel
 ]
 
 // ── icarKno spotlight ─────────────────────────────────────────────────────────
@@ -88,13 +88,11 @@ export function IcarKnoShowcase() {
                   no internet required, no data leaves your environment.
                 </p>
 
-                {/* Feature list — Notion-clean: icon + text only, no chip backgrounds */}
+                {/* Feature list — icon only, no chip backgrounds */}
                 <ul className="mt-5 space-y-2.5">
                   {icarKnoFeatures.map((f) => (
                     <li key={f.text} className="flex items-center gap-3">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg" style={{ background: f.bg }}>
-                        <f.icon className="h-3.5 w-3.5" style={{ color: f.color }} />
-                      </span>
+                      <f.icon className="h-4 w-4 shrink-0" style={{ color: f.color }} />
                       <span className="text-sm text-gray-700">{f.text}</span>
                     </li>
                   ))}
@@ -107,9 +105,9 @@ export function IcarKnoShowcase() {
                       Explore icarKno™ <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Link href="/products"
+                  <Link href="/contact"
                     className="inline-flex items-center gap-1 text-sm font-medium text-gray-400 hover:text-gray-900 transition-colors">
-                    View all products <ArrowUpRight className="h-3.5 w-3.5" />
+                    Discover the solution <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
               </div>
@@ -122,7 +120,7 @@ export function IcarKnoShowcase() {
               </div>
 
               {/* Mobile image */}
-              <div className="relative block h-60 bg-gray-50 lg:hidden">
+              <div className="relative block w-full aspect-[3/4] bg-gray-50 lg:hidden">
                 <IcarKnoSlideshow className="absolute inset-0 h-full w-full" interval={3500} />
               </div>
 
@@ -135,11 +133,12 @@ export function IcarKnoShowcase() {
   )
 }
 
-// ── More from Carnot Research (BharGati + SAATHI) ─────────────────────────────
+// ── More from icarKno™ (BharGati + SAATHI) ─────────────────────────────
 const imageProducts = [
   {
     name: "SAATHI",
-    nameColor: "#dc2626",
+    nameColor: "#0f172a",
+    taglineColor: "#64748b",
     tagline: "Delhi Public Transit AI",
     desc: "Award-winning multilingual AI assistant for Delhi commuters. Plan metro and bus journeys, check fares and timings, and get emergency help by voice or text in 22+ languages.",
     bullets: [
@@ -147,15 +146,17 @@ const imageProducts = [
       "22+ languages including Indic languages",
       "JICA–BCG–FITT award winner 2025",
     ],
-    accentFrom: "#dc2626",
-    accentTo: "#f87171",
+    accentFrom: "#0f172a",
+    accentTo: "#1e293b",
+    ctaColor: "#2563eb",
     image: "/assets/products/homepage/homepage_Saathi.png",
     href: "/products/saathi",
     award: true,
   },
   {
     name: "BharGati™ AI",
-    nameColor: "#16a34a",
+    nameColor: "#0f172a",
+    taglineColor: "#64748b",
     tagline: "Sports & Performance AI",
     desc: "AI-powered biomechanical movement analysis from standard video. No wearables or lab setup needed. Measures joint angles, gait, posture, and performance metrics for coaches, athletes, and rehabilitation teams.",
     bullets: [
@@ -163,8 +164,9 @@ const imageProducts = [
       "Biomechanical metrics & coaching insights",
       "Sports, rehabilitation & elite training",
     ],
-    accentFrom: "#16a34a",
-    accentTo: "#4ade80",
+    accentFrom: "#0f172a",
+    accentTo: "#1e293b",
+    ctaColor: "#2563eb",
     image: "/assets/products/homepage/homepage_Bhargati.png",
     href: "/products/bhargati",
     award: false,
@@ -182,7 +184,7 @@ export function MoreProducts() {
             <div className="h-px flex-1 bg-border" />
             <div className="text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
-                More from Carnot Research
+                Our other products
               </p>
             </div>
             <div className="h-px flex-1 bg-border" />
@@ -201,12 +203,12 @@ export function MoreProducts() {
                   className="relative flex h-52 items-center justify-center overflow-hidden"
                   style={{ background: `linear-gradient(135deg, ${p.accentFrom}15 0%, ${p.accentTo}0a 100%)` }}
                 >
-                  <div className="absolute inset-x-0 top-0 h-[3px]"
+                  <div className="absolute inset-x-0 top-0 h-[3px] z-10"
                     style={{ background: `linear-gradient(90deg, ${p.accentFrom}, ${p.accentTo})` }} />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${B}${p.image}`} alt={p.name} className="h-full w-full object-cover" />
                   {p.award && (
-                    <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-700 ring-1 ring-amber-200 shadow-sm">
+                    <span className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-slate-800 ring-1 ring-slate-200 shadow-sm">
                       <Trophy className="h-3 w-3" /> Award Winner
                     </span>
                   )}
@@ -216,7 +218,7 @@ export function MoreProducts() {
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <p className="text-2xl font-extrabold tracking-tight" style={{ color: p.nameColor }}>{p.name}</p>
-                      <p className="mt-0.5 text-xs font-semibold uppercase tracking-wider" style={{ color: p.accentFrom }}>{p.tagline}</p>
+                      <p className="mt-0.5 text-xs font-semibold uppercase tracking-wider" style={{ color: p.taglineColor }}>{p.tagline}</p>
                     </div>
                     <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground/30 mt-1 transition-all group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
@@ -231,7 +233,7 @@ export function MoreProducts() {
                   </ul>
                   <div className="mt-auto pt-5 border-t border-border flex items-center justify-between">
                     <span className="text-xs font-medium text-muted-foreground">Explore product</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" style={{ color: p.accentFrom }} />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" style={{ color: p.ctaColor }} />
                   </div>
                 </div>
               </Link>
@@ -243,9 +245,7 @@ export function MoreProducts() {
         <FadeUp delay={220}>
           <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-xl border border-border bg-secondary/40 px-5 py-4 sm:flex-row sm:items-center">
             <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50">
-                <Shield className="h-4 w-4 text-blue-600" />
-              </div>
+              <Shield className="h-5 w-5 shrink-0 text-blue-600" />
               <div>
                 <p className="text-sm font-semibold text-foreground">Also listed on GeM (Government e-Marketplace)</p>
                 <p className="text-xs text-muted-foreground">

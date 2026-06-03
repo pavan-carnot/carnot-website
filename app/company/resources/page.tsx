@@ -4,9 +4,9 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Research | Carnot Research",
+  title: "Research | icarKno™",
   description:
-    "Research articles from Carnot Research covering pose detection, real-time computer vision, edge AI deployment, biomechanics analysis, and challenges in production AI systems.",
+    "Research articles from icarKno™ covering pose detection, real-time computer vision, edge AI deployment, biomechanics analysis, and challenges in production AI systems.",
   keywords: [
     "AI research",
     "pose detection",
@@ -18,11 +18,12 @@ export const metadata: Metadata = {
     "on-premise AI",
   ],
   openGraph: {
-    title: "Research | Carnot Research",
-    description:
-      "Applied AI research from Carnot Research: pose detection, real-time vision systems, edge deployment, and production challenges.",
+    title: "Research Articles | icarKno™",
+    description: "Applied AI research from icarKno™: pose detection, real-time vision systems, edge deployment, and production challenges.",
+    url: "https://carnotresearch.com/company/resources",
     type: "website",
   },
+  alternates: { canonical: "https://carnotresearch.com/company/resources" },
 }
 
 const articles = [
@@ -189,9 +190,9 @@ const articles = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "AI Research Articles: Carnot Research",
+  name: "AI Research Articles: icarKno™",
   description:
-    "Applied AI research from Carnot Research covering pose detection, real-time vision, edge deployment, and production AI challenges.",
+    "Applied AI research from icarKno™ covering pose detection, real-time vision, edge deployment, and production AI challenges.",
   itemListElement: articles.map((a, i) => ({
     "@type": "ListItem",
     position: i + 1,
@@ -199,7 +200,7 @@ const jsonLd = {
       "@type": "Article",
       name: a.title,
       description: a.summary,
-      author: { "@type": "Organization", name: "Carnot Research" },
+      author: { "@type": "Organization", name: "icarKno™" },
     },
   })),
 }
@@ -232,7 +233,7 @@ export default function ResourcesPage() {
               Research Articles
             </h1>
             <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Applied research from Carnot Research covering computer vision,
+              Applied research from icarKno™ covering computer vision,
               edge AI, motion analysis, and production deployment, grounded in
               real engineering experience.
             </p>

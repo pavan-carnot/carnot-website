@@ -207,13 +207,13 @@ export function AboutContent() {
 
             <FadeUp delay={100}>
               <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-6xl">
-                About Carnot Research
+                About icarKno™
               </h1>
             </FadeUp>
 
             <FadeUp delay={200}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-                Carnot Research is an applied artificial intelligence company
+                icarKno™ is an applied artificial intelligence company
                 building secure, domain-aligned AI infrastructure for government,
                 defense, and enterprise environments.
               </p>
@@ -247,7 +247,7 @@ export function AboutContent() {
             <FadeUp delay={100}>
               <div className="space-y-5">
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  Carnot Research is a research-driven AI company focused on
+                  icarKno™ is a research-driven AI company focused on
                   institutional intelligence systems. Our team includes
                   artificial intelligence researchers, system architects, and
                   deployment engineers committed to building long-term AI
@@ -352,7 +352,7 @@ export function AboutContent() {
                   contextual depth, and long-term stability.
                 </p>
                 <p className="font-medium text-white">
-                  Carnot Research exists to meet that need.
+                  icarKno™ exists to meet that need.
                 </p>
                 <p>
                   We believe artificial intelligence must function as trusted

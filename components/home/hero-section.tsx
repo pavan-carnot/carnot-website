@@ -5,6 +5,8 @@ import Image from "next/image"
 import { useEffect, useRef } from "react"
 import { ChevronRight } from "lucide-react"
 
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 // ─── Ring-Particles Canvas ─────────────────────────────────────────────────────
 // Faithful canvas port of css-houdini-ringparticles (used on antigravity.google).
 // Source math from: https://unpkg.com/css-houdini-ringparticles/dist/ringparticles.js
@@ -192,22 +194,41 @@ const LETTER_REVEAL_DURATION = 0.55
 
 function Words({ text, color, delay = 0 }: { text: string; color?: string; delay?: number }) {
   const letters = Array.from(text)
+  // Group into word segments so mid-word line breaks don't occur on narrow screens
+  const segments: Array<{ word: string; startIdx: number }> = []
+  let i = 0
+  while (i < letters.length) {
+    const start = i
+    const isSpace = letters[i] === " "
+    while (i < letters.length && (letters[i] === " ") === isSpace) i++
+    segments.push({ word: letters.slice(start, i).join(""), startIdx: start })
+  }
   return (
     <>
-      {letters.map((char, i) => (
-        <span
-          key={i}
-          style={{
-            display: "inline-block",
-            color,
-            opacity: 0,
-            animation: "wordReveal 0.55s cubic-bezier(0.22,1,0.36,1) both",
-            animationDelay: `${delay + i * CHAR_STAGGER}s`,
-          }}
-        >
-          {char === " " ? "\u00A0" : char}
-        </span>
-      ))}
+      {segments.map((seg, si) => {
+        const isSpaceSeg = seg.word[0] === " "
+        return (
+          <span
+            key={si}
+            style={isSpaceSeg ? undefined : { display: "inline-block", whiteSpace: "nowrap" }}
+          >
+            {Array.from(seg.word).map((char, ci) => (
+              <span
+                key={ci}
+                style={{
+                  display: "inline-block",
+                  color,
+                  opacity: 0,
+                  animation: "wordReveal 0.55s cubic-bezier(0.22,1,0.36,1) both",
+                  animationDelay: `${delay + (seg.startIdx + ci) * CHAR_STAGGER}s`,
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </span>
+        )
+      })}
     </>
   )
 }
@@ -260,15 +281,15 @@ export function HeroSection() {
           }}
         >
           <Image
-            src="/assets/logo/carnot-logo.png"
-            alt="Carnot logo"
-            width={24}
-            height={24}
+            src={`${B}/assets/logo/carnot-logo.png`}
+            alt="icarKno™ logo"
+            width={64}
+            height={64}
             priority
-            style={{ width: 24, height: 24, objectFit: "contain" }}
+            style={{ width: 64, height: 64, objectFit: "contain" }}
           />
-          <span style={{ fontSize: 16, fontWeight: 500, color: "#0f172a", letterSpacing: "-0.01em" }}>
-            Carnot Research
+          <span style={{ fontSize: 22, fontWeight: 600, color: "#0f172a", letterSpacing: "-0.01em" }}>
+            icarKno™
           </span>
         </div>
 
@@ -361,7 +382,7 @@ export function HeroSection() {
               whiteSpace: "nowrap",
             }}
           >
-            Book a Demo <ChevronRight className="h-4 w-4" />
+            Discover the solution <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

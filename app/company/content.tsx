@@ -1,19 +1,12 @@
 "use client"
 
 import { useEffect, useRef, useState, type ReactNode } from "react"
-import Link from "next/link"
 import {
-  ArrowRight,
   Award,
   ShieldCheck,
   BadgeCheck,
   Building,
-  Trophy,
-  Cpu,
-  Target,
-  Users,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 function FadeUp({
   children,
@@ -58,11 +51,6 @@ function FadeUp({
   )
 }
 
-
-const founders = [
-  { name: "Prof. Brejesh Lall", affiliation: "IIT Delhi", initials: "BL" },
-  { name: "Dr. Amit Oberoi", affiliation: "IIT Delhi", initials: "AO" },
-]
 
 const certifications = [
   {
@@ -112,175 +100,6 @@ const clients = [
 export function CompanyContent() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-background min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-16 pb-[7.5rem]">
-        <div className="pointer-events-none absolute -top-40 -right-20 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-accent/8 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <FadeUp delay={0}>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-                Company
-              </div>
-            </FadeUp>
-
-            <FadeUp delay={100}>
-              <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-6xl">
-                Building trustworthy AI{" "}
-                <span className="text-primary">from India</span>
-              </h1>
-            </FadeUp>
-
-            <FadeUp delay={200}>
-              <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-                A deep-tech AI company founded by professors, scientists, and
-                engineers from top IITs, bridging cutting-edge research with
-                real-world deployment.
-              </p>
-            </FadeUp>
-          </div>
-        </div>
-      </section>
-
-
-      {/* ── Who we are / What we do ───────────────────────────────── */}
-      <section className="bg-background py-14 sm:py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-2">
-            {/* Who we are */}
-            <FadeUp delay={0} className="h-full">
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-primary/25">
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-primary via-primary/70 to-primary/0" />
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 transition-transform duration-300 group-hover:scale-110">
-                  <Users className="h-6 w-6 text-blue-600" />
-                </div>
-                <h2 className="text-2xl font-semibold text-foreground">
-                  Who we are
-                </h2>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  We are Carnot Research, a deep-tech AI company founded by
-                  professors, scientists, and engineers from top IITs. Our team
-                  brings together over 120 years of collective experience in AI,
-                  NLP, and systems engineering, backed by multiple patents and
-                  top-tier publications.
-                </p>
-                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                  We specialize in building trustworthy, secure, and high-impact
-                  AI systems, particularly for high-stakes sectors such as
-                  government, enterprise, and regulated industries.
-                </p>
-              </div>
-            </FadeUp>
-
-            {/* What we do */}
-            <FadeUp delay={150} className="h-full">
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-accent/25">
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-accent via-accent/70 to-accent/0" />
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 transition-transform duration-300 group-hover:scale-110">
-                  <Cpu className="h-6 w-6 text-orange-600" />
-                </div>
-                <h2 className="text-2xl font-semibold text-foreground">
-                  What we do
-                </h2>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  At Carnot, we build and deploy secure, on-premise GenAI
-                  systems with a strong focus on multimodal data ingestion,
-                  LLM-based RAG with verifiable citations, conversational AI
-                  with agentic workflows, and LLM + VLM integration for visual
-                  reasoning.
-                </p>
-                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                  Our ability to conduct managed, deployable research sets us
-                  apart, converting deep-tech research into scalable tools,
-                  applications, and IP that directly serve strategic needs.
-                </p>
-              </div>
-            </FadeUp>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Mission ──────────────────────────────────────────────── */}
-      <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeUp>
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                <Target className="h-7 w-7 text-primary" />
-              </div>
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground">
-                Our Mission
-              </h2>
-              <blockquote className="mt-6 border-l-0 text-xl italic leading-relaxed text-muted-foreground">
-                &ldquo;To enable responsible, domain-specific AI adoption across
-                industries and governments, delivering AI that works on-ground,
-                at-scale, and in-context.&rdquo;
-              </blockquote>
-            </div>
-          </FadeUp>
-
-          {/* Founders */}
-          <div className="mx-auto mt-20 max-w-2xl">
-            <FadeUp>
-              <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-8">
-                Founded by
-              </p>
-            </FadeUp>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {founders.map((founder, i) => (
-                <FadeUp key={founder.name} delay={i * 120}>
-                  <div className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-primary/25">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/5 text-sm font-bold text-primary transition-transform duration-300 group-hover:scale-105">
-                      {founder.initials}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">
-                        {founder.name}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {founder.affiliation}
-                      </p>
-                    </div>
-                  </div>
-                </FadeUp>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Award ────────────────────────────────────────────────── */}
-      <section className="bg-background py-14 sm:py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeUp>
-            <div className="mx-auto max-w-2xl">
-              <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50/70 via-card to-card p-8 text-center shadow-sm">
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-amber-300/0 via-amber-400 to-amber-300/0" />
-                <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-amber-100">
-                  <Trophy className="h-8 w-8 text-amber-600" />
-                </div>
-                <span className="inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 mb-4">
-                  Award Winner &middot; 2025
-                </span>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Transport Stack Open Innovation Challenge
-                </h3>
-                <p className="mt-1 text-sm font-medium text-muted-foreground">
-                  JICA &middot; Boston Consulting Group &middot; FITT IIT Delhi
-                </p>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  Carnot Research won the Transport Stack Open Innovation
-                  Challenge for project SAATHI, a hyper-personalized
-                  multilingual AI agent for conversational travel assistance.
-                </p>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* ── Certifications ───────────────────────────────────────── */}
       <section id="certifications" className="bg-secondary/30 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

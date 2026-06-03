@@ -318,7 +318,7 @@ export function ClientsPartnersContent() {
             </FadeUp>
             <FadeUp delay={200}>
               <p className="mt-6 text-pretty text-lg leading-relaxed text-gray-500">
-                Carnot Research works with top public institutions, global consulting firms, and
+                icarKno™ works with top public institutions, global consulting firms, and
                 technology partners to create and implement secure, mission-critical AI systems
                 across governance, defense, disaster response, telecommunications, and digital
                 public infrastructure.
@@ -416,7 +416,7 @@ export function ClientsPartnersContent() {
             <div className="mx-auto max-w-2xl text-center mb-14">
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">Why Partner with Us</p>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-                Why Organizations Choose Carnot Research
+                Why Organizations Choose icarKno™
               </h2>
             </div>
           </FadeUp>

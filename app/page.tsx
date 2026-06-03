@@ -1,16 +1,17 @@
 import type { Metadata } from "next"
 import { HeroSection }                    from "@/components/home/hero-section"
 import { WeAreSection }                   from "@/components/home/we-are-section"
+import { TheProblemSection }              from "@/components/home/the-problem-section"
 import { IcarKnoShowcase, MoreProducts }  from "@/components/home/icarkno-showcase"
-import { ProblemSection }                 from "@/components/home/problem-section"
 import { SolutionsSection }               from "@/components/home/solutions-section"
 import { AboutSection }                   from "@/components/home/about-section"
 import { TrustSection }                   from "@/components/home/trust-section"
+import { StayConnectedSection }           from "@/components/home/stay-connected-section"
 
 export const metadata: Metadata = {
-  title: "Carnot Research | On-Premise AI for Government, Defense & Enterprise",
+  title: "icarKno™ | On-Premise AI for Government, Defense & Enterprise",
   description:
-    "Carnot Research builds secure, on-premise AI for India's government, defense, and enterprise — knowledge management, computer vision, sports analytics, and NLP. Founded at IIT Delhi. CMMI Level 3 certified.",
+    "icarKno™ builds secure, on-premise AI for India's government, defense, and enterprise — knowledge management, computer vision, sports analytics, and NLP. Founded at IIT Delhi. CMMI Level 3 certified.",
   keywords: [
     "on-premise AI India",
     "enterprise AI solutions",
@@ -25,13 +26,14 @@ export const metadata: Metadata = {
     "air-gap AI deployment",
   ],
   openGraph: {
-    title: "Carnot Research | On-Premise AI for Government & Enterprise",
+    title: "icarKno™ | On-Premise AI for Government & Enterprise",
     description:
       "Secure AI that runs 100% on your own servers — knowledge management, computer vision, sports analytics, and NLP. Built at IIT Delhi.",
     url: "https://carnotresearch.com",
     type: "website",
-    images: [{ url: "https://carnotresearch.com/og-home.png", width: 1200, height: 630 }],
+    images: [{ url: "https://carnotresearch.com/og-image.png", width: 1200, height: 630 }],
   },
+  alternates: { canonical: "https://carnotresearch.com" },
 }
 
 export default function HomePage() {
@@ -40,26 +42,29 @@ export default function HomePage() {
       {/* 1. Who we are & first impression */}
       <HeroSection />
 
-      {/* 2. We are Carnot Research */}
+      {/* 2. We are icarKno™ */}
       <WeAreSection />
 
-      {/* 3. icarKno™ — flagship product spotlight */}
+      {/* 3. The problem — why trusted AI is hard */}
+      <TheProblemSection />
+
+      {/* 4. icarKno™ — flagship product spotlight */}
       <IcarKnoShowcase />
 
-      {/* 4. Why edge AI matters — the problem icarKno solves */}
-      <ProblemSection />
-
-      {/* 5. More from Carnot — BharGati & SAATHI */}
+      {/* 4. More from icarKno™ — BharGati & SAATHI */}
       <MoreProducts />
 
       {/* 6. All capabilities across 6 domains */}
       <SolutionsSection />
 
-      {/* 7. Company story — IIT Delhi origins */}
+      {/* 7. Clients + certifications */}
+      <TrustSection />
+
+      {/* 8. Company story — IIT Delhi origins */}
       <AboutSection />
 
-      {/* 8. Clients + certifications */}
-      <TrustSection />
+      {/* 9. Stay connected — social links */}
+      <StayConnectedSection />
 
     </>
   )

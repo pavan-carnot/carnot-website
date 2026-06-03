@@ -32,9 +32,15 @@ import {
 } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "Enterprise AI Solutions | Carnot Research",
+  title: "Enterprise AI Solutions | icarKno™",
   description:
     "Enterprise AI solutions for secure, scalable, real-world impact. From governed RAG and on-premise AI to applied AI systems, we turn complex data into reliable, actionable insights.",
+  openGraph: {
+    title: "Enterprise AI Solutions | icarKno™",
+    description: "Governed RAG, on-premise AI, and applied AI systems for government, defense, and enterprise.",
+    url: "https://carnotresearch.com/solutions",
+  },
+  alternates: { canonical: "https://carnotresearch.com/solutions" },
 }
 
 const challenges = [
@@ -275,9 +281,23 @@ const faqs = [
   },
 ]
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+}
+
 export default function SolutionsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <section className="bg-background min-h-[calc(100vh-4rem)] flex flex-col justify-center pt-14 pb-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
